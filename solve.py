@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 
 from generate import generate_pddl_from_maze
-from plan import plan_bloxorz_problem
+from plan import plan_bloxorz_problem, format_plan
 
 def solve_bloxorz_maze(problem_string: str) -> list[str]:
     problem_file = Path()
@@ -13,15 +13,7 @@ def solve_bloxorz_maze(problem_string: str) -> list[str]:
         problem_file = Path(f.name)
 
     domain_file = Path("domain.pddl")
-    plan = plan_bloxorz_problem(domain_file=domain_file, problem_file=problem_file)
-    return plan
-
-def format_plan(plan : list[str]) -> str:
-    result = ""
-    for action in plan:
-        action_args = action.split(" ")
-        result += f"{action_args[0]}-{action_args[-1]}\n"
-    return result
+    return plan_bloxorz_problem(domain_file=domain_file, problem_file=problem_file)
 
 if __name__ == "__main__":
 #     maze = """\

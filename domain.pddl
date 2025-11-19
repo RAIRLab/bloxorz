@@ -90,17 +90,17 @@
       (lying-on ?b ?t4)
  
        (forall (?x - tile)
-        (when (and (activating ?t3 ?x) (not (active ?x)) (not (hard ?t3)))
+        (when (and (enabling ?t3 ?x) (not (active ?x)) (not (hard ?t3)))
           (active ?x)))
       (forall (?x - tile)
-        (when (and (activating ?t4 ?x) (not (active ?x)) (not (hard ?t4)))
+        (when (and (enabling ?t4 ?x) (not (active ?x)) (not (hard ?t4)))
           (active ?x)))
 
       (forall (?x - tile)
-        (when (and (activating ?t3 ?x) (active ?x) (not (hard ?t3)))
+        (when (and (disabling ?t3 ?x) (active ?x) (not (hard ?t3)))
           (not (active ?x))))
       (forall (?x - tile)
-        (when (and (activating ?t4 ?x) (active ?x) (not (hard ?t4)))
+        (when (and (disabling ?t4 ?x) (active ?x) (not (hard ?t4)))
           (not (active ?x))))
  
     )

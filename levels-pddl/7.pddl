@@ -228,7 +228,8 @@
     (active t-08-06)
     (active t-08-07)
     (active t-08-08)
-    (activating t-05-10 t-07-04)
+    (enabling t-05-10 t-07-04)
+    (disabling t-05-10 t-07-04)
     (hard t-05-10)
   
     (standing-on B t-04-02)

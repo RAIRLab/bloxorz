@@ -29,9 +29,16 @@ def plan_bloxorz_problem(domain_file: Path, problem_file: Path) -> list[str] | N
     plan = plans[0]["actions"]
     return plan
 
+def format_plan(plan : list[str]) -> str:
+    result = ""
+    for action in plan:
+        action_args = action.split(" ")
+        result += f"{action_args[0]}-{action_args[-1]}\n"
+    return result
+
 if __name__ == "__main__":
     for bloxorz_problem in Path("levels-pddl").glob("*.pddl"):
-
+        print(f"\n\nPlanning for problem {bloxorz_problem}\n")
         domain_file = Path("domain.pddl")
         problem_file = bloxorz_problem
         plan = plan_bloxorz_problem(
@@ -39,7 +46,7 @@ if __name__ == "__main__":
             problem_file=problem_file
         )
         plan_str = "\n".join([f"({action})" for action in plan])
-        print(plan_str)
+        print(format_plan(plan))
 
         with open(PLANS_FOLDER / bloxorz_problem.name.replace(".pddl", ".txt"), "w", encoding="utf-8") as f:
             f.write(plan_str)
