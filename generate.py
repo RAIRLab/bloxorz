@@ -37,6 +37,7 @@ class Button:
     row: int
     col: int
     button_type: str  # 'hard' or 'soft'
+    button_action: str # 'enable' or 'disable' or "toggle"
     id: int
 
 @dataclass
@@ -108,7 +109,7 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
     for r, line in enumerate(lines, start=1):
         # Keep exact character positions (including leading spaces)
         for c, ch in enumerate([line[i:i+2] for i in range(0, len(line), 2)], start=1):
-            if ch in {"XX", "II", "GG", "YY"} or ch.startswith(("H", "S", "E", "D")):
+            if ch in {"XX", "II", "GG", "YY"} or ch.startswith(("T", "t", "E", "e", "D", "d", "A", "U")):
                 tiles.add((r, c))
                 max_c = max(max_c, c)
                 if ch == "II":
@@ -121,25 +122,49 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
                     goal = (r, c)
                 elif ch == "YY":
                     yellow_tiles.add((r, c))
-                elif ch.startswith("H"):
+                elif ch.startswith("T"):
                     try:
                         btn_id = int(ch[1:])
                     except ValueError:
                         raise ValueError(f"Invalid hard button ID in tile '{ch}' at ({r}, {c})")
-                    buttons.append(Button(row=r, col=c, button_type='hard', id=btn_id))
-                elif ch.startswith("S"):
+                    buttons.append(Button(row=r, col=c, button_type='hard', button_action="toggle", id=btn_id))
+                elif ch.startswith("t"):
                     try:
                         btn_id = int(ch[1:])
                     except ValueError:
                         raise ValueError(f"Invalid soft button ID in tile '{ch}' at ({r}, {c})")
-                    buttons.append(Button(row=r, col=c, button_type='soft', id=btn_id))
+                    buttons.append(Button(row=r, col=c, button_type='soft', button_action="toggle", id=btn_id))
                 elif ch.startswith("E"):
+                    try:
+                        toggle_id = int(ch[1:])
+                    except ValueError:
+                        raise ValueError(f"Invalid hard button ID in tile '{ch}' at ({r}, {c})")
+                    buttons.append(Button(row=r, col=c, button_type='hard', button_action='enable', id=toggle_id))
+                elif ch.startswith("e"):
+                    try:
+                        toggle_id = int(ch[1:])
+                    except ValueError:
+                        raise ValueError(f"Invalid soft button ID in tile '{ch}' at ({r}, {c})")
+                    buttons.append(Button(row=r, col=c, button_type='soft', button_action='enable', id=toggle_id))
+                elif ch.startswith("D"):
+                    try:
+                        toggle_id = int(ch[1:])
+                    except ValueError:
+                        raise ValueError(f"Invalid hard button ID in tile '{ch}' at ({r}, {c})")
+                    buttons.append(Button(row=r, col=c, button_type='hard', button_action='disable', id=toggle_id))
+                elif ch.startswith("d"):
+                    try:
+                        toggle_id = int(ch[1:])
+                    except ValueError:
+                        raise ValueError(f"Invalid soft button ID in tile '{ch}' at ({r}, {c})")
+                    buttons.append(Button(row=r, col=c, button_type='soft', button_action='disable', id=toggle_id))
+                elif ch.startswith("A"):
                     try:
                         toggle_id = int(ch[1:])
                     except ValueError:
                         raise ValueError(f"Invalid enabled toggle ID in tile '{ch}' at ({r}, {c})")
                     toggles.append(ToggleTile(row=r, col=c, state='enabled', id=toggle_id))
-                elif ch.startswith("D"):
+                elif ch.startswith("U"):
                     try:
                         toggle_id = int(ch[1:])
                     except ValueError:
@@ -271,7 +296,10 @@ def format_pddl(
         for toggle in toggles:
             if toggle.id == button.id:
                 toggle_tile_name = tn((toggle.row, toggle.col))
-                init_lines.append(f"  (activating {btn_tile_name} {toggle_tile_name})")
+                if(button.button_action == "toggle" or button.button_action == "enable"):
+                    init_lines.append(f"  (enabling {btn_tile_name} {toggle_tile_name})")
+                if(button.button_action == "toggle" or button.button_action == "disable"):
+                    init_lines.append(f"  (disabling {btn_tile_name} {toggle_tile_name})")
         if button.button_type == 'hard':
             init_lines.append(f"  (hard {btn_tile_name})")
 
