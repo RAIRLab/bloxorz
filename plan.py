@@ -16,14 +16,14 @@ def plan_bloxorz_problem(domain_file: Path, problem_file: Path) -> list[str] | N
         search_heuristic=heuristic
     )
     if plans_result.get("unsolvable", False):
-        print(f"Problem {bloxorz_problem} is unsolvable")
+        print(f"Problem is unsolvable")
         return None
     plans = plans_result.get("plans", None)
     if plans is None:
-        print(f"No plans found for problem {bloxorz_problem}")
+        print(f"No plans found for problem")
         return None
     if len(plans) == 0:
-        print(f"No plans found for problem {bloxorz_problem}")
+        print(f"No plans found for problem")
         print(plans_result["planner_error"])
         return None
     plan = plans[0]["actions"]

@@ -8,10 +8,14 @@ Maze legend:
   GG - Goal tile
   YY - Yellow tile (cannot be stood on upright)
      - Empty space (no tile)
-  H# - Hard button tile (where # is a digit, e.g., H1, H2, ...)
-  S# - Soft button tile (where # is a digit, e.g., S1, S2, ...)
-  E# - Enabled toggle tile (where # is a digit, e.g., E1, E2, ...)
-  D# - Disabled toggle tile (where # is a digit, e.g., D1, D2, ...)
+  T# - Hard toggle button tile (where # is a digit, e.g., T1, T2, ...)
+  t# - Soft toggle button tile (where # is a digit, e.g., t1, t2, ...)
+  E# - Hard enable button tile (where # is a digit, e.g., E1, E2, ...)
+  e# - Soft enable button tile (where # is a digit, e.g., e1, e2, ...)
+  D# - Hard disable button tile (where # is a digit, e.g., D1, D2, ...)
+  d# - Soft disable button tile (where # is a digit, e.g., d1, d2, ...)
+  A# - Enabled toggle tile (where # is a digit, e.g., A1, A2, ...)
+  U# - Disabled toggle tile (where # is a digit, e.g., U1, U2, ...)
 
 Supports ragged rows and leading spaces (columns are 1-based and preserved).
 If most lines begin with ';', the script strips a leading ';' and any following spaces.

@@ -29,9 +29,9 @@ if __name__ == "__main__":
                 XXXXXXXX
 XXXXXX          XX    XXXXXXXX
 XXIIXXXXXXXXXXXXXX      XXGGXX
-XXXXXX        XXXXH1    XXXXXX
+XXXXXX        XXXXT1    XXXXXX
 XXXXXX        XXXXXX    XXXXXX
-  XXXXD1      XX
+  XXXXU1      XX
     XXXXXXXXXXXX
 """
     plan = solve_bloxorz_maze(maze)
