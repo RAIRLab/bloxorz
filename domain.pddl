@@ -10,8 +10,9 @@
     (perpendicular ?d1 - direction ?d2 - direction)
     (active ?t - tile)                               ; tile is active (can be used)
     (hard ?t - tile)
-    (activating ?t - tile ?t2 - tile)                ; t activates t2 when block is on t
-    (yellow ?t - tile)                               ; tile is yellow (can't be stood on upright)
+    (disabling ?t1 - tile ?t2 - tile)                 ; t1 disables t2 when block is on t1
+    (enabling ?t1 - tile ?t2 - tile)                   ; t1 enables t2 when block is on t1
+    (yellow ?t - tile)                                 ; tile is yellow (can't be stood on upright)
   )
 
   (:action lay-down
@@ -29,17 +30,17 @@
       (lying-on ?b ?to1)
 
       (forall (?x - tile)
-        (when (and (activating ?to1 ?x) (not (active ?x)) (not (hard ?to1)))
+        (when (and (enabling ?to1 ?x) (not (active ?x)) (not (hard ?to1)))
           (active ?x)))
       (forall (?x - tile)
-        (when (and (activating ?to2 ?x) (not (active ?x)) (not (hard ?to2)))
+        (when (and (enabling ?to2 ?x) (not (active ?x)) (not (hard ?to2)))
           (active ?x)))
 
       (forall (?x - tile)
-        (when (and (activating ?to1 ?x) (active ?x) (not (hard ?to1)))
+        (when (and (disabling ?to1 ?x) (active ?x) (not (hard ?to1)))
           (not (active ?x))))
       (forall (?x - tile)
-        (when (and (activating ?to2 ?x) (active ?x) (not (hard ?to2)))
+        (when (and (disabling ?to2 ?x) (active ?x) (not (hard ?to2)))
           (not (active ?x))))
     )
   )
@@ -60,10 +61,10 @@
       (not (lying-on ?b ?t2))
       (standing-on ?b ?t3)
       (forall (?x - tile)
-        (when (and (activating ?t3 ?x) (not (active ?x)))
+        (when (and (enabling ?t3 ?x) (not (active ?x)))
           (active ?x)))
       (forall (?x - tile)
-        (when (and (activating ?t3 ?x) (active ?x))
+        (when (and (disabling ?t3 ?x) (active ?x))
           (not (active ?x))))
 
     )
