@@ -1,0 +1,36 @@
+version = 1
+revision = 3
+requires-python = ">=3.11"
+
+[[package]]
+name = "bloxorz"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "kstar-planner" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "kstar-planner", specifier = ">=1.4.16" }]
+
+[[package]]
+name = "kstar-planner"
+version = "1.4.16"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3c/96/749f13c6fab31e3f662a49f5b698854d0bb6be2e813cfa61c6209a6c00a2/kstar_planner-1.4.16-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:144c2cf64c874b66f304ed3d255b13eab04bfa9564db4970011cab99d997b413", size = 1722529, upload-time = "2025-10-02T21:29:26.84Z" },
+    { url = "https://files.pythonhosted.org/packages/6f/bb/2a49575a2988aae56ea54f0fc309643799717944b34be2c54b2af0428634/kstar_planner-1.4.16-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:a8351af01d6d667fa8df134a4c979b087aa3563f226db4bf49ca481450801ef5", size = 1722567, upload-time = "2025-10-02T21:29:28.198Z" },
+    { url = "https://files.pythonhosted.org/packages/2d/ee/c8f8019f0b8fe479c40fda76fd3b1611b01533d74ca7de4cd6dca8dfe166/kstar_planner-1.4.16-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:16b966fea94155f2413c3ee7bd0d31986933857575300ac32abbce875cf6fea0", size = 1722535, upload-time = "2025-10-02T21:29:29.297Z" },
+    { url = "https://files.pythonhosted.org/packages/58/60/bc373d081153f6fdc0a22ddb7134c21a632a7ac947d2fd635543c3944ee9/kstar_planner-1.4.16-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2ece5da0d9ad9489d7a1838588c65a4a6a95f5ef32585b23ef6a37f4d26e2d93", size = 58943496, upload-time = "2025-10-02T21:11:57.28Z" },
+    { url = "https://files.pythonhosted.org/packages/c6/05/50a8f3aa7e2f92a3aba4fab7ef0484e7627a109b030e7b5923f040abfda8/kstar_planner-1.4.16-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:784cf61d5e95375398037014b3833ce3689bad6e39c5da6086122e857bf6aa58", size = 59276914, upload-time = "2025-10-02T20:33:38.745Z" },
+    { url = "https://files.pythonhosted.org/packages/96/72/b46aacc723080ff2735e876768b935a37d0e1d5f3278028b791a28e953f3/kstar_planner-1.4.16-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:91fa59ae06b5316fb0614b7b51dc41a88b1300bb637240fd1a7e6ecc26fc695f", size = 1722502, upload-time = "2025-10-02T21:29:31.47Z" },
+    { url = "https://files.pythonhosted.org/packages/f0/1a/8833882d179c7af8670c39bcdf27dfdd9477c19b1e2417cacb8ba301bc49/kstar_planner-1.4.16-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:2ae7f87f6a898065f124ac66772e177eff17cdfcd041a283b63b47da3d9d5bde", size = 1722467, upload-time = "2025-10-02T21:29:32.985Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/dc/80bcaa4c174cb9e2e4ab3dc5794d342d22f685658bbc8bd75be0cf950b24/kstar_planner-1.4.16-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:ab38166e0d47b79fbf16f3ec275d543a03be79b8d200e8ef64650b33583356e7", size = 1722465, upload-time = "2025-10-02T21:29:34.205Z" },
+    { url = "https://files.pythonhosted.org/packages/cc/03/813c8b1d7fccc78d2f1f245f9e40041d81fa722dbea75d250776c2e0bee5/kstar_planner-1.4.16-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:dfc6dea2d67a1ae1d9a135ba86e3f0005d2aabca30997e49104913a7b4ad03e6", size = 58942640, upload-time = "2025-10-03T02:15:40.832Z" },
+    { url = "https://files.pythonhosted.org/packages/7c/8f/a99b1468ca7391502a3e65a0117d3ad0de63b289025dd9b424778e7c9492/kstar_planner-1.4.16-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:44408d864ec9ec8ca071dde5de0ecc3c7b929aa7f642ea0234b99ec9108a184e", size = 59276039, upload-time = "2025-10-02T20:33:35.793Z" },
+    { url = "https://files.pythonhosted.org/packages/ee/71/bc441a0cde350d9ff6182f02138a048ea4e49f52190b0da4bd3c573a9123/kstar_planner-1.4.16-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:c666eeb1bec6b70d4ea6913bf9c845201f45bb0189c182e231237ca6cdf33452", size = 1722580, upload-time = "2025-10-02T21:29:35.288Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/bc/d175ee537ce91cefb9698a684c060579feedba1b86d1b57c0fd42993c602/kstar_planner-1.4.16-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:4178f5438402bc6135f63cd9ef501d0da59dfd68c3188b3b3061e3c4b202dc90", size = 1722467, upload-time = "2025-10-02T21:29:36.759Z" },
+    { url = "https://files.pythonhosted.org/packages/bd/6a/3141a942047414bc5be802fc8dee74cffb20ac26dcb204d64d863ee3c1ac/kstar_planner-1.4.16-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:55cc039e4e4db5bcb7d208b1b3e848340271d1d5cd13a561db219c8ccc468c67", size = 1722499, upload-time = "2025-10-02T21:29:38.179Z" },
+    { url = "https://files.pythonhosted.org/packages/d9/e5/09ae530500c43edfab6fb6216a15ed0290b6ca6eb276311ff8e595ce65de/kstar_planner-1.4.16-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:02ada85edfdec785b9a7f01dd9f64e1ba66d6633e4fc1f0ef0c63c4f1179c587", size = 58942185, upload-time = "2025-10-02T23:01:27.235Z" },
+    { url = "https://files.pythonhosted.org/packages/4e/ee/f336c791f3bdae6cf3688834db9e983ada236d914faa07db66c2bd1755f8/kstar_planner-1.4.16-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9707bd7bd6f9448bf7014965bda0579afe0a652887e8c1d18411fdf3ec9f4f3f", size = 59278291, upload-time = "2025-10-02T20:33:44.665Z" },
+]

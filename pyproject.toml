@@ -1,0 +1,9 @@
+[project]
+name = "bloxorz"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "kstar-planner>=1.4.16",
+]
