@@ -14,8 +14,8 @@ start_y = int(max_y/2)
 # How many moves it should generate
 total_moves = 20
 
-# The number of problems to generate
-num_problems = 100
+# The number of good problems to generate
+num_good_problems = 3
 
 # The grading threshold for what problems to output
 grading_threshold = .045
@@ -332,7 +332,7 @@ class Game:
 
 if __name__ == "__main__":
     goodProblems = 0
-    for i in range(num_problems):
+    while goodProblems < num_good_problems:
         game = Game()
         game.generateMap(total_moves, requireStand=True)
         if game.isValidProblem() and game.scoreGrid() >= grading_threshold:
