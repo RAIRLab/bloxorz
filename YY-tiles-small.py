@@ -16,9 +16,16 @@ def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3):
     """Generate a fully connected grid with scattered yellow tiles that form paths."""
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     
-    # Place start and goal
-    grid[1][1] = "II"
-    grid[rows - 2][cols - 2] = "GG"
+    # Place start and goal at random positions
+    start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+    goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+    
+    # Ensure start and goal are different
+    while (start_r, start_c) == (goal_r, goal_c):
+        goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+    
+    grid[start_r][start_c] = "II"
+    grid[goal_r][goal_c] = "GG"
     
     # Randomly scatter yellow tiles
     yellow_positions = []
