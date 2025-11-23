@@ -12,91 +12,39 @@ Tile legend:
 import random
 
 
-def generate_bloxorz_grid(rows=10, cols=10, num_islands=6, yellow_ratio=0.2):
-    """Generate a maze-like multi-island Bloxorz grid with yellow tiles."""
-    grid = [["." for _ in range(cols)] for _ in range(rows)]
-
-    def valid(r, c):
-        return 0 <= r < rows and 0 <= c < cols
-
-    def empty(r, c):
-        return valid(r, c) and grid[r][c] == "."
-
-    def place_island(r, c, label_start, is_last=False):
-        """Create a single island at (r,c) and return the upright subgoal position."""
-        grid[r][c] = label_start
-        orientation = random.choice(["horizontal", "vertical"])
-
-        if orientation == "horizontal":
-            pattern = [(0, 1), (0, 2), (1, 1), (1, 2)]
-            goal_pos = (r, c + 2)
-        else:
-            pattern = [(1, 0), (2, 0), (1, 1), (2, 1)]
-            goal_pos = (r + 2, c)
-
-        for dr, dc in pattern:
-            rr, cc = r + dr, c + dc
-            if empty(rr, cc):
-                grid[rr][cc] = "XX"
-
-        gr, gc = goal_pos
-        if valid(gr, gc):
-            grid[gr][gc] = "GG" if is_last else "XX"
-
-        return goal_pos
-
-    def build_bridge(r, c, direction, length):
-        """Lay a straight bridge of XX tiles."""
-        dr, dc = {
-            "north": (-1, 0),
-            "south": (1, 0),
-            "east": (0, 1),
-            "west": (0, -1)
-        }[direction]
-
-        for step in range(1, length + 1):
-            rr, cc = r + dr * step, c + dc * step
-            if empty(rr, cc):
-                grid[rr][cc] = "XX"
-
-        end_r, end_c = r + dr * (length + 1), c + dc * (length + 1)
-        return (end_r, end_c) if valid(end_r, end_c) else (r, c)
-
-    # Start near top-left
-    r, c = random.randint(1, 2), random.randint(1, 2)
-    next_r, next_c = r, c
-
-    for i in range(num_islands):
-        label = "II" if i == 0 else "XX"
-        is_last = (i == num_islands - 1)
-        next_r, next_c = place_island(next_r, next_c, label, is_last)
-        if is_last:
-            break
-
-        # Choose a valid direction (north/south/east/west)
-        for direction in random.sample(["north", "south", "east", "west"], 4):
-            bridge_len = random.randint(2, 3)
-            dr, dc = {
-                "north": (-1, 0),
-                "south": (1, 0),
-                "east": (0, 1),
-                "west": (0, -1)
-            }[direction]
-            end_r, end_c = next_r + dr * (bridge_len + 1), next_c + dc * (bridge_len + 1)
-            if valid(end_r, end_c):
-                next_r, next_c = build_bridge(next_r, next_c, direction, bridge_len)
-                break
-
-        # Stay within safe bounds
-        next_r = max(1, min(rows - 5, next_r))
-        next_c = max(1, min(cols - 5, next_c))
-
-    # Randomly convert some XX tiles to YY tiles
-    for r in range(rows):
-        for c in range(cols):
+def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3):
+    """Generate a fully connected grid with scattered yellow tiles that form paths."""
+    grid = [["XX" for _ in range(cols)] for _ in range(rows)]
+    
+    # Place start and goal
+    grid[1][1] = "II"
+    grid[rows - 2][cols - 2] = "GG"
+    
+    # Randomly scatter yellow tiles
+    yellow_positions = []
+    for r in range(1, rows - 1):
+        for c in range(1, cols - 1):
             if grid[r][c] == "XX" and random.random() < yellow_ratio:
                 grid[r][c] = "YY"
-
+                yellow_positions.append((r, c))
+    
+    # Create connecting yellow paths between scattered yellow tiles
+    if len(yellow_positions) > 1:
+        for i in range(len(yellow_positions) - 1):
+            yr1, yc1 = yellow_positions[i]
+            yr2, yc2 = yellow_positions[i + 1]
+            
+            # Connect with a path of yellow tiles
+            r, c = yr1, yc1
+            while c != yc2:
+                c += 1 if yc2 > c else -1
+                if grid[r][c] == "XX":
+                    grid[r][c] = "YY"
+            while r != yr2:
+                r += 1 if yr2 > r else -1
+                if grid[r][c] == "XX":
+                    grid[r][c] = "YY"
+    
     return grid
 
 
@@ -159,11 +107,31 @@ def generate_bloxorz_problem(data_file, output_file):
     problem.append("    )\n")
 
     problem.append("    (:init")
+    # Perpendicular direction facts
+    perpendicular_facts = [
+        ("north", "east"), ("north", "west"),
+        ("east", "north"), ("west", "north"),
+        ("south", "east"), ("south", "west"),
+        ("east", "south"), ("west", "south"),
+    ]
+    for d1, d2 in perpendicular_facts:
+        problem.append(f"        (perpendicular {d1} {d2})")
+    
+    # Start position
     problem.append(f"        (standing-on b1 {start_tile})")
+    
+    # Adjacency facts
     for t1, t2, d in adjacency:
         problem.append(f"        (adjacent {t1} {t2} {d})")
+    
+    # All tiles are active by default
+    for (r, c) in tiles:
+        problem.append(f"        (active {tile_name(r, c)})")
+    
+    # Yellow tile facts
     for yellow_tile in yellow_tiles:
         problem.append(f"        (yellow {yellow_tile})")
+    
     problem.append("    )\n")
 
     problem.append("    (:goal (and")
@@ -177,12 +145,14 @@ def generate_bloxorz_problem(data_file, output_file):
 
 if __name__ == "__main__":
     random.seed(14)  # for reproducible output
-    grid = generate_bloxorz_grid(rows=10, cols=10, num_islands=6, yellow_ratio=0.2)
+    
+    # Generate fully connected grid with yellow paths
+    grid = generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3)
     write_grid_to_file(grid, "bloxorz_grid_with_yellow.txt")
     print("Generated grid:")
     for row in grid:
         print("".join(row))
     
-    # Also generate the PDDL problem file
+    # Generate the PDDL problem file
     generate_bloxorz_problem("bloxorz_grid_with_yellow.txt", "bloxorz_problem_with_yellow.pddl")
     print("\nGenerated PDDL problem file: bloxorz_problem_with_yellow.pddl")
