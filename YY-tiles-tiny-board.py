@@ -1,13 +1,12 @@
 """
 Simple utility to build PDDL problem files for the 'bloxorz' domain
-with support for yellow tiles and empty spaces.
+with support for yellow tiles - 4x4 compact version with no empty spaces.
 
 Tile legend:
   XX - Normal tile
   II - Start tile
   GG - Goal tile
   YY - Yellow tile (cannot be stood on upright)
-  .. - Empty space (no tile)
 """
 
 import random
@@ -133,8 +132,8 @@ def is_connected(grid, start_pos, goal_pos):
     return False
 
 
-def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
-    """Generate a connected grid with yellow tiles and empty spaces, ensuring solvability."""
+def generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3):
+    """Generate a fully connected 4x3 grid with yellow tiles, no empty spaces."""
     max_attempts = 100
     
     for attempt in range(max_attempts):
@@ -153,23 +152,10 @@ def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
         grid[start_r][start_c] = "II"
         grid[goal_r][goal_c] = "GG"
         
-        # Add empty spaces, but not adjacent to start/goal
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == "XX" and random.random() < empty_ratio:
-                    # Don't remove tiles immediately adjacent to start or goal
-                    if not ((abs(r - start_r) <= 1 and abs(c - start_c) <= 1) or
-                            (abs(r - goal_r) <= 1 and abs(c - goal_c) <= 1)):
-                        grid[r][c] = ".."
-        
-        # Check if start and goal are still connected
-        if not is_connected(grid, (start_r, start_c), (goal_r, goal_c)):
-            continue  # Try again
-        
         # Randomly scatter yellow tiles (only on XX tiles)
         yellow_positions = []
-        for r in range(1, rows - 1):
-            for c in range(1, cols - 1):
+        for r in range(rows):
+            for c in range(cols):
                 if grid[r][c] == "XX" and random.random() < yellow_ratio:
                     grid[r][c] = "YY"
                     yellow_positions.append((r, c))
@@ -191,11 +177,11 @@ def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
                     if grid[r][c] == "XX":
                         grid[r][c] = "YY"
         
-        # Final connectivity check and ensure no full yellow rows/columns
+        # Check connectivity with yellow tile constraint and ensure no full yellow rows/columns
         if is_connected(grid, (start_r, start_c), (goal_r, goal_c)) and not has_full_yellow_line(grid):
             return grid
     
-    # Fallback: return a fully connected grid without empty spaces
+    # Fallback: return a fully connected grid without yellow tiles
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
@@ -310,9 +296,9 @@ if __name__ == "__main__":
     seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
     random.seed(seed)
     
-    grid = generate_bloxorz_grid(rows=5, cols=5, yellow_ratio=0.3)
-    grid_file = f"levels/YY-tiles-small-board-{seed}.txt"
-    pddl_file = f"levels-pddl/YY-tiles-small-board-problem-{seed}.pddl"
+    grid = generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3)
+    grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
+    pddl_file = f"levels-pddl/YY-tiles-tiny-board-problem-{seed}.pddl"
     
     write_grid_to_file(grid, grid_file)
     
