@@ -1,6 +1,6 @@
 """
 Simple utility to build PDDL problem files for the 'bloxorz' domain
-with support for yellow tiles - 4x4 compact version with no empty spaces.
+with support for yellow tiles - 3x4 compact version with no empty spaces.
 
 Tile legend:
   XX - Normal tile
@@ -132,9 +132,9 @@ def is_connected(grid, start_pos, goal_pos):
     return False
 
 
-def generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3):
-    """Generate a fully connected 4x3 grid with yellow tiles, no empty spaces."""
-    max_attempts = 100
+def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
+    """Generate a fully connected 3x4 grid with yellow tiles, no empty spaces."""
+    max_attempts = 1000
     
     for attempt in range(max_attempts):
         grid = [["XX" for _ in range(cols)] for _ in range(rows)]
@@ -143,11 +143,29 @@ def generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3):
         start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         
-        # Ensure start and goal: not adjacent, not on same wall, and max 1 row or 1 col apart
-        while ((abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1) or 
-               on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols) or
-               (abs(start_r - goal_r) > 1 and abs(start_c - goal_c) > 1)):
+        # Ensure start and goal: not adjacent, not on same wall, max 1 row and 1 col in between,
+        # can only be in same row if it's row 2 (index 1 in 0-indexed)
+        position_attempts = 0
+        while True:
+            # Not adjacent
+            adjacent = abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1
+            # Not on same wall
+            same_wall = on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols)
+            # Max 1 row and 1 col in between (so at most 2 rows apart and 2 cols apart)
+            too_far = abs(start_r - goal_r) > 2 or abs(start_c - goal_c) > 2
+            # Same row only allowed if it's row 2 (index 1)
+            same_row_invalid = (start_r == goal_r) and (start_r != 1)
+            
+            if not (adjacent or same_wall or too_far or same_row_invalid):
+                break
+            
             goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+            position_attempts += 1
+            if position_attempts > 1000:
+                break
+        
+        if position_attempts > 1000:
+            continue
         
         grid[start_r][start_c] = "II"
         grid[goal_r][goal_c] = "GG"
@@ -185,10 +203,24 @@ def generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3):
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
-    while ((abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1) or 
-           on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols) or
-           (abs(start_r - goal_r) > 1 and abs(start_c - goal_c) > 1)):
+    position_attempts = 0
+    while True:
+        # Not adjacent
+        adjacent = abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1
+        # Not on same wall
+        same_wall = on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols)
+        # Max 1 row and 1 col in between (so at most 2 rows apart and 2 cols apart)
+        too_far = abs(start_r - goal_r) > 2 or abs(start_c - goal_c) > 2
+        # Same row only allowed if it's row 2 (index 1)
+        same_row_invalid = (start_r == goal_r) and (start_r != 1)
+        
+        if not (adjacent or same_wall or too_far or same_row_invalid):
+            break
+        
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+        position_attempts += 1
+        if position_attempts > 1000:
+            return None
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
     return grid
@@ -295,8 +327,15 @@ if __name__ == "__main__":
     # Generate a random problem each time using timestamp as seed
     seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
     random.seed(seed)
+    print(f"Starting generation with seed {seed}...")
     
-    grid = generate_bloxorz_grid(rows=4, cols=4, yellow_ratio=0.3)
+    grid = generate_bloxorz_grid(rows=3, cols=4, yellow_ratio=0.3)
+    
+    if grid is None:
+        print(f"Failed to generate valid grid after 100 attempts. Constraints may be too restrictive.")
+        exit(1)
+    
+    print(f"Grid generation completed!")
     grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
     pddl_file = f"levels-pddl/YY-tiles-tiny-board-problem-{seed}.pddl"
     

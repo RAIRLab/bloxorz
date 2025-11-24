@@ -135,7 +135,7 @@ def is_connected(grid, start_pos, goal_pos):
 
 def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
     """Generate a connected grid with yellow tiles and empty spaces, ensuring solvability."""
-    max_attempts = 100
+    max_attempts = 1000
     
     for attempt in range(max_attempts):
         grid = [["XX" for _ in range(cols)] for _ in range(rows)]
@@ -144,10 +144,10 @@ def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
         start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         
-        # Ensure start and goal: not adjacent, not on same wall, and max 1 row or 1 col apart
+        # Ensure start and goal: not immediately adjacent, not on same wall, and max 1 row AND 1 col apart
         while ((abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1) or 
                on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols) or
-               (abs(start_r - goal_r) > 1 and abs(start_c - goal_c) > 1)):
+               abs(start_r - goal_r) > 1 or abs(start_c - goal_c) > 1):
             goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         
         grid[start_r][start_c] = "II"
@@ -201,7 +201,7 @@ def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     while ((abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1) or 
            on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols) or
-           (abs(start_r - goal_r) > 1 and abs(start_c - goal_c) > 1)):
+           abs(start_r - goal_r) > 1 or abs(start_c - goal_c) > 1):
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
@@ -309,8 +309,15 @@ if __name__ == "__main__":
     # Generate a random problem each time using timestamp as seed
     seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
     random.seed(seed)
+    print(f"Starting generation with seed {seed}...")
     
-    grid = generate_bloxorz_grid(rows=5, cols=5, yellow_ratio=0.3)
+    grid = generate_bloxorz_grid(rows=5, cols=5, yellow_ratio=0.3, empty_ratio=0.4)
+    
+    if grid is None:
+        print(f"Failed to generate valid grid after 100 attempts. Constraints may be too restrictive.")
+        exit(1)
+    
+    print(f"Grid generation completed!")
     grid_file = f"levels/YY-tiles-small-board-{seed}.txt"
     pddl_file = f"levels-pddl/YY-tiles-small-board-problem-{seed}.pddl"
     
