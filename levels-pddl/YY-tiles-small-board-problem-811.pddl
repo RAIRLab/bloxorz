@@ -1,4 +1,4 @@
-(define (problem bloxorz-prob-levels/YY-tiles-small-board-456622)
+(define (problem bloxorz-prob-levels/YY-tiles-small-board-811)
     (:domain bloxorz)
     (:objects
         b1 - block
@@ -14,7 +14,7 @@
         (perpendicular south west)
         (perpendicular east south)
         (perpendicular west south)
-        (standing-on b1 t-01-01)
+        (standing-on b1 t-01-03)
         (adjacent t-01-01 t-01-03 east)
         (adjacent t-01-03 t-01-01 west)
         (adjacent t-01-01 t-02-01 south)
@@ -120,11 +120,13 @@
         (active t-05-05)
         (active t-05-07)
         (active t-05-09)
-        (yellow t-04-03)
+        (yellow t-03-05)
         (yellow t-04-05)
+        (yellow t-02-07)
+        (yellow t-02-05)
     )
 
     (:goal (and
-        (standing-on b1 t-05-03)
+        (standing-on b1 t-05-09)
     ))
 )

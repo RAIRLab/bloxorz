@@ -154,7 +154,7 @@ if __name__ == "__main__":
     import time
     
     # Generate a random problem each time using timestamp as seed
-    seed = int(time.time() * 1000) % 1000000  # Use millisecond timestamp as seed
+    seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
     random.seed(seed)
     
     grid = generate_bloxorz_grid(rows=5, cols=5, yellow_ratio=0.3)
