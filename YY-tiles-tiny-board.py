@@ -1,12 +1,20 @@
 """
 Simple utility to build PDDL problem files for the 'bloxorz' domain
-with support for yellow tiles - 3x4 compact version with no empty spaces.
+with support for yellow tiles - 3x4 compact version.
 
 Tile legend:
   XX - Normal tile
   II - Start tile
   GG - Goal tile
   YY - Yellow tile (cannot be stood on upright)
+
+Constraints:
+  - Start and goal are not adjacent
+  - Start and goal are not on the same wall
+  - Maximum 1 row and 1 column in between start and goal (at most 2 apart)
+  - Same row only allowed if it's row 2 (middle row, index 1)
+  - No full rows or columns of yellow tiles
+  - Grid must be solvable (connectivity check with Bloxorz movement)
 """
 
 import random
@@ -133,7 +141,10 @@ def is_connected(grid, start_pos, goal_pos):
 
 
 def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
-    """Generate a fully connected 3x4 grid with yellow tiles, no empty spaces."""
+    """Generate a solvable 3x4 grid with yellow tiles.
+    
+    Applies position constraints and validates connectivity using full Bloxorz movement simulation.
+    """
     max_attempts = 1000
     
     for attempt in range(max_attempts):
@@ -143,8 +154,11 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
         start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         
-        # Ensure start and goal: not adjacent, not on same wall, max 1 row and 1 col in between,
-        # can only be in same row if it's row 2 (index 1 in 0-indexed)
+        # Apply constraints:
+        # - Not adjacent (no diagonal or orthogonal neighbors)
+        # - Not on same wall (not both on same edge)
+        # - Max 1 row and 1 col in between (at most 2 rows/cols apart)
+        # - Same row only if it's row 2 (middle row, index 1)
         position_attempts = 0
         while True:
             # Not adjacent
@@ -199,7 +213,7 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
         if is_connected(grid, (start_r, start_c), (goal_r, goal_c)) and not has_full_yellow_line(grid):
             return grid
     
-    # Fallback: return a fully connected grid without yellow tiles
+    # Fallback: if max_attempts exhausted, return a simple grid without yellow tiles
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
@@ -332,7 +346,7 @@ if __name__ == "__main__":
     grid = generate_bloxorz_grid(rows=3, cols=4, yellow_ratio=0.3)
     
     if grid is None:
-        print(f"Failed to generate valid grid after 100 attempts. Constraints may be too restrictive.")
+        print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
         exit(1)
     
     print(f"Grid generation completed!")
