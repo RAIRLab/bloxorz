@@ -1,57 +1,164 @@
 """
 Simple utility to build PDDL problem files for the 'bloxorz' domain
-with support for yellow tiles.
+with support for yellow tiles and empty spaces.
 
 Tile legend:
   XX - Normal tile
   II - Start tile
   GG - Goal tile
   YY - Yellow tile (cannot be stood on upright)
+  .. - Empty space (no tile)
 """
 
 import random
+from collections import deque
 
 
-def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3):
-    """Generate a fully connected grid with scattered yellow tiles that form paths."""
-    grid = [["XX" for _ in range(cols)] for _ in range(rows)]
+def is_valid_tile(grid, r, c):
+    """Check if a position has a valid tile (not empty)."""
+    rows, cols = len(grid), len(grid[0])
+    if 0 <= r < rows and 0 <= c < cols:
+        return grid[r][c] != ".."
+    return False
+
+
+def is_connected(grid, start_pos, goal_pos):
+    """Check if start and goal are connected considering Bloxorz block movement."""
+    rows, cols = len(grid), len(grid[0])
+    # State: (row, col, orientation) where orientation: 0=standing, 1=lying horizontal, 2=lying vertical
+    visited = set()
+    queue = deque([(start_pos[0], start_pos[1], 0)])  # Start standing
+    visited.add((start_pos[0], start_pos[1], 0))
     
-    # Place start and goal at random positions
+    while queue:
+        r, c, orient = queue.popleft()
+        
+        # Check if we reached goal (must be standing)
+        if (r, c) == goal_pos and orient == 0:
+            return True
+        
+        # Generate valid moves based on current orientation
+        next_states = []
+        
+        if orient == 0:  # Standing upright
+            # Tip over in 4 directions (becomes lying)
+            if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-2, c):
+                next_states.append((r-2, c, 2))  # Tip north (lying vertical)
+            if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+2, c):
+                next_states.append((r+1, c, 2))  # Tip south (lying vertical)
+            if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r, c-2):
+                next_states.append((r, c-2, 1))  # Tip west (lying horizontal)
+            if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r, c+2):
+                next_states.append((r, c+1, 1))  # Tip east (lying horizontal)
+                
+        elif orient == 1:  # Lying horizontal (occupies current + right)
+            # Roll horizontally
+            if is_valid_tile(grid, r, c-1):
+                next_states.append((r, c-1, 1))  # Roll left
+            if is_valid_tile(grid, r, c+2):
+                next_states.append((r, c+2, 1))  # Roll right
+            # Stand up
+            if is_valid_tile(grid, r, c) and is_valid_tile(grid, r, c+1):
+                next_states.append((r, c, 0))  # Stand on left tile
+                next_states.append((r, c+1, 0))  # Stand on right tile
+            # Tip to vertical
+            if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-1, c+1):
+                next_states.append((r-1, c, 2))  # Tip north
+            if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+1, c+1):
+                next_states.append((r+1, c, 2))  # Tip south
+                
+        elif orient == 2:  # Lying vertical (occupies current + below)
+            # Roll vertically
+            if is_valid_tile(grid, r-1, c):
+                next_states.append((r-1, c, 2))  # Roll up
+            if is_valid_tile(grid, r+2, c):
+                next_states.append((r+2, c, 2))  # Roll down
+            # Stand up
+            if is_valid_tile(grid, r, c) and is_valid_tile(grid, r+1, c):
+                next_states.append((r, c, 0))  # Stand on top tile
+                next_states.append((r+1, c, 0))  # Stand on bottom tile
+            # Tip to horizontal
+            if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r+1, c-1):
+                next_states.append((r, c-1, 1))  # Tip west
+            if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r+1, c+1):
+                next_states.append((r, c+1, 1))  # Tip east
+        
+        for state in next_states:
+            if state not in visited:
+                visited.add(state)
+                queue.append(state)
+    
+    return False
+
+
+def generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3, empty_ratio=0.4):
+    """Generate a connected grid with yellow tiles and empty spaces, ensuring solvability."""
+    max_attempts = 100
+    
+    for attempt in range(max_attempts):
+        grid = [["XX" for _ in range(cols)] for _ in range(rows)]
+        
+        # Place start and goal at random positions
+        start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+        goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+        
+        # Ensure start and goal are different
+        while (start_r, start_c) == (goal_r, goal_c):
+            goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
+        
+        grid[start_r][start_c] = "II"
+        grid[goal_r][goal_c] = "GG"
+        
+        # Add empty spaces, but not adjacent to start/goal
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "XX" and random.random() < empty_ratio:
+                    # Don't remove tiles immediately adjacent to start or goal
+                    if not ((abs(r - start_r) <= 1 and abs(c - start_c) <= 1) or
+                            (abs(r - goal_r) <= 1 and abs(c - goal_c) <= 1)):
+                        grid[r][c] = ".."
+        
+        # Check if start and goal are still connected
+        if not is_connected(grid, (start_r, start_c), (goal_r, goal_c)):
+            continue  # Try again
+        
+        # Randomly scatter yellow tiles (only on XX tiles)
+        yellow_positions = []
+        for r in range(1, rows - 1):
+            for c in range(1, cols - 1):
+                if grid[r][c] == "XX" and random.random() < yellow_ratio:
+                    grid[r][c] = "YY"
+                    yellow_positions.append((r, c))
+        
+        # Create connecting yellow paths between scattered yellow tiles
+        if len(yellow_positions) > 1:
+            for i in range(len(yellow_positions) - 1):
+                yr1, yc1 = yellow_positions[i]
+                yr2, yc2 = yellow_positions[i + 1]
+                
+                # Connect with a path of yellow tiles
+                r, c = yr1, yc1
+                while c != yc2:
+                    c += 1 if yc2 > c else -1
+                    if grid[r][c] == "XX":
+                        grid[r][c] = "YY"
+                while r != yr2:
+                    r += 1 if yr2 > r else -1
+                    if grid[r][c] == "XX":
+                        grid[r][c] = "YY"
+        
+        # Final connectivity check
+        if is_connected(grid, (start_r, start_c), (goal_r, goal_c)):
+            return grid
+    
+    # Fallback: return a fully connected grid without empty spaces
+    grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     start_r, start_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
-    
-    # Ensure start and goal are different
     while (start_r, start_c) == (goal_r, goal_c):
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
-    
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
-    
-    # Randomly scatter yellow tiles
-    yellow_positions = []
-    for r in range(1, rows - 1):
-        for c in range(1, cols - 1):
-            if grid[r][c] == "XX" and random.random() < yellow_ratio:
-                grid[r][c] = "YY"
-                yellow_positions.append((r, c))
-    
-    # Create connecting yellow paths between scattered yellow tiles
-    if len(yellow_positions) > 1:
-        for i in range(len(yellow_positions) - 1):
-            yr1, yc1 = yellow_positions[i]
-            yr2, yc2 = yellow_positions[i + 1]
-            
-            # Connect with a path of yellow tiles
-            r, c = yr1, yc1
-            while c != yc2:
-                c += 1 if yc2 > c else -1
-                if grid[r][c] == "XX":
-                    grid[r][c] = "YY"
-            while r != yr2:
-                r += 1 if yr2 > r else -1
-                if grid[r][c] == "XX":
-                    grid[r][c] = "YY"
-    
     return grid
 
 
