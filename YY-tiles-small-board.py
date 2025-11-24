@@ -151,15 +151,22 @@ def generate_bloxorz_problem(data_file, output_file):
 
 
 if __name__ == "__main__":
-    random.seed(14)  # for reproducible output
+    import time
     
-    # Generate fully connected grid with yellow paths
-    grid = generate_bloxorz_grid(rows=10, cols=10, yellow_ratio=0.3)
-    write_grid_to_file(grid, "bloxorz_grid_with_yellow.txt")
-    print("Generated grid:")
+    # Generate a random problem each time using timestamp as seed
+    seed = int(time.time() * 1000) % 1000000  # Use millisecond timestamp as seed
+    random.seed(seed)
+    
+    grid = generate_bloxorz_grid(rows=5, cols=5, yellow_ratio=0.3)
+    grid_file = f"levels/YY-tiles-small-board-{seed}.txt"
+    pddl_file = f"levels-pddl/YY-tiles-small-board-problem-{seed}.pddl"
+    
+    write_grid_to_file(grid, grid_file)
+    
+    print(f"Generated grid (seed: {seed}):")
     for row in grid:
         print("".join(row))
     
     # Generate the PDDL problem file
-    generate_bloxorz_problem("bloxorz_grid_with_yellow.txt", "bloxorz_problem_with_yellow.pddl")
-    print("\nGenerated PDDL problem file: bloxorz_problem_with_yellow.pddl")
+    generate_bloxorz_problem(grid_file, pddl_file)
+    print(f"\nGenerated PDDL problem file: {pddl_file}")
