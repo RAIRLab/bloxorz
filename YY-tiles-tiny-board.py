@@ -320,7 +320,7 @@ def generate_bloxorz_problem(data_file, output_file):
     for (r, c) in tiles:
         problem.append(f"        (active {tile_name(r, c)})")
     
-    # Yellow tile facts
+    # Yellow tiles
     for yellow_tile in yellow_tiles:
         problem.append(f"        (yellow {yellow_tile})")
     
