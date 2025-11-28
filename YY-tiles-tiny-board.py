@@ -30,17 +30,22 @@ def is_valid_tile(grid, r, c):
 
 
 def has_full_yellow_line(grid):
-    """Check if there's a full row or column of only yellow tiles."""
+    """Check if there's a full row or column of only yellow tiles.
+    
+    Also considers a row/column invalid if all tiles are yellow except for II or GG.
+    """
     rows, cols = len(grid), len(grid[0])
     
     # Check rows
     for r in range(rows):
-        if all(grid[r][c] == "YY" for c in range(cols)):
+        non_yellow_tiles = [grid[r][c] for c in range(cols) if grid[r][c] not in ("YY", "II", "GG")]
+        if len(non_yellow_tiles) == 0:  # All tiles are either YY, II, or GG
             return True
     
     # Check columns
     for c in range(cols):
-        if all(grid[r][c] == "YY" for r in range(rows)):
+        non_yellow_tiles = [grid[r][c] for r in range(rows) if grid[r][c] not in ("YY", "II", "GG")]
+        if len(non_yellow_tiles) == 0:  # All tiles are either YY, II, or GG
             return True
     
     return False
