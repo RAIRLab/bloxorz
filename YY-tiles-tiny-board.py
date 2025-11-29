@@ -13,6 +13,7 @@ Constraints:
   - Start and goal are not on the same wall
   - Maximum 1 row and 1 column in between start and goal (at most 2 apart)
   - Same row only allowed if it's row 2 (middle row, index 1)
+  - Cannot be in same column
   - No full rows or columns of yellow tiles
   - Grid must be solvable (connectivity check with Bloxorz movement)
 """
@@ -164,6 +165,7 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
         # - Not on same wall (not both on same edge)
         # - Max 1 row and 1 col in between (at most 2 rows/cols apart)
         # - Same row only if it's row 2 (middle row, index 1)
+        # - Cannot be in same column
         position_attempts = 0
         while True:
             # Not adjacent
@@ -174,8 +176,10 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
             too_far = abs(start_r - goal_r) > 2 or abs(start_c - goal_c) > 2
             # Same row only allowed if it's row 2 (index 1)
             same_row_invalid = (start_r == goal_r) and (start_r != 1)
+            # Cannot be in same column
+            same_col = start_c == goal_c
             
-            if not (adjacent or same_wall or too_far or same_row_invalid):
+            if not (adjacent or same_wall or too_far or same_row_invalid or same_col):
                 break
             
             goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
@@ -232,8 +236,10 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
         too_far = abs(start_r - goal_r) > 2 or abs(start_c - goal_c) > 2
         # Same row only allowed if it's row 2 (index 1)
         same_row_invalid = (start_r == goal_r) and (start_r != 1)
+        # Cannot be in same column
+        same_col = start_c == goal_c
         
-        if not (adjacent or same_wall or too_far or same_row_invalid):
+        if not (adjacent or same_wall or too_far or same_row_invalid or same_col):
             break
         
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
