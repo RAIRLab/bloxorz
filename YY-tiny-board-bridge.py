@@ -111,70 +111,6 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     return True
 
 
-def is_connected(grid, start_pos, goal_pos):
-    """Check if start and goal are connected considering Bloxorz block movement and yellow tile constraint."""
-    rows, cols = len(grid), len(grid[0])
-    visited = set()
-    queue = deque([(start_pos[0], start_pos[1], 0)])
-    visited.add((start_pos[0], start_pos[1], 0))
-    
-    while queue:
-        r, c, orient = queue.popleft()
-        
-        # Check if we reached goal (must be standing)
-        if (r, c) == goal_pos and orient == 0:
-            return True
-        
-        next_states = []
-        
-        if orient == 0:
-            if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-2, c):
-                next_states.append((r-2, c, 2))
-            if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+2, c):
-                next_states.append((r+1, c, 2))
-            if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r, c-2):
-                next_states.append((r, c-2, 1))
-            if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r, c+2):
-                next_states.append((r, c+1, 1))
-                
-        elif orient == 1:
-            if is_valid_tile(grid, r, c-1):
-                next_states.append((r, c-1, 1))
-            if is_valid_tile(grid, r, c+2):
-                next_states.append((r, c+2, 1))
-            if is_valid_tile(grid, r, c) and is_valid_tile(grid, r, c+1):
-                if grid[r][c] != "YY":
-                    next_states.append((r, c, 0))
-                if grid[r][c+1] != "YY":
-                    next_states.append((r, c+1, 0))
-            if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-1, c+1):
-                next_states.append((r-1, c, 2))
-            if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+1, c+1):
-                next_states.append((r+1, c, 2))
-                
-        elif orient == 2:
-            if is_valid_tile(grid, r-1, c):
-                next_states.append((r-1, c, 2))
-            if is_valid_tile(grid, r+2, c):
-                next_states.append((r+2, c, 2))
-            if is_valid_tile(grid, r, c) and is_valid_tile(grid, r+1, c):
-                if grid[r][c] != "YY":
-                    next_states.append((r, c, 0))
-                if grid[r+1][c] != "YY":
-                    next_states.append((r+1, c, 0))
-            if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r+1, c-1):
-                next_states.append((r, c-1, 1))
-            if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r+1, c+1):
-                next_states.append((r, c+1, 1))
-        
-        for state in next_states:
-            if state not in visited:
-                visited.add(state)
-                queue.append(state)
-    
-    return False
-
-
 def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
     """Generate a solvable 3x4 grid with yellow tiles and bridges.
     
@@ -364,71 +300,7 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             if valid_bridge_connections:
                 return grid
     
-    total_rows = rows * (n + 1) + n * 2
-    grid = [["XX" for _ in range(cols)] for _ in range(total_rows)]
-    
-    for bridge_id in range(1, n + 1):
-        bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
-        bridge_col = random.randint(0, cols - 1)
-        
-        for c in range(cols):
-            if c == bridge_col:
-                grid[bridge_row_start][c] = f"U{bridge_id}"
-            else:
-                grid[bridge_row_start][c] = "  "
-        
-        for c in range(cols):
-            if c == bridge_col:
-                grid[bridge_row_start + 1][c] = f"U{bridge_id}"
-            else:
-                grid[bridge_row_start + 1][c] = "  "
-    
-    board_section = random.randint(0, n)
-    start_r_base = random.randint(0, rows - 1)
-    start_r = board_section * (rows + 2) + start_r_base
-    start_c = random.randint(0, cols - 1)
-    
-    if n > 0:
-        possible_sections = [s for s in range(n + 1) if s != board_section]
-        board_section_goal = random.choice(possible_sections)
-    else:
-        board_section_goal = board_section
-    
-    goal_r_base = random.randint(0, rows - 1)
-    goal_r = board_section_goal * (rows + 2) + goal_r_base
-    goal_c = random.randint(0, cols - 1)
-    
-    if board_section == board_section_goal:
-        position_attempts = 0
-        while not valid_position_pair(start_r_base, start_c, goal_r_base, goal_c, rows, cols):
-            goal_r_base = random.randint(0, rows - 1)
-            goal_r = board_section_goal * (rows + 2) + goal_r_base
-            goal_c = random.randint(0, cols - 1)
-            position_attempts += 1
-            if position_attempts > 1000:
-                return None
-    
-    grid[start_r][start_c] = "II"
-    grid[goal_r][goal_c] = "GG"
-    
-    accessible_sections = {board_section}
-    
-    for bridge_id in range(1, n + 1):
-        if bridge_id - 1 in accessible_sections:
-            section_for_button = bridge_id - 1
-        elif bridge_id in accessible_sections:
-            section_for_button = bridge_id
-        else:
-            section_for_button = board_section
-        er_base = random.randint(0, rows - 1)
-        er = section_for_button * (rows + 2) + er_base
-        ec = random.randint(0, cols - 1)
-        if grid[er][ec] == "XX":
-            grid[er][ec] = f"E{bridge_id}"
-        accessible_sections.add(bridge_id - 1)
-        accessible_sections.add(bridge_id)
-    
-    return grid
+    return None
 
 
 def write_grid_to_file(grid, filename):
