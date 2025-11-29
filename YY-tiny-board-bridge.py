@@ -22,15 +22,6 @@ Constraints:
 """
 
 import random
-from collections import deque
-
-
-def is_valid_tile(grid, r, c):
-    """Check if a position has a valid tile (not empty)."""
-    rows, cols = len(grid), len(grid[0])
-    if 0 <= r < rows and 0 <= c < cols:
-        return grid[r][c] != "  "
-    return False
 
 
 def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
