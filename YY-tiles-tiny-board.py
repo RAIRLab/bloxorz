@@ -161,15 +161,16 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
         goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
         
         # Apply constraints:
-        # - Not adjacent (no diagonal or orthogonal neighbors)
+        # - Not adjacent (orthogonal neighbors only: same row adjacent col, or same col adjacent row)
         # - Not on same wall (not both on same edge)
         # - Max 1 row and 1 col in between (at most 2 rows/cols apart)
         # - Same row only if it's row 2 (middle row, index 1)
         # - Cannot be in same column
         position_attempts = 0
         while True:
-            # Not adjacent
-            adjacent = abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1
+            # Not adjacent (orthogonal only: same row and adjacent col, or same col and adjacent row)
+            adjacent = ((start_r == goal_r and abs(start_c - goal_c) == 1) or 
+                       (start_c == goal_c and abs(start_r - goal_r) == 1))
             # Not on same wall
             same_wall = on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols)
             # Max 1 row and 1 col in between (so at most 2 rows apart and 2 cols apart)
@@ -228,8 +229,9 @@ def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
     goal_r, goal_c = random.randint(0, rows - 1), random.randint(0, cols - 1)
     position_attempts = 0
     while True:
-        # Not adjacent
-        adjacent = abs(start_r - goal_r) <= 1 and abs(start_c - goal_c) <= 1
+        # Not adjacent (orthogonal only: same row and adjacent col, or same col and adjacent row)
+        adjacent = ((start_r == goal_r and abs(start_c - goal_c) == 1) or 
+                   (start_c == goal_c and abs(start_r - goal_r) == 1))
         # Not on same wall
         same_wall = on_same_wall((start_r, start_c), (goal_r, goal_c), rows, cols)
         # Max 1 row and 1 col in between (so at most 2 rows apart and 2 cols apart)
