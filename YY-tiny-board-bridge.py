@@ -11,10 +11,10 @@ Tile legend:
   U# - Disabled toggle tile (bridge, where # is a digit)
   E# - Hard enable button tile (where # is a digit)
 
-Constraints:
-  - Start and goal are not adjacent
-  - Start and goal are not on the same wall
-  - Maximum 1 row and 1 column in between start and goal (at most 2 apart)
+Constraints (applied to special tiles: II, GG, E#):
+  - Special tiles are not adjacent
+  - Special tiles are not on the same wall
+  - Maximum 1 row and 1 column in between special tiles (at most 2 apart)
   - Same row only allowed if it's row 2 (middle row, index 1)
   - Cannot be in same column
   - No full rows or columns of yellow tiles within each section
