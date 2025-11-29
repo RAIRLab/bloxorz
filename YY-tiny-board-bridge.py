@@ -122,35 +122,22 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
             bridge_col = random.randint(0, cols - 1)
             
-            for c in range(cols):
-                if c == bridge_col:
-                    grid[bridge_row_start][c] = f"U{bridge_id}"
-                else:
-                    grid[bridge_row_start][c] = "  "
-            
-            for c in range(cols):
-                if c == bridge_col:
-                    grid[bridge_row_start + 1][c] = f"U{bridge_id}"
-                else:
-                    grid[bridge_row_start + 1][c] = "  "
+            for row_offset in [0, 1]:
+                for c in range(cols):
+                    grid[bridge_row_start + row_offset][c] = f"U{bridge_id}" if c == bridge_col else "  "
         
         board_section = random.randint(0, n)
         start_r_base = random.randint(0, rows - 1)
         start_r = board_section * (rows + 2) + start_r_base
         start_c = random.randint(0, cols - 1)
         
-        if n > 0:
-            possible_sections = [s for s in range(n + 1) if s != board_section]
-            board_section_goal = random.choice(possible_sections)
-            goal_r_base = random.randint(0, rows - 1)
-            goal_r = board_section_goal * (rows + 2) + goal_r_base
-            goal_c = random.randint(0, cols - 1)
-        else:
-            board_section_goal = board_section
-            goal_r_base = random.randint(0, rows - 1)
-            goal_r = board_section_goal * (rows + 2) + goal_r_base
-            goal_c = random.randint(0, cols - 1)
-            
+        possible_sections = [s for s in range(n + 1) if s != board_section] if n > 0 else [board_section]
+        board_section_goal = random.choice(possible_sections)
+        goal_r_base = random.randint(0, rows - 1)
+        goal_r = board_section_goal * (rows + 2) + goal_r_base
+        goal_c = random.randint(0, cols - 1)
+        
+        if board_section == board_section_goal:
             position_attempts = 0
             while not valid_position_pair(start_r_base, start_c, goal_r_base, goal_c, rows, cols):
                 goal_r_base = random.randint(0, rows - 1)
@@ -186,44 +173,35 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             start_in_section = board_section == section_for_button
             goal_in_section = board_section_goal == section_for_button
             
+            def is_valid_button_pos(r_base, c):
+                if start_in_section and not valid_position_pair(r_base, c, start_r_base, start_c, rows, cols):
+                    return False
+                if goal_in_section and not valid_position_pair(r_base, c, goal_r_base, goal_c, rows, cols):
+                    return False
+                return True
+            
+            # Try random positions first
             for _ in range(100):
                 er_base = random.randint(0, rows - 1)
                 er = section_for_button * (rows + 2) + er_base
                 ec = random.randint(0, cols - 1)
-                if grid[er][ec] == "XX":
-                    # Check constraints against start and goal if in same section
-                    valid = True
-                    if start_in_section and not valid_position_pair(er_base, ec, start_r_base, start_c, rows, cols):
-                        valid = False
-                    if goal_in_section and not valid_position_pair(er_base, ec, goal_r_base, goal_c, rows, cols):
-                        valid = False
-                    
-                    if valid:
-                        grid[er][ec] = f"E{bridge_id}"
-                        placed = True
-                        accessible_sections.add(bridge_id - 1)
-                        accessible_sections.add(bridge_id)
-                        break
+                if grid[er][ec] == "XX" and is_valid_button_pos(er_base, ec):
+                    grid[er][ec] = f"E{bridge_id}"
+                    placed = True
+                    accessible_sections.update([bridge_id - 1, bridge_id])
+                    break
+            
+            # Exhaustive search if random failed
             if not placed:
                 section_start_row = section_for_button * (rows + 2)
                 section_end_row = section_start_row + rows
                 for r in range(section_start_row, section_end_row):
                     for c in range(cols):
-                        if grid[r][c] == "XX":
-                            er_base = r - section_start_row
-                            # Check constraints against start and goal if in same section
-                            valid = True
-                            if start_in_section and not valid_position_pair(er_base, c, start_r_base, start_c, rows, cols):
-                                valid = False
-                            if goal_in_section and not valid_position_pair(er_base, c, goal_r_base, goal_c, rows, cols):
-                                valid = False
-                            
-                            if valid:
-                                grid[r][c] = f"E{bridge_id}"
-                                placed = True
-                                accessible_sections.add(bridge_id - 1)
-                                accessible_sections.add(bridge_id)
-                                break
+                        if grid[r][c] == "XX" and is_valid_button_pos(r - section_start_row, c):
+                            grid[r][c] = f"E{bridge_id}"
+                            placed = True
+                            accessible_sections.update([bridge_id - 1, bridge_id])
+                            break
                     if placed:
                         break
             
@@ -270,25 +248,15 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             valid_bridge_connections = True
             for bridge_id in range(1, n + 1):
                 bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
-                
-                # Find the bridge column
-                bridge_col = None
-                for c in range(cols):
-                    if grid[bridge_row_start][c] == f"U{bridge_id}":
-                        bridge_col = c
-                        break
+                bridge_col = next((c for c in range(cols) if grid[bridge_row_start][c] == f"U{bridge_id}"), None)
                 
                 if bridge_col is not None:
-                    # Check exit tile from section (bridge_id - 1) - last row of that section
-                    exit_row = bridge_row_start - 1
-                    if grid[exit_row][bridge_col] not in ("XX", "II", "GG") and not grid[exit_row][bridge_col].startswith("E"):
-                        valid_bridge_connections = False
-                        break
-                    
-                    # Check entry tile to section bridge_id - first row of that section
-                    entry_row = bridge_row_start + 2
-                    if grid[entry_row][bridge_col] not in ("XX", "II", "GG") and not grid[entry_row][bridge_col].startswith("E"):
-                        valid_bridge_connections = False
+                    for check_row in [bridge_row_start - 1, bridge_row_start + 2]:
+                        tile = grid[check_row][bridge_col]
+                        if tile not in ("XX", "II", "GG") and not tile.startswith("E"):
+                            valid_bridge_connections = False
+                            break
+                    if not valid_bridge_connections:
                         break
             
             if valid_bridge_connections:
@@ -361,13 +329,8 @@ def generate_bloxorz_problem(data_file, output_file):
     problem.append("    )\n")
 
     problem.append("    (:init")
-    perpendicular_facts = [
-        ("north", "east"), ("north", "west"),
-        ("east", "north"), ("west", "north"),
-        ("south", "east"), ("south", "west"),
-        ("east", "south"), ("west", "south"),
-    ]
-    for d1, d2 in perpendicular_facts:
+    for d1, d2 in [(d1, d2) for d1 in ["north", "south"] for d2 in ["east", "west"]] + \
+                   [(d2, d1) for d1 in ["north", "south"] for d2 in ["east", "west"]]:
         problem.append(f"        (perpendicular {d1} {d2})")
     
     problem.append(f"        (standing-on b1 {start_tile})")
