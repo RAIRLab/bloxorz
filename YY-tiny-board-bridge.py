@@ -70,6 +70,41 @@ def on_same_wall(pos1, pos2, rows, cols):
     return False
 
 
+def valid_position_pair(r1, c1, r2, c2, rows, cols):
+    """Check if two positions satisfy placement constraints within a section.
+    
+    Constraints:
+      - Not adjacent (orthogonally)
+      - Not on same wall
+      - Max 1 row and 1 col in between (at most 2 apart)
+      - Same row only if it's row 2 (middle row, index 1 in 0-indexed)
+      - Cannot be in same column
+    """
+    # Not adjacent (orthogonal only: same row and adjacent col, or same col and adjacent row)
+    adjacent = ((r1 == r2 and abs(c1 - c2) == 1) or 
+               (c1 == c2 and abs(r1 - r2) == 1))
+    if adjacent:
+        return False
+    
+    # Not on same wall
+    if on_same_wall((r1, c1), (r2, c2), rows, cols):
+        return False
+    
+    # Max 1 row and 1 col in between (so at most 2 rows apart and 2 cols apart)
+    if abs(r1 - r2) > 2 or abs(c1 - c2) > 2:
+        return False
+    
+    # Same row only allowed if it's row 2 (index 1 in 0-indexed for 3 rows)
+    if r1 == r2 and r1 != 1:
+        return False
+    
+    # Cannot be in same column
+    if c1 == c2:
+        return False
+    
+    return True
+
+
 def is_connected(grid, start_pos, goal_pos):
     """Check if start and goal are connected considering Bloxorz block movement and yellow tile constraint."""
     rows, cols = len(grid), len(grid[0])
@@ -199,29 +234,50 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             
             sections_with_special_tiles.add(section_for_button)
             
+            # Get positions of start and goal in this section (if any)
+            start_in_section = board_section == section_for_button
+            goal_in_section = board_section_goal == section_for_button
+            
             for _ in range(100):
                 er_base = random.randint(0, rows - 1)
                 er = section_for_button * (rows + 2) + er_base
                 ec = random.randint(0, cols - 1)
                 if grid[er][ec] == "XX":
-                    grid[er][ec] = f"E{bridge_id}"
-                    enable_button_positions.append((er, ec, bridge_id))
-                    placed = True
-                    accessible_sections.add(bridge_id - 1)
-                    accessible_sections.add(bridge_id)
-                    break
+                    # Check constraints against start and goal if in same section
+                    valid = True
+                    if start_in_section and not valid_position_pair(er_base, ec, start_r_base, start_c, rows, cols):
+                        valid = False
+                    if goal_in_section and not valid_position_pair(er_base, ec, goal_r_base, goal_c, rows, cols):
+                        valid = False
+                    
+                    if valid:
+                        grid[er][ec] = f"E{bridge_id}"
+                        enable_button_positions.append((er, ec, bridge_id))
+                        placed = True
+                        accessible_sections.add(bridge_id - 1)
+                        accessible_sections.add(bridge_id)
+                        break
             if not placed:
                 section_start_row = section_for_button * (rows + 2)
                 section_end_row = section_start_row + rows
                 for r in range(section_start_row, section_end_row):
                     for c in range(cols):
                         if grid[r][c] == "XX":
-                            grid[r][c] = f"E{bridge_id}"
-                            enable_button_positions.append((r, c, bridge_id))
-                            placed = True
-                            accessible_sections.add(bridge_id - 1)
-                            accessible_sections.add(bridge_id)
-                            break
+                            er_base = r - section_start_row
+                            # Check constraints against start and goal if in same section
+                            valid = True
+                            if start_in_section and not valid_position_pair(er_base, c, start_r_base, start_c, rows, cols):
+                                valid = False
+                            if goal_in_section and not valid_position_pair(er_base, c, goal_r_base, goal_c, rows, cols):
+                                valid = False
+                            
+                            if valid:
+                                grid[r][c] = f"E{bridge_id}"
+                                enable_button_positions.append((r, c, bridge_id))
+                                placed = True
+                                accessible_sections.add(bridge_id - 1)
+                                accessible_sections.add(bridge_id)
+                                break
                     if placed:
                         break
         
@@ -285,11 +341,21 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
         possible_sections = [s for s in range(n + 1) if s != board_section]
         board_section_goal = random.choice(possible_sections)
     else:
-        board_section_goal = 0
+        board_section_goal = board_section
     
     goal_r_base = random.randint(0, rows - 1)
     goal_r = board_section_goal * (rows + 2) + goal_r_base
     goal_c = random.randint(0, cols - 1)
+    
+    if board_section == board_section_goal:
+        position_attempts = 0
+        while not valid_position_pair(start_r_base, start_c, goal_r_base, goal_c, rows, cols):
+            goal_r_base = random.randint(0, rows - 1)
+            goal_r = board_section_goal * (rows + 2) + goal_r_base
+            goal_c = random.randint(0, cols - 1)
+            position_attempts += 1
+            if position_attempts > 1000:
+                return None
     
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
@@ -434,7 +500,7 @@ if __name__ == "__main__":
     seed = int(time.time() * 1000) % 1000
     random.seed(seed)
     
-    num_bridges = 2
+    num_bridges = 1
     
     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
     
