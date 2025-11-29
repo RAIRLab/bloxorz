@@ -184,20 +184,34 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
         grid[start_r][start_c] = "II"
         grid[goal_r][goal_c] = "GG"
         
+        sections_with_special_tiles = {board_section, board_section_goal}
         enable_button_positions = []
+        accessible_sections = {board_section}
+        
         for bridge_id in range(1, n + 1):
             placed = False
+            if bridge_id - 1 in accessible_sections:
+                section_for_button = bridge_id - 1
+            elif bridge_id in accessible_sections:
+                section_for_button = bridge_id
+            else:
+                section_for_button = board_section
+            
+            sections_with_special_tiles.add(section_for_button)
+            
             for _ in range(100):
                 er_base = random.randint(0, rows - 1)
-                er = board_section * (rows + 2) + er_base
+                er = section_for_button * (rows + 2) + er_base
                 ec = random.randint(0, cols - 1)
                 if grid[er][ec] == "XX":
                     grid[er][ec] = f"E{bridge_id}"
                     enable_button_positions.append((er, ec, bridge_id))
                     placed = True
+                    accessible_sections.add(bridge_id - 1)
+                    accessible_sections.add(bridge_id)
                     break
             if not placed:
-                section_start_row = board_section * (rows + 2)
+                section_start_row = section_for_button * (rows + 2)
                 section_end_row = section_start_row + rows
                 for r in range(section_start_row, section_end_row):
                     for c in range(cols):
@@ -205,9 +219,14 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                             grid[r][c] = f"E{bridge_id}"
                             enable_button_positions.append((r, c, bridge_id))
                             placed = True
+                            accessible_sections.add(bridge_id - 1)
+                            accessible_sections.add(bridge_id)
                             break
                     if placed:
                         break
+        
+        if len(sections_with_special_tiles) < n + 1:
+            continue
         
         for section_id in range(n + 1):
             section_start_row = section_id * (rows + 2)
@@ -275,12 +294,22 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
     
+    accessible_sections = {board_section}
+    
     for bridge_id in range(1, n + 1):
+        if bridge_id - 1 in accessible_sections:
+            section_for_button = bridge_id - 1
+        elif bridge_id in accessible_sections:
+            section_for_button = bridge_id
+        else:
+            section_for_button = board_section
         er_base = random.randint(0, rows - 1)
-        er = board_section * (rows + 2) + er_base
+        er = section_for_button * (rows + 2) + er_base
         ec = random.randint(0, cols - 1)
         if grid[er][ec] == "XX":
             grid[er][ec] = f"E{bridge_id}"
+        accessible_sections.add(bridge_id - 1)
+        accessible_sections.add(bridge_id)
     
     return grid
 
@@ -405,7 +434,7 @@ if __name__ == "__main__":
     seed = int(time.time() * 1000) % 1000
     random.seed(seed)
     
-    num_bridges = 1
+    num_bridges = 2
     
     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
     
