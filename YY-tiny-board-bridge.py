@@ -40,12 +40,20 @@ def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
         section_end_row = rows
     
     for r in range(section_start_row, section_end_row):
-        non_yellow_tiles = [grid[r][c] for c in range(cols) if grid[r][c] not in ("YY", "II", "GG", "  ") and not grid[r][c].startswith(("E", "U"))]
+        non_yellow_tiles = [
+            grid[r][c] for c in range(cols) 
+            if grid[r][c] not in ("YY", "II", "GG", "  ") 
+            and not grid[r][c].startswith(("E", "U"))
+        ]
         if len(non_yellow_tiles) == 0:
             return True
     
     for c in range(cols):
-        non_yellow_tiles = [grid[r][c] for r in range(section_start_row, section_end_row) if grid[r][c] not in ("YY", "II", "GG", "  ") and not grid[r][c].startswith(("E", "U"))]
+        non_yellow_tiles = [
+            grid[r][c] for r in range(section_start_row, section_end_row) 
+            if grid[r][c] not in ("YY", "II", "GG", "  ") 
+            and not grid[r][c].startswith(("E", "U"))
+        ]
         if len(non_yellow_tiles) == 0:
             return True
     
