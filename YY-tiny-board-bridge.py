@@ -336,7 +336,33 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                 break
         
         if not has_invalid_yellow_line:
-            return grid
+            # Validate bridge entry/exit tiles are not yellow
+            valid_bridge_connections = True
+            for bridge_id in range(1, n + 1):
+                bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
+                
+                # Find the bridge column
+                bridge_col = None
+                for c in range(cols):
+                    if grid[bridge_row_start][c] == f"U{bridge_id}":
+                        bridge_col = c
+                        break
+                
+                if bridge_col is not None:
+                    # Check exit tile from section (bridge_id - 1) - last row of that section
+                    exit_row = bridge_row_start - 1
+                    if grid[exit_row][bridge_col] not in ("XX", "II", "GG") and not grid[exit_row][bridge_col].startswith("E"):
+                        valid_bridge_connections = False
+                        break
+                    
+                    # Check entry tile to section bridge_id - first row of that section
+                    entry_row = bridge_row_start + 2
+                    if grid[entry_row][bridge_col] not in ("XX", "II", "GG") and not grid[entry_row][bridge_col].startswith("E"):
+                        valid_bridge_connections = False
+                        break
+            
+            if valid_bridge_connections:
+                return grid
     
     total_rows = rows * (n + 1) + n * 2
     grid = [["XX" for _ in range(cols)] for _ in range(total_rows)]
