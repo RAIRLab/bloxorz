@@ -1,12 +1,15 @@
 """
 Simple utility to build PDDL problem files for the 'bloxorz' domain
-with support for yellow tiles - 3x4 compact version.
+with support for yellow tiles and bridges - 3x4 compact version.
 
 Tile legend:
   XX - Normal tile
   II - Start tile
   GG - Goal tile
   YY - Yellow tile (cannot be stood on upright)
+     - Empty space (no tile)
+  U# - Disabled toggle tile (bridge, where # is a digit)
+  E# - Hard enable button tile (where # is a digit)
 
 Constraints:
   - Start and goal are not adjacent
@@ -26,7 +29,7 @@ def is_valid_tile(grid, r, c):
     """Check if a position has a valid tile (not empty)."""
     rows, cols = len(grid), len(grid[0])
     if 0 <= r < rows and 0 <= c < cols:
-        return grid[r][c] != ".."
+        return grid[r][c] != "  "
     return False
 
 
@@ -146,8 +149,8 @@ def is_connected(grid, start_pos, goal_pos):
     return False
 
 
-def generate_bloxorz_grid(rows, cols, yellow_ratio=0.3):
-    """Generate a solvable 3x4 grid with yellow tiles.
+def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
+    """Generate a solvable 3x4 grid with yellow tiles and bridges.
     
     Applies position constraints and validates connectivity using full Bloxorz movement simulation.
     """
@@ -354,9 +357,13 @@ if __name__ == "__main__":
     # Generate a random problem each time using timestamp as seed
     seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
     random.seed(seed)
-    print(f"Starting generation with seed {seed}...")
     
-    grid = generate_bloxorz_grid(rows=3, cols=4, yellow_ratio=0.3)
+    # Number of bridges to include
+    num_bridges = 1  # Default to 1 bridge, can be modified as needed
+    
+    print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
+    
+    grid = generate_bloxorz_grid(num_bridges, rows=3, cols=4, yellow_ratio=0.3)
     
     if grid is None:
         print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
