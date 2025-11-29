@@ -33,20 +33,26 @@ def is_valid_tile(grid, r, c):
     return False
 
 
-def has_full_yellow_line(grid):
+def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
     """Check if there's a full row or column of only yellow tiles.
     
     Also considers a row/column invalid if all tiles are yellow except for II or GG.
+    If section bounds are provided, only checks within that section.
     """
     rows, cols = len(grid), len(grid[0])
     
-    for r in range(rows):
-        non_yellow_tiles = [grid[r][c] for c in range(cols) if grid[r][c] not in ("YY", "II", "GG")]
+    if section_start_row is None:
+        section_start_row = 0
+    if section_end_row is None:
+        section_end_row = rows
+    
+    for r in range(section_start_row, section_end_row):
+        non_yellow_tiles = [grid[r][c] for c in range(cols) if grid[r][c] not in ("YY", "II", "GG", "  ") and not grid[r][c].startswith(("E", "U"))]
         if len(non_yellow_tiles) == 0:
             return True
     
     for c in range(cols):
-        non_yellow_tiles = [grid[r][c] for r in range(rows) if grid[r][c] not in ("YY", "II", "GG")]
+        non_yellow_tiles = [grid[r][c] for r in range(section_start_row, section_end_row) if grid[r][c] not in ("YY", "II", "GG", "  ") and not grid[r][c].startswith(("E", "U"))]
         if len(non_yellow_tiles) == 0:
             return True
     
@@ -200,18 +206,31 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
         
         board_section = random.randint(0, n)
         start_r_base = random.randint(0, rows - 1)
-        start_r = board_section * (rows + 2) + start_r_base  # +2 for each 2-row bridge
+        start_r = board_section * (rows + 2) + start_r_base
         start_c = random.randint(0, cols - 1)
         
         if n > 0:
             possible_sections = [s for s in range(n + 1) if s != board_section]
             board_section_goal = random.choice(possible_sections)
+            goal_r_base = random.randint(0, rows - 1)
+            goal_r = board_section_goal * (rows + 2) + goal_r_base
+            goal_c = random.randint(0, cols - 1)
         else:
             board_section_goal = board_section
-        
-        goal_r_base = random.randint(0, rows - 1)
-        goal_r = board_section_goal * (rows + 2) + goal_r_base
-        goal_c = random.randint(0, cols - 1)
+            goal_r_base = random.randint(0, rows - 1)
+            goal_r = board_section_goal * (rows + 2) + goal_r_base
+            goal_c = random.randint(0, cols - 1)
+            
+            position_attempts = 0
+            while not valid_position_pair(start_r_base, start_c, goal_r_base, goal_c, rows, cols):
+                goal_r_base = random.randint(0, rows - 1)
+                goal_r = board_section_goal * (rows + 2) + goal_r_base
+                goal_c = random.randint(0, cols - 1)
+                position_attempts += 1
+                if position_attempts > 1000:
+                    break
+            if position_attempts > 1000:
+                continue
         
         grid[start_r][start_c] = "II"
         grid[goal_r][goal_c] = "GG"
@@ -221,12 +240,15 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
         
         for bridge_id in range(1, n + 1):
             placed = False
+            # Button for bridge_id should be in section bridge_id-1 or bridge_id (adjacent to the bridge)
+            # and must be accessible from start
             if bridge_id - 1 in accessible_sections:
                 section_for_button = bridge_id - 1
             elif bridge_id in accessible_sections:
                 section_for_button = bridge_id
             else:
-                section_for_button = board_section
+                # If neither side is accessible, we need to regenerate
+                break
             
             sections_with_special_tiles.add(section_for_button)
             
@@ -274,10 +296,15 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                                 break
                     if placed:
                         break
+            
+            if not placed:
+                # Failed to place button, regenerate
+                break
         
-        if len(sections_with_special_tiles) < n + 1:
+        if not placed or len(sections_with_special_tiles) < n + 1:
             continue
         
+        has_invalid_yellow_line = False
         for section_id in range(n + 1):
             section_start_row = section_id * (rows + 2)
             section_end_row = section_start_row + rows
@@ -303,8 +330,12 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                         r += 1 if yr2 > r else -1
                         if section_start_row <= r < section_end_row and grid[r][c] == "XX":
                             grid[r][c] = "YY"
+            
+            if has_full_yellow_line(grid, section_start_row, section_end_row):
+                has_invalid_yellow_line = True
+                break
         
-        if not has_full_yellow_line(grid):
+        if not has_invalid_yellow_line:
             return grid
     
     total_rows = rows * (n + 1) + n * 2
