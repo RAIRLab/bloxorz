@@ -17,8 +17,10 @@ Constraints:
   - Maximum 1 row and 1 column in between start and goal (at most 2 apart)
   - Same row only allowed if it's row 2 (middle row, index 1)
   - Cannot be in same column
-  - No full rows or columns of yellow tiles
-  - Grid must be solvable (connectivity check with Bloxorz movement)
+  - No full rows or columns of yellow tiles within each section
+  - Bridge entry/exit tiles must not be yellow
+  - Every section must have at least one special tile (II, GG, or E#)
+  - Enable buttons must be accessible from start position
 """
 
 import random
@@ -103,10 +105,11 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
 
 
 def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
-    """Generate a solvable 3x4 grid with yellow tiles and bridges.
+    """Generate a 3x4 grid with yellow tiles and bridges.
     
-    Applies position constraints and validates connectivity using full Bloxorz movement simulation.
-    Creates n bridge sections, each 2 tiles long, at the bottom of board sections.
+    Applies position constraints, validates yellow tile placement per section,
+    ensures bridge entry/exit tiles are accessible, and verifies button accessibility.
+    Creates n bridge sections (0-3), each 2 tiles long, connecting board sections.
     """
     n = n % 4
     max_attempts = 1000
