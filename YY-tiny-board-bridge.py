@@ -40,16 +40,14 @@ def has_full_yellow_line(grid):
     """
     rows, cols = len(grid), len(grid[0])
     
-    # Check rows
     for r in range(rows):
         non_yellow_tiles = [grid[r][c] for c in range(cols) if grid[r][c] not in ("YY", "II", "GG")]
-        if len(non_yellow_tiles) == 0:  # All tiles are either YY, II, or GG
+        if len(non_yellow_tiles) == 0:
             return True
     
-    # Check columns
     for c in range(cols):
         non_yellow_tiles = [grid[r][c] for r in range(rows) if grid[r][c] not in ("YY", "II", "GG")]
-        if len(non_yellow_tiles) == 0:  # All tiles are either YY, II, or GG
+        if len(non_yellow_tiles) == 0:
             return True
     
     return False
@@ -60,16 +58,12 @@ def on_same_wall(pos1, pos2, rows, cols):
     r1, c1 = pos1
     r2, c2 = pos2
     
-    # Top wall
     if r1 == 0 and r2 == 0:
         return True
-    # Bottom wall
     if r1 == rows - 1 and r2 == rows - 1:
         return True
-    # Left wall
     if c1 == 0 and c2 == 0:
         return True
-    # Right wall
     if c1 == cols - 1 and c2 == cols - 1:
         return True
     
@@ -79,9 +73,8 @@ def on_same_wall(pos1, pos2, rows, cols):
 def is_connected(grid, start_pos, goal_pos):
     """Check if start and goal are connected considering Bloxorz block movement and yellow tile constraint."""
     rows, cols = len(grid), len(grid[0])
-    # State: (row, col, orientation) where orientation: 0=standing, 1=lying horizontal, 2=lying vertical
     visited = set()
-    queue = deque([(start_pos[0], start_pos[1], 0)])  # Start standing
+    queue = deque([(start_pos[0], start_pos[1], 0)])
     visited.add((start_pos[0], start_pos[1], 0))
     
     while queue:
@@ -91,55 +84,47 @@ def is_connected(grid, start_pos, goal_pos):
         if (r, c) == goal_pos and orient == 0:
             return True
         
-        # Generate valid moves based on current orientation
         next_states = []
         
-        if orient == 0:  # Standing upright
-            # Tip over in 4 directions (becomes lying)
+        if orient == 0:
             if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-2, c):
-                next_states.append((r-2, c, 2))  # Tip north (lying vertical)
+                next_states.append((r-2, c, 2))
             if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+2, c):
-                next_states.append((r+1, c, 2))  # Tip south (lying vertical)
+                next_states.append((r+1, c, 2))
             if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r, c-2):
-                next_states.append((r, c-2, 1))  # Tip west (lying horizontal)
+                next_states.append((r, c-2, 1))
             if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r, c+2):
-                next_states.append((r, c+1, 1))  # Tip east (lying horizontal)
+                next_states.append((r, c+1, 1))
                 
-        elif orient == 1:  # Lying horizontal (occupies current + right)
-            # Roll horizontally
+        elif orient == 1:
             if is_valid_tile(grid, r, c-1):
-                next_states.append((r, c-1, 1))  # Roll left
+                next_states.append((r, c-1, 1))
             if is_valid_tile(grid, r, c+2):
-                next_states.append((r, c+2, 1))  # Roll right
-            # Stand up (cannot stand on yellow tiles)
+                next_states.append((r, c+2, 1))
             if is_valid_tile(grid, r, c) and is_valid_tile(grid, r, c+1):
                 if grid[r][c] != "YY":
-                    next_states.append((r, c, 0))  # Stand on left tile
+                    next_states.append((r, c, 0))
                 if grid[r][c+1] != "YY":
-                    next_states.append((r, c+1, 0))  # Stand on right tile
-            # Tip to vertical
+                    next_states.append((r, c+1, 0))
             if is_valid_tile(grid, r-1, c) and is_valid_tile(grid, r-1, c+1):
-                next_states.append((r-1, c, 2))  # Tip north
+                next_states.append((r-1, c, 2))
             if is_valid_tile(grid, r+1, c) and is_valid_tile(grid, r+1, c+1):
-                next_states.append((r+1, c, 2))  # Tip south
+                next_states.append((r+1, c, 2))
                 
-        elif orient == 2:  # Lying vertical (occupies current + below)
-            # Roll vertically
+        elif orient == 2:
             if is_valid_tile(grid, r-1, c):
-                next_states.append((r-1, c, 2))  # Roll up
+                next_states.append((r-1, c, 2))
             if is_valid_tile(grid, r+2, c):
-                next_states.append((r+2, c, 2))  # Roll down
-            # Stand up (cannot stand on yellow tiles)
+                next_states.append((r+2, c, 2))
             if is_valid_tile(grid, r, c) and is_valid_tile(grid, r+1, c):
                 if grid[r][c] != "YY":
-                    next_states.append((r, c, 0))  # Stand on top tile
+                    next_states.append((r, c, 0))
                 if grid[r+1][c] != "YY":
-                    next_states.append((r+1, c, 0))  # Stand on bottom tile
-            # Tip to horizontal
+                    next_states.append((r+1, c, 0))
             if is_valid_tile(grid, r, c-1) and is_valid_tile(grid, r+1, c-1):
-                next_states.append((r, c-1, 1))  # Tip west
+                next_states.append((r, c-1, 1))
             if is_valid_tile(grid, r, c+1) and is_valid_tile(grid, r+1, c+1):
-                next_states.append((r, c+1, 1))  # Tip east
+                next_states.append((r, c+1, 1))
         
         for state in next_states:
             if state not in visited:
@@ -159,27 +144,20 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
     max_attempts = 1000
     
     for attempt in range(max_attempts):
-        # Initialize grid with sections separated by bridges
-        # For n bridges, we have n+1 board sections
-        total_rows = rows * (n + 1) + n * 2  # Each bridge adds 2 rows
+        total_rows = rows * (n + 1) + n * 2
         grid = [["XX" for _ in range(cols)] for _ in range(total_rows)]
         
-        # Place bridges: 2-tile vertical bridges between board sections
-        # Each bridge occupies 2 rows, tiles stacked vertically
         bridge_positions = []
         for bridge_id in range(1, n + 1):
-            bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2  # Position after each board section
-            # Place 2-tile vertical bridge (disabled toggle tiles U#) in one column, rest empty
+            bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
             bridge_col = random.randint(0, cols - 1)
             
-            # First row of bridge: U# tile in one column, empty space in others
             for c in range(cols):
                 if c == bridge_col:
                     grid[bridge_row_start][c] = f"U{bridge_id}"
                 else:
                     grid[bridge_row_start][c] = "  "
             
-            # Second row of bridge: U# tile below the first, empty space in others
             for c in range(cols):
                 if c == bridge_col:
                     grid[bridge_row_start + 1][c] = f"U{bridge_id}"
@@ -188,37 +166,30 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
             
             bridge_positions.append((bridge_row_start, bridge_col, bridge_id))
         
-        # Place start and goal at random positions (not on bridge rows)
-        # If there are bridges (n > 0), start and goal must be on different board sections
-        board_section = random.randint(0, n)  # Which board section (0 to n)
+        board_section = random.randint(0, n)
         start_r_base = random.randint(0, rows - 1)
         start_r = board_section * (rows + 2) + start_r_base  # +2 for each 2-row bridge
         start_c = random.randint(0, cols - 1)
         
         if n > 0:
-            # Ensure goal is on a different board section than start
             possible_sections = [s for s in range(n + 1) if s != board_section]
             board_section_goal = random.choice(possible_sections)
         else:
             board_section_goal = 0
         
         goal_r_base = random.randint(0, rows - 1)
-        goal_r = board_section_goal * (rows + 2) + goal_r_base  # +2 for each 2-row bridge
+        goal_r = board_section_goal * (rows + 2) + goal_r_base
         goal_c = random.randint(0, cols - 1)
         
-        # Skip constraint checking for now with bridges - just place start and goal
         grid[start_r][start_c] = "II"
         grid[goal_r][goal_c] = "GG"
         
-        # Place enable buttons for each bridge
-        # Enable buttons must be in the same board section as the start tile
         enable_button_positions = []
         for bridge_id in range(1, n + 1):
-            # Place enable button in the same board section as start (not on start or goal)
             placed = False
             for _ in range(100):
                 er_base = random.randint(0, rows - 1)
-                er = board_section * (rows + 2) + er_base  # Same section as start
+                er = board_section * (rows + 2) + er_base
                 ec = random.randint(0, cols - 1)
                 if grid[er][ec] == "XX":
                     grid[er][ec] = f"E{bridge_id}"
@@ -226,7 +197,6 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                     placed = True
                     break
             if not placed:
-                # Fallback: place in first available XX tile in start's board section
                 section_start_row = board_section * (rows + 2)
                 section_end_row = section_start_row + rows
                 for r in range(section_start_row, section_end_row):
@@ -239,7 +209,6 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                     if placed:
                         break
         
-        # Randomly scatter yellow tiles within each 3x4 board section independently
         for section_id in range(n + 1):
             section_start_row = section_id * (rows + 2)
             section_end_row = section_start_row + rows
@@ -251,13 +220,11 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                         grid[r][c] = "YY"
                         yellow_positions.append((r, c))
             
-            # Create connecting yellow paths within this board section
             if len(yellow_positions) > 1:
                 for i in range(len(yellow_positions) - 1):
                     yr1, yc1 = yellow_positions[i]
                     yr2, yc2 = yellow_positions[i + 1]
                     
-                    # Connect with a path of yellow tiles (stay within section)
                     r, c = yr1, yc1
                     while c != yc2:
                         c += 1 if yc2 > c else -1
@@ -268,42 +235,34 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                         if section_start_row <= r < section_end_row and grid[r][c] == "XX":
                             grid[r][c] = "YY"
         
-        # Check connectivity with yellow tile constraint and ensure no full yellow rows/columns
-        # Note: connectivity check needs to account for disabled bridges
         if not has_full_yellow_line(grid):
             return grid
     
-    # Fallback: if max_attempts exhausted, return a simple grid without yellow tiles or bridges
     total_rows = rows * (n + 1) + n * 2
     grid = [["XX" for _ in range(cols)] for _ in range(total_rows)]
     
-    # Place bridges (vertical, 2 tiles stacked)
     for bridge_id in range(1, n + 1):
         bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
         bridge_col = random.randint(0, cols - 1)
         
-        # First row of bridge
         for c in range(cols):
             if c == bridge_col:
                 grid[bridge_row_start][c] = f"U{bridge_id}"
             else:
                 grid[bridge_row_start][c] = "  "
         
-        # Second row of bridge
         for c in range(cols):
             if c == bridge_col:
                 grid[bridge_row_start + 1][c] = f"U{bridge_id}"
             else:
                 grid[bridge_row_start + 1][c] = "  "
     
-    # Place start and goal
     board_section = random.randint(0, n)
     start_r_base = random.randint(0, rows - 1)
     start_r = board_section * (rows + 2) + start_r_base
     start_c = random.randint(0, cols - 1)
     
     if n > 0:
-        # Ensure goal is on a different board section than start
         possible_sections = [s for s in range(n + 1) if s != board_section]
         board_section_goal = random.choice(possible_sections)
     else:
@@ -316,7 +275,6 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
     grid[start_r][start_c] = "II"
     grid[goal_r][goal_c] = "GG"
     
-    # Place enable buttons in the same board section as start
     for bridge_id in range(1, n + 1):
         er_base = random.randint(0, rows - 1)
         er = board_section * (rows + 2) + er_base
@@ -343,14 +301,13 @@ def generate_bloxorz_problem(data_file, output_file):
     start_tile = None
     goal_tile = None
     yellow_tiles = set()
-    enable_buttons = {}  # {button_id: (r, c)}
-    disabled_bridges = {}  # {bridge_id: [(r, c), ...]}
+    enable_buttons = {}
+    disabled_bridges = {}
 
-    # Parse grid: take two characters at a time
     for r, line in enumerate(lines, start=1):
         c = 1
         while c <= len(line):
-            ch = line[c-1:c+1]  # grab a tile (2 characters)
+            ch = line[c-1:c+1]
             if ch in ("XX", "II", "GG", "YY") or ch.startswith(("E", "U")):
                 tile = f"t-{r:02d}-{c:02d}"
                 tiles.append((r, c))
@@ -361,34 +318,28 @@ def generate_bloxorz_problem(data_file, output_file):
                 elif ch == "YY":
                     yellow_tiles.add(tile)
                 elif ch.startswith("E"):
-                    # Enable button
                     bridge_id = int(ch[1:])
                     enable_buttons[bridge_id] = (r, c)
                 elif ch.startswith("U"):
-                    # Disabled bridge tile
                     bridge_id = int(ch[1:])
                     if bridge_id not in disabled_bridges:
                         disabled_bridges[bridge_id] = []
                     disabled_bridges[bridge_id].append((r, c))
-            c += 2  # move to next tile
+            c += 2
 
     def tile_name(r, c):
         return f"t-{r:02d}-{c:02d}"
 
-    # Build adjacency facts
     adjacency = []
     tile_set = set(tiles)
     for (r, c) in tiles:
-        # east / west (+2 because each tile is 2 chars wide)
         if (r, c + 2) in tile_set:
             adjacency.append((tile_name(r, c), tile_name(r, c + 2), "east"))
             adjacency.append((tile_name(r, c + 2), tile_name(r, c), "west"))
-        # north / south
         if (r + 1, c) in tile_set:
             adjacency.append((tile_name(r, c), tile_name(r + 1, c), "south"))
             adjacency.append((tile_name(r + 1, c), tile_name(r, c), "north"))
 
-    # Build the PDDL problem
     problem = []
     problem.append(f"(define (problem bloxorz-prob-{data_file.split('.')[0]})")
     problem.append("    (:domain bloxorz)")
@@ -398,7 +349,6 @@ def generate_bloxorz_problem(data_file, output_file):
     problem.append("    )\n")
 
     problem.append("    (:init")
-    # Perpendicular direction facts
     perpendicular_facts = [
         ("north", "east"), ("north", "west"),
         ("east", "north"), ("west", "north"),
@@ -408,17 +358,13 @@ def generate_bloxorz_problem(data_file, output_file):
     for d1, d2 in perpendicular_facts:
         problem.append(f"        (perpendicular {d1} {d2})")
     
-    # Start position
     problem.append(f"        (standing-on b1 {start_tile})")
     
-    # Adjacency facts
     for t1, t2, d in adjacency:
         problem.append(f"        (adjacent {t1} {t2} {d})")
     
-    # Tile states: bridges start inactive, enable buttons are hard
     for (r, c) in tiles:
         t = tile_name(r, c)
-        # Check if this tile is a disabled bridge
         is_bridge = False
         for bridge_id, bridge_tiles in disabled_bridges.items():
             if (r, c) in bridge_tiles:
@@ -427,18 +373,14 @@ def generate_bloxorz_problem(data_file, output_file):
         
         if not is_bridge:
             problem.append(f"        (active {t})")
-        # Bridges start inactive (not active)
     
-    # Yellow tiles
     for yellow_tile in yellow_tiles:
         problem.append(f"        (yellow {yellow_tile})")
     
-    # Mark enable buttons as hard
     for bridge_id, (r, c) in enable_buttons.items():
         button_tile = tile_name(r, c)
         problem.append(f"        (hard {button_tile})")
     
-    # Create enabling relationships: button enables all tiles of its bridge
     for bridge_id in enable_buttons:
         if bridge_id in disabled_bridges:
             button_tile = tile_name(*enable_buttons[bridge_id])
@@ -460,12 +402,10 @@ def generate_bloxorz_problem(data_file, output_file):
 if __name__ == "__main__":
     import time
     
-    # Generate a random problem each time using timestamp as seed
-    seed = int(time.time() * 1000) % 1000  # Use millisecond timestamp as seed (0-999)
+    seed = int(time.time() * 1000) % 1000
     random.seed(seed)
     
-    # Number of bridges to include
-    num_bridges = 1  # Default to 1 bridge, can be modified as needed
+    num_bridges = 1
     
     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
     
@@ -485,6 +425,5 @@ if __name__ == "__main__":
     for row in grid:
         print("".join(row))
     
-    # Generate the PDDL problem file
     generate_bloxorz_problem(grid_file, pddl_file)
     print(f"\nGenerated PDDL problem file: {pddl_file}")
