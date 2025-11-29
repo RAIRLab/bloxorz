@@ -496,11 +496,12 @@ def generate_bloxorz_problem(data_file, output_file):
 
 if __name__ == "__main__":
     import time
+    import sys
     
     seed = int(time.time() * 1000) % 1000
     random.seed(seed)
     
-    num_bridges = 1
+    num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
     
