@@ -15,12 +15,13 @@ start_y = int(max_y/2)
 total_moves = 20
 
 # The number of good problems to generate
-num_good_problems = 3
+num_good_problems = 5
 
 # The grading threshold for what problems to output
 grading_threshold = .045
 
 floor = 'XX'
+yellow = 'YY'
 initial_state = 'II'
 goal_state = 'GG'
 
@@ -301,7 +302,14 @@ class Game:
         self.positionTracker.updatePositions(newPositions)
         return True
 
-    def generateMap(self, total_moves, requireStand=False):
+    def spotsCanBeYellow(self):
+        canBeYellow = True
+        for x in self.positionTracker.positions:
+            if self.grid[x[0]][x[1]] == floor:
+                canBeYellow = False
+        return canBeYellow
+
+    def generateMap(self, total_moves, requireStand=False, forceYellowPanels=False):
         # Generates a complete problem given a minimum number of moves explored. It
         # randomly picks a move to do, executes it, and records ground where the
         # block fell. This function also tracks the moves and uses condenseStates()
@@ -319,11 +327,14 @@ class Game:
                 success = self.move_right()
             if success:
                 for p in self.positionTracker.positions:
-                    self.grid[p[0]][p[1]] = floor
+                    if forceYellowPanels and self.blox.orientation != self.blox.Orientation.STAND and self.spotsCanBeYellow():
+                        self.grid[p[0]][p[1]] = yellow
+                    else:
+                        self.grid[p[0]][p[1]] = floor
                 self.trackState(move)
                 self.condenseStates()
         if requireStand and self.blox.orientation != self.blox.Orientation.STAND:
-            return self.generateMap(1, requireStand)
+            return self.generateMap(1, requireStand, forceYellowPanels)
 
         self.grid[start_x][start_y] = initial_state
         for p in self.positionTracker.positions:
