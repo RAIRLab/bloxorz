@@ -20,6 +20,12 @@ num_good_problems = 5
 # The grading threshold for what problems to output
 grading_threshold = .045
 
+# Require standing goal
+requireStand = True
+
+# Require yellow tiles
+requireYellow = False
+
 floor = 'XX'
 yellow = 'YY'
 initial_state = 'II'
@@ -166,7 +172,10 @@ class Game:
         # Basic way to score a given problem, just divides length of solution by
         # spaces on the board
         spaces = 0
-        moves = len(solve_bloxorz_maze(self.gridToString()))
+        solution = solve_bloxorz_maze(self.gridToString())
+        if solution is None:
+            return -1
+        moves = len(solution)
         for x in self.grid:
             for y in x:
                 if y != '':
@@ -345,7 +354,8 @@ if __name__ == "__main__":
     goodProblems = 0
     while goodProblems < num_good_problems:
         game = Game()
-        game.generateMap(total_moves, requireStand=True)
+        game.generateMap(total_moves, requireStand=requireStand,
+                         forceYellowPanels=requireYellow)
         if game.isValidProblem() and game.scoreGrid() >= grading_threshold:
             goodProblems += 1
             print("Problem", goodProblems, ":")
