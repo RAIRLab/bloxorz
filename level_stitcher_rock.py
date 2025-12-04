@@ -1,17 +1,20 @@
 import sys
 import os.path
+import heapq
 from copy import deepcopy
 import level_generator_rock
+import math
 
 emptySpace = "  "
 floorSpace = "XX"
+yellowSpace = "YY"
 initialSpace = "II"
 goalSpace = "GG"
 
 sidePairs = {'top': 'bottom', 'right': 'left',
              'bottom': 'top', 'left': 'right'}
 
-padding = 3
+padding = 4
 
 
 def gridToString(grid):
@@ -51,17 +54,15 @@ def printGridVisual(grid):
     print("\n".join(split))
 
 
-def readFile(filePath):
-    file = open(filePath, 'r')
-    fileContent = file.read()
-    fileLines = fileContent.split("\n")
+def stringToGrid(string):
+    stringSplit = string.split("\n")
     longest = 0
-    for x in fileLines:
+    for x in stringSplit:
         length = len(x)
         if length > longest:
             longest = length
     grid = []
-    for x in fileLines:
+    for x in stringSplit:
         difference = longest - len(x)
         stringLine = x + (' ' * difference)
         lineAsArray = []
@@ -69,7 +70,13 @@ def readFile(filePath):
             lineAsArray.append(stringLine[i:i+2])
         grid.append(lineAsArray)
     return grid
+
+
+def readFile(filePath):
+    file = open(filePath, 'r')
+    fileContent = file.read()
     file.close()
+    return stringToGrid(fileContent)
 
 
 def flipLevelY(level):
@@ -115,7 +122,9 @@ def scorePath(grid):
     for x in grid:
         for y in x:
             if y != emptySpace:
-                count += 1
+                count += 4
+            else:
+                count += 3
     return count
 
 
@@ -156,8 +165,8 @@ def mergeLevelsHorizontal(level1, level2):
     level1Row = len(level1)
     level2Col = len(level2[0])
     level2Row = len(level2)
-    bigGridCol = level1Col + level2Col + (padding*2)
-    bigGridRow = max(level1Row, level2Row) + (padding*2)
+    bigGridCol = level1Col + level2Col + (padding*4)
+    bigGridRow = max(level1Row, level2Row) + (padding*4)
     bigGrid = []
     bridgeStart = ()
     bridgeEnd = ()
@@ -169,15 +178,17 @@ def mergeLevelsHorizontal(level1, level2):
 
     for i in range(level1Row):
         for j in range(level1Col):
-            bigGrid[i + padding][j] = level1[i][j]
+            bigGrid[i + padding][j + padding] = level1[i][j]
             if level1[i][j] == goalSpace:
-                bridgeStart = (i + padding, j)
+                bridgeStart = (i + padding, j + padding)
 
     for i in range(level2Row):
         for j in range(level2Col):
-            bigGrid[i + padding][j + level1Col + (2*padding)] = level2[i][j]
+            bigGrid[i + padding][j + level1Col + (3*padding)] = level2[i][j]
             if level2[i][j] == initialSpace:
-                bridgeEnd = (i + padding, j + level1Col + (2*padding))
+                bridgeEnd = (i + padding, j + level1Col + (3*padding))
+    bigGrid[bridgeStart[0]][bridgeStart[1]] = floorSpace
+    bigGrid[bridgeEnd[0]][bridgeEnd[1]] = floorSpace
     return bigGrid, (bridgeStart, bridgeEnd)
 
 
@@ -186,8 +197,8 @@ def mergeLevelsVertical(level1, level2):
     level1Row = len(level1)
     level2Col = len(level2[0])
     level2Row = len(level2)
-    bigGridCol = max(level1Col, level2Col) + (padding*2)
-    bigGridRow = level1Row + level2Row + (padding*2)
+    bigGridCol = max(level1Col, level2Col) + (padding*4)
+    bigGridRow = level1Row + level2Row + (padding*4)
     bigGrid = []
     bridgeStart = ()
     bridgeEnd = ()
@@ -199,15 +210,17 @@ def mergeLevelsVertical(level1, level2):
 
     for i in range(level1Row):
         for j in range(level1Col):
-            bigGrid[i][j + padding] = level1[i][j]
+            bigGrid[i + padding][j + padding] = level1[i][j]
             if level1[i][j] == goalSpace:
-                bridgeStart = (i, j + padding)
+                bridgeStart = (i + padding, j + padding)
 
     for i in range(level2Row):
         for j in range(level2Col):
-            bigGrid[i + level1Row + (2*padding)][j + padding] = level2[i][j]
+            bigGrid[i + level1Row + (3*padding)][j + padding] = level2[i][j]
             if level2[i][j] == initialSpace:
-                bridgeEnd = (i + level1Row + (2*padding), j + padding)
+                bridgeEnd = (i + level1Row + (3*padding), j + padding)
+    bigGrid[bridgeStart[0]][bridgeStart[1]] = floorSpace
+    bigGrid[bridgeEnd[0]][bridgeEnd[1]] = floorSpace
     return bigGrid, (bridgeStart, bridgeEnd)
 
 
@@ -223,9 +236,77 @@ def shareSides(sides1, sides2):
     return len(sharedSides(sides1, sides2)) > 0
 
 
+def distance(point1, point2):
+    return math.sqrt(((point1[0] - point2[0])**2) + ((point1[1] - point2[1])**2))
+
+
+def closerTo(target, points1, points2):
+    point1ave = [0, 0]
+    for x in points1:
+        point1ave[0] += x[0]
+        point1ave[1] += x[1]
+    point1ave = [x/len(points1) for x in point1ave]
+
+    point2ave = [0, 0]
+    for x in points2:
+        point2ave[0] += x[0]
+        point2ave[1] += x[1]
+    point2ave = [x/len(points2) for x in point2ave]
+
+    return distance(point1ave, target) < distance(point2ave, target)
+
+
+def solve(level, spaces):
+    pq = []
+    startingGame = level_generator_rock.Game(
+        deepcopy(level), spaces[0][0], spaces[0][1])
+    heapq.heappush(pq, (distance(spaces[0], spaces[1]), startingGame))
+    while len(pq) > 0:
+        state = heapq.heappop(pq)
+        game = state[1]
+        for move in game.Moves:
+            newGame = deepcopy(game)
+            success = False
+            if move == newGame.Moves.UP:
+                success = newGame.move_up()
+            if move == newGame.Moves.DOWN:
+                success = newGame.move_down()
+            if move == newGame.Moves.LEFT:
+                success = newGame.move_left()
+            if move == newGame.Moves.RIGHT:
+                success = newGame.move_right()
+            if success:
+                newGame.trackState(move)
+                if newGame.isStateRepeated():
+                    continue
+                if newGame.positionTracker.positions == [spaces[1]]:
+                    return deepcopy(newGame.grid)
+
+                distances = []
+                for point in newGame.positionTracker.positions:
+                    if newGame.grid[point[0]][point[1]] == emptySpace or newGame.grid[point[0]][point[1]] == yellowSpace:
+                        newGame.grid[point[0]][point[1]] = floorSpace
+                    distances.append(distance(point, spaces[1]))
+
+                minDistance = min(distances)
+                pathWeight = 0
+                if minDistance > 1:
+                    pathWeight += min(distances)
+                heapq.heappush(pq, (pathWeight, newGame))
+
+
 def stitchLevels(level1, level2):
     level1Side = findCleanestEdgeToPoint(level1, findGoal(level1))
     level2Side = findCleanestEdgeToPoint(level2, findInitial(level2))
+
+    while 'right' not in level1Side and 'bottom' not in level1Side:
+        level1 = rotateLevel(level1)
+        level1Side = findCleanestEdgeToPoint(
+            level1, findGoal(level1))
+    if 'top' in level1Side and 'bottom' in level1Side:
+        level1Side.remove('top')
+    if 'left' in level1Side and 'right' in level1Side:
+        level1Side.remove('left')
 
     orientation = ''
     for i in range(len(sidePairs)):
@@ -234,6 +315,10 @@ def stitchLevels(level1, level2):
                 level2 = rotateLevel(level2)
                 level2Side = findCleanestEdgeToPoint(
                     level2, findInitial(level2))
+                if 'top' in level2Side and 'bottom' in level2Side:
+                    level2Side.remove('bottom')
+                if 'left' in level2Side and 'right' in level2Side:
+                    level2Side.remove('right')
             else:
                 orientation = sharedSides(level1Side, level2Side)[0]
                 break
@@ -241,35 +326,64 @@ def stitchLevels(level1, level2):
             level1 = rotateLevel(level1)
             level1Side = findCleanestEdgeToPoint(
                 level1, findGoal(level1))
+            if 'top' in level1Side and 'bottom' in level1Side:
+                level1Side.remove('top')
+            if 'left' in level1Side and 'right' in level1Side:
+                level1Side.remove('left')
         else:
             orientation = sharedSides(level1Side, level2Side)[0]
             break
 
-    mergedLevel = []
+    mergedlevel = []
     points = ()
     if orientation == 'right' or orientation == 'left':
         mergedlevel, points = mergeLevelsHorizontal(level1, level2)
     else:
         mergedlevel, points = mergeLevelsVertical(level1, level2)
-    return solve(mergedlevel, points)
+    solved = solve(mergedlevel, points)
+    return solved
+
+
+def stitchLevelList(levels):
+    counter = 1
+    while len(levels) > 1:
+        levels.insert(0, stitchLevels(
+            rotateLevel(levels.pop(0)), levels.pop(0)))
+        print("Made stitch", counter)
+        counter += 1
+    return levels[0]
+
+
+def generateMassiveLevel(difficultyScore):
+    # difficulty score is a number from 1-20
+    links = (difficultyScore // 2) + 1
+    levels = []
+    for i in range(links):
+        print("Generating %d of %d" % (i + 1, links))
+        generationCycle = []
+        for j in range(difficultyScore):
+            game = level_generator_rock.Game()
+            game.generateMap(total_moves=difficultyScore, requireStand=True)
+            level = stringToGrid(game.gridToString())
+            score = game.scoreGrid()
+            generationCycle.append((score, level))
+        generationCycle.sort(reverse=True)
+        levels.append(generationCycle[difficultyScore-1][1])
+    print("Stitching")
+    bigLevel = stitchLevelList(levels)
+    return gridToString(bigLevel)
 
 
 if __name__ == "__main__":
-    fileList = sys.argv[1:]
+    print(generateMassiveLevel(20))
+    # fileList = sys.argv[1:]
 
-    for filePath in fileList:
-        if not os.path.exists(filePath):
-            print("Error, file \"%s\" not found" % filePath)
-            exit(1)
-    levels = []
-    for x in fileList:
-        levels.append(readFile(x))
+    # for filePath in fileList:
+    #    if not os.path.exists(filePath):
+    #        print("Error, file \"%s\" not found" % filePath)
+    #        exit(1)
+    # levels = []
+    # for x in fileList:
+    #    levels.append(readFile(x))
 
-    # printGridVisual(levels[0])
-    # print()
-    # print(findCleanestEdgeToPoint(levels[0], findGoal(levels[0])))
-
-    levels[0] = rotateLevel(levels[0])
-    levels[0] = rotateLevel(levels[0])
-    levels[0] = rotateLevel(levels[0])
-    stitchLevels(levels[0], levels[1])
+    # printGridVisual(stitchLevelList(levels))
