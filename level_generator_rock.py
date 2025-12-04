@@ -106,30 +106,46 @@ class Game:
     solution = []
 
     class Moves(Enum):
-        UP = 0
+        RIGHT = 0
         DOWN = 1
         LEFT = 2
-        RIGHT = 3
+        UP = 3
 
-    def __init__(self):
+    def __init__(self, grid=None, startX=start_x, startY=start_y):
         # Resets every variable so that you can run multiple generations in a row
         self.blox = Blox()
-        self.grid = []
-        self.positionTracker = PositionTracker([(start_x, start_y)])
+        self.positionTracker = PositionTracker([(startX, startY)])
         self.states = []
         self.solution = []
-        for i in range(max_y):
-            self.grid.append([])
-            for j in range(max_x):
-                self.grid[i].append("  ")
-        self.grid[start_x][start_y] = initial_state
+
+        if grid is None:
+            self.grid = []
+            for i in range(max_y):
+                self.grid.append([])
+                for j in range(max_x):
+                    self.grid[i].append("  ")
+            self.grid[start_x][start_y] = initial_state
+        else:
+            self.grid = grid
         self.trackState(None)
+
+    def __lt__(self, other):
+        return 0
 
     def trackState(self, move):
         # Recordes the latest move and current state
         self.solution.append(move)
         self.states.append(
             (deepcopy(self.grid), deepcopy(self.positionTracker.positions)))
+
+    def isStateRepeated(self):
+        if len(self.states) == 0:
+            return False
+        currentstate = self.states[-1]
+        for i in range(len(self.states)-2, -1, -1):
+            if self.states[i][1] == currentstate[1]:
+                return True
+        return False
 
     def condenseStates(self):
         # If the blox rolls onto a space that it has been to previously, delete all
@@ -240,7 +256,7 @@ class Game:
         lowest = self.positionTracker.lowest_position
         leftest = self.positionTracker.leftest_position
         rightest = self.positionTracker.rightest_position
-        if lowest[0] >= max_x - 2:
+        if lowest[0] >= len(self.grid) - 2:
             return False
         self.blox.move_vert()
         newPositions = []
@@ -290,7 +306,7 @@ class Game:
         rightest = self.positionTracker.rightest_position
         lowest = self.positionTracker.lowest_position
         highest = self.positionTracker.highest_position
-        if rightest[1] >= max_x - 2:
+        if rightest[1] >= len(self.grid[0]) - 2:
             return False
         self.blox.move_hor()
         newPositions = []
@@ -318,7 +334,7 @@ class Game:
                 canBeYellow = False
         return canBeYellow
 
-    def generateMap(self, total_moves, requireStand=False, forceYellowPanels=False):
+    def generateMap(self, total_moves=total_moves, requireStand=False, forceYellowPanels=False):
         # Generates a complete problem given a minimum number of moves explored. It
         # randomly picks a move to do, executes it, and records ground where the
         # block fell. This function also tracks the moves and uses condenseStates()
@@ -347,7 +363,10 @@ class Game:
 
         self.grid[start_x][start_y] = initial_state
         for p in self.positionTracker.positions:
-            self.grid[p[0]][p[1]] = goal_state
+            if self.grid[p[0]][p[1]] == initial_state:
+                return self.generateMap(1, requireStand, forceYellowPanels)
+            else:
+                self.grid[p[0]][p[1]] = goal_state
 
 
 if __name__ == "__main__":
