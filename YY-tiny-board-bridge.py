@@ -108,8 +108,8 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     if abs(r1 - r2) > 2 or abs(c1 - c2) > 2:
         return False
     
-    # Same row only allowed if it's a middle row (index 1, 2, or 3 in 0-indexed for 5 rows)
-    if r1 == r2 and r1 not in (1, 2, 3):
+    # Same row only allowed if it's a middle row (index 1 or 2 in 0-indexed for 4 rows)
+    if r1 == r2 and r1 not in (1, 2):
         return False
     
     # Cannot be in same column
@@ -420,11 +420,9 @@ if __name__ == "__main__":
     else:
         print(f"Starting generation with seed {seed} and {num_bridges} bridge(s) [solver not available]...")
     
-    grid = generate_bloxorz_grid(num_bridges, rows=5, cols=5, yellow_ratio=0.1, validate_solvable=True)
-    
-    if grid is None:
-        print(f"Failed to generate valid grid after 10000 attempts. Constraints may be too restrictive.")
-        exit(1)
+    grid = None
+    while grid is None:
+        grid = generate_bloxorz_grid(num_bridges, rows=4, cols=5, yellow_ratio=0.15, validate_solvable=True)
     
     print(f"Grid generation completed!")
     grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
