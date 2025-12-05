@@ -24,6 +24,7 @@ Constraints (applied to special tiles: II, GG, E#):
 """
 
 import random
+from time import time
 
 
 def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
@@ -279,135 +280,38 @@ def write_grid_to_file(grid, filename):
         for row in grid:
             f.write("".join(row) + "\n")
 
-
-def generate_bloxorz_problem(data_file, output_file):
-    """Build a PDDL problem file for the given Bloxorz grid text file."""
-    with open(data_file, 'r') as f:
-        lines = [line.rstrip('\n') for line in f if line.strip()]
-
-    tiles = []
-    start_tile = None
-    goal_tile = None
-    yellow_tiles = set()
-    enable_buttons = {}
-    disabled_bridges = {}
-
-    for r, line in enumerate(lines, start=1):
-        c = 1
-        while c <= len(line):
-            ch = line[c-1:c+1]
-            if ch in ("XX", "II", "GG", "YY") or ch.startswith(("E", "U")):
-                tile = f"t-{r:02d}-{c:02d}"
-                tiles.append((r, c))
-                if ch == "II":
-                    start_tile = tile
-                elif ch == "GG":
-                    goal_tile = tile
-                elif ch == "YY":
-                    yellow_tiles.add(tile)
-                elif ch.startswith("E"):
-                    bridge_id = int(ch[1:])
-                    enable_buttons[bridge_id] = (r, c)
-                elif ch.startswith("U"):
-                    bridge_id = int(ch[1:])
-                    if bridge_id not in disabled_bridges:
-                        disabled_bridges[bridge_id] = []
-                    disabled_bridges[bridge_id].append((r, c))
-            c += 2
-
-    def tile_name(r, c):
-        return f"t-{r:02d}-{c:02d}"
-
-    adjacency = []
-    tile_set = set(tiles)
-    for (r, c) in tiles:
-        if (r, c + 2) in tile_set:
-            adjacency.append((tile_name(r, c), tile_name(r, c + 2), "east"))
-            adjacency.append((tile_name(r, c + 2), tile_name(r, c), "west"))
-        if (r + 1, c) in tile_set:
-            adjacency.append((tile_name(r, c), tile_name(r + 1, c), "south"))
-            adjacency.append((tile_name(r + 1, c), tile_name(r, c), "north"))
-
-    problem = []
-    problem.append(f"(define (problem bloxorz-prob-{data_file.split('.')[0]})")
-    problem.append("    (:domain bloxorz)")
-    problem.append("    (:objects")
-    problem.append("        b1 - block")
-    problem.append("        " + " ".join(tile_name(r, c) for (r, c) in tiles) + " - tile")
-    problem.append("    )\n")
-
-    problem.append("    (:init")
-    for d1, d2 in [(d1, d2) for d1 in ["north", "south"] for d2 in ["east", "west"]] + \
-                   [(d2, d1) for d1 in ["north", "south"] for d2 in ["east", "west"]]:
-        problem.append(f"        (perpendicular {d1} {d2})")
-    
-    problem.append(f"        (standing-on b1 {start_tile})")
-    
-    for t1, t2, d in adjacency:
-        problem.append(f"        (adjacent {t1} {t2} {d})")
-    
-    for (r, c) in tiles:
-        t = tile_name(r, c)
-        is_bridge = False
-        for bridge_id, bridge_tiles in disabled_bridges.items():
-            if (r, c) in bridge_tiles:
-                is_bridge = True
-                break
-        
-        if not is_bridge:
-            problem.append(f"        (active {t})")
-    
-    for yellow_tile in yellow_tiles:
-        problem.append(f"        (yellow {yellow_tile})")
-    
-    for bridge_id, (r, c) in enable_buttons.items():
-        button_tile = tile_name(r, c)
-        problem.append(f"        (hard {button_tile})")
-    
-    for bridge_id in enable_buttons:
-        if bridge_id in disabled_bridges:
-            button_tile = tile_name(*enable_buttons[bridge_id])
-            for bridge_r, bridge_c in disabled_bridges[bridge_id]:
-                bridge_tile = tile_name(bridge_r, bridge_c)
-                problem.append(f"        (enabling {button_tile} {bridge_tile})")
-    
-    problem.append("    )\n")
-
-    problem.append("    (:goal (and")
-    problem.append(f"        (standing-on b1 {goal_tile})")
-    problem.append("    ))")
-    problem.append(")")
-
-    with open(output_file, "w") as f:
-        f.write("\n".join(problem))
-
-
-if __name__ == "__main__":
-    import time
-    import sys
-    
+def generate_problem(n) -> str:
     seed = int(time.time() * 1000) % 1000
-    random.seed(seed)
+    random.seed(seed)    
+    return generate_bloxorz_grid(n, rows=3, cols=4, yellow_ratio=0.3)
+
+
+# if __name__ == "__main__":
+#     import time
+#     import sys
     
-    num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+#     seed = int(time.time() * 1000) % 1000
+#     random.seed(seed)
     
-    print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
+#     num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
-    grid = generate_bloxorz_grid(num_bridges, rows=3, cols=4, yellow_ratio=0.3)
+#     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
     
-    if grid is None:
-        print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
-        exit(1)
+#     grid = generate_bloxorz_grid(num_bridges, rows=3, cols=4, yellow_ratio=0.3)
     
-    print(f"Grid generation completed!")
-    grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
-    pddl_file = f"levels-pddl/YY-tiles-tiny-board-problem-{seed}.pddl"
+#     if grid is None:
+#         print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
+#         exit(1)
     
-    write_grid_to_file(grid, grid_file)
+#     print(f"Grid generation completed!")
+#     grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
+#     pddl_file = f"levels-pddl/YY-tiles-tiny-board-problem-{seed}.pddl"
     
-    print(f"Generated grid (seed: {seed}):")
-    for row in grid:
-        print("".join(row))
+#     write_grid_to_file(grid, grid_file)
     
-    generate_bloxorz_problem(grid_file, pddl_file)
-    print(f"\nGenerated PDDL problem file: {pddl_file}")
+#     print(f"Generated grid (seed: {seed}):")
+#     for row in grid:
+#         print("".join(row))
+    
+#     generate_bloxorz_problem(grid_file, pddl_file)
+#     print(f"\nGenerated PDDL problem file: {pddl_file}")
