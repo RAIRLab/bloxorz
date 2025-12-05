@@ -25,6 +25,13 @@ Constraints (applied to special tiles: II, GG, E#):
 
 import random
 
+# Optional solver integration for validation
+try:
+    from solve import solve_bloxorz_maze
+    SOLVER_AVAILABLE = True
+except ImportError:
+    SOLVER_AVAILABLE = False
+
 
 def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
     """Check if there's a full row or column of only yellow tiles.
@@ -101,8 +108,8 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     if abs(r1 - r2) > 2 or abs(c1 - c2) > 2:
         return False
     
-    # Same row only allowed if it's row 2 (index 1 in 0-indexed for 3 rows)
-    if r1 == r2 and r1 != 1:
+    # Same row only allowed if it's a middle row (index 1, 2, or 3 in 0-indexed for 5 rows)
+    if r1 == r2 and r1 not in (1, 2, 3):
         return False
     
     # Cannot be in same column
@@ -112,15 +119,18 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     return True
 
 
-def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
+def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3, validate_solvable=True):
     """Generate a 3x4 grid with yellow tiles and bridges.
     
     Applies position constraints, validates yellow tile placement per section,
     ensures bridge entry/exit tiles are accessible, and verifies button accessibility.
-    Creates n bridge sections (0-3), each 2 tiles long, connecting board sections.
+    Creates n bridge sections, each 2 tiles long, connecting board sections.
+    
+    Args:
+        n: Number of bridges to generate (0 or more)
+        validate_solvable: If True and solver is available, only return grids that have a solution.
     """
-    n = n % 4
-    max_attempts = 1000
+    max_attempts = 10000
     
     for attempt in range(max_attempts):
         total_rows = rows * (n + 1) + n * 2
@@ -163,6 +173,7 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
         sections_with_special_tiles = {board_section, board_section_goal}
         accessible_sections = {board_section}
         
+        placed = True
         for bridge_id in range(1, n + 1):
             placed = False
             # Button for bridge_id should be in section bridge_id-1 or bridge_id (adjacent to the bridge)
@@ -268,6 +279,19 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3):
                         break
             
             if valid_bridge_connections:
+                # Optional: Validate solvability using solver
+                if validate_solvable and SOLVER_AVAILABLE:
+                    grid_str = "\n".join("".join(row) for row in grid)
+                    try:
+                        plan = solve_bloxorz_maze(grid_str)
+                        if plan is None:
+                            # Unsolvable, try again
+                            continue
+                    except Exception as e:
+                        # Solver error, skip validation for this attempt
+                        print(f"Solver error (continuing): {e}")
+                        pass
+                
                 return grid
     
     return None
@@ -391,12 +415,15 @@ if __name__ == "__main__":
     
     num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
-    print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
+    if SOLVER_AVAILABLE:
+        print(f"Starting generation with seed {seed} and {num_bridges} bridge(s) [solver validation enabled]...")
+    else:
+        print(f"Starting generation with seed {seed} and {num_bridges} bridge(s) [solver not available]...")
     
-    grid = generate_bloxorz_grid(num_bridges, rows=3, cols=4, yellow_ratio=0.3)
+    grid = generate_bloxorz_grid(num_bridges, rows=5, cols=5, yellow_ratio=0.1, validate_solvable=True)
     
     if grid is None:
-        print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
+        print(f"Failed to generate valid grid after 10000 attempts. Constraints may be too restrictive.")
         exit(1)
     
     print(f"Grid generation completed!")
