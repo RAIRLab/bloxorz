@@ -1,18 +1,28 @@
 (define (domain bloxorz)
-  (:requirements :strips :typing)
+  (:requirements :strips :typing :conditional-effects :negative-preconditions)
   (:types tile block direction)
   (:constants north east west south - direction)
 
   (:predicates
-    (standing-on ?b - block ?t - tile)               ; block stands upright on one tile
-    (lying-on ?b - block ?t - tile)                  ; block lies flat on a tile (one of the two)
-    (adjacent ?t1 - tile ?t2 - tile ?d - direction)  ; direction of t2 from t1
+    ; block stands upright on one tile
+    (standing-on ?b - block ?t - tile)
+     ; block lies flat on a tile (one of the two)               
+    (lying-on ?b - block ?t - tile)
+    ; direction of t2 from t1
+    (adjacent ?t1 - tile ?t2 - tile ?d - direction)
+    ; two directions are perpendicular
     (perpendicular ?d1 - direction ?d2 - direction)
-    (active ?t - tile)                               ; tile is active (can be used)
+    ; tile is active (can be used)
+    (active ?t - tile)                               
     (hard ?t - tile)
-    (disabling ?t1 - tile ?t2 - tile)                 ; t1 disables t2 when block is on t1
-    (enabling ?t1 - tile ?t2 - tile)                   ; t1 enables t2 when block is on t1
-    (yellow ?t - tile)                                 ; tile is yellow (can't be stood on upright)
+    ; t1 disables t2 when block is on t1
+    (disabling ?t1 - tile ?t2 - tile)                           
+    ; t1 enables t2 when block is on t1
+    (enabling ?t1 - tile ?t2 - tile)                             
+    ; tile is yellow (can't be stood on upright)
+    (yellow ?t - tile)
+    ; A block exists on this tile                                                                      
+    (occupied ?t - tile)                                                                                  
   )
 
   (:action lay-down
@@ -20,6 +30,8 @@
     :precondition (and
       (active ?to1)
       (active ?to2)
+      (not (occupied ?to1))
+      (not (occupied ?to2))
       (standing-on ?b ?from)
       (adjacent ?from ?to1 ?d)
       (adjacent ?to1 ?to2 ?d)
@@ -28,14 +40,15 @@
       (not (standing-on ?b ?from))
       (lying-on ?b ?to2)
       (lying-on ?b ?to1)
-
+      (occupied ?to1)
+      (occupied ?to2)
+      (not (occupied ?from))
       (forall (?x - tile)
         (when (and (enabling ?to1 ?x) (not (active ?x)) (not (hard ?to1)))
           (active ?x)))
       (forall (?x - tile)
         (when (and (enabling ?to2 ?x) (not (active ?x)) (not (hard ?to2)))
           (active ?x)))
-
       (forall (?x - tile)
         (when (and (disabling ?to1 ?x) (active ?x) (not (hard ?to1)))
           (not (active ?x))))
@@ -51,6 +64,7 @@
       (active ?t3)
       (lying-on ?b ?t1)
       (lying-on ?b ?t2)
+      (not (occupied ?t3))
       (adjacent ?t1 ?t2 ?d)
       (adjacent ?t2 ?t3 ?d)
       ; the tile we are going to stand on must not be yellow
@@ -59,7 +73,10 @@
     :effect (and
       (not (lying-on ?b ?t1))
       (not (lying-on ?b ?t2))
+      (not (occupied ?t1))
+      (not (occupied ?t2))
       (standing-on ?b ?t3)
+      (occupied ?t3)
       (forall (?x - tile)
         (when (and (enabling ?t3 ?x) (not (active ?x)))
           (active ?x)))
@@ -78,6 +95,8 @@
       (active ?t4)
       (lying-on ?b ?t1)
       (lying-on ?b ?t2)
+      (not (occupied ?t3))
+      (not (occupied ?t4))
       (adjacent ?t1 ?t2 ?blockd)
       (adjacent ?t3 ?t4 ?blockd)
       (adjacent ?t1 ?t3 ?tod)
@@ -88,21 +107,22 @@
       (not (lying-on ?b ?t2))    
       (lying-on ?b ?t3)
       (lying-on ?b ?t4)
- 
-       (forall (?x - tile)
+      (occupied ?t3)
+      (occupied ?t4)
+      (not (occupied ?t1))
+      (not (occupied ?t2))
+      (forall (?x - tile)
         (when (and (enabling ?t3 ?x) (not (active ?x)) (not (hard ?t3)))
           (active ?x)))
       (forall (?x - tile)
         (when (and (enabling ?t4 ?x) (not (active ?x)) (not (hard ?t4)))
           (active ?x)))
-
       (forall (?x - tile)
         (when (and (disabling ?t3 ?x) (active ?x) (not (hard ?t3)))
           (not (active ?x))))
       (forall (?x - tile)
         (when (and (disabling ?t4 ?x) (active ?x) (not (hard ?t4)))
           (not (active ?x))))
- 
     )
   )
 )

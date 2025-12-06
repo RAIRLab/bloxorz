@@ -31,7 +31,6 @@ import argparse
 from dataclasses import dataclass
 import glob
 import os
-import sys
 from typing import Dict, List, Set, Tuple
 
 Coord = Tuple[int, int]
@@ -103,8 +102,8 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
     lines = [ln for ln in lines if ln.strip() != ""]
 
     tiles: Set[Coord] = set()
-    start: Coord | None = None
-    goal: Coord | None = None
+    starts: List[Coord] = []
+    goals: List[Coord] = []
     yellow_tiles: Set[Coord] = set()
     buttons: List[Button] = []
     toggles: List[ToggleTile] = []
@@ -117,13 +116,13 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
                 tiles.add((r, c))
                 max_c = max(max_c, c)
                 if ch == "II":
-                    if start is not None:
-                        raise ValueError("Multiple 'II' (start) tiles found.")
-                    start = (r, c)
+                    # if start is not None:
+                    #     raise ValueError("Multiple 'II' (start) tiles found.")
+                    starts.append((r, c))
                 elif ch == "GG":
-                    if goal is not None:
-                        raise ValueError("Multiple 'GG' (goal) tiles found.")
-                    goal = (r, c)
+                    # if goal is not None:
+                    #     raise ValueError("Multiple 'GG' (goal) tiles found.")
+                    goals.append((r, c))
                 elif ch == "YY":
                     yellow_tiles.add((r, c))
                 elif ch.startswith("T"):
@@ -175,14 +174,15 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
                         raise ValueError(f"Invalid disabled toggle ID in tile '{ch}' at ({r}, {c})")
                     toggles.append(ToggleTile(row=r, col=c, state='disabled', id=toggle_id))
 
-    if start is None:
+    if not starts:
         raise ValueError("No 'II' (start) tile found in the maze.")
-    if goal is None:
+    if not goals:
         raise ValueError("No 'GG' (goal) tile found in the maze.")
+    if len(starts) > len(goals):
+        raise ValueError("Number of start tiles 'II' does not match number of goal tiles 'GG'.")
 
     max_r = len(lines)
-    return tiles, start, goal, max_r, max_c, yellow_tiles, buttons, toggles
-
+    return tiles, starts, goals, max_r, max_c, yellow_tiles, buttons, toggles
 
 def tname(r: int, c: int, w: int) -> str:
     """Tile name as t-rr-cc using zero-padded width w (>=2)."""
@@ -213,8 +213,8 @@ def build_adjacencies(tiles: Set[Coord]) -> Tuple[List[Tuple[str, str, str]], Li
 
 def format_pddl(
     tiles: Set[Coord],
-    start: Coord,
-    goal: Coord,
+    starts: List[Coord],
+    goals: List[Coord],
     yellow_tiles: Set[Coord],
     buttons: List[Button],
     toggles: List[ToggleTile],
@@ -246,7 +246,8 @@ def format_pddl(
 
     # Objects section (row-wise, matching your example style)
     obj_lines: List[str] = []
-    obj_lines.append("(:objects B - block")
+    blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
+    obj_lines.append(f"(:objects {' '.join(blocks)} - block")
     tiles = []
     for r in sorted(rows.keys()):
         cols = rows[r]
@@ -283,6 +284,8 @@ def format_pddl(
         r, c = t
         init_lines.append(f"  (yellow {tn((r, c))})")
 
+    
+
     # Active tiles (All tiles are active except disabled toggles)
     for tile in tiles:
         flag = True
@@ -307,14 +310,20 @@ def format_pddl(
         if button.button_type == 'hard':
             init_lines.append(f"  (hard {btn_tile_name})")
 
-    # Start position
-    init_lines.append(f"\n  (standing-on B {tn(start)})")
+    # Start positions
 
+    for n, start in enumerate(starts, start=1):
+        init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
+        init_lines.append(f"  (occupied {tn(start)})")
 
     init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
 
-    # Goal
-    goal_block = f"(:goal (and \n  (standing-on B {tn(goal)})\n))"
+    # Goals
+    goal_lines: List[str] = []
+    for g in goals:
+        goal_lines.append(f"(occupied {tn(g)})")
+
+    goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
 
     # Top-level
     lines: List[str] = []
@@ -332,7 +341,7 @@ def format_pddl(
     return "\n".join(lines) + "\n"
 
 
-def generate_pddl_from_maze(
+def generate_pddl_from_string_level(
     maze_text: str,
     problem_name: str = "p01",
     domain_name: str = "bloxorz",
@@ -358,7 +367,7 @@ def main():
             maze_text = f.read()
 
         #try:
-        pddl = generate_pddl_from_maze(maze_text)
+        pddl = generate_pddl_from_string_level(maze_text)
 
         # Write output
         if args.output:

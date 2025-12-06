@@ -2,7 +2,7 @@
   (:domain bloxorz)
   ; t-r-c describes tile in row r column c
   ;
-  (:objects B - block
+  (:objects b-1 - block
       t-01-06 t-01-07 t-01-08 t-01-09 t-01-10 t-01-11
       t-02-06 t-02-09 t-02-10 t-02-11
       t-03-06 t-03-09 t-03-10 t-03-11 t-03-12 t-03-13
@@ -227,10 +227,11 @@
     (active t-10-09)
     (active t-10-10)
   
-    (standing-on B t-04-01)
+    (standing-on b-1 t-04-01)
+    (occupied t-04-01)
   )
 
   (:goal (and 
-    (standing-on B t-05-14)
+    (occupied t-05-14)
   ))
 )
