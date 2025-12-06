@@ -1,8 +1,8 @@
 
 import os
 from tqdm import tqdm
-from level_gen import GENERATORS
-from bloxorz import generate_pddl_from_string_level
+from level_gen import GENERATORS, ENCODINGS
+from bloxorz import generate_pddl_from_string_level, generate_pddl_from_string_level_3
 
 for gen_name, gen_func in GENERATORS.items():
     # Create directories if they don't exist
@@ -17,11 +17,14 @@ for gen_name, gen_func in GENERATORS.items():
     for n in range(1, 11):
         print(f"Generating levels for generator {gen_name}, complexity {n}")
         for s in tqdm(range(100)):
-            level = gen_func(n)
+            level = gen_func(1)
             # Save the level text file
             with open(f"levels/{gen_name}/level_{n:02d}_seed_{s:03d}.txt", "w") as f:
                 f.write(level)
-            level_pddl = generate_pddl_from_string_level(level)
+            if ENCODINGS[gen_name] == 2:
+                level_pddl = generate_pddl_from_string_level(level)
+            elif ENCODINGS[gen_name] == 3:
+                level_pddl = generate_pddl_from_string_level_3(level)
             with open(f"levels-pddl/{gen_name}/level_{n:02d}_seed_{s:03d}.pddl", "w") as f:
                 f.write(level_pddl)
             

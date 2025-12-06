@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
+
 """
+
+This version accepts 3-character wide tile codes to allow for better tiles.
+
 Generate a PDDL problem file for the 'bloxorz' domain from a text maze.
 
 Maze legend:
-  XX - Normal tile
-  II - Start tile (block initially stands here)
-  GG - Goal tile
-  YY - Yellow tile (cannot be stood on upright)
-     - Empty space (no tile)
-  T# - Hard toggle button tile (where # is a digit, e.g., T1, T2, ...)
-  t# - Soft toggle button tile (where # is a digit, e.g., t1, t2, ...)
-  E# - Hard enable button tile (where # is a digit, e.g., E1, E2, ...)
-  e# - Soft enable button tile (where # is a digit, e.g., e1, e2, ...)
-  D# - Hard disable button tile (where # is a digit, e.g., D1, D2, ...)
-  d# - Soft disable button tile (where # is a digit, e.g., d1, d2, ...)
-  A# - Enabled toggle tile (where # is a digit, e.g., A1, A2, ...)
-  U# - Disabled toggle tile (where # is a digit, e.g., U1, U2, ...)
+  XXX - Normal tile
+  III - Start tile (block initially stands here)
+  GGG - Goal tile
+  YYY - Yellow tile (cannot be stood on upright)
+      - Empty space (no tile)
+  T## - Hard toggle button tile 
+  t## - Soft toggle button tile 
+  E## - Hard enable button tile 
+  e## - Soft enable button tile 
+  D## - Hard disable button tile 
+  d## - Soft disable button tile 
+  A## - Enabled toggle tile 
+  U## - Disabled toggle tile 
 
 Supports ragged rows and leading spaces (columns are 1-based and preserved).
 If most lines begin with ';', the script strips a leading ';' and any following spaces.
@@ -64,25 +68,14 @@ PERPENDICULAR_FACTS = [
 
 def _maybe_strip_comment_semicolon(lines: List[str]) -> List[str]:
     """If most non-empty lines start with ';', strip leading ';' and spaces."""
-    content_lines = [ln.rstrip("\n") for ln in lines if ln.strip("\n") != ""]
-    if not content_lines:
-        return []
-
-    semis = sum(1 for ln in content_lines if ln.lstrip().startswith(";"))
-    # Heuristic: if at least half the lines start with ';', strip them.
-    strip = semis >= (len(content_lines) / 2)
 
     processed = []
     for ln in lines:
         s = ln.rstrip("\n")
-        if strip:
-            # Find first ';' if present after any leading spaces
-            lstripped = s.lstrip()
-            if lstripped.startswith(";"):
-                # Remove up to and including the first ';' in the original string
-                # Then lstrip spaces that follow it (to handle "; XXX" -> "XXX")
-                first_semicolon_index = s.find(";")
-                s = s[first_semicolon_index + 1 :].lstrip()
+        # Find first ';' if present after any leading spaces
+        lstripped = s.lstrip()
+        if lstripped.startswith(";"):
+            continue
         processed.append(s)
     return processed
 
@@ -111,19 +104,19 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
     max_c = 0
     for r, line in enumerate(lines, start=1):
         # Keep exact character positions (including leading spaces)
-        for c, ch in enumerate([line[i:i+2] for i in range(0, len(line), 2)], start=1):
-            if ch in {"XX", "II", "GG", "YY"} or ch.startswith(("T", "t", "E", "e", "D", "d", "A", "U")):
+        for c, ch in enumerate([line[i:i+3] for i in range(0, len(line), 3)], start=1):
+            if ch in {"XXX", "III", "GGG", "YYY"} or ch.startswith(("T", "t", "E", "e", "D", "d", "A", "U")):
                 tiles.add((r, c))
                 max_c = max(max_c, c)
-                if ch == "II":
+                if ch == "III":
                     # if start is not None:
-                    #     raise ValueError("Multiple 'II' (start) tiles found.")
+                    #     raise ValueError("Multiple 'III' (start) tiles found.")
                     starts.append((r, c))
-                elif ch == "GG":
+                elif ch == "GGG":
                     # if goal is not None:
-                    #     raise ValueError("Multiple 'GG' (goal) tiles found.")
+                    #     raise ValueError("Multiple 'GGG' (goal) tiles found.")
                     goals.append((r, c))
-                elif ch == "YY":
+                elif ch == "YYY":
                     yellow_tiles.add((r, c))
                 elif ch.startswith("T"):
                     try:
@@ -173,21 +166,20 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
                     except ValueError:
                         raise ValueError(f"Invalid disabled toggle ID in tile '{ch}' at ({r}, {c})")
                     toggles.append(ToggleTile(row=r, col=c, state='disabled', id=toggle_id))
-            else:
+            elif ch != "   ":
                 raise ValueError(f"Unknown tile code '{ch}' at ({r}, {c})")
 
     if not starts:
-        raise ValueError("No 'II' (start) tile found in the maze.")
+        raise ValueError("No 'III' (start) tile found in the maze.")
     if not goals:
-        raise ValueError("No 'GG' (goal) tile found in the maze.")
+        raise ValueError("No 'GGG' (goal) tile found in the maze.")
     if len(starts) > len(goals):
-        raise ValueError("Number of start tiles 'II' is greater than number of goal tiles 'GG'.")
-
+        raise ValueError("Number of start tiles 'III' is greater than number of goal tiles 'GGG'.")
     max_r = len(lines)
     return tiles, starts, goals, max_r, max_c, yellow_tiles, buttons, toggles
 
 def tname(r: int, c: int, w: int) -> str:
-    """Tile name as t-rr-cc using zero-padded width w (>=2)."""
+    """Tile name as t-rrr-ccc using zero-padded width w (>=3)."""
     return f"t-{r:0{w}d}-{c:0{w}d}"
 
 

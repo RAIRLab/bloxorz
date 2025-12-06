@@ -304,48 +304,20 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3, validate_solvable=Tru
     
     return None
 
-
-def write_grid_to_file(grid, filename):
-    """Write the generated grid to a text file."""
-    with open(filename, "w") as f:
-        for row in grid:
-            f.write("".join(row) + "\n")
-
 def generate_YY_bridge_problem(n) -> str:
     seed = int(time() * 1000) % 1000
     random.seed(seed)
-    while (grid := generate_bloxorz_grid(n, rows=3, cols=4, yellow_ratio=0.3)) is None:
+    if n % 3 == 0:
+        r = 3
+        c = 4
+    elif n % 3 == 1:
+        r = 4
+        c = 5
+    else:
+        r = 5
+        c = 6
+    island_count = n // 3
+    while (grid := generate_bloxorz_grid(island_count, rows=r, cols=c, yellow_ratio=0.3)) is None:
         pass
     grid_string = "\n".join("".join(row) for row in grid)
     return grid_string
-
-
-# if __name__ == "__main__":
-#     import time
-#     import sys
-    
-#     seed = int(time.time() * 1000) % 1000
-#     random.seed(seed)
-    
-#     num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-    
-#     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
-    
-#     grid = generate_bloxorz_grid(num_bridges, rows=3, cols=4, yellow_ratio=0.3)
-    
-#     if grid is None:
-#         print(f"Failed to generate valid grid after 1000 attempts. Constraints may be too restrictive.")
-#         exit(1)
-    
-#     print(f"Grid generation completed!")
-#     grid_file = f"levels/YY-tiles-tiny-board-{seed}.txt"
-#     pddl_file = f"levels-pddl/YY-tiles-tiny-board-problem-{seed}.pddl"
-    
-#     write_grid_to_file(grid, grid_file)
-    
-#     print(f"Generated grid (seed: {seed}):")
-#     for row in grid:
-#         print("".join(row))
-    
-#     generate_bloxorz_problem(grid_file, pddl_file)
-#     print(f"\nGenerated PDDL problem file: {pddl_file}")
