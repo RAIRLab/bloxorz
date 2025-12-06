@@ -122,6 +122,18 @@ def generate_multi_block_grid(n):
     return grid
 
 
+def generate_multi_block_problem_string(n) -> str:
+    """
+    Generate a multi-block grid and return it as a string.
+    """
+    from time import time
+    seed = int(time() * 1000) % 1000
+    random.seed(seed)
+    grid = generate_multi_block_grid(n)
+    grid_string = "\n".join("".join(row) for row in grid)
+    return grid_string
+
+
 def write_grid_to_file(grid, filename):
     """Write the generated grid to a text file."""
     with open(filename, "w") as f:
@@ -237,37 +249,37 @@ def generate_multi_block_problem(data_file, output_file, num_blocks):
         f.write("\n".join(problem))
 
 
-if __name__ == "__main__":
-    import time
+# if __name__ == "__main__":
+#     import time
     
-    seed = int(time.time() * 1000) % 1000
-    random.seed(seed)
+#     seed = int(time.time() * 1000) % 1000
+#     random.seed(seed)
     
-    # Parse command-line arguments
-    n = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+#     # Parse command-line arguments
+#     n = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
-    # Calculate parameters for display
-    num_blocks_ii = n * 4
-    num_blocks_gg = n * 5
-    rows = 3 + n
-    cols = 4 + n
+#     # Calculate parameters for display
+#     num_blocks_ii = n * 4
+#     num_blocks_gg = n * 5
+#     rows = 3 + n
+#     cols = 4 + n
     
-    print(f"Generating multi-block grid with seed {seed}")
-    print(f"Complexity level: {n}")
-    print(f"Parameters: {num_blocks_ii} II blocks, {num_blocks_gg} GG goals, {rows}x{cols} grid")
+#     print(f"Generating multi-block grid with seed {seed}")
+#     print(f"Complexity level: {n}")
+#     print(f"Parameters: {num_blocks_ii} II blocks, {num_blocks_gg} GG goals, {rows}x{cols} grid")
     
-    # Generate grid
-    grid = generate_multi_block_grid(n)
+#     # Generate grid
+#     grid = generate_multi_block_grid(n)
     
-    print(f"Grid generation completed!")
-    grid_file = f"levels/multi-block-{seed}.txt"
-    pddl_file = f"levels-pddl/multi-block-problem-{seed}.pddl"
+#     print(f"Grid generation completed!")
+#     grid_file = f"levels/multi-block-{seed}.txt"
+#     pddl_file = f"levels-pddl/multi-block-problem-{seed}.pddl"
     
-    write_grid_to_file(grid, grid_file)
+#     write_grid_to_file(grid, grid_file)
     
-    print(f"\nGenerated grid (seed: {seed}):")
-    for row in grid:
-        print("".join(row))
+#     print(f"\nGenerated grid (seed: {seed}):")
+#     for row in grid:
+#         print("".join(row))
     
-    generate_multi_block_problem(grid_file, pddl_file, num_blocks_ii)
-    print(f"\nGenerated PDDL problem file: {pddl_file}")
+#     generate_multi_block_problem(grid_file, pddl_file, num_blocks_ii)
+#     print(f"\nGenerated PDDL problem file: {pddl_file}")
