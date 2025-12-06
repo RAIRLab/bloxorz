@@ -12,12 +12,21 @@ import random
 import sys
 
 
-def generate_multi_block_grid(num_blocks, rows, cols):
-    """Generate a simple rectangular grid with num_blocks initial and goal positions.
+def generate_multi_block_grid(n):
+    """Generate a simple rectangular grid based on complexity level n.
     
-    Places II and GG markers on a rows x cols grid.
+    Complexity level n determines:
+    - num_blocks = n * 4
+    - rows = 4 + n * 2
+    - cols = 6 + n * 2
+    
+    Places II and GG markers on the grid.
     Returns a grid where II represents initial positions and GG represents goals.
     """
+    num_blocks = n * 4
+    rows = 4 + n * 2
+    cols = 6 + n * 2
+    
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     placed_positions = set()
     
@@ -146,12 +155,11 @@ def generate_multi_block_problem(data_file, output_file, num_blocks):
     
     problem.append("    )\n")
     
-    # Goal: All blocks standing on any GG tile
+    # Goal: All GG tiles must have at least one block standing on them
     problem.append("    (:goal (and")
-    for ba in block_assignments:
-        block_name = f"b{ba['id']}"
-        goal_tile = tile_name(*ba['goal'])
-        problem.append(f"        (standing-on {block_name} {goal_tile})")
+    for (r, c) in goal_positions:
+        goal_tile = tile_name(r, c)
+        problem.append(f"        (exists (?b - block) (standing-on ?b {goal_tile}))")
     problem.append("    ))")
     problem.append(")")
     
@@ -167,15 +175,19 @@ if __name__ == "__main__":
     random.seed(seed)
     
     # Parse command-line arguments
-    num_blocks = int(sys.argv[1]) if len(sys.argv) > 1 else 2
-    rows = int(sys.argv[2]) if len(sys.argv) > 2 else 6
-    cols = int(sys.argv[3]) if len(sys.argv) > 3 else 8
+    n = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    
+    # Calculate parameters for display
+    num_blocks = n * 4
+    rows = 4 + n * 2
+    cols = 6 + n * 2
     
     print(f"Generating multi-block grid with seed {seed}")
+    print(f"Complexity level: {n}")
     print(f"Parameters: {num_blocks} blocks, {rows}x{cols} grid")
     
     # Generate grid
-    grid = generate_multi_block_grid(num_blocks, rows, cols)
+    grid = generate_multi_block_grid(n)
     
     print(f"Grid generation completed!")
     grid_file = f"levels/multi-block-{seed}.txt"
