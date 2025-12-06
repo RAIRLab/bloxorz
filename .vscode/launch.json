@@ -5,30 +5,37 @@
     "version": "0.2.0",
     "configurations": [
 
+        // {
+        //     "name": "Python Debugger: Generate",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "generate.py",
+        //     "args": [
+        //         "-i", "levels/3.txt",
+        //         "-o", "problems/p01.pddl"
+        //     ],
+        //     "console": "integratedTerminal"
+        // }, 
+        // {
+        //     "name": "Python Debugger: Plan",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "plan.py",
+        //     "console": "integratedTerminal"
+        // },
+        // {
+        //     "name": "Python Debugger: Solve",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "solve.py",
+        //     "console": "integratedTerminal"
+        // }
         {
             "name": "Python Debugger: Generate",
             "type": "debugpy",
             "request": "launch",
-            "program": "generate.py",
-            "args": [
-                "-i", "levels/3.txt",
-                "-o", "problems/p01.pddl"
-            ],
+            "program": "generate_problems.py",
             "console": "integratedTerminal"
         }, 
-        {
-            "name": "Python Debugger: Plan",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "plan.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python Debugger: Solve",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "solve.py",
-            "console": "integratedTerminal"
-        }
     ]
 }

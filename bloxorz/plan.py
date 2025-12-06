@@ -5,7 +5,7 @@ from pathlib import Path
 PLANS_FOLDER = Path("plans")
 
 #heuristic = "ipdb(transform=undo_to_origin())"
-heuristic = "ff(transform=no_transform())"
+heuristic = "blind" #"lmcut(transform=undo_to_origin())"
 
 def plan_bloxorz_problem(domain_file: Path, problem_file: Path) -> list[str] | None:
     plans_result = planners.plan_topk(

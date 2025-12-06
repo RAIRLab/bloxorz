@@ -1,0 +1,51 @@
+(define (problem p01)
+  (:domain bloxorz)
+  ; t-r-c describes tile in row r column c
+  ;
+  (:objects b-1 b-2 - block
+      t-01-01 t-01-02 t-01-03 t-01-04 t-01-05 t-01-06 t-01-07 t-01-08  - tile)
+
+  (:init
+    (perpendicular north east)
+    (perpendicular north west)
+    (perpendicular east north)
+    (perpendicular west north)
+    (perpendicular south east)
+    (perpendicular south west)
+    (perpendicular east south)
+    (perpendicular west south)
+    (adjacent t-01-01 t-01-02 east)
+    (adjacent t-01-02 t-01-03 east)
+    (adjacent t-01-03 t-01-04 east)
+    (adjacent t-01-04 t-01-05 east)
+    (adjacent t-01-05 t-01-06 east)
+    (adjacent t-01-06 t-01-07 east)
+    (adjacent t-01-07 t-01-08 east)
+    (adjacent t-01-02 t-01-01 west)
+    (adjacent t-01-03 t-01-02 west)
+    (adjacent t-01-04 t-01-03 west)
+    (adjacent t-01-05 t-01-04 west)
+    (adjacent t-01-06 t-01-05 west)
+    (adjacent t-01-07 t-01-06 west)
+    (adjacent t-01-08 t-01-07 west)
+    (active t-01-01)
+    (active t-01-02)
+    (active t-01-03)
+    (active t-01-04)
+    (active t-01-05)
+    (active t-01-06)
+    (active t-01-07)
+    (active t-01-08)
+  
+    (standing-on b-1 t-01-01)
+    (occupied t-01-01)
+  
+    (standing-on b-2 t-01-08)
+    (occupied t-01-08)
+  )
+
+  (:goal (and 
+    (occupied t-01-04)
+    (occupied t-01-05)
+  ))
+)

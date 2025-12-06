@@ -1,0 +1,4 @@
+(lay-down b-1 t-01-01 t-01-02 t-01-03 east)
+(stand-up b-1 t-01-02 t-01-03 t-01-04 east)
+(lay-down b-2 t-01-08 t-01-07 t-01-06 west)
+(stand-up b-2 t-01-07 t-01-06 t-01-05 west)

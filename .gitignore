@@ -5,9 +5,10 @@ build/
 dist/
 wheels/
 *.egg-info
+levels/*/**
+levels-pddl/*/**
 
 # Virtual environments
 .venv
 
-# Solve script
-solve.py
+found_plans
