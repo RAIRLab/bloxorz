@@ -4,6 +4,7 @@ import heapq
 from copy import deepcopy
 import level_generator_rock
 import math
+from threading import Thread
 
 emptySpace = "  "
 floorSpace = "XX"
@@ -256,7 +257,7 @@ def closerTo(target, points1, points2):
     return distance(point1ave, target) < distance(point2ave, target)
 
 
-def solve(level, spaces):
+def solve(level, spaces, forceYellowPanels=False):
     pq = []
     startingGame = level_generator_rock.Game(
         deepcopy(level), spaces[0][0], spaces[0][1])
@@ -285,7 +286,10 @@ def solve(level, spaces):
                 distances = []
                 for point in newGame.positionTracker.positions:
                     if newGame.grid[point[0]][point[1]] == emptySpace or newGame.grid[point[0]][point[1]] == yellowSpace:
-                        newGame.grid[point[0]][point[1]] = floorSpace
+                        if forceYellowPanels and newGame.blox.orientation != newGame.blox.Orientation.STAND and newGame.spotsCanBeYellow():
+                            newGame.grid[point[0]][point[1]] = yellowSpace
+                        else:
+                            newGame.grid[point[0]][point[1]] = floorSpace
                     distances.append(distance(point, spaces[1]))
 
                 minDistance = min(distances)
@@ -295,7 +299,7 @@ def solve(level, spaces):
                 heapq.heappush(pq, (pathWeight, newGame))
 
 
-def stitchLevels(level1, level2):
+def stitchLevels(level1, level2, forceYellowPanels=False):
     level1Side = findCleanestEdgeToPoint(level1, findGoal(level1))
     level2Side = findCleanestEdgeToPoint(level2, findInitial(level2))
 
@@ -340,42 +344,60 @@ def stitchLevels(level1, level2):
         mergedlevel, points = mergeLevelsHorizontal(level1, level2)
     else:
         mergedlevel, points = mergeLevelsVertical(level1, level2)
-    solved = solve(mergedlevel, points)
+    solved = solve(mergedlevel, points, forceYellowPanels=forceYellowPanels)
     return solved
 
 
-def stitchLevelList(levels):
+def stitchLevelList(levels, forceYellowPanels=False):
     counter = 1
     while len(levels) > 1:
         levels.insert(0, stitchLevels(
-            rotateLevel(levels.pop(0)), levels.pop(0)))
+            rotateLevel(levels.pop(0)), levels.pop(0), forceYellowPanels=forceYellowPanels))
         print("Made stitch", counter)
         counter += 1
     return levels[0]
 
 
-def generateMassiveLevel(difficultyScore):
+def threadedGenerator(outputData, difficultyScore, requireStand):
+    game = level_generator_rock.Game()
+    game.generateMap(total_moves=difficultyScore, requireStand=requireStand)
+    level = stringToGrid(game.gridToString())
+    score = 0
+    outputData.append([score, level])
+
+
+def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=False):
     # difficulty score is a number from 1-20
-    links = (difficultyScore // 2) + 1
+    links = (difficultyScore // 3) + 1
     levels = []
     for i in range(links):
         print("Generating %d of %d" % (i + 1, links))
         generationCycle = []
-        for j in range(difficultyScore):
-            game = level_generator_rock.Game()
-            game.generateMap(total_moves=difficultyScore, requireStand=True)
-            level = stringToGrid(game.gridToString())
-            score = game.scoreGrid()
-            generationCycle.append((score, level))
+        if threaded:
+            threads = []
+            for j in range(difficultyScore * 10):
+                t = Thread(target=threadedGenerator, args=[
+                           generationCycle, difficultyScore, True, forceYellowPanels])
+                threads.append(t)
+                t.start()
+            for t in threads:
+                t.join()
+            for x in generationCycle:
+                gameScorer = level_generator_rock.Game(grid=x[1])
+                x[0] = gameScorer.scoreGrid()
+        else:
+            for j in range(difficultyScore * 10):
+                threadedGenerator(
+                    generationCycle, difficultyScore, True, forceYellowPanels)
         generationCycle.sort(reverse=True)
-        levels.append(generationCycle[difficultyScore-1][1])
+        levels.append(generationCycle[0][1])
     print("Stitching")
-    bigLevel = stitchLevelList(levels)
+    bigLevel = stitchLevelList(levels, forceYellowPanels=forceYellowPanels)
     return gridToString(bigLevel)
 
 
 if __name__ == "__main__":
-    print(generateMassiveLevel(20))
+    print(generateMassiveLevel(20, forceYellowPanels=False, threaded=True))
     # fileList = sys.argv[1:]
 
     # for filePath in fileList:
