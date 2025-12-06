@@ -15,15 +15,13 @@ import sys
 def generate_multi_block_grid(n):
     """Generate a simple rectangular grid based on complexity level n.
     
-    Complexity level n determines:
-    - num_blocks = n * 4
-    - rows = 3 + n
-    - cols = 4 + n
-    
     Places II and GG markers on the grid.
     Returns a grid where II represents initial positions and GG represents goals.
+    Note: Number of GG tiles is >= number of II tiles (at most 2 more).
     """
-    num_blocks = n * 4
+    num_blocks_ii = n * 4
+    # GG can be equal to II or at most 2 more
+    num_blocks_gg = num_blocks_ii + random.randint(0, 2)
     rows = 3 + n
     cols = 4 + n
     
@@ -33,9 +31,9 @@ def generate_multi_block_grid(n):
     # Define minimum Manhattan distance between II and GG tiles
     min_distance = max(2, rows // 2)
     
-    # Place num_blocks initial positions (II)
+    # Place num_blocks_ii initial positions (II)
     initial_count = 0
-    while initial_count < num_blocks:
+    while initial_count < num_blocks_ii:
         r = random.randint(0, rows - 1)
         c = random.randint(0, cols - 1)
         if (r, c) not in placed_positions:
@@ -46,11 +44,13 @@ def generate_multi_block_grid(n):
     # Collect all II positions
     ii_positions = [(r, c) for r in range(rows) for c in range(cols) if grid[r][c] == "II"]
     
-    # Place num_blocks goal positions (GG) - ensure they're not adjacent to each other and far from II
+    # Place num_blocks_gg goal positions (GG) - ensure they're not adjacent to each other and far from II
     goal_count = 0
     max_attempts = 10000
     attempt = 0
-    while goal_count < num_blocks and attempt < max_attempts:
+    
+    # First try with strict constraints
+    while goal_count < num_blocks_gg and attempt < max_attempts:
         r = random.randint(0, rows - 1)
         c = random.randint(0, cols - 1)
         
@@ -82,6 +82,42 @@ def generate_multi_block_grid(n):
             goal_count += 1
         
         attempt += 1
+    
+    # If we couldn't place all GG tiles with strict constraints, relax the distance constraint
+    if goal_count < num_blocks_gg:
+        relaxed_distance = max(1, min_distance - 1)
+        attempt = 0
+        while goal_count < num_blocks_gg and attempt < max_attempts:
+            r = random.randint(0, rows - 1)
+            c = random.randint(0, cols - 1)
+            
+            if (r, c) in placed_positions:
+                attempt += 1
+                continue
+            
+            # Check if any adjacent position has a GG tile
+            is_adjacent_to_goal = False
+            for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                adj_r, adj_c = r + dr, c + dc
+                if 0 <= adj_r < rows and 0 <= adj_c < cols:
+                    if grid[adj_r][adj_c] == "GG":
+                        is_adjacent_to_goal = True
+                        break
+            
+            # Relaxed distance check
+            is_far_from_ii = True
+            for ii_r, ii_c in ii_positions:
+                manhattan_dist = abs(r - ii_r) + abs(c - ii_c)
+                if manhattan_dist < relaxed_distance:
+                    is_far_from_ii = False
+                    break
+            
+            if not is_adjacent_to_goal and is_far_from_ii:
+                grid[r][c] = "GG"
+                placed_positions.add((r, c))
+                goal_count += 1
+            
+            attempt += 1
     
     return grid
 
@@ -211,13 +247,14 @@ if __name__ == "__main__":
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 1
     
     # Calculate parameters for display
-    num_blocks = n * 4
+    num_blocks_ii = n * 4
+    num_blocks_gg = n * 5
     rows = 3 + n
     cols = 4 + n
     
     print(f"Generating multi-block grid with seed {seed}")
     print(f"Complexity level: {n}")
-    print(f"Parameters: {num_blocks} blocks, {rows}x{cols} grid")
+    print(f"Parameters: {num_blocks_ii} II blocks, {num_blocks_gg} GG goals, {rows}x{cols} grid")
     
     # Generate grid
     grid = generate_multi_block_grid(n)
@@ -232,5 +269,5 @@ if __name__ == "__main__":
     for row in grid:
         print("".join(row))
     
-    generate_multi_block_problem(grid_file, pddl_file, num_blocks)
+    generate_multi_block_problem(grid_file, pddl_file, num_blocks_ii)
     print(f"\nGenerated PDDL problem file: {pddl_file}")
