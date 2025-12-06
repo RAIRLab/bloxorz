@@ -383,13 +383,13 @@ def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=Fals
                 t.start()
             for t in threads:
                 t.join()
-            for x in generationCycle:
-                gameScorer = level_generator_rock.Game(grid=x[1])
-                x[0] = gameScorer.scoreGrid()
         else:
             for j in range(difficultyScore * 10):
                 threadedGenerator(
                     generationCycle, difficultyScore, True, forceYellowPanels)
+        for x in generationCycle:
+            gameScorer = level_generator_rock.Game(grid=x[1])
+            x[0] = gameScorer.scoreGrid()
         generationCycle.sort(reverse=True)
         levels.append(generationCycle[0][1])
     print("Stitching")
