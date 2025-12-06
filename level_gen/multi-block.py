@@ -19,7 +19,7 @@ def generate_multi_block_grid(n):
     Returns a grid where II represents initial positions and GG represents goals.
     Note: Number of GG tiles is >= number of II tiles (at most 2 more).
     """
-    num_blocks_ii = n * 3
+    num_blocks_ii = n * 4
     # GG can be equal to II or at most 2 more
     num_blocks_gg = num_blocks_ii + random.randint(0, 2)
     rows = 3 + n
