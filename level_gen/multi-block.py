@@ -28,9 +28,6 @@ def generate_multi_block_grid(n):
     grid = [["XX" for _ in range(cols)] for _ in range(rows)]
     placed_positions = set()
     
-    # Define minimum Manhattan distance between II and GG tiles
-    min_distance = max(2, rows // 2)
-    
     # Place num_blocks_ii initial positions (II)
     initial_count = 0
     while initial_count < num_blocks_ii:
@@ -41,25 +38,22 @@ def generate_multi_block_grid(n):
             placed_positions.add((r, c))
             initial_count += 1
     
-    # Collect all II positions
-    ii_positions = [(r, c) for r in range(rows) for c in range(cols) if grid[r][c] == "II"]
-    
-    # Place num_blocks_gg goal positions (GG) - ensure they're not adjacent to each other and far from II
+    # Place num_blocks_gg goal positions (GG) - ensure they're not adjacent to each other
     goal_count = 0
     max_attempts = 10000
-    attempt = 0
     
-    # First try with strict constraints
+    # Place GG tiles ensuring they're not adjacent to each other
+    # (distance constraint from II removed as it's too restrictive with many blocks)
+    attempt = 0
     while goal_count < num_blocks_gg and attempt < max_attempts:
         r = random.randint(0, rows - 1)
         c = random.randint(0, cols - 1)
         
-        # Check if position is available
         if (r, c) in placed_positions:
             attempt += 1
             continue
         
-        # Check if any adjacent position has a GG tile
+        # Only check if adjacent to another GG tile
         is_adjacent_to_goal = False
         for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
             adj_r, adj_c = r + dr, c + dc
@@ -68,56 +62,12 @@ def generate_multi_block_grid(n):
                     is_adjacent_to_goal = True
                     break
         
-        # Check if far enough from all II tiles
-        is_far_from_ii = True
-        for ii_r, ii_c in ii_positions:
-            manhattan_dist = abs(r - ii_r) + abs(c - ii_c)
-            if manhattan_dist < min_distance:
-                is_far_from_ii = False
-                break
-        
-        if not is_adjacent_to_goal and is_far_from_ii:
+        if not is_adjacent_to_goal:
             grid[r][c] = "GG"
             placed_positions.add((r, c))
             goal_count += 1
         
         attempt += 1
-    
-    # If we couldn't place all GG tiles with strict constraints, relax the distance constraint
-    if goal_count < num_blocks_gg:
-        relaxed_distance = max(1, min_distance - 1)
-        attempt = 0
-        while goal_count < num_blocks_gg and attempt < max_attempts:
-            r = random.randint(0, rows - 1)
-            c = random.randint(0, cols - 1)
-            
-            if (r, c) in placed_positions:
-                attempt += 1
-                continue
-            
-            # Check if any adjacent position has a GG tile
-            is_adjacent_to_goal = False
-            for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-                adj_r, adj_c = r + dr, c + dc
-                if 0 <= adj_r < rows and 0 <= adj_c < cols:
-                    if grid[adj_r][adj_c] == "GG":
-                        is_adjacent_to_goal = True
-                        break
-            
-            # Relaxed distance check
-            is_far_from_ii = True
-            for ii_r, ii_c in ii_positions:
-                manhattan_dist = abs(r - ii_r) + abs(c - ii_c)
-                if manhattan_dist < relaxed_distance:
-                    is_far_from_ii = False
-                    break
-            
-            if not is_adjacent_to_goal and is_far_from_ii:
-                grid[r][c] = "GG"
-                placed_positions.add((r, c))
-                goal_count += 1
-            
-            attempt += 1
     
     return grid
 
