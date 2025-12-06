@@ -2,7 +2,7 @@ import sys
 import os.path
 import heapq
 from copy import deepcopy
-import level_generator_rock
+from . import level_generator_rock
 import math
 from threading import Thread
 
@@ -358,9 +358,10 @@ def stitchLevelList(levels, forceYellowPanels=False):
     return levels[0]
 
 
-def threadedGenerator(outputData, difficultyScore, requireStand):
+def threadedGenerator(outputData, difficultyScore, requireStand, forceYellowPanels):
     game = level_generator_rock.Game()
-    game.generateMap(total_moves=difficultyScore, requireStand=requireStand)
+    game.generateMap(total_moves=difficultyScore,
+                     requireStand=requireStand, forceYellowPanels=forceYellowPanels)
     level = stringToGrid(game.gridToString())
     score = 0
     outputData.append([score, level])
