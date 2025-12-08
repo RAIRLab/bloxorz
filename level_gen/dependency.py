@@ -326,9 +326,16 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
         start_r, start_c = random.choice(start_xx_tiles)
         grid[start_r][start_c] = "II"
         
-        # Choose goal section (prefer different section if possible)
-        possible_goal_sections = [s for s in range(n + 1) if s != start_section] if n > 0 else [start_section]
-        goal_section = random.choice(possible_goal_sections)
+        # Place goal in a trap section if traps exist, otherwise in a random section
+        if trap_bridges:
+            # Choose a random trap section for the goal
+            trap_section_ids = [tb['connects'][1] for tb in trap_bridges]
+            goal_section = random.choice(trap_section_ids)
+        else:
+            # Choose goal section (prefer different section if possible)
+            possible_goal_sections = [s for s in range(n + 1) if s != start_section] if n > 0 else [start_section]
+            goal_section = random.choice(possible_goal_sections)
+        
         goal_section_info = sections[goal_section]
         
         # Find XX tiles in goal section
