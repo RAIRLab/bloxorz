@@ -612,13 +612,8 @@ def write_grid_to_file(grid, filename):
 
 
 def generate_dependency_problem(n, num_traps=0) -> str:
-    """Generate a dependency graph problem with n bridges and return as a string.
-    
-    Args:
-        n: Number of regular bridges
-        num_traps: Number of trap sections with disable buttons (default 0)
-        
-    Note: Total bridges (n + num_traps) is capped at 9
+    """
+    Generate a dependency graph problem with n bridges and return as a string.
     """
     # Enforce maximum of 9 total bridges
     total_bridges = n + num_traps
