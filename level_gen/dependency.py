@@ -646,7 +646,7 @@ if __name__ == "__main__":
     total_bridges = min(total_bridges, 9)
     
     # Algorithm decides split: roughly 1/3 to 1/2 should be traps for interesting puzzles
-    # For small numbers, ensure at least some variety
+    # For small numbers it ensure at least some variety
     if total_bridges <= 2:
         num_traps = 1 if total_bridges == 2 else 0
         num_bridges = total_bridges - num_traps
