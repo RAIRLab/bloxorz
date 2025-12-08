@@ -297,7 +297,7 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
                 for r in range(len(grid)):
                     if source_section['row_start'] <= r < source_section['row_end']:
                         if r == bridge_row:
-                            grid[r].extend([f"U{trap_bridge_id}", f"U{trap_bridge_id}"])
+                            grid[r].extend([f"A{trap_bridge_id}", f"A{trap_bridge_id}"])
                         else:
                             grid[r].extend(["  ", "  "])
                         grid[r].extend(["XX" for _ in range(cols)])
