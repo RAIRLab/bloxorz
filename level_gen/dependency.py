@@ -638,3 +638,40 @@ def generate_dependency_problem(n, num_traps=0) -> str:
         pass
     grid_string = "\n".join("".join(row) for row in grid)
     return grid_string
+
+
+if __name__ == "__main__":
+    import sys
+    
+    # Parse command line arguments
+    total_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 8
+    output_file = sys.argv[2] if len(sys.argv) > 2 else None
+    
+    # Cap at 9 total bridges
+    total_bridges = min(total_bridges, 9)
+    
+    # Algorithm decides split: roughly 1/3 to 1/2 should be traps for interesting puzzles
+    # For small numbers, ensure at least some variety
+    if total_bridges <= 2:
+        num_traps = 1 if total_bridges == 2 else 0
+        num_bridges = total_bridges - num_traps
+    elif total_bridges <= 4:
+        num_traps = random.randint(1, 2)
+        num_bridges = total_bridges - num_traps
+    else:
+        # For larger grids, allocate 30-40% to traps
+        num_traps = random.randint(int(total_bridges * 0.3), int(total_bridges * 0.4))
+        num_bridges = total_bridges - num_traps
+    
+    print(f"Generating grid with {total_bridges} total bridges ({num_bridges} regular, {num_traps} traps)...")
+    grid = generate_dependency_problem(num_bridges, num_traps)
+    
+    if output_file:
+        with open(output_file, 'w') as f:
+            f.write(grid)
+        print(f"Grid saved to {output_file}")
+    else:
+        print("\nGenerated Grid:")
+        print("=" * 70)
+        print(grid)
+        print("=" * 70)
