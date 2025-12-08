@@ -427,11 +427,28 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             sections_with_disable_button.add(disable_button_section)
             disable_section_info = sections[disable_button_section]
             
-            # Find available XX tiles
+            # Find the specific trap bridge this button controls to avoid its row/col
+            incoming_bridge_rows = set()
+            incoming_bridge_cols = set()
+            
+            # Only check the trap bridge that this disable button controls
+            if trap_bridge_info['orientation'] == 'horizontal':
+                # For horizontal bridges, avoid the bridge row if it overlaps with our section
+                if (disable_section_info['row_start'] <= trap_bridge_info['row'] < disable_section_info['row_end']):
+                    incoming_bridge_rows.add(trap_bridge_info['row'])
+            else:  # vertical
+                # For vertical bridges, avoid the bridge column if it overlaps with our section's column range
+                # Vertical bridges are always at columns 0-3 (absolute grid positions)
+                bridge_col = trap_bridge_info['col']
+                # Check if this column is within our section's column range
+                if disable_section_info['col_start'] <= bridge_col < disable_section_info['col_end']:
+                    incoming_bridge_cols.add(bridge_col)
+            
+            # Find available XX tiles, excluding those in bridge rows/cols
             available_tiles = [
                 (r, c) for r in range(disable_section_info['row_start'], disable_section_info['row_end'])
                 for c in range(disable_section_info['col_start'], disable_section_info['col_end'])
-                if grid[r][c] == "XX"
+                if grid[r][c] == "XX" and r not in incoming_bridge_rows and c not in incoming_bridge_cols
             ]
             
             if not available_tiles:
