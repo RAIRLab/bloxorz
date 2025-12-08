@@ -355,6 +355,10 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
         sections_with_special_tiles = {start_section, goal_section}
         accessible_sections = {start_section}
         
+        # Track which sections already have buttons (at most one enable and one disable per section)
+        sections_with_enable_button = set()
+        sections_with_disable_button = set()
+        
         # Place buttons for each bridge (must be in accessible section)
         all_buttons_placed = True
         for bridge_info in bridges:
@@ -362,16 +366,28 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             section_a, section_b = bridge_info['connects']
             
             # Button must be in an accessible section adjacent to the bridge
-            if section_a in accessible_sections:
-                button_section = section_a
-            elif section_b in accessible_sections:
-                button_section = section_b
-            else:
+            # Try to find a section without an enable button already
+            possible_sections = []
+            if section_a in accessible_sections and section_a not in sections_with_enable_button:
+                possible_sections.append(section_a)
+            if section_b in accessible_sections and section_b not in sections_with_enable_button:
+                possible_sections.append(section_b)
+            
+            # If both have enable buttons, allow reuse (will fail in regeneration)
+            if not possible_sections:
+                if section_a in accessible_sections:
+                    possible_sections.append(section_a)
+                elif section_b in accessible_sections:
+                    possible_sections.append(section_b)
+            
+            if not possible_sections:
                 # No accessible section found, regenerate
                 all_buttons_placed = False
                 break
             
+            button_section = random.choice(possible_sections)
             sections_with_special_tiles.add(button_section)
+            sections_with_enable_button.add(button_section)
             button_section_info = sections[button_section]
             
             # Find available XX tiles in button section
@@ -401,13 +417,24 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             trap_section_a, trap_section_b = trap_bridge_info['connects']
             
             # Place disable button in any accessible section (not in the trap itself)
-            available_sections = [s for s in accessible_sections if s != trap_section_b]
-            if not available_sections:
-                all_buttons_placed = False
-                break
+            # Prefer sections without disable buttons already
+            available_sections_no_disable = [
+                s for s in accessible_sections 
+                if s != trap_section_b and s not in sections_with_disable_button
+            ]
             
-            disable_button_section = random.choice(available_sections)
+            if available_sections_no_disable:
+                disable_button_section = random.choice(available_sections_no_disable)
+            else:
+                # All have disable buttons, try any accessible section
+                available_sections = [s for s in accessible_sections if s != trap_section_b]
+                if not available_sections:
+                    all_buttons_placed = False
+                    break
+                disable_button_section = random.choice(available_sections)
+            
             sections_with_special_tiles.add(disable_button_section)
+            sections_with_disable_button.add(disable_button_section)
             disable_section_info = sections[disable_button_section]
             
             # Find available XX tiles
