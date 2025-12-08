@@ -1,5 +1,5 @@
 """
-Nico's Yellow‑Large generator (Bloxorz)
+Yellow‑Large generator (Bloxorz)
 
 Public API (what the repo will call):
     generate_level(complexity_0_9: int, seed: int | None = None) -> str
@@ -17,6 +17,7 @@ If you're testing locally, you can call generate(..., encoding=1) to get a
 single‑char preview, but the public API always returns encoding=2.
 """
 from __future__ import annotations
+import time
 import random
 from dataclasses import dataclass
 from typing import List, Tuple, Set, Optional
@@ -326,6 +327,8 @@ def generate_level(complexity_0_9: int, seed: Optional[int] = None) -> str:
       Internally I map 0..9 onto the 1..20 range used by my helper `generate`.
       No prints, no file I/O.
     """
+    if seed is None:
+        seed = int(time.time() * 1000) % 1000000
     if not isinstance(complexity_0_9, int):
         raise TypeError("complexity must be an int in 0..9")
     if complexity_0_9 < 0 or complexity_0_9 > 9:

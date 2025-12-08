@@ -39,7 +39,7 @@ def format_plan(plan : list[str]) -> str:
 if __name__ == "__main__":
     for bloxorz_problem in Path("levels-pddl").glob("*.pddl"):
         print(f"\n\nPlanning for problem {bloxorz_problem}\n")
-        domain_file = Path("domain.pddl")
+        domain_file = Path("domain2.pddl")
         problem_file = bloxorz_problem
         plan = plan_bloxorz_problem(
             domain_file=domain_file,

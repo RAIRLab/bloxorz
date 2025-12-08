@@ -12,7 +12,7 @@ def solve_bloxorz_maze(problem_string: str) -> list[str]:
         f.write(generate_pddl_from_string_level(problem_string).encode("utf-8"))
         problem_file = Path(f.name)
 
-    domain_file = Path("domain.pddl")
+    domain_file = Path("domain2.pddl")
     return plan_bloxorz_problem(domain_file=domain_file, problem_file=problem_file)
 
 if __name__ == "__main__":

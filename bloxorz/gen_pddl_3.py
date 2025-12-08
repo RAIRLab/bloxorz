@@ -241,10 +241,12 @@ def format_pddl(
     # Objects section (row-wise, matching your example style)
 
     # If we have more than one block encode blocks, else skip.
+    obj_lines: List[str] = []
     if len(goals) > 1:
-        obj_lines: List[str] = []
         blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
         obj_lines.append(f"(:objects {' '.join(blocks)} - block")
+    else:
+        obj_lines.append(f"(:objects ")
     tiles = []
     for r in sorted(rows.keys()):
         cols = rows[r]

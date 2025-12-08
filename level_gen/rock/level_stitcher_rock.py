@@ -367,12 +367,13 @@ def threadedGenerator(outputData, difficultyScore, requireStand, forceYellowPane
     outputData.append([score, level])
 
 
-def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=False):
+def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=True):
     # difficulty score is a number from 1-20
+    difficultyScore += 2
     links = (difficultyScore // 3) + 1
     levels = []
     for i in range(links):
-        print("Generating %d of %d" % (i + 1, links))
+        #print("Generating %d of %d" % (i + 1, links))
         generationCycle = []
         if threaded:
             threads = []
@@ -392,7 +393,7 @@ def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=Fals
             x[0] = gameScorer.scoreGrid()
         generationCycle.sort(reverse=True)
         levels.append(generationCycle[0][1])
-    print("Stitching")
+    #print("Stitching")
     bigLevel = stitchLevelList(levels, forceYellowPanels=forceYellowPanels)
     return gridToString(bigLevel)
 
