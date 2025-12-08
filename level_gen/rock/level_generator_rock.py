@@ -1,7 +1,7 @@
 from enum import Enum
 import random as rand
 from copy import deepcopy
-from solve import solve_bloxorz_maze
+from ....bloxorz.solve import solve_bloxorz_maze
 
 # Maximum size of board/grid space
 max_x = 20

@@ -314,18 +314,28 @@ def format_pddl(
 
     # Start positions
 
-    for n, start in enumerate(starts, start=1):
-        init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
-        init_lines.append(f"  (occupied {tn(start)})")
+    if len(goals > 1):
+        for n, start in enumerate(starts, start=1):
+            init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
+            init_lines.append(f"  (occupied {tn(start)})")
 
-    init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
 
-    # Goals
-    goal_lines: List[str] = []
-    for g in goals:
-        goal_lines.append(f"(occupied {tn(g)})")
+        # Goals
+        goal_lines: List[str] = []
+        for g in goals:
+            goal_lines.append(f"(occupied {tn(g)})")
 
-    goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+        goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+    else:
+        start = starts[0]
+        init_lines.append(f"\n  (standing-on {tn(start)})")
+
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+
+        # Goals
+        goal = goals[0]
+        goal_block = f"(:goal (and \n  (standing-on {tn(goal)})\n))"
 
     # Top-level
     lines: List[str] = []

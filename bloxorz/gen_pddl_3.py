@@ -239,9 +239,12 @@ def format_pddl(
         return tname(rc[0], rc[1], width)
 
     # Objects section (row-wise, matching your example style)
-    obj_lines: List[str] = []
-    blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
-    obj_lines.append(f"(:objects {' '.join(blocks)} - block")
+
+    # If we have more than one block encode blocks, else skip.
+    if len(goals) > 1:
+        obj_lines: List[str] = []
+        blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
+        obj_lines.append(f"(:objects {' '.join(blocks)} - block")
     tiles = []
     for r in sorted(rows.keys()):
         cols = rows[r]
@@ -305,19 +308,30 @@ def format_pddl(
             init_lines.append(f"  (hard {btn_tile_name})")
 
     # Start positions
+    if len(goals) > 1:
 
-    for n, start in enumerate(starts, start=1):
-        init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
-        init_lines.append(f"  (occupied {tn(start)})")
+        for n, start in enumerate(starts, start=1):
+            init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
+            init_lines.append(f"  (occupied {tn(start)})")
 
-    init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
 
-    # Goals
-    goal_lines: List[str] = []
-    for g in goals:
-        goal_lines.append(f"(occupied {tn(g)})")
+        # Goals
+        goal_lines: List[str] = []
+        for g in goals:
+            goal_lines.append(f"(occupied {tn(g)})")
 
-    goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+        goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+
+    else: 
+        start = starts[0]
+        init_lines.append(f"\n  (standing-on {tn(start)})")
+
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+
+        # Goal
+        goal = goals[0]
+        goal_block = f"(:goal (and \n  (standing-on {tn(goal)})\n))"
 
     # Top-level
     lines: List[str] = []

@@ -33,12 +33,6 @@ try:
 except ImportError:
     SOLVER_AVAILABLE = False
 
-# Optional solver integration for validation
-try:
-    from ..bloxorz.solve import solve_bloxorz_maze
-    SOLVER_AVAILABLE = True
-except ImportError:
-    SOLVER_AVAILABLE = False
 
 
 def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
