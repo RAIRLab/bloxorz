@@ -88,11 +88,12 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     return True
 
 
-def generate_dependency_grid(n, rows, cols, validate_solvable=True):
+def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True):
     """Generate a 3x4 grid with bridges in random directions, organized by sections.
     
     Applies position constraints, ensures bridge entry/exit tiles are accessible,
     and verifies button accessibility. Creates n bridges connecting n+1 sections.
+    Optionally adds num_traps trap sections with disable buttons.
     
     Args:
         n: Number of bridges to generate (0 or more)
@@ -220,6 +221,94 @@ def generate_dependency_grid(n, rows, cols, validate_solvable=True):
                     'connects': (source_section_id, bridge_id)
                 })
         
+        # Add trap sections with disable buttons
+        trap_bridges = []
+        next_id = n + 1
+        
+        for trap_num in range(num_traps):
+            trap_bridge_id = next_id + trap_num
+            trap_orientation = random.choice(['vertical', 'horizontal'])
+            
+            # Pick a random existing section to connect the trap from
+            source_section_id = random.choice(list(sections.keys()))
+            source_section = sections[source_section_id]
+            
+            if trap_orientation == 'vertical':
+                # Create vertical trap section
+                bridge_col = random.randint(0, cols - 1)
+                bridge_row_start = max_row
+                
+                # Add 2 bridge rows
+                for _ in range(2):
+                    new_row = ["  " for _ in range(cols)]
+                    new_row[bridge_col] = f"U{trap_bridge_id}"
+                    while len(new_row) < max_col:
+                        new_row.append("  ")
+                    grid.append(new_row)
+                
+                max_row += 2
+                
+                # Add trap section (dead end)
+                section_row_start = max_row
+                for _ in range(rows):
+                    new_row = ["XX" for _ in range(cols)]
+                    while len(new_row) < max_col:
+                        new_row.append("  ")
+                    grid.append(new_row)
+                
+                max_row += rows
+                
+                sections[trap_bridge_id] = {
+                    'row_start': section_row_start,
+                    'row_end': max_row,
+                    'col_start': 0,
+                    'col_end': cols
+                }
+                
+                trap_bridges.append({
+                    'id': trap_bridge_id,
+                    'orientation': 'vertical',
+                    'row_start': bridge_row_start,
+                    'row_end': bridge_row_start + 1,
+                    'col': bridge_col,
+                    'connects': (source_section_id, trap_bridge_id),
+                    'is_trap': True
+                })
+                
+            else:  # horizontal trap
+                bridge_row = random.randint(source_section['row_start'], source_section['row_end'] - 1)
+                bridge_col_start = max_col
+                
+                for r in range(len(grid)):
+                    if source_section['row_start'] <= r < source_section['row_end']:
+                        if r == bridge_row:
+                            grid[r].extend([f"U{trap_bridge_id}", f"U{trap_bridge_id}"])
+                        else:
+                            grid[r].extend(["  ", "  "])
+                        grid[r].extend(["XX" for _ in range(cols)])
+                    else:
+                        grid[r].extend(["  " for _ in range(2 + cols)])
+                
+                section_col_start = max_col + 2
+                max_col += 2 + cols
+                
+                sections[trap_bridge_id] = {
+                    'row_start': source_section['row_start'],
+                    'row_end': source_section['row_end'],
+                    'col_start': section_col_start,
+                    'col_end': max_col
+                }
+                
+                trap_bridges.append({
+                    'id': trap_bridge_id,
+                    'orientation': 'horizontal',
+                    'row': bridge_row,
+                    'col_start': bridge_col_start,
+                    'col_end': bridge_col_start + 1,
+                    'connects': (source_section_id, trap_bridge_id),
+                    'is_trap': True
+                })
+        
         # Choose start section
         start_section = random.randint(0, n)
         start_section_info = sections[start_section]
@@ -299,12 +388,49 @@ def generate_dependency_grid(n, rows, cols, validate_solvable=True):
             # Once button is placed, both sections connected by this bridge become accessible
             accessible_sections.update([section_a, section_b])
         
+        # Place disable buttons for trap bridges (in any accessible section)
+        for trap_bridge_info in trap_bridges:
+            trap_bridge_id = trap_bridge_info['id']
+            trap_section_a, trap_section_b = trap_bridge_info['connects']
+            
+            # Place disable button in any accessible section (not in the trap itself)
+            available_sections = [s for s in accessible_sections if s != trap_section_b]
+            if not available_sections:
+                all_buttons_placed = False
+                break
+            
+            disable_button_section = random.choice(available_sections)
+            sections_with_special_tiles.add(disable_button_section)
+            disable_section_info = sections[disable_button_section]
+            
+            # Find available XX tiles
+            available_tiles = [
+                (r, c) for r in range(disable_section_info['row_start'], disable_section_info['row_end'])
+                for c in range(disable_section_info['col_start'], disable_section_info['col_end'])
+                if grid[r][c] == "XX"
+            ]
+            
+            if not available_tiles:
+                all_buttons_placed = False
+                break
+            
+            # Randomly choose between hard (D) and soft (d) disable button
+            disable_button_type = random.choice(["D", "d"])
+            
+            # Place disable button
+            disable_r, disable_c = random.choice(available_tiles)
+            grid[disable_r][disable_c] = f"{disable_button_type}{trap_bridge_id}"
+            
+            # Mark the trap section as having a special tile
+            sections_with_special_tiles.add(trap_section_b)
+        
         if not all_buttons_placed or len(sections_with_special_tiles) < n + 1:
             continue
         
         # Validate bridge entry/exit tiles are valid
         valid_bridge_connections = True
-        for bridge_info in bridges:
+        all_bridges = bridges + trap_bridges
+        for bridge_info in all_bridges:
             bridge_id = bridge_info['id']
             
             if bridge_info['orientation'] == 'vertical':
@@ -315,13 +441,13 @@ def generate_dependency_grid(n, rows, cols, validate_solvable=True):
                 
                 if row_before >= 0:
                     tile_before = grid[row_before][bridge_col]
-                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e")):
+                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e", "D", "d")):
                         valid_bridge_connections = False
                         break
                         
                 if row_after < len(grid):
                     tile_after = grid[row_after][bridge_col]
-                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e")):
+                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e", "D", "d")):
                         valid_bridge_connections = False
                         break
                         
@@ -333,13 +459,13 @@ def generate_dependency_grid(n, rows, cols, validate_solvable=True):
                 
                 if col_before >= 0:
                     tile_before = grid[bridge_row][col_before]
-                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e")):
+                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e", "D", "d")):
                         valid_bridge_connections = False
                         break
                         
                 if col_after < len(grid[0]):
                     tile_after = grid[bridge_row][col_after]
-                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e")):
+                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e", "D", "d")):
                         valid_bridge_connections = False
                         break
         
@@ -369,11 +495,16 @@ def write_grid_to_file(grid, filename):
             f.write("".join(row) + "\n")
 
 
-def generate_dependency_problem(n) -> str:
-    """Generate a dependency graph problem with n bridges and return as a string."""
+def generate_dependency_problem(n, num_traps=0) -> str:
+    """Generate a dependency graph problem with n bridges and return as a string.
+    
+    Args:
+        n: Number of regular bridges
+        num_traps: Number of trap sections with disable buttons (default 0)
+    """
     seed = int(time() * 1000) % 1000
     random.seed(seed)
-    while (grid := generate_dependency_grid(n, rows=3, cols=4)) is None:
+    while (grid := generate_dependency_grid(n, rows=3, cols=4, num_traps=num_traps)) is None:
         pass
     grid_string = "\n".join("".join(row) for row in grid)
     return grid_string
