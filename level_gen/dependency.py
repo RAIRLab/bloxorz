@@ -563,34 +563,3 @@ def generate_dependency_problem(n, num_traps=0) -> str:
         pass
     grid_string = "\n".join("".join(row) for row in grid)
     return grid_string
-
-
-# if __name__ == "__main__":
-#     import time
-#     import sys
-    
-#     seed = int(time.time() * 1000) % 1000
-#     random.seed(seed)
-    
-#     num_bridges = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-    
-#     print(f"Starting generation with seed {seed} and {num_bridges} bridge(s)...")
-    
-#     grid = generate_dependency_grid(num_bridges, rows=3, cols=4)
-    
-#     if grid is None:
-#         print(f"Failed to generate valid grid after 10000 attempts. Constraints may be too restrictive.")
-#         exit(1)
-    
-#     print(f"Grid generation completed!")
-#     grid_file = f"levels/dependency-{seed}.txt"
-#     pddl_file = f"levels-pddl/dependency-problem-{seed}.pddl"
-    
-#     write_grid_to_file(grid, grid_file)
-    
-#     print(f"Generated grid (seed: {seed}):")
-#     for row in grid:
-#         print("".join(row))
-    
-#     print(f"\nGenerated grid file: {grid_file}")
-#     print(f"Generated PDDL problem file: {pddl_file}")
