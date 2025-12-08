@@ -1,0 +1,77 @@
+(define (problem p01)
+  (:domain bloxorz)
+  ; t-r-c describes tile in row r column c
+  ;
+  (:objects 
+      t-01-06 t-01-08
+      t-02-06 t-02-07
+      t-03-06 t-03-07
+      t-04-07 t-04-08 t-04-09
+      t-05-08 t-05-09 t-05-10
+      t-06-10
+      t-07-10  - tile)
+
+  (:init
+    (perpendicular north east)
+    (perpendicular north west)
+    (perpendicular east north)
+    (perpendicular west north)
+    (perpendicular south east)
+    (perpendicular south west)
+    (perpendicular east south)
+    (perpendicular west south)
+    (adjacent t-02-06 t-02-07 east)
+    (adjacent t-03-06 t-03-07 east)
+    (adjacent t-04-07 t-04-08 east)
+    (adjacent t-04-08 t-04-09 east)
+    (adjacent t-05-08 t-05-09 east)
+    (adjacent t-05-09 t-05-10 east)
+    (adjacent t-01-06 t-02-06 south)
+    (adjacent t-02-06 t-03-06 south)
+    (adjacent t-02-07 t-03-07 south)
+    (adjacent t-03-07 t-04-07 south)
+    (adjacent t-04-08 t-05-08 south)
+    (adjacent t-04-09 t-05-09 south)
+    (adjacent t-05-10 t-06-10 south)
+    (adjacent t-06-10 t-07-10 south)
+    (adjacent t-02-07 t-02-06 west)
+    (adjacent t-03-07 t-03-06 west)
+    (adjacent t-04-08 t-04-07 west)
+    (adjacent t-04-09 t-04-08 west)
+    (adjacent t-05-09 t-05-08 west)
+    (adjacent t-05-10 t-05-09 west)
+    (adjacent t-02-06 t-01-06 north)
+    (adjacent t-03-06 t-02-06 north)
+    (adjacent t-03-07 t-02-07 north)
+    (adjacent t-04-07 t-03-07 north)
+    (adjacent t-05-08 t-04-08 north)
+    (adjacent t-05-09 t-04-09 north)
+    (adjacent t-06-10 t-05-10 north)
+    (adjacent t-07-10 t-06-10 north)
+    (yellow t-02-07)
+    (yellow t-03-07)
+    (yellow t-01-08)
+    (yellow t-04-08)
+    (yellow t-03-06)
+    (active t-01-06)
+    (active t-01-08)
+    (active t-02-06)
+    (active t-02-07)
+    (active t-03-06)
+    (active t-03-07)
+    (active t-04-07)
+    (active t-04-08)
+    (active t-04-09)
+    (active t-05-08)
+    (active t-05-09)
+    (active t-05-10)
+    (active t-06-10)
+    (active t-07-10)
+  
+    (standing-on t-05-10)
+  )
+
+  (:goal (and 
+    (standing-on t-01-06)
+  ))
+)

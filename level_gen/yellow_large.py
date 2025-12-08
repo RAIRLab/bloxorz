@@ -22,6 +22,8 @@ import random
 from dataclasses import dataclass
 from typing import List, Tuple, Set, Optional
 
+from bloxorz.solve import solve_bloxorz_maze
+
 # ---------------- basics ----------------
 def in_bounds(h: int, w: int, r: int, c: int) -> bool:
     return 0 <= r < h and 0 <= c < w
@@ -337,4 +339,14 @@ def generate_level(complexity_0_9: int, seed: Optional[int] = None) -> str:
     mapped = 1 + round(complexity_0_9 * 19 / 9)
     return generate(mapped, seed, encoding=2)
 
-__all__ = ["generate_level", "generate"]
+
+def generate_level_og(complexity_0_9: int) -> str:
+    while True:
+        try:
+            level = generate_level(complexity_0_9)
+            if "II" not in level or "GG" not in level:
+                continue
+        except Exception as e:
+            continue
+        if solve_bloxorz_maze(level) is not None:
+            return level

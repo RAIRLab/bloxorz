@@ -1,0 +1,17 @@
+(define (problem grounded-STRIPS-P01)
+(:domain grounded-STRIPS-BLOXORZ)
+(:init
+(NOT-ACTIVE-T-05-03)
+(NOT-ACTIVE-T-06-03)
+(NOT-ACTIVE-T-11-01)
+(NOT-ACTIVE-T-12-01)
+(NOT-ACTIVE-T-17-02)
+(NOT-ACTIVE-T-18-02)
+(STANDING-ON-T-03-02)
+)
+(:goal
+(and
+(STANDING-ON-T-19-03)
+)
+)
+)

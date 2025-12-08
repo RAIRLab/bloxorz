@@ -1,0 +1,22 @@
+XXXXXXXX            
+XXXXXXXX            
+XXe1XXXX            
+IIXXXXXX            
+    U1              
+    U1              
+XXXXXXE2    XXXXXXXX
+XXXXXXXX    XXXXGGXX
+XXD3XXXXU4U4XXXXXXXX
+XXXXXXXX    XXXXXXXX
+  U2                
+  U2                
+XXXXXXXX            
+XXXXXXXX            
+XXXXXXXX            
+XXXXD4XX            
+    A3              
+    A3              
+XXXXXXXX            
+XXXXXXXX            
+XXXXXXXX            
+XXXXXXXX            

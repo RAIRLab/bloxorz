@@ -1,0 +1,12 @@
+;∀ x1 ∀ x2 ∃ x3 ∃ x4 . ((¬x3 ∨ x4 ∨ ¬x3) ∧ (x3 ∨ ¬x4 ∨ ¬x4) ∧ (x4 ∨ x3))
+
+IIIXXXXXXXXXd12e09XXXXXXA09XXXXXXXXXXXXXXXXXXXXXd16e13XXXXXXA13XXXXXXXXXXXXXXXXXXXXXd18e01e02d03d04e17XXXXXXA17XXXXXXXXXXXXXXXXXXd20e05e06d07d08e19XXXXXXA19XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    XXX                                 XXX      XXX                                 XXX      XXX                                 XXX                                                                     XXX
+                                    XXX                                 XXX      XXX                                 XXX      XXX                                 XXX                                                                     XXX
+         XXXe12e11A11d11d09XXXXXXXXXXXX      XXXe16e15A15d15d13XXXXXXXXXXXX      XXXd17e03e04d01d02e18XXXXXXA18XXXXXXXXX      XXXd19e07e08d05d06e20XXXXXXA20XXXXXXXXX      XXXXXXXXXXXXA03XXXXXXXXXXXXXXXA01XXXXXXXXXXXXXXXA06XXXXXXXXXXXXXXX
+         XXX                                 XXX                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+         XXX                                 XXX                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+         XXXd10XXXXXXA10XXXXXXXXXXXXe10      XXXd14XXXXXXA14XXXXXXXXXXXXe14                                                                                                XXX      XXXA05XXXXXX      XXXA07XXXXXX      XXXA02XXXXXX         
+                                    XXX                                 XXX                                                                                                XXX      XXX      XXX      XXX      XXX                           
+                                    XXX                                 XXX                                                                                                XXX      XXX      XXX      XXX      XXX                           
+GGGXXXXXXXXXA12XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXA16XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXA04XXXXXX      XXXA08XXXXXX                           

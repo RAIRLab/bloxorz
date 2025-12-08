@@ -1,0 +1,28 @@
+XXXXXXXX    XXXXXXXXU2U2XXXXXXXX    XXXXGGXX
+XXXXXXe1U1U1XXXXXXXX    XXXXXXE3U6U6XXXXXXXX
+XXXXd6XX    XXXXXXe2    XXXXXXXX    XXXXXXXX
+XXIIXXXX    XXXXXXXX    XXXXXXXX    XXXXXXXX
+U3                                          
+U3                                          
+XXE4XXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    
+  U4                                        
+  U4                                        
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXe5XXXX                                    
+XXXXXXXX                                    
+      U5                                    
+      U5                                    
+XXXXXXXX                                    
+XXXXXXXX                                    
+D7XXXXXX                                    
+XXXXXXXX                                    
+  A7                                        
+  A7                                        
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    

@@ -37,5 +37,12 @@
             "program": "generate_problems.py",
             "console": "integratedTerminal"
         }, 
+        {
+            "name": "Python Debugger: Solve",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "solve.py",
+            "console": "integratedTerminal"
+        }, 
     ]
 }

@@ -1,0 +1,78 @@
+(define (problem p01)
+  (:domain bloxorz)
+  ; t-r-c describes tile in row r column c
+  ;
+  (:objects 
+      t-01-04
+      t-02-04 t-02-05
+      t-03-04 t-03-05
+      t-04-02 t-04-03 t-04-04
+      t-05-01 t-05-02 t-05-03
+      t-06-01
+      t-07-01  - tile)
+
+  (:init
+    (perpendicular north east)
+    (perpendicular north west)
+    (perpendicular east north)
+    (perpendicular west north)
+    (perpendicular south east)
+    (perpendicular south west)
+    (perpendicular east south)
+    (perpendicular west south)
+    (adjacent t-02-04 t-02-05 east)
+    (adjacent t-03-04 t-03-05 east)
+    (adjacent t-04-02 t-04-03 east)
+    (adjacent t-04-03 t-04-04 east)
+    (adjacent t-05-01 t-05-02 east)
+    (adjacent t-05-02 t-05-03 east)
+    (adjacent t-01-04 t-02-04 south)
+    (adjacent t-02-04 t-03-04 south)
+    (adjacent t-02-05 t-03-05 south)
+    (adjacent t-03-04 t-04-04 south)
+    (adjacent t-04-02 t-05-02 south)
+    (adjacent t-04-03 t-05-03 south)
+    (adjacent t-05-01 t-06-01 south)
+    (adjacent t-06-01 t-07-01 south)
+    (adjacent t-02-05 t-02-04 west)
+    (adjacent t-03-05 t-03-04 west)
+    (adjacent t-04-03 t-04-02 west)
+    (adjacent t-04-04 t-04-03 west)
+    (adjacent t-05-02 t-05-01 west)
+    (adjacent t-05-03 t-05-02 west)
+    (adjacent t-02-04 t-01-04 north)
+    (adjacent t-03-04 t-02-04 north)
+    (adjacent t-03-05 t-02-05 north)
+    (adjacent t-04-04 t-03-04 north)
+    (adjacent t-05-02 t-04-02 north)
+    (adjacent t-05-03 t-04-03 north)
+    (adjacent t-06-01 t-05-01 north)
+    (adjacent t-07-01 t-06-01 north)
+    (yellow t-03-04)
+    (yellow t-04-03)
+    (yellow t-04-02)
+    (yellow t-05-03)
+    (yellow t-02-05)
+    (yellow t-03-05)
+    (yellow t-05-02)
+    (active t-01-04)
+    (active t-02-04)
+    (active t-02-05)
+    (active t-03-04)
+    (active t-03-05)
+    (active t-04-02)
+    (active t-04-03)
+    (active t-04-04)
+    (active t-05-01)
+    (active t-05-02)
+    (active t-05-03)
+    (active t-06-01)
+    (active t-07-01)
+  
+    (standing-on t-05-01)
+  )
+
+  (:goal (and 
+    (standing-on t-01-04)
+  ))
+)

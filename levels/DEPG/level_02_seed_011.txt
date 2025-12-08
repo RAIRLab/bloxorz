@@ -1,0 +1,16 @@
+IIXXXXXX                                    
+XXXXXXXX                                    
+XXXXE1XX                                    
+XXXXXXXX                                    
+      U1                                    
+      U1                                    
+XXXXXXXX    XXXXd4XX    XXXXXXXX    XXXXXXXX
+XXXXXXXXU2U2XXXXXXXX    XXXXXXXXU4U4XXXXXXXX
+XXE2XXXX    XXXXXXe3U3U3XXXXXXXX    XXXXGGXX
+XXXXXXXX    XXXXXXXX    XXXXXXd5    XXXXXXXX
+A5                                          
+A5                                          
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    
+XXXXXXXX                                    

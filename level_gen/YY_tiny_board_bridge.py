@@ -300,6 +300,7 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3, validate_solvable=Tru
 
 def generate_YY_bridge_problem(n) -> str:
     seed = int(time() * 1000) % 1000
+    n = n * 2
     random.seed(seed)
     if n % 3 == 0:
         r = 3

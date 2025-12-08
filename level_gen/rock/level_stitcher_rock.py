@@ -353,7 +353,7 @@ def stitchLevelList(levels, forceYellowPanels=False):
     while len(levels) > 1:
         levels.insert(0, stitchLevels(
             rotateLevel(levels.pop(0)), levels.pop(0), forceYellowPanels=forceYellowPanels))
-        print("Made stitch", counter)
+        #print("Made stitch", counter)
         counter += 1
     return levels[0]
 

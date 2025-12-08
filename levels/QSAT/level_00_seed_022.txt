@@ -1,0 +1,12 @@
+;∃ x1 ∃ x2 ∃ x3 ∃ x4 . ((¬x4 ∨ ¬x3) ∧ (¬x3 ∨ x2) ∧ (¬x1 ∨ ¬x2))
+
+IIIXXXXXXXXXd08d01e07XXXXXXA07XXXXXXXXXXXXXXXXXXd10e02d03e09XXXXXXA09XXXXXXXXXXXXXXXXXXXXXXXXd12d04d05e11XXXXXXA11XXXXXXXXXXXXXXXXXXXXXXXXd14d06e13XXXXXXA13XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+         XXX                        XXX      XXX                                 XXX      XXX                                 XXX      XXX                        XXX                                                                     XXX
+         XXX                        XXX      XXX                                 XXX      XXX                                 XXX      XXX                        XXX                                                                     XXX
+         XXXd07e01e08XXXXXXA08XXXXXXXXX      XXXd09e03d02e10XXXXXXA10XXXXXXXXXXXXXXX      XXXd11e04e05e12XXXXXXA12XXXXXXXXXXXXXXX      XXXd13e06e14XXXXXXA14XXXXXXXXX      XXXXXXXXXXXXA06XXXXXXXXXXXXXXXA05XXXXXXXXXXXXXXXA01XXXXXXXXXXXXXXX
+                                                                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+                                                                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+                                                                                                                                                                           XXX      XXXA04XXXXXX      XXXA02XXXXXX      XXXA03XXXXXX         
+                                                                                                                                                                           XXX                                                               
+                                                                                                                                                                           XXX                                                               
+GGGXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                                                               

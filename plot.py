@@ -1,0 +1,114 @@
+
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
+
+import pandas as pd
+import os
+
+# Define the directory containing your CSV files
+csv_directory = 'results' 
+
+combined_df = pd.read_csv("results/master.csv")
+
+# our columns are: planner,generator,difficulty,instance,name,time_taken,expanded_states,plan_length
+
+bjolp_df = combined_df[combined_df['planner'] == 'seq-opt-bjolp']
+plt.rcParams.update({'font.size': 16})
+plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
+# Begin by plotting average optimal plan length vs difficulty for bjolp for each generator
+avg_plan_length = bjolp_df.groupby(['generator', 'difficulty'])['plan_length'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+for generator in avg_plan_length['generator'].unique():
+    gen_data = avg_plan_length[avg_plan_length['generator'] == generator]
+    plt.plot(gen_data['difficulty'] + 1, gen_data['plan_length'], marker='o', label=generator)
+plt.title('Generator Difficulty vs Average Optimal Plan Length')
+plt.xlabel('Generator Difficulty')
+plt.yscale('log')
+plt.ylabel('Average Optimal Plan Length')
+plt.grid()
+plt.legend()
+plt.savefig('plots/avg_plan_length_bjolp.png')
+plt.close()
+
+# Next plot averge expanded states vs difficulty for bjolp for each generator
+avg_expanded_states = bjolp_df.groupby(['generator', 'difficulty'])['expanded_states'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+for generator in avg_expanded_states['generator'].unique():
+    gen_data = avg_expanded_states[avg_expanded_states['generator'] == generator]
+    plt.plot(gen_data['difficulty'] + 1, gen_data['expanded_states'], marker='o', label=generator)
+plt.title('Generator Difficulty vs Average BJOLP Expanded States')
+plt.xlabel('Generator Difficulty')
+plt.yscale('log')
+plt.ylabel('Average BJOLP Expanded States')
+plt.grid()
+plt.legend()
+plt.savefig('plots/avg_expanded_states_bjolp.png')
+plt.close()
+
+# Now plot average time taken vs difficulty for planner and generator pairs.
+# Make all lines of the same problem the same color, use different linestyles and markers different planners.
+avg_time_taken = combined_df.groupby(['planner', 'generator', 'difficulty'])['time_taken'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+
+# Define colors for each generator and linestyles for each planner
+generators = avg_time_taken['generator'].unique()
+planners = avg_time_taken['planner'].unique()
+linestyles = ['-', '--', '-.', ':']
+markers = ['o', 's', '^', 'D']
+
+linestyle_map = {planner: linestyles[i % len(linestyles)] for i, planner in enumerate(planners)}
+marker_map = {planner: markers[i % len(markers)] for i, planner in enumerate(planners)}
+
+for generator in generators:
+    plt.figure(figsize=(10, 6))
+    gen_data = avg_time_taken[avg_time_taken['generator'] == generator]
+    
+    for planner in planners:
+        planner_data = gen_data[gen_data['planner'] == planner]
+        if not planner_data.empty:
+            plt.plot(planner_data['difficulty'] + 1, planner_data['time_taken'], 
+                     marker=marker_map[planner],
+                     linestyle=linestyle_map[planner],
+                     label=planner)
+    
+    plt.title(f'Generator Difficulty vs Average Time Taken - {generator}')
+    plt.xlabel('Generator Difficulty')
+    plt.ylabel('Average Time Taken (s)')
+    plt.yscale('log')
+    plt.grid()
+    plt.legend()
+    plt.savefig(f'plots/avg_time_taken_{generator}.png')
+    plt.close()
+
+
+# Now plot average plan length vs difficulty for planner and generator pairs.
+# Make all lines of the same generator the same color, use a solid line for bjolp and dotted lines for others.
+
+avg_plan_length_all = combined_df.groupby(['planner', 'generator', 'difficulty'])['plan_length'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+
+# Define colors for each generator
+generators = avg_plan_length_all['generator'].unique()
+colors = plt.cm.tab10(range(len(generators)))
+color_map = {generator: colors[i] for i, generator in enumerate(generators)}
+
+for generator in generators:
+    gen_data = avg_plan_length_all[avg_plan_length_all['generator'] == generator]
+    
+    for planner in gen_data['planner'].unique():
+        planner_data = gen_data[gen_data['planner'] == planner]
+        linestyle = '-' if planner == 'seq-opt-bjolp' else '--'
+        plt.plot(planner_data['difficulty'] + 1, planner_data['plan_length'],
+                 marker='o',
+                 linestyle=linestyle,
+                 color=color_map[generator],
+                 label=f'{generator} - {planner}')
+
+plt.title('Generator Difficulty vs Average Plan Length')
+plt.xlabel('Generator Difficulty')
+plt.ylabel('Average Plan Length')
+plt.yscale('log')
+plt.grid()
+plt.legend()
+plt.savefig('plots/avg_plan_length_all.png')
+plt.close()
