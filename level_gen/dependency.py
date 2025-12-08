@@ -7,11 +7,12 @@ Tile legend:
   II - Start tile
   GG - Goal tile
      - Empty space (no tile)
-  U# - Disabled toggle tile (bridge, where # is a digit)
-  E# - Hard enable button tile (where # is a digit)
-  e# - Soft enable button tile (where # is a digit)
-  D# - Hard disable button tile (where # is a digit)
-  d# - Soft disable button tile (where # is a digit)
+  U# - Disabled toggle tile (bridge, where # is a digit) - controlled by enable buttons
+  A# - Enabled toggle tile (bridge, where # is a digit) - controlled by disable buttons
+  E# - Hard enable button tile (where # is a digit) - enables U# bridges
+  e# - Soft enable button tile (where # is a digit) - enables U# bridges
+  D# - Hard disable button tile (where # is a digit) - disables A# bridges
+  d# - Soft disable button tile (where # is a digit) - disables A# bridges
 
 Constraints (applied to special tiles: II, GG, E#, e#, D#, d#):
   - Special tiles are not adjacent
@@ -191,7 +192,7 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
                 # Extend existing rows - only bridge_row gets the actual bridge
                 for r in range(len(grid)):
                     if source_section['row_start'] <= r < source_section['row_end']:
-                        # Only the specific bridge_row gets the bridge tiles
+                        # Only the specific bridge_row gets the bridge tiles (U# = disabled toggle for enable buttons)
                         if r == bridge_row:
                             grid[r].extend([f"U{bridge_id}", f"U{bridge_id}"])
                         else:
@@ -238,10 +239,10 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
                 bridge_col = random.randint(0, cols - 1)
                 bridge_row_start = max_row
                 
-                # Add 2 bridge rows
+                # Add 2 bridge rows (A# = enabled toggle for disable buttons)
                 for _ in range(2):
                     new_row = ["  " for _ in range(cols)]
-                    new_row[bridge_col] = f"U{trap_bridge_id}"
+                    new_row[bridge_col] = f"A{trap_bridge_id}"
                     while len(new_row) < max_col:
                         new_row.append("  ")
                     grid.append(new_row)
@@ -366,22 +367,15 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             section_a, section_b = bridge_info['connects']
             
             # Button must be in an accessible section adjacent to the bridge
-            # Try to find a section without an enable button already
+            # Strictly enforce: only place in sections without an enable button
             possible_sections = []
             if section_a in accessible_sections and section_a not in sections_with_enable_button:
                 possible_sections.append(section_a)
             if section_b in accessible_sections and section_b not in sections_with_enable_button:
                 possible_sections.append(section_b)
             
-            # If both have enable buttons, allow reuse (will fail in regeneration)
             if not possible_sections:
-                if section_a in accessible_sections:
-                    possible_sections.append(section_a)
-                elif section_b in accessible_sections:
-                    possible_sections.append(section_b)
-            
-            if not possible_sections:
-                # No accessible section found, regenerate
+                # No section available without violating constraint, regenerate
                 all_buttons_placed = False
                 break
             
@@ -417,22 +411,18 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             trap_section_a, trap_section_b = trap_bridge_info['connects']
             
             # Place disable button in any accessible section (not in the trap itself)
-            # Prefer sections without disable buttons already
+            # Strictly enforce: only place in sections without a disable button
             available_sections_no_disable = [
                 s for s in accessible_sections 
                 if s != trap_section_b and s not in sections_with_disable_button
             ]
             
-            if available_sections_no_disable:
-                disable_button_section = random.choice(available_sections_no_disable)
-            else:
-                # All have disable buttons, try any accessible section
-                available_sections = [s for s in accessible_sections if s != trap_section_b]
-                if not available_sections:
-                    all_buttons_placed = False
-                    break
-                disable_button_section = random.choice(available_sections)
+            if not available_sections_no_disable:
+                # No section available without violating constraint, regenerate
+                all_buttons_placed = False
+                break
             
+            disable_button_section = random.choice(available_sections_no_disable)
             sections_with_special_tiles.add(disable_button_section)
             sections_with_disable_button.add(disable_button_section)
             disable_section_info = sections[disable_button_section]
@@ -535,7 +525,21 @@ def generate_dependency_problem(n, num_traps=0) -> str:
     Args:
         n: Number of regular bridges
         num_traps: Number of trap sections with disable buttons (default 0)
+        
+    Note: Total bridges (n + num_traps) is capped at 9
     """
+    # Enforce maximum of 9 total bridges
+    total_bridges = n + num_traps
+    if total_bridges > 9:
+        # Adjust to keep total at 9
+        if n > 6:  # Reserve at least 3 for traps if requested
+            n = 9 - num_traps
+            if n < 1:
+                n = 6
+                num_traps = 3
+        else:
+            num_traps = 9 - n
+    
     seed = int(time() * 1000) % 1000
     random.seed(seed)
     while (grid := generate_dependency_grid(n, rows=3, cols=4, num_traps=num_traps)) is None:
