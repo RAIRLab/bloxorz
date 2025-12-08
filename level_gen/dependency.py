@@ -89,6 +89,20 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
     return True
 
 
+def get_special_tiles_in_section(grid, section_info):
+    """Get all special tiles (II, GG, E#, e#, D#, d#) in a section with their positions."""
+    special_tiles = []
+    for r in range(section_info['row_start'], section_info['row_end']):
+        for c in range(section_info['col_start'], section_info['col_end']):
+            tile = grid[r][c]
+            if tile in ("II", "GG") or tile.startswith(("E", "e", "D", "d")):
+                # Convert to relative position within section
+                r_rel = r - section_info['row_start']
+                c_rel = c - section_info['col_start']
+                special_tiles.append((r_rel, c_rel, tile))
+    return special_tiles
+
+
 def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True):
     """Generate a 3x4 grid with bridges in random directions, organized by sections.
     
@@ -324,6 +338,7 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
         if not start_xx_tiles:
             continue
         
+        # Place start tile - no constraints yet since it's the first special tile
         start_r, start_c = random.choice(start_xx_tiles)
         grid[start_r][start_c] = "II"
         
@@ -349,8 +364,32 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
         if not goal_xx_tiles:
             continue
         
-        goal_r, goal_c = random.choice(goal_xx_tiles)
-        grid[goal_r][goal_c] = "GG"
+        # Place goal tile - check constraints if in same section as start
+        goal_placed = False
+        if goal_section == start_section:
+            # Get special tiles in this section (should only be start at this point)
+            special_tiles = get_special_tiles_in_section(grid, goal_section_info)
+            # Try to find a valid position for goal
+            random.shuffle(goal_xx_tiles)
+            for goal_r, goal_c in goal_xx_tiles:
+                goal_r_rel = goal_r - goal_section_info['row_start']
+                goal_c_rel = goal_c - goal_section_info['col_start']
+                # Check against all existing special tiles
+                valid = True
+                for special_r, special_c, _ in special_tiles:
+                    if not valid_position_pair(goal_r_rel, goal_c_rel, special_r, special_c, rows, cols):
+                        valid = False
+                        break
+                if valid:
+                    grid[goal_r][goal_c] = "GG"
+                    goal_placed = True
+                    break
+            if not goal_placed:
+                continue
+        else:
+            # Different section, no constraints needed
+            goal_r, goal_c = random.choice(goal_xx_tiles)
+            grid[goal_r][goal_c] = "GG"
         
         # Track which sections have special tiles and are accessible
         sections_with_special_tiles = {start_section, goal_section}
@@ -398,9 +437,27 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             # Randomly choose between hard (E) and soft (e) enable button
             button_type = random.choice(["E", "e"])
             
-            # Place button on a random available tile in this section
-            button_r, button_c = random.choice(available_tiles)
-            grid[button_r][button_c] = f"{button_type}{bridge_id}"
+            # Place button with constraint checking
+            special_tiles = get_special_tiles_in_section(grid, button_section_info)
+            random.shuffle(available_tiles)
+            button_placed = False
+            for button_r, button_c in available_tiles:
+                button_r_rel = button_r - button_section_info['row_start']
+                button_c_rel = button_c - button_section_info['col_start']
+                # Check against all existing special tiles in this section
+                valid = True
+                for special_r, special_c, _ in special_tiles:
+                    if not valid_position_pair(button_r_rel, button_c_rel, special_r, special_c, rows, cols):
+                        valid = False
+                        break
+                if valid:
+                    grid[button_r][button_c] = f"{button_type}{bridge_id}"
+                    button_placed = True
+                    break
+            
+            if not button_placed:
+                all_buttons_placed = False
+                break
             
             # Once button is placed, both sections connected by this bridge become accessible
             accessible_sections.update([section_a, section_b])
@@ -458,9 +515,27 @@ def generate_dependency_grid(n, rows, cols, num_traps=0, validate_solvable=True)
             # Randomly choose between hard (D) and soft (d) disable button
             disable_button_type = random.choice(["D", "d"])
             
-            # Place disable button
-            disable_r, disable_c = random.choice(available_tiles)
-            grid[disable_r][disable_c] = f"{disable_button_type}{trap_bridge_id}"
+            # Place disable button with constraint checking
+            special_tiles = get_special_tiles_in_section(grid, disable_section_info)
+            random.shuffle(available_tiles)
+            disable_placed = False
+            for disable_r, disable_c in available_tiles:
+                disable_r_rel = disable_r - disable_section_info['row_start']
+                disable_c_rel = disable_c - disable_section_info['col_start']
+                # Check against all existing special tiles in this section
+                valid = True
+                for special_r, special_c, _ in special_tiles:
+                    if not valid_position_pair(disable_r_rel, disable_c_rel, special_r, special_c, rows, cols):
+                        valid = False
+                        break
+                if valid:
+                    grid[disable_r][disable_c] = f"{disable_button_type}{trap_bridge_id}"
+                    disable_placed = True
+                    break
+            
+            if not disable_placed:
+                all_buttons_placed = False
+                break
             
             # Mark the trap section as having a special tile
             sections_with_special_tiles.add(trap_section_b)
