@@ -10,8 +10,10 @@ Tile legend:
   U# - Disabled toggle tile (bridge, where # is a digit)
   E# - Hard enable button tile (where # is a digit)
   e# - Soft enable button tile (where # is a digit)
+  D# - Hard disable button tile (where # is a digit)
+  d# - Soft disable button tile (where # is a digit)
 
-Constraints (applied to special tiles: II, GG, E#, e#):
+Constraints (applied to special tiles: II, GG, E#, e#, D#, d#):
   - Special tiles are not adjacent
   - Special tiles are not on the same wall
   - Maximum 1 row and 1 column in between special tiles (at most 2 apart)
@@ -20,6 +22,7 @@ Constraints (applied to special tiles: II, GG, E#, e#):
   - Bridge entry/exit tiles must be valid
   - Every section must have at least one special tile (II, GG, or E#)
   - Enable buttons must be accessible from start position
+  - Disable buttons create trap sections that can block the player
 """
 
 import random
@@ -86,11 +89,10 @@ def valid_position_pair(r1, c1, r2, c2, rows, cols):
 
 
 def generate_dependency_grid(n, rows, cols, validate_solvable=True):
-    """Generate a 3x4 grid with bridges (no yellow tiles).
+    """Generate a 3x4 grid with bridges in random directions, organized by sections.
     
     Applies position constraints, ensures bridge entry/exit tiles are accessible,
-    and verifies button accessibility. Creates n bridge sections, each 2 tiles long,
-    connecting board sections.
+    and verifies button accessibility. Creates n bridges connecting n+1 sections.
     
     Args:
         n: Number of bridges to generate (0 or more)
@@ -99,121 +101,247 @@ def generate_dependency_grid(n, rows, cols, validate_solvable=True):
     max_attempts = 10000
     
     for attempt in range(max_attempts):
-        total_rows = rows * (n + 1) + n * 2
-        grid = [["XX" for _ in range(cols)] for _ in range(total_rows)]
+        # Build grid dynamically with each bridge creating a new 3x4 section
+        # Start with section 0
+        grid = [["XX" for _ in range(cols)] for _ in range(rows)]
+        
+        sections = {
+            0: {
+                'row_start': 0,
+                'row_end': rows,
+                'col_start': 0,
+                'col_end': cols
+            }
+        }
+        bridges = []
+        
+        # Track current grid dimensions
+        max_row = rows
+        max_col = cols
+        
+        # Track orientation counts to ensure mix
+        orientation_counts = {'vertical': 0, 'horizontal': 0}
         
         for bridge_id in range(1, n + 1):
-            bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
-            bridge_col = random.randint(0, cols - 1)
+            # Bias toward the less-used orientation to ensure a mix
+            if orientation_counts['vertical'] > orientation_counts['horizontal'] + 1:
+                orientation = 'horizontal'
+            elif orientation_counts['horizontal'] > orientation_counts['vertical'] + 1:
+                orientation = 'vertical'
+            else:
+                orientation = random.choice(['vertical', 'horizontal'])
             
-            for row_offset in [0, 1]:
-                for c in range(cols):
-                    grid[bridge_row_start + row_offset][c] = f"U{bridge_id}" if c == bridge_col else "  "
+            orientation_counts[orientation] += 1
+            
+            if orientation == 'vertical':
+                # Vertical bridge connects downward to new section below
+                # Always use original 4-column width for vertical sections
+                bridge_col = random.randint(0, cols - 1)
+                bridge_row_start = max_row
+                
+                # Add 2 bridge rows (only 4 columns wide)
+                for _ in range(2):
+                    new_row = ["  " for _ in range(cols)]
+                    new_row[bridge_col] = f"U{bridge_id}"
+                    # Pad to current grid width
+                    while len(new_row) < max_col:
+                        new_row.append("  ")
+                    grid.append(new_row)
+                
+                max_row += 2
+                
+                # Add new 3x4 section below (only 4 columns wide)
+                section_row_start = max_row
+                for _ in range(rows):
+                    new_row = ["XX" for _ in range(cols)]
+                    # Pad to current grid width
+                    while len(new_row) < max_col:
+                        new_row.append("  ")
+                    grid.append(new_row)
+                
+                max_row += rows
+                
+                sections[bridge_id] = {
+                    'row_start': section_row_start,
+                    'row_end': max_row,
+                    'col_start': 0,
+                    'col_end': cols  # Only 4 columns
+                }
+                
+                bridges.append({
+                    'id': bridge_id,
+                    'orientation': 'vertical',
+                    'row_start': bridge_row_start,
+                    'row_end': bridge_row_start + 1,
+                    'col': bridge_col,
+                    'connects': (bridge_id - 1, bridge_id)
+                })
+                
+            else:  # horizontal
+                # Horizontal bridge connects rightward from any existing section
+                # Pick a random existing section to connect from
+                source_section_id = random.choice(list(sections.keys()))
+                source_section = sections[source_section_id]
+                
+                # Pick a row within the source section
+                bridge_row = random.randint(source_section['row_start'], source_section['row_end'] - 1)
+                bridge_col_start = max_col
+                
+                # Extend existing rows - only bridge_row gets the actual bridge
+                for r in range(len(grid)):
+                    if source_section['row_start'] <= r < source_section['row_end']:
+                        # Only the specific bridge_row gets the bridge tiles
+                        if r == bridge_row:
+                            grid[r].extend([f"U{bridge_id}", f"U{bridge_id}"])
+                        else:
+                            grid[r].extend(["  ", "  "])
+                        # All rows in the source section range get the new section
+                        grid[r].extend(["XX" for _ in range(cols)])
+                    else:
+                        # Other rows just get padding to maintain rectangular grid
+                        grid[r].extend(["  " for _ in range(2 + cols)])
+                
+                section_col_start = max_col + 2
+                max_col += 2 + cols
+                
+                sections[bridge_id] = {
+                    'row_start': source_section['row_start'],
+                    'row_end': source_section['row_end'],
+                    'col_start': section_col_start,
+                    'col_end': max_col
+                }
+                
+                bridges.append({
+                    'id': bridge_id,
+                    'orientation': 'horizontal',
+                    'row': bridge_row,
+                    'col_start': bridge_col_start,
+                    'col_end': bridge_col_start + 1,
+                    'connects': (source_section_id, bridge_id)
+                })
         
-        board_section = random.randint(0, n)
-        start_r_base = random.randint(0, rows - 1)
-        start_r = board_section * (rows + 2) + start_r_base
-        start_c = random.randint(0, cols - 1)
+        # Choose start section
+        start_section = random.randint(0, n)
+        start_section_info = sections[start_section]
         
-        possible_sections = [s for s in range(n + 1) if s != board_section] if n > 0 else [board_section]
-        board_section_goal = random.choice(possible_sections)
-        goal_r_base = random.randint(0, rows - 1)
-        goal_r = board_section_goal * (rows + 2) + goal_r_base
-        goal_c = random.randint(0, cols - 1)
+        # Find XX tiles in start section
+        start_xx_tiles = [
+            (r, c) for r in range(start_section_info['row_start'], start_section_info['row_end'])
+            for c in range(start_section_info['col_start'], start_section_info['col_end'])
+            if grid[r][c] == "XX"
+        ]
         
-        if board_section == board_section_goal:
-            position_attempts = 0
-            while not valid_position_pair(start_r_base, start_c, goal_r_base, goal_c, rows, cols):
-                goal_r_base = random.randint(0, rows - 1)
-                goal_r = board_section_goal * (rows + 2) + goal_r_base
-                goal_c = random.randint(0, cols - 1)
-                position_attempts += 1
-                if position_attempts > 1000:
-                    break
-            if position_attempts > 1000:
-                continue
+        if not start_xx_tiles:
+            continue
         
+        start_r, start_c = random.choice(start_xx_tiles)
         grid[start_r][start_c] = "II"
+        
+        # Choose goal section (prefer different section if possible)
+        possible_goal_sections = [s for s in range(n + 1) if s != start_section] if n > 0 else [start_section]
+        goal_section = random.choice(possible_goal_sections)
+        goal_section_info = sections[goal_section]
+        
+        # Find XX tiles in goal section
+        goal_xx_tiles = [
+            (r, c) for r in range(goal_section_info['row_start'], goal_section_info['row_end'])
+            for c in range(goal_section_info['col_start'], goal_section_info['col_end'])
+            if grid[r][c] == "XX"
+        ]
+        
+        if not goal_xx_tiles:
+            continue
+        
+        goal_r, goal_c = random.choice(goal_xx_tiles)
         grid[goal_r][goal_c] = "GG"
         
-        sections_with_special_tiles = {board_section, board_section_goal}
-        accessible_sections = {board_section}
+        # Track which sections have special tiles and are accessible
+        sections_with_special_tiles = {start_section, goal_section}
+        accessible_sections = {start_section}
         
-        placed = True
-        for bridge_id in range(1, n + 1):
-            placed = False
-            # Button for bridge_id should be in section bridge_id-1 or bridge_id (adjacent to the bridge)
-            # and must be accessible from start
-            if bridge_id - 1 in accessible_sections:
-                section_for_button = bridge_id - 1
-            elif bridge_id in accessible_sections:
-                section_for_button = bridge_id
+        # Place buttons for each bridge (must be in accessible section)
+        all_buttons_placed = True
+        for bridge_info in bridges:
+            bridge_id = bridge_info['id']
+            section_a, section_b = bridge_info['connects']
+            
+            # Button must be in an accessible section adjacent to the bridge
+            if section_a in accessible_sections:
+                button_section = section_a
+            elif section_b in accessible_sections:
+                button_section = section_b
             else:
-                # If neither side is accessible, we need to regenerate
+                # No accessible section found, regenerate
+                all_buttons_placed = False
                 break
             
-            sections_with_special_tiles.add(section_for_button)
+            sections_with_special_tiles.add(button_section)
+            button_section_info = sections[button_section]
             
-            # Get positions of start and goal in this section (if any)
-            start_in_section = board_section == section_for_button
-            goal_in_section = board_section_goal == section_for_button
+            # Find available XX tiles in button section
+            available_tiles = [
+                (r, c) for r in range(button_section_info['row_start'], button_section_info['row_end'])
+                for c in range(button_section_info['col_start'], button_section_info['col_end'])
+                if grid[r][c] == "XX"
+            ]
             
-            def is_valid_button_pos(r_base, c):
-                if start_in_section and not valid_position_pair(r_base, c, start_r_base, start_c, rows, cols):
-                    return False
-                if goal_in_section and not valid_position_pair(r_base, c, goal_r_base, goal_c, rows, cols):
-                    return False
-                return True
+            if not available_tiles:
+                all_buttons_placed = False
+                break
             
             # Randomly choose between hard (E) and soft (e) enable button
             button_type = random.choice(["E", "e"])
             
-            # Try random positions first
-            for _ in range(100):
-                er_base = random.randint(0, rows - 1)
-                er = section_for_button * (rows + 2) + er_base
-                ec = random.randint(0, cols - 1)
-                if grid[er][ec] == "XX" and is_valid_button_pos(er_base, ec):
-                    grid[er][ec] = f"{button_type}{bridge_id}"
-                    placed = True
-                    accessible_sections.update([bridge_id - 1, bridge_id])
-                    break
+            # Place button on a random available tile in this section
+            button_r, button_c = random.choice(available_tiles)
+            grid[button_r][button_c] = f"{button_type}{bridge_id}"
             
-            # Exhaustive search if random failed
-            if not placed:
-                section_start_row = section_for_button * (rows + 2)
-                section_end_row = section_start_row + rows
-                for r in range(section_start_row, section_end_row):
-                    for c in range(cols):
-                        if grid[r][c] == "XX" and is_valid_button_pos(r - section_start_row, c):
-                            grid[r][c] = f"{button_type}{bridge_id}"
-                            placed = True
-                            accessible_sections.update([bridge_id - 1, bridge_id])
-                            break
-                    if placed:
-                        break
-            
-            if not placed:
-                # Failed to place button, regenerate
-                break
+            # Once button is placed, both sections connected by this bridge become accessible
+            accessible_sections.update([section_a, section_b])
         
-        if not placed or len(sections_with_special_tiles) < n + 1:
+        if not all_buttons_placed or len(sections_with_special_tiles) < n + 1:
             continue
         
         # Validate bridge entry/exit tiles are valid
         valid_bridge_connections = True
-        for bridge_id in range(1, n + 1):
-            bridge_row_start = rows * bridge_id + (bridge_id - 1) * 2
-            bridge_col = next((c for c in range(cols) if grid[bridge_row_start][c] == f"U{bridge_id}"), None)
+        for bridge_info in bridges:
+            bridge_id = bridge_info['id']
             
-            if bridge_col is not None:
-                for check_row in [bridge_row_start - 1, bridge_row_start + 2]:
-                    tile = grid[check_row][bridge_col]
-                    if tile not in ("XX", "II", "GG") and not tile.startswith(("E", "e")):
+            if bridge_info['orientation'] == 'vertical':
+                # Check tiles above and below vertical bridge
+                bridge_col = bridge_info['col']
+                row_before = bridge_info['row_start'] - 1
+                row_after = bridge_info['row_end'] + 1
+                
+                if row_before >= 0:
+                    tile_before = grid[row_before][bridge_col]
+                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e")):
                         valid_bridge_connections = False
                         break
-                if not valid_bridge_connections:
-                    break
+                        
+                if row_after < len(grid):
+                    tile_after = grid[row_after][bridge_col]
+                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e")):
+                        valid_bridge_connections = False
+                        break
+                        
+            else:  # horizontal
+                # Check tiles left and right of horizontal bridge
+                bridge_row = bridge_info['row']
+                col_before = bridge_info['col_start'] - 1
+                col_after = bridge_info['col_end'] + 1
+                
+                if col_before >= 0:
+                    tile_before = grid[bridge_row][col_before]
+                    if tile_before not in ("XX", "II", "GG") and not tile_before.startswith(("E", "e")):
+                        valid_bridge_connections = False
+                        break
+                        
+                if col_after < len(grid[0]):
+                    tile_after = grid[bridge_row][col_after]
+                    if tile_after not in ("XX", "II", "GG") and not tile_after.startswith(("E", "e")):
+                        valid_bridge_connections = False
+                        break
         
         if valid_bridge_connections:
             # Optional: Validate solvability using solver
