@@ -8,9 +8,9 @@ wheels/
 #levels/*/**
 #levels-pddl-adl/*/**
 #levels-pddl-strips/*/**
-plans/*/**
-logs/*
-plots
+#plans/*/**
+#logs/*
+#plots
 
 # Virtual environments
 .venv

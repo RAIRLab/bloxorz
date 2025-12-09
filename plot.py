@@ -11,11 +11,11 @@ csv_directory = 'results'
 combined_df = pd.read_csv("results/master.csv")
 
 label_mapping = {
-    'ipc2023_odin': 'Odin',
-    'ipc2023_scorpion_2023': 'Scorpion',
-    'ipc2023_fdss_2023_agl': 'FDSS-AGL',
-    'ipc2023_fdss_2023_sat': 'FDSS-SAT',
-    'lama' : "Lama"
+    'ipc2023_odin': 'Odin (O)',
+    'ipc2023_scorpion_2023': 'Scorpion (S)',
+    'ipc2023_fdss_2023_agl': 'FS',
+    'ipc2023_fdss_2023_sat': 'FA',
+    'lama' : "Lama (L)"
 }
 
 # our columns are: planner,generator,difficulty,instance,name,time_taken,expanded_states,plan_length
@@ -68,7 +68,7 @@ linestyle_map = {planner: linestyles[i % len(linestyles)] for i, planner in enum
 marker_map = {planner: markers[i % len(markers)] for i, planner in enumerate(planners)}
 
 for generator in generators:
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(11, 6))
     gen_data = avg_time_taken[avg_time_taken['generator'] == generator]
     
     for planner in planners:
@@ -79,12 +79,16 @@ for generator in generators:
                      linestyle=linestyle_map[planner],
                      label=label_mapping.get(planner))
     
-    plt.title(f'Generator Difficulty vs Average Time Taken - {label_mapping.get(generator)}')
+    # Move legend outside the plot
+    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5), ncol=1)
+    plt.subplots_adjust(right=0.7)
+
+    plt.title(f'Generator Difficulty vs Average Time Taken - {generator}')
     plt.xlabel('Generator Difficulty')
     plt.ylabel('Average Time Taken (s)')
     plt.yscale('log')
     plt.grid()
-    plt.legend()
+    #plt.legend()
     plt.savefig(f'plots/avg_time_taken_{generator}.png')
     plt.close()
 

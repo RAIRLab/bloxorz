@@ -6,7 +6,7 @@
 
 Only tested on Ubuntu 22.04 LTS
 
-# Setup
+# Setup and Usage
 1. Clone the repository
 2. Install dependencies using Uv:
 ```bash
@@ -48,3 +48,14 @@ The `plot.py` script is used to visualize the results obtained from running plan
 ```bash
 plot.py
 ```
+
+# Directory Structure
+- `level_gen/`: Contains problem generator scripts for creating Bloxorz levels.
+- `levels/`: Directory where ascii generated Bloxorz level files are stored.
+- `levels-pddl-adl/`: Directory where initial ADL PDDL problem files are stored.
+- `levels-pddl-strips/`: Directory where grounded STRIPS PDDL problem files are stored after processing with `adl2strips`.
+- `domain2.pddl`: The base ADL PDDL domain file used for generating problem instances.
+- `results/`: Directory where the results CSV files are stored after running planners.
+- `generate_problems.py`: Script to generate problem instances using the generators in `level_gen/`.
+- `solve.py`: Script to run planners on the generated problem instances and record results.
+- `plot.py`: Script to visualize the results from the planners.
