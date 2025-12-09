@@ -1,10 +1,6 @@
-                      XXXXXXXX
-  XXXXXXXXA1A1XXt1XXXXXXXXIIXX
-  XXXXXXXX              XXXXXX
-  XXXXe2XX                    
-  XXXXXXXX                    
-      XXXXXXd2XXA3A3XXXXXX
-                    XXXXXXXXt2
-XXXXXX              XXXXXXXXXX
-XXGGXXXXXXA2A2XXXXXXXXXXXX
-XXXXXXXX
+            XXXXXXXXXXXXXX
+XXXXXXXX    XXXXXX    XXXX
+XXXXXXXXXXXXXXXXXX    XXXXXXXX
+XXIIXXXX              XXXXGGXX
+XXXXXXXX              XXXXXXXX
+                        XXXXXX

@@ -1,12 +1,12 @@
-;∀ x1 ∃ x2 ∃ x3 ∃ x4 . ((¬x1 ∨ x2 ∨ x4) ∧ (¬x4 ∨ x2) ∧ (¬x4))
+;∀ x1 ∃ x2 ∃ x3 . ((x3) ∧ (x3 ∨ x3 ∨ x1) ∧ (x2))
 
-IIIXXXXXXXXXd10d01e07XXXXXXA07XXXXXXXXXXXXXXXXXXd12e02e03e11XXXXXXA11XXXXXXXXXXXXXXXXXXXXXXXXd14e13XXXXXXA13XXXXXXXXXXXXXXXXXXXXXd16e04d05d06e15XXXXXXA15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                                    XXX      XXX                                 XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
-                                    XXX      XXX                                 XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
-         XXXe10e09A09d09d07XXXXXXXXXXXX      XXXd11d02d03e12XXXXXXA12XXXXXXXXXXXXXXX      XXXd13e14XXXXXXA14XXXXXXXXXXXX      XXXd15e05e06d04e16XXXXXXA16XXXXXXXXXXXX      XXXXXXXXXXXXA01XXXXXXXXXXXXXXXA05XXXXXXXXXXXXXXXA06XXXXXXXXXXXXXXX
-         XXX                                                                                                                                                               XXX      XXX      XXX      XXX      XXX                           
-         XXX                                                                                                                                                               XXX      XXX      XXX      XXX      XXX                           
-         XXXe01d08XXXXXXA08XXXXXXXXXe08                                                                                                                                    XXX      XXXA02XXXXXX      XXXA03XXXXXX                           
-                                    XXX                                                                                                                                    XXX      XXX      XXX                                             
-                                    XXX                                                                                                                                    XXX      XXX      XXX                                             
-GGGXXXXXXXXXA10XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXA04XXXXXX                                             
+IIIXXXXXXXXXd09e01e06XXXXXXA06XXXXXXXXXXXXXXXXXXd11e02e10XXXXXXA10XXXXXXXXXXXXXXXXXXd13e03e04e05e12XXXXXXA12XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
+                                    XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
+         XXXe09e08A08d08d06XXXXXXXXXXXX      XXXd10d02e11XXXXXXA11XXXXXXXXX      XXXd12d03d04d05e13XXXXXXA13XXXXXXXXXXXX      XXXXXXXXXXXXA03XXXXXXXXXXXXXXXA04XXXXXXXXXXXXXXXA02XXXXXXXXXXXXXXX
+         XXX                                                                                                                  XXX                        XXX      XXX                           
+         XXX                                                                                                                  XXX                        XXX      XXX                           
+         XXXd01d07XXXXXXA07XXXXXXXXXe07                                                                                       XXX                        XXXA05XXXXXX                           
+                                    XXX                                                                                       XXX                        XXX      XXX                           
+                                    XXX                                                                                       XXX                        XXX      XXX                           
+GGGXXXXXXXXXA09XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        XXXA01XXXXXX                           

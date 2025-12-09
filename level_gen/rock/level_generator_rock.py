@@ -188,15 +188,15 @@ class Game:
         # Basic way to score a given problem, just divides length of solution by
         # spaces on the board
         spaces = 0
-        solution = solve_bloxorz_maze(self.gridToString())
-        if solution is None:
-            return -1
-        moves = len(solution)
+        # solution = solve_bloxorz_maze(self.gridToString())
+        # if solution is None:
+        #     return -1
+        # moves = len(solution)
         for x in self.grid:
             for y in x:
                 if y != '':
                     spaces += 1
-        return moves / spaces
+        return 10 / spaces
 
     def printGrid(self, grid=None):
         # Prints the problem grid in the required machine readable format

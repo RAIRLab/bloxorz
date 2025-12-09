@@ -261,10 +261,16 @@ def generate_qsat_level(f : QBF) -> str:
     level_string = "\n".join(level_lines)
     return level_string
 
+def generate_and_shuffle(n, m):
+    # n ones, then zeros up to position m
+    arr = [1]*n + [0]*(m - n)
+    random.shuffle(arr)
+    return arr
+
 def random_qsat_formula(n : int) -> QBF:
-    num_vars = max(n, 4)
+    num_vars = n + 5 #max(n, 4)
     num_clauses = n + 2
-    quantifiers = [random.choice([0, 1]) for _ in range(num_vars)]
+    quantifiers = generate_and_shuffle(n, num_vars)
     clauses = []
     for _ in range(num_clauses):
         clause_size = random.randint(1, 3)

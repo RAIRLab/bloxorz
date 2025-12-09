@@ -72,15 +72,23 @@ def generate_problems(gen_name, num_difficulties=5, num_instances=30):
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description="Generate Bloxorz problems")
-    parser.add_argument("-n", "--name", type=str, help="Generator name")
-    parser.add_argument("-d", "--difficulties", type=int, default=5, help="Number of difficulties")
-    parser.add_argument("-i", "--instances", type=int, default=30, help="Number of instances")
+    # parser = argparse.ArgumentParser(description="Generate Bloxorz problems")
+    # parser.add_argument("-n", "--name", type=str, help="Generator name")
+    # parser.add_argument("-d", "--difficulties", type=int, default=5, help="Number of difficulties")
+    # parser.add_argument("-i", "--instances", type=int, default=30, help="Number of instances")
     
-    args = parser.parse_args()
-    
-    if args.name:
-        generate_problems(args.name, args.difficulties, args.instances)
-    else:
-        for gen_name in GENERATORS.keys():
-            generate_problems(gen_name)
+    #args = parser.parse_args()
+
+    # number of instances per difficulty for a given generator
+    num_instances = {
+        "2007" : 1,
+        "ROCK" : 3,
+        "YYTBB" : 3,
+        "QSAT" : 3,
+    }
+
+    #generator = ["2007", "ROCK", "YYTBB", "QSAT"]
+    generators = ["QSAT"]
+
+    for gen_name in generators:
+        generate_problems(gen_name, num_difficulties=5, num_instances=num_instances[gen_name])

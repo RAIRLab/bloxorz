@@ -367,9 +367,9 @@ def threadedGenerator(outputData, difficultyScore, requireStand, forceYellowPane
     outputData.append([score, level])
 
 
-def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=True):
+def generateMassiveLevel(difficultyScore, forceYellowPanels=False, threaded=False):
     # difficulty score is a number from 1-20
-    difficultyScore += 2
+    difficultyScore += 15
     links = (difficultyScore // 3) + 1
     levels = []
     for i in range(links):

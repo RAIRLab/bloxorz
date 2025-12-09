@@ -67,37 +67,18 @@
 (NOT-ACTIVE-T-01-62)
 (NOT-ACTIVE-T-01-63)
 (NOT-ACTIVE-T-01-64)
-(NOT-ACTIVE-T-01-65)
-(NOT-ACTIVE-T-01-66)
-(NOT-ACTIVE-T-01-67)
-(NOT-ACTIVE-T-01-68)
-(NOT-ACTIVE-T-01-69)
-(NOT-ACTIVE-T-01-70)
-(NOT-ACTIVE-T-01-71)
-(NOT-ACTIVE-T-01-72)
-(NOT-ACTIVE-T-01-73)
-(NOT-ACTIVE-T-01-74)
-(NOT-ACTIVE-T-01-75)
-(NOT-ACTIVE-T-01-76)
-(NOT-ACTIVE-T-01-77)
-(NOT-ACTIVE-T-01-78)
-(NOT-ACTIVE-T-01-79)
 (NOT-ACTIVE-T-02-13)
 (NOT-ACTIVE-T-02-16)
+(NOT-ACTIVE-T-02-25)
 (NOT-ACTIVE-T-02-28)
-(NOT-ACTIVE-T-02-31)
 (NOT-ACTIVE-T-02-40)
-(NOT-ACTIVE-T-02-43)
-(NOT-ACTIVE-T-02-55)
-(NOT-ACTIVE-T-02-79)
+(NOT-ACTIVE-T-02-64)
 (NOT-ACTIVE-T-03-13)
 (NOT-ACTIVE-T-03-16)
+(NOT-ACTIVE-T-03-25)
 (NOT-ACTIVE-T-03-28)
-(NOT-ACTIVE-T-03-31)
 (NOT-ACTIVE-T-03-40)
-(NOT-ACTIVE-T-03-43)
-(NOT-ACTIVE-T-03-55)
-(NOT-ACTIVE-T-03-79)
+(NOT-ACTIVE-T-03-64)
 (NOT-ACTIVE-T-04-04)
 (NOT-ACTIVE-T-04-05)
 (NOT-ACTIVE-T-04-06)
@@ -118,9 +99,9 @@
 (NOT-ACTIVE-T-04-23)
 (NOT-ACTIVE-T-04-24)
 (NOT-ACTIVE-T-04-25)
-(NOT-ACTIVE-T-04-26)
-(NOT-ACTIVE-T-04-27)
 (NOT-ACTIVE-T-04-28)
+(NOT-ACTIVE-T-04-29)
+(NOT-ACTIVE-T-04-30)
 (NOT-ACTIVE-T-04-31)
 (NOT-ACTIVE-T-04-32)
 (NOT-ACTIVE-T-04-33)
@@ -144,6 +125,8 @@
 (NOT-ACTIVE-T-04-53)
 (NOT-ACTIVE-T-04-54)
 (NOT-ACTIVE-T-04-55)
+(NOT-ACTIVE-T-04-56)
+(NOT-ACTIVE-T-04-57)
 (NOT-ACTIVE-T-04-58)
 (NOT-ACTIVE-T-04-59)
 (NOT-ACTIVE-T-04-60)
@@ -151,33 +134,14 @@
 (NOT-ACTIVE-T-04-62)
 (NOT-ACTIVE-T-04-63)
 (NOT-ACTIVE-T-04-64)
-(NOT-ACTIVE-T-04-65)
-(NOT-ACTIVE-T-04-66)
-(NOT-ACTIVE-T-04-67)
-(NOT-ACTIVE-T-04-68)
-(NOT-ACTIVE-T-04-69)
-(NOT-ACTIVE-T-04-70)
-(NOT-ACTIVE-T-04-71)
-(NOT-ACTIVE-T-04-72)
-(NOT-ACTIVE-T-04-73)
-(NOT-ACTIVE-T-04-74)
-(NOT-ACTIVE-T-04-75)
-(NOT-ACTIVE-T-04-76)
-(NOT-ACTIVE-T-04-77)
-(NOT-ACTIVE-T-04-78)
-(NOT-ACTIVE-T-04-79)
 (NOT-ACTIVE-T-05-04)
-(NOT-ACTIVE-T-05-58)
-(NOT-ACTIVE-T-05-61)
-(NOT-ACTIVE-T-05-64)
-(NOT-ACTIVE-T-05-67)
-(NOT-ACTIVE-T-05-70)
+(NOT-ACTIVE-T-05-43)
+(NOT-ACTIVE-T-05-52)
+(NOT-ACTIVE-T-05-55)
 (NOT-ACTIVE-T-06-04)
-(NOT-ACTIVE-T-06-58)
-(NOT-ACTIVE-T-06-61)
-(NOT-ACTIVE-T-06-64)
-(NOT-ACTIVE-T-06-67)
-(NOT-ACTIVE-T-06-70)
+(NOT-ACTIVE-T-06-43)
+(NOT-ACTIVE-T-06-52)
+(NOT-ACTIVE-T-06-55)
 (NOT-ACTIVE-T-07-04)
 (NOT-ACTIVE-T-07-05)
 (NOT-ACTIVE-T-07-06)
@@ -188,23 +152,19 @@
 (NOT-ACTIVE-T-07-11)
 (NOT-ACTIVE-T-07-12)
 (NOT-ACTIVE-T-07-13)
-(NOT-ACTIVE-T-07-58)
-(NOT-ACTIVE-T-07-61)
-(NOT-ACTIVE-T-07-62)
-(NOT-ACTIVE-T-07-63)
-(NOT-ACTIVE-T-07-64)
-(NOT-ACTIVE-T-07-67)
-(NOT-ACTIVE-T-07-68)
-(NOT-ACTIVE-T-07-69)
-(NOT-ACTIVE-T-07-70)
+(NOT-ACTIVE-T-07-43)
+(NOT-ACTIVE-T-07-52)
+(NOT-ACTIVE-T-07-53)
+(NOT-ACTIVE-T-07-54)
+(NOT-ACTIVE-T-07-55)
 (NOT-ACTIVE-T-08-13)
-(NOT-ACTIVE-T-08-58)
-(NOT-ACTIVE-T-08-61)
-(NOT-ACTIVE-T-08-64)
+(NOT-ACTIVE-T-08-43)
+(NOT-ACTIVE-T-08-52)
+(NOT-ACTIVE-T-08-55)
 (NOT-ACTIVE-T-09-13)
-(NOT-ACTIVE-T-09-58)
-(NOT-ACTIVE-T-09-61)
-(NOT-ACTIVE-T-09-64)
+(NOT-ACTIVE-T-09-43)
+(NOT-ACTIVE-T-09-52)
+(NOT-ACTIVE-T-09-55)
 (NOT-ACTIVE-T-10-01)
 (NOT-ACTIVE-T-10-02)
 (NOT-ACTIVE-T-10-03)
@@ -248,25 +208,10 @@
 (NOT-ACTIVE-T-10-41)
 (NOT-ACTIVE-T-10-42)
 (NOT-ACTIVE-T-10-43)
-(NOT-ACTIVE-T-10-44)
-(NOT-ACTIVE-T-10-45)
-(NOT-ACTIVE-T-10-46)
-(NOT-ACTIVE-T-10-47)
-(NOT-ACTIVE-T-10-48)
-(NOT-ACTIVE-T-10-49)
-(NOT-ACTIVE-T-10-50)
-(NOT-ACTIVE-T-10-51)
 (NOT-ACTIVE-T-10-52)
 (NOT-ACTIVE-T-10-53)
 (NOT-ACTIVE-T-10-54)
 (NOT-ACTIVE-T-10-55)
-(NOT-ACTIVE-T-10-56)
-(NOT-ACTIVE-T-10-57)
-(NOT-ACTIVE-T-10-58)
-(NOT-ACTIVE-T-10-61)
-(NOT-ACTIVE-T-10-62)
-(NOT-ACTIVE-T-10-63)
-(NOT-ACTIVE-T-10-64)
 (LYING-ON-T-01-03)
 (LYING-ON-T-01-02)
 (STANDING-ON-T-01-04)
@@ -314,6 +259,8 @@
 (STANDING-ON-T-01-25)
 (LYING-ON-T-06-04)
 (LYING-ON-T-05-04)
+(LYING-ON-T-03-25)
+(LYING-ON-T-02-25)
 (LYING-ON-T-04-24)
 (LYING-ON-T-04-23)
 (LYING-ON-T-01-27)
@@ -325,21 +272,19 @@
 (LYING-ON-T-02-28)
 (LYING-ON-T-07-06)
 (LYING-ON-T-07-05)
-(LYING-ON-T-04-27)
-(LYING-ON-T-04-26)
 (LYING-ON-T-01-30)
 (LYING-ON-T-01-29)
 (STANDING-ON-T-04-28)
 (STANDING-ON-T-07-07)
 (STANDING-ON-T-01-31)
-(LYING-ON-T-03-31)
-(LYING-ON-T-02-31)
 (LYING-ON-T-07-09)
 (LYING-ON-T-07-08)
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
 (LYING-ON-T-01-33)
 (LYING-ON-T-01-32)
-(STANDING-ON-T-04-31)
 (STANDING-ON-T-07-10)
+(STANDING-ON-T-04-31)
 (STANDING-ON-T-01-34)
 (LYING-ON-T-07-12)
 (LYING-ON-T-07-11)
@@ -375,58 +320,41 @@
 (STANDING-ON-T-01-43)
 (LYING-ON-T-10-08)
 (LYING-ON-T-10-09)
-(LYING-ON-T-03-43)
-(LYING-ON-T-02-43)
 (LYING-ON-T-10-18)
 (LYING-ON-T-10-17)
 (LYING-ON-T-01-45)
 (LYING-ON-T-01-44)
 (STANDING-ON-T-10-07)
-(STANDING-ON-T-04-43)
 (STANDING-ON-T-10-19)
 (STANDING-ON-T-01-46)
 (LYING-ON-T-10-05)
 (LYING-ON-T-10-06)
 (LYING-ON-T-10-21)
 (LYING-ON-T-10-20)
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
 (LYING-ON-T-01-48)
 (LYING-ON-T-01-47)
 (STANDING-ON-T-10-04)
 (STANDING-ON-T-10-22)
-(STANDING-ON-T-04-46)
 (STANDING-ON-T-01-49)
 (LYING-ON-T-10-02)
 (LYING-ON-T-10-03)
 (LYING-ON-T-10-24)
 (LYING-ON-T-10-23)
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
 (LYING-ON-T-01-51)
 (LYING-ON-T-01-50)
 (STANDING-ON-T-10-01)
 (STANDING-ON-T-10-25)
-(STANDING-ON-T-04-49)
 (STANDING-ON-T-01-52)
 (LYING-ON-T-10-27)
 (LYING-ON-T-10-26)
-(LYING-ON-T-04-51)
-(LYING-ON-T-04-50)
 (LYING-ON-T-01-54)
 (LYING-ON-T-01-53)
 (STANDING-ON-T-10-28)
-(STANDING-ON-T-04-52)
 (STANDING-ON-T-01-55)
-(LYING-ON-T-03-55)
-(LYING-ON-T-02-55)
 (LYING-ON-T-10-30)
 (LYING-ON-T-10-29)
-(LYING-ON-T-04-54)
-(LYING-ON-T-04-53)
 (LYING-ON-T-01-57)
 (LYING-ON-T-01-56)
-(STANDING-ON-T-04-55)
 (STANDING-ON-T-10-31)
 (STANDING-ON-T-01-58)
 (LYING-ON-T-10-33)
@@ -441,95 +369,57 @@
 (LYING-ON-T-01-62)
 (STANDING-ON-T-10-37)
 (STANDING-ON-T-01-64)
+(LYING-ON-T-03-64)
+(LYING-ON-T-02-64)
 (LYING-ON-T-10-39)
 (LYING-ON-T-10-38)
-(LYING-ON-T-01-66)
-(LYING-ON-T-01-65)
+(STANDING-ON-T-04-64)
 (STANDING-ON-T-10-40)
-(STANDING-ON-T-01-67)
+(LYING-ON-T-04-62)
+(LYING-ON-T-04-63)
 (LYING-ON-T-10-42)
 (LYING-ON-T-10-41)
-(LYING-ON-T-01-69)
-(LYING-ON-T-01-68)
-(STANDING-ON-T-10-43)
-(STANDING-ON-T-01-70)
-(LYING-ON-T-10-45)
-(LYING-ON-T-10-44)
-(LYING-ON-T-01-72)
-(LYING-ON-T-01-71)
-(STANDING-ON-T-10-46)
-(STANDING-ON-T-01-73)
-(LYING-ON-T-10-48)
-(LYING-ON-T-10-47)
-(LYING-ON-T-01-75)
-(LYING-ON-T-01-74)
-(STANDING-ON-T-10-49)
-(STANDING-ON-T-01-76)
-(LYING-ON-T-10-51)
-(LYING-ON-T-10-50)
-(LYING-ON-T-01-78)
-(LYING-ON-T-01-77)
-(STANDING-ON-T-10-52)
-(STANDING-ON-T-01-79)
-(LYING-ON-T-03-79)
-(LYING-ON-T-02-79)
-(LYING-ON-T-10-54)
-(LYING-ON-T-10-53)
-(STANDING-ON-T-04-79)
-(STANDING-ON-T-10-55)
-(LYING-ON-T-04-77)
-(LYING-ON-T-04-78)
-(LYING-ON-T-10-57)
-(LYING-ON-T-10-56)
-(STANDING-ON-T-04-76)
-(STANDING-ON-T-10-58)
-(LYING-ON-T-08-58)
-(LYING-ON-T-09-58)
-(LYING-ON-T-04-74)
-(LYING-ON-T-04-75)
-(STANDING-ON-T-07-58)
-(STANDING-ON-T-04-73)
-(LYING-ON-T-05-58)
-(LYING-ON-T-06-58)
-(LYING-ON-T-04-71)
-(LYING-ON-T-04-72)
-(STANDING-ON-T-04-58)
-(STANDING-ON-T-04-70)
-(LYING-ON-T-04-68)
-(LYING-ON-T-04-69)
-(LYING-ON-T-06-70)
-(LYING-ON-T-05-70)
-(LYING-ON-T-04-60)
-(LYING-ON-T-04-59)
-(STANDING-ON-T-04-67)
-(STANDING-ON-T-07-70)
 (STANDING-ON-T-04-61)
-(LYING-ON-T-07-68)
-(LYING-ON-T-07-69)
-(LYING-ON-T-04-65)
-(LYING-ON-T-04-66)
-(LYING-ON-T-06-67)
-(LYING-ON-T-05-67)
-(LYING-ON-T-06-61)
-(LYING-ON-T-05-61)
-(LYING-ON-T-04-63)
-(LYING-ON-T-04-62)
-(STANDING-ON-T-07-67)
-(STANDING-ON-T-04-64)
-(STANDING-ON-T-07-61)
-(LYING-ON-T-09-61)
-(LYING-ON-T-08-61)
-(LYING-ON-T-06-64)
-(LYING-ON-T-05-64)
-(LYING-ON-T-07-63)
-(LYING-ON-T-07-62)
-(STANDING-ON-T-10-61)
-(STANDING-ON-T-07-64)
-(LYING-ON-T-09-64)
-(LYING-ON-T-08-64)
-(LYING-ON-T-10-63)
-(LYING-ON-T-10-62)
-(STANDING-ON-T-10-64)
+(STANDING-ON-T-10-43)
+(LYING-ON-T-08-43)
+(LYING-ON-T-09-43)
+(LYING-ON-T-04-59)
+(LYING-ON-T-04-60)
+(STANDING-ON-T-07-43)
+(STANDING-ON-T-04-58)
+(LYING-ON-T-05-43)
+(LYING-ON-T-06-43)
+(LYING-ON-T-04-56)
+(LYING-ON-T-04-57)
+(STANDING-ON-T-04-43)
+(STANDING-ON-T-04-55)
+(LYING-ON-T-04-53)
+(LYING-ON-T-04-54)
+(LYING-ON-T-06-55)
+(LYING-ON-T-05-55)
+(LYING-ON-T-04-45)
+(LYING-ON-T-04-44)
+(STANDING-ON-T-04-52)
+(STANDING-ON-T-07-55)
+(STANDING-ON-T-04-46)
+(LYING-ON-T-07-53)
+(LYING-ON-T-07-54)
+(LYING-ON-T-04-50)
+(LYING-ON-T-04-51)
+(LYING-ON-T-09-55)
+(LYING-ON-T-08-55)
+(LYING-ON-T-06-52)
+(LYING-ON-T-05-52)
+(LYING-ON-T-04-48)
+(LYING-ON-T-04-47)
+(STANDING-ON-T-07-52)
+(STANDING-ON-T-04-49)
+(STANDING-ON-T-10-55)
+(LYING-ON-T-10-53)
+(LYING-ON-T-10-54)
+(LYING-ON-T-09-52)
+(LYING-ON-T-08-52)
+(STANDING-ON-T-10-52)
 (ACTIVE-T-01-01)
 (ACTIVE-T-01-02)
 (ACTIVE-T-01-03)
@@ -594,37 +484,18 @@
 (ACTIVE-T-01-62)
 (ACTIVE-T-01-63)
 (ACTIVE-T-01-64)
-(ACTIVE-T-01-65)
-(ACTIVE-T-01-66)
-(ACTIVE-T-01-67)
-(ACTIVE-T-01-68)
-(ACTIVE-T-01-69)
-(ACTIVE-T-01-70)
-(ACTIVE-T-01-71)
-(ACTIVE-T-01-72)
-(ACTIVE-T-01-73)
-(ACTIVE-T-01-74)
-(ACTIVE-T-01-75)
-(ACTIVE-T-01-76)
-(ACTIVE-T-01-77)
-(ACTIVE-T-01-78)
-(ACTIVE-T-01-79)
 (ACTIVE-T-02-13)
 (ACTIVE-T-02-16)
+(ACTIVE-T-02-25)
 (ACTIVE-T-02-28)
-(ACTIVE-T-02-31)
 (ACTIVE-T-02-40)
-(ACTIVE-T-02-43)
-(ACTIVE-T-02-55)
-(ACTIVE-T-02-79)
+(ACTIVE-T-02-64)
 (ACTIVE-T-03-13)
 (ACTIVE-T-03-16)
+(ACTIVE-T-03-25)
 (ACTIVE-T-03-28)
-(ACTIVE-T-03-31)
 (ACTIVE-T-03-40)
-(ACTIVE-T-03-43)
-(ACTIVE-T-03-55)
-(ACTIVE-T-03-79)
+(ACTIVE-T-03-64)
 (ACTIVE-T-04-04)
 (ACTIVE-T-04-05)
 (ACTIVE-T-04-06)
@@ -645,9 +516,9 @@
 (ACTIVE-T-04-23)
 (ACTIVE-T-04-24)
 (ACTIVE-T-04-25)
-(ACTIVE-T-04-26)
-(ACTIVE-T-04-27)
 (ACTIVE-T-04-28)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-30)
 (ACTIVE-T-04-31)
 (ACTIVE-T-04-32)
 (ACTIVE-T-04-33)
@@ -671,6 +542,8 @@
 (ACTIVE-T-04-53)
 (ACTIVE-T-04-54)
 (ACTIVE-T-04-55)
+(ACTIVE-T-04-56)
+(ACTIVE-T-04-57)
 (ACTIVE-T-04-58)
 (ACTIVE-T-04-59)
 (ACTIVE-T-04-60)
@@ -678,33 +551,14 @@
 (ACTIVE-T-04-62)
 (ACTIVE-T-04-63)
 (ACTIVE-T-04-64)
-(ACTIVE-T-04-65)
-(ACTIVE-T-04-66)
-(ACTIVE-T-04-67)
-(ACTIVE-T-04-68)
-(ACTIVE-T-04-69)
-(ACTIVE-T-04-70)
-(ACTIVE-T-04-71)
-(ACTIVE-T-04-72)
-(ACTIVE-T-04-73)
-(ACTIVE-T-04-74)
-(ACTIVE-T-04-75)
-(ACTIVE-T-04-76)
-(ACTIVE-T-04-77)
-(ACTIVE-T-04-78)
-(ACTIVE-T-04-79)
 (ACTIVE-T-05-04)
-(ACTIVE-T-05-58)
-(ACTIVE-T-05-61)
-(ACTIVE-T-05-64)
-(ACTIVE-T-05-67)
-(ACTIVE-T-05-70)
+(ACTIVE-T-05-43)
+(ACTIVE-T-05-52)
+(ACTIVE-T-05-55)
 (ACTIVE-T-06-04)
-(ACTIVE-T-06-58)
-(ACTIVE-T-06-61)
-(ACTIVE-T-06-64)
-(ACTIVE-T-06-67)
-(ACTIVE-T-06-70)
+(ACTIVE-T-06-43)
+(ACTIVE-T-06-52)
+(ACTIVE-T-06-55)
 (ACTIVE-T-07-04)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-06)
@@ -715,23 +569,19 @@
 (ACTIVE-T-07-11)
 (ACTIVE-T-07-12)
 (ACTIVE-T-07-13)
-(ACTIVE-T-07-58)
-(ACTIVE-T-07-61)
-(ACTIVE-T-07-62)
-(ACTIVE-T-07-63)
-(ACTIVE-T-07-64)
-(ACTIVE-T-07-67)
-(ACTIVE-T-07-68)
-(ACTIVE-T-07-69)
-(ACTIVE-T-07-70)
+(ACTIVE-T-07-43)
+(ACTIVE-T-07-52)
+(ACTIVE-T-07-53)
+(ACTIVE-T-07-54)
+(ACTIVE-T-07-55)
 (ACTIVE-T-08-13)
-(ACTIVE-T-08-58)
-(ACTIVE-T-08-61)
-(ACTIVE-T-08-64)
+(ACTIVE-T-08-43)
+(ACTIVE-T-08-52)
+(ACTIVE-T-08-55)
 (ACTIVE-T-09-13)
-(ACTIVE-T-09-58)
-(ACTIVE-T-09-61)
-(ACTIVE-T-09-64)
+(ACTIVE-T-09-43)
+(ACTIVE-T-09-52)
+(ACTIVE-T-09-55)
 (ACTIVE-T-10-01)
 (ACTIVE-T-10-02)
 (ACTIVE-T-10-03)
@@ -775,1195 +625,40 @@
 (ACTIVE-T-10-41)
 (ACTIVE-T-10-42)
 (ACTIVE-T-10-43)
-(ACTIVE-T-10-44)
-(ACTIVE-T-10-45)
-(ACTIVE-T-10-46)
-(ACTIVE-T-10-47)
-(ACTIVE-T-10-48)
-(ACTIVE-T-10-49)
-(ACTIVE-T-10-50)
-(ACTIVE-T-10-51)
 (ACTIVE-T-10-52)
 (ACTIVE-T-10-53)
 (ACTIVE-T-10-54)
 (ACTIVE-T-10-55)
-(ACTIVE-T-10-56)
-(ACTIVE-T-10-57)
-(ACTIVE-T-10-58)
-(ACTIVE-T-10-61)
-(ACTIVE-T-10-62)
-(ACTIVE-T-10-63)
-(ACTIVE-T-10-64)
 (STANDING-ON-T-01-01)
 )
-(:action LAY-DOWN-T-10-64-T-10-63-T-10-62-WEST
+(:action LAY-DOWN-T-10-52-T-10-53-T-10-54-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-64)
-(ACTIVE-T-10-62)
-(ACTIVE-T-10-63)
-)
-:effect
-(and
-(LYING-ON-T-10-62)
-(LYING-ON-T-10-63)
-(not (STANDING-ON-T-10-64))
-)
-)
-(:action LAY-DOWN-T-10-64-T-09-64-T-08-64-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-64)
-(ACTIVE-T-08-64)
-(ACTIVE-T-09-64)
-)
-:effect
-(and
-(LYING-ON-T-08-64)
-(LYING-ON-T-09-64)
-(not (STANDING-ON-T-10-64))
-)
-)
-(:action STAND-UP-T-10-62-T-10-63-T-10-64-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-10-63)
-(LYING-ON-T-10-62)
-(ACTIVE-T-10-64)
-)
-:effect
-(and
-(STANDING-ON-T-10-64)
-(not (LYING-ON-T-10-62))
-(not (LYING-ON-T-10-63))
-)
-)
-(:action STAND-UP-T-08-64-T-09-64-T-10-64-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-09-64)
-(LYING-ON-T-08-64)
-(ACTIVE-T-10-64)
-)
-:effect
-(and
-(STANDING-ON-T-10-64)
-(not (LYING-ON-T-08-64))
-(not (LYING-ON-T-09-64))
-)
-)
-(:action STAND-UP-T-10-63-T-10-62-T-10-61-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-10-62)
-(LYING-ON-T-10-63)
-(ACTIVE-T-10-61)
-)
-:effect
-(and
-(STANDING-ON-T-10-61)
-(not (LYING-ON-T-10-63))
-(not (LYING-ON-T-10-62))
-)
-)
-(:action STAND-UP-T-09-64-T-08-64-T-07-64-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-08-64)
-(LYING-ON-T-09-64)
-(ACTIVE-T-07-64)
-)
-:effect
-(and
-(STANDING-ON-T-07-64)
-(not (LYING-ON-T-09-64))
-(not (LYING-ON-T-08-64))
-)
-)
-(:action LAY-DOWN-T-10-61-T-10-62-T-10-63-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-61)
-(ACTIVE-T-10-63)
-(ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-10-63)
-(LYING-ON-T-10-62)
-(not (STANDING-ON-T-10-61))
-)
-)
-(:action LAY-DOWN-T-07-64-T-08-64-T-09-64-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-64)
-(ACTIVE-T-09-64)
-(ACTIVE-T-08-64)
-)
-:effect
-(and
-(LYING-ON-T-09-64)
-(LYING-ON-T-08-64)
-(not (STANDING-ON-T-07-64))
-)
-)
-(:action LAY-DOWN-T-07-64-T-07-63-T-07-62-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-64)
-(ACTIVE-T-07-62)
-(ACTIVE-T-07-63)
-)
-:effect
-(and
-(LYING-ON-T-07-62)
-(LYING-ON-T-07-63)
-(not (STANDING-ON-T-07-64))
-)
-)
-(:action LAY-DOWN-T-07-64-T-06-64-T-05-64-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-64)
-(ACTIVE-T-05-64)
-(ACTIVE-T-06-64)
-)
-:effect
-(and
-(LYING-ON-T-05-64)
-(LYING-ON-T-06-64)
-(not (STANDING-ON-T-07-64))
-)
-)
-(:action LAY-DOWN-T-10-61-T-09-61-T-08-61-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-61)
-(ACTIVE-T-08-61)
-(ACTIVE-T-09-61)
-)
-:effect
-(and
-(LYING-ON-T-08-61)
-(LYING-ON-T-09-61)
-(not (STANDING-ON-T-10-61))
-)
-)
-(:action STAND-UP-T-07-62-T-07-63-T-07-64-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-07-63)
-(LYING-ON-T-07-62)
-(ACTIVE-T-07-64)
-)
-:effect
-(and
-(STANDING-ON-T-07-64)
-(not (LYING-ON-T-07-62))
-(not (LYING-ON-T-07-63))
-)
-)
-(:action STAND-UP-T-05-64-T-06-64-T-07-64-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-06-64)
-(LYING-ON-T-05-64)
-(ACTIVE-T-07-64)
-)
-:effect
-(and
-(STANDING-ON-T-07-64)
-(not (LYING-ON-T-05-64))
-(not (LYING-ON-T-06-64))
-)
-)
-(:action STAND-UP-T-08-61-T-09-61-T-10-61-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-09-61)
-(LYING-ON-T-08-61)
-(ACTIVE-T-10-61)
-)
-:effect
-(and
-(STANDING-ON-T-10-61)
-(not (LYING-ON-T-08-61))
-(not (LYING-ON-T-09-61))
-)
-)
-(:action STAND-UP-T-07-63-T-07-62-T-07-61-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-07-62)
-(LYING-ON-T-07-63)
-(ACTIVE-T-07-61)
-)
-:effect
-(and
-(STANDING-ON-T-07-61)
-(not (LYING-ON-T-07-63))
-(not (LYING-ON-T-07-62))
-)
-)
-(:action STAND-UP-T-06-64-T-05-64-T-04-64-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-05-64)
-(LYING-ON-T-06-64)
-(ACTIVE-T-04-64)
-)
-:effect
-(and
-(STANDING-ON-T-04-64)
-(not (LYING-ON-T-06-64))
-(not (LYING-ON-T-05-64))
-)
-)
-(:action STAND-UP-T-09-61-T-08-61-T-07-61-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-08-61)
-(LYING-ON-T-09-61)
-(ACTIVE-T-07-61)
-)
-:effect
-(and
-(STANDING-ON-T-07-61)
-(not (LYING-ON-T-09-61))
-(not (LYING-ON-T-08-61))
-)
-)
-(:action LAY-DOWN-T-04-64-T-04-65-T-04-66-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-64)
-(ACTIVE-T-04-66)
-(ACTIVE-T-04-65)
-)
-:effect
-(and
-(LYING-ON-T-04-66)
-(LYING-ON-T-04-65)
-(not (STANDING-ON-T-04-64))
-)
-)
-(:action LAY-DOWN-T-07-61-T-07-62-T-07-63-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-61)
-(ACTIVE-T-07-63)
-(ACTIVE-T-07-62)
-)
-:effect
-(and
-(LYING-ON-T-07-63)
-(LYING-ON-T-07-62)
-(not (STANDING-ON-T-07-61))
-)
-)
-(:action LAY-DOWN-T-07-67-T-07-68-T-07-69-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-67)
-(ACTIVE-T-07-69)
-(ACTIVE-T-07-68)
-)
-:effect
-(and
-(LYING-ON-T-07-69)
-(LYING-ON-T-07-68)
-(not (STANDING-ON-T-07-67))
-)
-)
-(:action LAY-DOWN-T-04-64-T-05-64-T-06-64-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-64)
-(ACTIVE-T-06-64)
-(ACTIVE-T-05-64)
-)
-:effect
-(and
-(LYING-ON-T-06-64)
-(LYING-ON-T-05-64)
-(not (STANDING-ON-T-04-64))
-)
-)
-(:action LAY-DOWN-T-07-61-T-08-61-T-09-61-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-61)
-(ACTIVE-T-09-61)
-(ACTIVE-T-08-61)
-)
-:effect
-(and
-(LYING-ON-T-09-61)
-(LYING-ON-T-08-61)
-(not (STANDING-ON-T-07-61))
-)
-)
-(:action LAY-DOWN-T-04-64-T-04-63-T-04-62-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-64)
-(ACTIVE-T-04-62)
-(ACTIVE-T-04-63)
-)
-:effect
-(and
-(LYING-ON-T-04-62)
-(LYING-ON-T-04-63)
-(not (STANDING-ON-T-04-64))
-)
-)
-(:action LAY-DOWN-T-07-61-T-06-61-T-05-61-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-61)
-(ACTIVE-T-05-61)
-(ACTIVE-T-06-61)
-)
-:effect
-(and
-(LYING-ON-T-05-61)
-(LYING-ON-T-06-61)
-(not (STANDING-ON-T-07-61))
-)
-)
-(:action LAY-DOWN-T-07-67-T-06-67-T-05-67-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-67)
-(ACTIVE-T-05-67)
-(ACTIVE-T-06-67)
-)
-:effect
-(and
-(LYING-ON-T-05-67)
-(LYING-ON-T-06-67)
-(not (STANDING-ON-T-07-67))
-)
-)
-(:action STAND-UP-T-04-62-T-04-63-T-04-64-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-63)
-(LYING-ON-T-04-62)
-(ACTIVE-T-04-64)
-)
-:effect
-(and
-(STANDING-ON-T-04-64)
-(not (LYING-ON-T-04-62))
-(not (LYING-ON-T-04-63))
-)
-)
-(:action STAND-UP-T-04-65-T-04-66-T-04-67-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-66)
-(LYING-ON-T-04-65)
-(ACTIVE-T-04-67)
-)
-:effect
-(and
-(STANDING-ON-T-04-67)
-(not (LYING-ON-T-04-65))
-(not (LYING-ON-T-04-66))
-)
-)
-(:action STAND-UP-T-07-68-T-07-69-T-07-70-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-07-69)
-(LYING-ON-T-07-68)
-(ACTIVE-T-07-70)
-)
-:effect
-(and
-(STANDING-ON-T-07-70)
-(not (LYING-ON-T-07-68))
-(not (LYING-ON-T-07-69))
-)
-)
-(:action STAND-UP-T-05-61-T-06-61-T-07-61-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-06-61)
-(LYING-ON-T-05-61)
-(ACTIVE-T-07-61)
-)
-:effect
-(and
-(STANDING-ON-T-07-61)
-(not (LYING-ON-T-05-61))
-(not (LYING-ON-T-06-61))
-)
-)
-(:action STAND-UP-T-05-67-T-06-67-T-07-67-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-06-67)
-(LYING-ON-T-05-67)
-(ACTIVE-T-07-67)
-)
-:effect
-(and
-(STANDING-ON-T-07-67)
-(not (LYING-ON-T-05-67))
-(not (LYING-ON-T-06-67))
-)
-)
-(:action STAND-UP-T-04-63-T-04-62-T-04-61-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-62)
-(LYING-ON-T-04-63)
-(ACTIVE-T-04-61)
-)
-:effect
-(and
-(STANDING-ON-T-04-61)
-(not (LYING-ON-T-04-63))
-(not (LYING-ON-T-04-62))
-)
-)
-(:action STAND-UP-T-04-66-T-04-65-T-04-64-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-65)
-(LYING-ON-T-04-66)
-(ACTIVE-T-04-64)
-)
-:effect
-(and
-(STANDING-ON-T-04-64)
-(not (LYING-ON-T-04-66))
-(not (LYING-ON-T-04-65))
-)
-)
-(:action STAND-UP-T-07-69-T-07-68-T-07-67-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-07-68)
-(LYING-ON-T-07-69)
-(ACTIVE-T-07-67)
-)
-:effect
-(and
-(STANDING-ON-T-07-67)
-(not (LYING-ON-T-07-69))
-(not (LYING-ON-T-07-68))
-)
-)
-(:action STAND-UP-T-06-61-T-05-61-T-04-61-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-05-61)
-(LYING-ON-T-06-61)
-(ACTIVE-T-04-61)
-)
-:effect
-(and
-(STANDING-ON-T-04-61)
-(not (LYING-ON-T-06-61))
-(not (LYING-ON-T-05-61))
-)
-)
-(:action STAND-UP-T-06-67-T-05-67-T-04-67-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-05-67)
-(LYING-ON-T-06-67)
-(ACTIVE-T-04-67)
-)
-:effect
-(and
-(STANDING-ON-T-04-67)
-(not (LYING-ON-T-06-67))
-(not (LYING-ON-T-05-67))
-)
-)
-(:action LAY-DOWN-T-04-61-T-04-62-T-04-63-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-61)
-(ACTIVE-T-04-63)
-(ACTIVE-T-04-62)
-)
-:effect
-(and
-(LYING-ON-T-04-63)
-(LYING-ON-T-04-62)
-(not (STANDING-ON-T-04-61))
-)
-)
-(:action LAY-DOWN-T-04-67-T-04-68-T-04-69-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-67)
-(ACTIVE-T-04-69)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-69)
-(LYING-ON-T-04-68)
-(not (STANDING-ON-T-04-67))
-)
-)
-(:action LAY-DOWN-T-04-61-T-05-61-T-06-61-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-61)
-(ACTIVE-T-06-61)
-(ACTIVE-T-05-61)
-)
-:effect
-(and
-(LYING-ON-T-06-61)
-(LYING-ON-T-05-61)
-(not (STANDING-ON-T-04-61))
-)
-)
-(:action LAY-DOWN-T-04-67-T-05-67-T-06-67-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-67)
-(ACTIVE-T-06-67)
-(ACTIVE-T-05-67)
-)
-:effect
-(and
-(LYING-ON-T-06-67)
-(LYING-ON-T-05-67)
-(not (STANDING-ON-T-04-67))
-)
-)
-(:action LAY-DOWN-T-04-61-T-04-60-T-04-59-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-61)
-(ACTIVE-T-04-59)
-(ACTIVE-T-04-60)
-)
-:effect
-(and
-(LYING-ON-T-04-59)
-(LYING-ON-T-04-60)
-(not (STANDING-ON-T-04-61))
-)
-)
-(:action LAY-DOWN-T-04-67-T-04-66-T-04-65-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-67)
-(ACTIVE-T-04-65)
-(ACTIVE-T-04-66)
-)
-:effect
-(and
-(LYING-ON-T-04-65)
-(LYING-ON-T-04-66)
-(not (STANDING-ON-T-04-67))
-)
-)
-(:action LAY-DOWN-T-07-70-T-07-69-T-07-68-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-70)
-(ACTIVE-T-07-68)
-(ACTIVE-T-07-69)
-)
-:effect
-(and
-(LYING-ON-T-07-68)
-(LYING-ON-T-07-69)
-(not (STANDING-ON-T-07-70))
-)
-)
-(:action LAY-DOWN-T-07-70-T-06-70-T-05-70-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-70)
-(ACTIVE-T-05-70)
-(ACTIVE-T-06-70)
-)
-:effect
-(and
-(LYING-ON-T-05-70)
-(LYING-ON-T-06-70)
-(not (STANDING-ON-T-07-70))
-)
-)
-(:action STAND-UP-T-04-59-T-04-60-T-04-61-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-60)
-(LYING-ON-T-04-59)
-(ACTIVE-T-04-61)
-)
-:effect
-(and
-(STANDING-ON-T-04-61)
-(not (LYING-ON-T-04-59))
-(not (LYING-ON-T-04-60))
-)
-)
-(:action STAND-UP-T-04-68-T-04-69-T-04-70-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-69)
-(LYING-ON-T-04-68)
-(ACTIVE-T-04-70)
-)
-:effect
-(and
-(STANDING-ON-T-04-70)
-(not (LYING-ON-T-04-68))
-(not (LYING-ON-T-04-69))
-)
-)
-(:action STAND-UP-T-05-70-T-06-70-T-07-70-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-06-70)
-(LYING-ON-T-05-70)
-(ACTIVE-T-07-70)
-)
-:effect
-(and
-(STANDING-ON-T-07-70)
-(not (LYING-ON-T-05-70))
-(not (LYING-ON-T-06-70))
-)
-)
-(:action STAND-UP-T-04-60-T-04-59-T-04-58-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-59)
-(LYING-ON-T-04-60)
-(ACTIVE-T-04-58)
-)
-:effect
-(and
-(STANDING-ON-T-04-58)
-(not (LYING-ON-T-04-60))
-(not (LYING-ON-T-04-59))
-)
-)
-(:action STAND-UP-T-04-69-T-04-68-T-04-67-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-68)
-(LYING-ON-T-04-69)
-(ACTIVE-T-04-67)
-)
-:effect
-(and
-(STANDING-ON-T-04-67)
-(not (LYING-ON-T-04-69))
-(not (LYING-ON-T-04-68))
-)
-)
-(:action STAND-UP-T-06-70-T-05-70-T-04-70-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-05-70)
-(LYING-ON-T-06-70)
-(ACTIVE-T-04-70)
-)
-:effect
-(and
-(STANDING-ON-T-04-70)
-(not (LYING-ON-T-06-70))
-(not (LYING-ON-T-05-70))
-)
-)
-(:action LAY-DOWN-T-04-58-T-04-59-T-04-60-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-58)
-(ACTIVE-T-04-60)
-(ACTIVE-T-04-59)
-)
-:effect
-(and
-(LYING-ON-T-04-60)
-(LYING-ON-T-04-59)
-(not (STANDING-ON-T-04-58))
-)
-)
-(:action LAY-DOWN-T-04-70-T-04-71-T-04-72-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-70)
-(ACTIVE-T-04-72)
-(ACTIVE-T-04-71)
-)
-:effect
-(and
-(LYING-ON-T-04-72)
-(LYING-ON-T-04-71)
-(not (STANDING-ON-T-04-70))
-)
-)
-(:action LAY-DOWN-T-04-58-T-05-58-T-06-58-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-58)
-(ACTIVE-T-06-58)
-(ACTIVE-T-05-58)
-)
-:effect
-(and
-(LYING-ON-T-06-58)
-(LYING-ON-T-05-58)
-(not (STANDING-ON-T-04-58))
-)
-)
-(:action LAY-DOWN-T-04-70-T-05-70-T-06-70-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-70)
-(ACTIVE-T-06-70)
-(ACTIVE-T-05-70)
-)
-:effect
-(and
-(LYING-ON-T-06-70)
-(LYING-ON-T-05-70)
-(not (STANDING-ON-T-04-70))
-)
-)
-(:action LAY-DOWN-T-04-70-T-04-69-T-04-68-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-70)
-(ACTIVE-T-04-68)
-(ACTIVE-T-04-69)
-)
-:effect
-(and
-(LYING-ON-T-04-68)
-(LYING-ON-T-04-69)
-(not (STANDING-ON-T-04-70))
-)
-)
-(:action STAND-UP-T-04-71-T-04-72-T-04-73-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-72)
-(LYING-ON-T-04-71)
-(ACTIVE-T-04-73)
-)
-:effect
-(and
-(STANDING-ON-T-04-73)
-(not (LYING-ON-T-04-71))
-(not (LYING-ON-T-04-72))
-)
-)
-(:action STAND-UP-T-05-58-T-06-58-T-07-58-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-06-58)
-(LYING-ON-T-05-58)
-(ACTIVE-T-07-58)
-)
-:effect
-(and
-(STANDING-ON-T-07-58)
-(not (LYING-ON-T-05-58))
-(not (LYING-ON-T-06-58))
-)
-)
-(:action STAND-UP-T-04-72-T-04-71-T-04-70-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-71)
-(LYING-ON-T-04-72)
-(ACTIVE-T-04-70)
-)
-:effect
-(and
-(STANDING-ON-T-04-70)
-(not (LYING-ON-T-04-72))
-(not (LYING-ON-T-04-71))
-)
-)
-(:action STAND-UP-T-06-58-T-05-58-T-04-58-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-05-58)
-(LYING-ON-T-06-58)
-(ACTIVE-T-04-58)
-)
-:effect
-(and
-(STANDING-ON-T-04-58)
-(not (LYING-ON-T-06-58))
-(not (LYING-ON-T-05-58))
-)
-)
-(:action LAY-DOWN-T-04-73-T-04-74-T-04-75-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-73)
-(ACTIVE-T-04-75)
-(ACTIVE-T-04-74)
-)
-:effect
-(and
-(LYING-ON-T-04-75)
-(LYING-ON-T-04-74)
-(not (STANDING-ON-T-04-73))
-)
-)
-(:action LAY-DOWN-T-07-58-T-08-58-T-09-58-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-58)
-(ACTIVE-T-09-58)
-(ACTIVE-T-08-58)
-)
-:effect
-(and
-(LYING-ON-T-09-58)
-(LYING-ON-T-08-58)
-(not (STANDING-ON-T-07-58))
-)
-)
-(:action LAY-DOWN-T-04-73-T-04-72-T-04-71-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-73)
-(ACTIVE-T-04-71)
-(ACTIVE-T-04-72)
-)
-:effect
-(and
-(LYING-ON-T-04-71)
-(LYING-ON-T-04-72)
-(not (STANDING-ON-T-04-73))
-)
-)
-(:action LAY-DOWN-T-07-58-T-06-58-T-05-58-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-58)
-(ACTIVE-T-05-58)
-(ACTIVE-T-06-58)
-)
-:effect
-(and
-(LYING-ON-T-05-58)
-(LYING-ON-T-06-58)
-(not (STANDING-ON-T-07-58))
-)
-)
-(:action STAND-UP-T-04-74-T-04-75-T-04-76-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-75)
-(LYING-ON-T-04-74)
-(ACTIVE-T-04-76)
-)
-:effect
-(and
-(STANDING-ON-T-04-76)
-(not (LYING-ON-T-04-74))
-(not (LYING-ON-T-04-75))
-)
-)
-(:action STAND-UP-T-08-58-T-09-58-T-10-58-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-09-58)
-(LYING-ON-T-08-58)
-(ACTIVE-T-10-58)
-)
-:effect
-(and
-(STANDING-ON-T-10-58)
-(not (LYING-ON-T-08-58))
-(not (LYING-ON-T-09-58))
-)
-)
-(:action STAND-UP-T-04-75-T-04-74-T-04-73-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-74)
-(LYING-ON-T-04-75)
-(ACTIVE-T-04-73)
-)
-:effect
-(and
-(STANDING-ON-T-04-73)
-(not (LYING-ON-T-04-75))
-(not (LYING-ON-T-04-74))
-)
-)
-(:action STAND-UP-T-09-58-T-08-58-T-07-58-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-08-58)
-(LYING-ON-T-09-58)
-(ACTIVE-T-07-58)
-)
-:effect
-(and
-(STANDING-ON-T-07-58)
-(not (LYING-ON-T-09-58))
-(not (LYING-ON-T-08-58))
-)
-)
-(:action LAY-DOWN-T-04-76-T-04-77-T-04-78-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-76)
-(ACTIVE-T-04-78)
-(ACTIVE-T-04-77)
-)
-:effect
-(and
-(LYING-ON-T-04-78)
-(LYING-ON-T-04-77)
-(not (STANDING-ON-T-04-76))
-)
-)
-(:action LAY-DOWN-T-04-76-T-04-75-T-04-74-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-76)
-(ACTIVE-T-04-74)
-(ACTIVE-T-04-75)
-)
-:effect
-(and
-(LYING-ON-T-04-74)
-(LYING-ON-T-04-75)
-(not (STANDING-ON-T-04-76))
-)
-)
-(:action LAY-DOWN-T-10-58-T-10-57-T-10-56-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-58)
-(ACTIVE-T-10-56)
-(ACTIVE-T-10-57)
-)
-:effect
-(and
-(LYING-ON-T-10-56)
-(LYING-ON-T-10-57)
-(not (STANDING-ON-T-10-58))
-)
-)
-(:action LAY-DOWN-T-10-58-T-09-58-T-08-58-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-58)
-(ACTIVE-T-08-58)
-(ACTIVE-T-09-58)
-)
-:effect
-(and
-(LYING-ON-T-08-58)
-(LYING-ON-T-09-58)
-(not (STANDING-ON-T-10-58))
-)
-)
-(:action STAND-UP-T-04-77-T-04-78-T-04-79-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-78)
-(LYING-ON-T-04-77)
-(ACTIVE-T-04-79)
-)
-:effect
-(and
-(STANDING-ON-T-04-79)
-(not (LYING-ON-T-04-77))
-(not (LYING-ON-T-04-78))
-)
-)
-(:action STAND-UP-T-10-56-T-10-57-T-10-58-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-10-57)
-(LYING-ON-T-10-56)
-(ACTIVE-T-10-58)
-)
-:effect
-(and
-(STANDING-ON-T-10-58)
-(not (LYING-ON-T-10-56))
-(not (LYING-ON-T-10-57))
-)
-)
-(:action STAND-UP-T-04-78-T-04-77-T-04-76-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-77)
-(LYING-ON-T-04-78)
-(ACTIVE-T-04-76)
-)
-:effect
-(and
-(STANDING-ON-T-04-76)
-(not (LYING-ON-T-04-78))
-(not (LYING-ON-T-04-77))
-)
-)
-(:action STAND-UP-T-10-57-T-10-56-T-10-55-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-10-56)
-(LYING-ON-T-10-57)
-(ACTIVE-T-10-55)
-)
-:effect
-(and
-(STANDING-ON-T-10-55)
-(not (LYING-ON-T-10-57))
-(not (LYING-ON-T-10-56))
-)
-)
-(:action LAY-DOWN-T-10-55-T-10-56-T-10-57-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-55)
-(ACTIVE-T-10-57)
-(ACTIVE-T-10-56)
-)
-:effect
-(and
-(LYING-ON-T-10-57)
-(LYING-ON-T-10-56)
-(not (STANDING-ON-T-10-55))
-)
-)
-(:action LAY-DOWN-T-04-79-T-04-78-T-04-77-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-79)
-(ACTIVE-T-04-77)
-(ACTIVE-T-04-78)
-)
-:effect
-(and
-(LYING-ON-T-04-77)
-(LYING-ON-T-04-78)
-(not (STANDING-ON-T-04-79))
-)
-)
-(:action LAY-DOWN-T-10-55-T-10-54-T-10-53-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-10-55)
-(ACTIVE-T-10-53)
+(STANDING-ON-T-10-52)
 (ACTIVE-T-10-54)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
-(LYING-ON-T-10-53)
 (LYING-ON-T-10-54)
-(not (STANDING-ON-T-10-55))
+(LYING-ON-T-10-53)
+(not (STANDING-ON-T-10-52))
 )
 )
-(:action LAY-DOWN-T-04-79-T-03-79-T-02-79-NORTH
+(:action LAY-DOWN-T-10-52-T-09-52-T-08-52-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-04-79)
-(ACTIVE-T-02-79)
-(ACTIVE-T-03-79)
+(STANDING-ON-T-10-52)
+(ACTIVE-T-08-52)
+(ACTIVE-T-09-52)
 )
 :effect
 (and
-(LYING-ON-T-02-79)
-(LYING-ON-T-03-79)
-(not (STANDING-ON-T-04-79))
+(LYING-ON-T-08-52)
+(LYING-ON-T-09-52)
+(not (STANDING-ON-T-10-52))
 )
 )
 (:action STAND-UP-T-10-53-T-10-54-T-10-55-EAST
@@ -1981,19 +676,19 @@
 (not (LYING-ON-T-10-54))
 )
 )
-(:action STAND-UP-T-02-79-T-03-79-T-04-79-SOUTH
+(:action STAND-UP-T-08-52-T-09-52-T-10-52-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-03-79)
-(LYING-ON-T-02-79)
-(ACTIVE-T-04-79)
+(LYING-ON-T-09-52)
+(LYING-ON-T-08-52)
+(ACTIVE-T-10-52)
 )
 :effect
 (and
-(STANDING-ON-T-04-79)
-(not (LYING-ON-T-02-79))
-(not (LYING-ON-T-03-79))
+(STANDING-ON-T-10-52)
+(not (LYING-ON-T-08-52))
+(not (LYING-ON-T-09-52))
 )
 )
 (:action STAND-UP-T-10-54-T-10-53-T-10-52-WEST
@@ -2011,424 +706,769 @@
 (not (LYING-ON-T-10-53))
 )
 )
-(:action STAND-UP-T-03-79-T-02-79-T-01-79-NORTH
+(:action STAND-UP-T-09-52-T-08-52-T-07-52-NORTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-02-79)
-(LYING-ON-T-03-79)
-(ACTIVE-T-01-79)
+(LYING-ON-T-08-52)
+(LYING-ON-T-09-52)
+(ACTIVE-T-07-52)
 )
 :effect
 (and
-(STANDING-ON-T-01-79)
-(not (LYING-ON-T-03-79))
-(not (LYING-ON-T-02-79))
+(STANDING-ON-T-07-52)
+(not (LYING-ON-T-09-52))
+(not (LYING-ON-T-08-52))
 )
 )
-(:action LAY-DOWN-T-10-52-T-10-53-T-10-54-EAST
+(:action LAY-DOWN-T-04-49-T-04-50-T-04-51-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-52)
-(ACTIVE-T-10-54)
+(STANDING-ON-T-04-49)
+(ACTIVE-T-04-51)
+(ACTIVE-T-04-50)
+)
+:effect
+(and
+(LYING-ON-T-04-51)
+(LYING-ON-T-04-50)
+(not (STANDING-ON-T-04-49))
+)
+)
+(:action LAY-DOWN-T-07-52-T-07-53-T-07-54-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-52)
+(ACTIVE-T-07-54)
+(ACTIVE-T-07-53)
+)
+:effect
+(and
+(LYING-ON-T-07-54)
+(LYING-ON-T-07-53)
+(not (STANDING-ON-T-07-52))
+)
+)
+(:action LAY-DOWN-T-07-52-T-08-52-T-09-52-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-52)
+(ACTIVE-T-09-52)
+(ACTIVE-T-08-52)
+)
+:effect
+(and
+(LYING-ON-T-09-52)
+(LYING-ON-T-08-52)
+(not (STANDING-ON-T-07-52))
+)
+)
+(:action LAY-DOWN-T-04-49-T-04-48-T-04-47-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-49)
+(ACTIVE-T-04-47)
+(ACTIVE-T-04-48)
+)
+:effect
+(and
+(LYING-ON-T-04-47)
+(LYING-ON-T-04-48)
+(not (STANDING-ON-T-04-49))
+)
+)
+(:action LAY-DOWN-T-10-55-T-10-54-T-10-53-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-55)
 (ACTIVE-T-10-53)
+(ACTIVE-T-10-54)
 )
 :effect
 (and
-(LYING-ON-T-10-54)
 (LYING-ON-T-10-53)
-(not (STANDING-ON-T-10-52))
+(LYING-ON-T-10-54)
+(not (STANDING-ON-T-10-55))
 )
 )
-(:action LAY-DOWN-T-01-79-T-02-79-T-03-79-SOUTH
+(:action LAY-DOWN-T-07-52-T-06-52-T-05-52-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-79)
-(ACTIVE-T-03-79)
-(ACTIVE-T-02-79)
+(STANDING-ON-T-07-52)
+(ACTIVE-T-05-52)
+(ACTIVE-T-06-52)
 )
 :effect
 (and
-(LYING-ON-T-03-79)
-(LYING-ON-T-02-79)
-(not (STANDING-ON-T-01-79))
+(LYING-ON-T-05-52)
+(LYING-ON-T-06-52)
+(not (STANDING-ON-T-07-52))
 )
 )
-(:action LAY-DOWN-T-01-79-T-01-78-T-01-77-WEST
+(:action LAY-DOWN-T-10-55-T-09-55-T-08-55-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-79)
-(ACTIVE-T-01-77)
-(ACTIVE-T-01-78)
+(STANDING-ON-T-10-55)
+(ACTIVE-T-08-55)
+(ACTIVE-T-09-55)
 )
 :effect
 (and
-(LYING-ON-T-01-77)
-(LYING-ON-T-01-78)
-(not (STANDING-ON-T-01-79))
+(LYING-ON-T-08-55)
+(LYING-ON-T-09-55)
+(not (STANDING-ON-T-10-55))
 )
 )
-(:action LAY-DOWN-T-10-52-T-10-51-T-10-50-WEST
+(:action STAND-UP-T-04-47-T-04-48-T-04-49-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-52)
-(ACTIVE-T-10-50)
-(ACTIVE-T-10-51)
+(LYING-ON-T-04-48)
+(LYING-ON-T-04-47)
+(ACTIVE-T-04-49)
 )
 :effect
 (and
-(LYING-ON-T-10-50)
-(LYING-ON-T-10-51)
-(not (STANDING-ON-T-10-52))
+(STANDING-ON-T-04-49)
+(not (LYING-ON-T-04-47))
+(not (LYING-ON-T-04-48))
 )
 )
-(:action STAND-UP-T-01-77-T-01-78-T-01-79-EAST
+(:action STAND-UP-T-04-50-T-04-51-T-04-52-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-78)
-(LYING-ON-T-01-77)
-(ACTIVE-T-01-79)
+(LYING-ON-T-04-51)
+(LYING-ON-T-04-50)
+(ACTIVE-T-04-52)
 )
 :effect
 (and
-(STANDING-ON-T-01-79)
-(not (LYING-ON-T-01-77))
-(not (LYING-ON-T-01-78))
+(STANDING-ON-T-04-52)
+(not (LYING-ON-T-04-50))
+(not (LYING-ON-T-04-51))
 )
 )
-(:action STAND-UP-T-10-50-T-10-51-T-10-52-EAST
+(:action STAND-UP-T-07-53-T-07-54-T-07-55-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-51)
-(LYING-ON-T-10-50)
-(ACTIVE-T-10-52)
+(LYING-ON-T-07-54)
+(LYING-ON-T-07-53)
+(ACTIVE-T-07-55)
 )
 :effect
 (and
-(STANDING-ON-T-10-52)
-(not (LYING-ON-T-10-50))
-(not (LYING-ON-T-10-51))
+(STANDING-ON-T-07-55)
+(not (LYING-ON-T-07-53))
+(not (LYING-ON-T-07-54))
 )
 )
-(:action STAND-UP-T-01-78-T-01-77-T-01-76-WEST
+(:action STAND-UP-T-05-52-T-06-52-T-07-52-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-77)
-(LYING-ON-T-01-78)
-(ACTIVE-T-01-76)
+(LYING-ON-T-06-52)
+(LYING-ON-T-05-52)
+(ACTIVE-T-07-52)
 )
 :effect
 (and
-(STANDING-ON-T-01-76)
-(not (LYING-ON-T-01-78))
-(not (LYING-ON-T-01-77))
+(STANDING-ON-T-07-52)
+(not (LYING-ON-T-05-52))
+(not (LYING-ON-T-06-52))
 )
 )
-(:action STAND-UP-T-10-51-T-10-50-T-10-49-WEST
+(:action STAND-UP-T-08-55-T-09-55-T-10-55-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-50)
-(LYING-ON-T-10-51)
-(ACTIVE-T-10-49)
+(LYING-ON-T-09-55)
+(LYING-ON-T-08-55)
+(ACTIVE-T-10-55)
 )
 :effect
 (and
-(STANDING-ON-T-10-49)
-(not (LYING-ON-T-10-51))
-(not (LYING-ON-T-10-50))
+(STANDING-ON-T-10-55)
+(not (LYING-ON-T-08-55))
+(not (LYING-ON-T-09-55))
 )
 )
-(:action LAY-DOWN-T-01-76-T-01-77-T-01-78-EAST
+(:action STAND-UP-T-04-48-T-04-47-T-04-46-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-76)
-(ACTIVE-T-01-78)
-(ACTIVE-T-01-77)
+(LYING-ON-T-04-47)
+(LYING-ON-T-04-48)
+(ACTIVE-T-04-46)
 )
 :effect
 (and
-(LYING-ON-T-01-78)
-(LYING-ON-T-01-77)
-(not (STANDING-ON-T-01-76))
+(STANDING-ON-T-04-46)
+(not (LYING-ON-T-04-48))
+(not (LYING-ON-T-04-47))
 )
 )
-(:action LAY-DOWN-T-10-49-T-10-50-T-10-51-EAST
+(:action STAND-UP-T-04-51-T-04-50-T-04-49-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-49)
-(ACTIVE-T-10-51)
-(ACTIVE-T-10-50)
+(LYING-ON-T-04-50)
+(LYING-ON-T-04-51)
+(ACTIVE-T-04-49)
 )
 :effect
 (and
-(LYING-ON-T-10-51)
-(LYING-ON-T-10-50)
-(not (STANDING-ON-T-10-49))
+(STANDING-ON-T-04-49)
+(not (LYING-ON-T-04-51))
+(not (LYING-ON-T-04-50))
 )
 )
-(:action LAY-DOWN-T-01-76-T-01-75-T-01-74-WEST
+(:action STAND-UP-T-07-54-T-07-53-T-07-52-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-76)
-(ACTIVE-T-01-74)
-(ACTIVE-T-01-75)
+(LYING-ON-T-07-53)
+(LYING-ON-T-07-54)
+(ACTIVE-T-07-52)
 )
 :effect
 (and
-(LYING-ON-T-01-74)
-(LYING-ON-T-01-75)
-(not (STANDING-ON-T-01-76))
+(STANDING-ON-T-07-52)
+(not (LYING-ON-T-07-54))
+(not (LYING-ON-T-07-53))
 )
 )
-(:action LAY-DOWN-T-10-49-T-10-48-T-10-47-WEST
+(:action STAND-UP-T-06-52-T-05-52-T-04-52-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-49)
-(ACTIVE-T-10-47)
-(ACTIVE-T-10-48)
+(LYING-ON-T-05-52)
+(LYING-ON-T-06-52)
+(ACTIVE-T-04-52)
 )
 :effect
 (and
-(LYING-ON-T-10-47)
-(LYING-ON-T-10-48)
-(not (STANDING-ON-T-10-49))
+(STANDING-ON-T-04-52)
+(not (LYING-ON-T-06-52))
+(not (LYING-ON-T-05-52))
 )
 )
-(:action STAND-UP-T-01-74-T-01-75-T-01-76-EAST
+(:action STAND-UP-T-09-55-T-08-55-T-07-55-NORTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-75)
-(LYING-ON-T-01-74)
-(ACTIVE-T-01-76)
+(LYING-ON-T-08-55)
+(LYING-ON-T-09-55)
+(ACTIVE-T-07-55)
 )
 :effect
 (and
-(STANDING-ON-T-01-76)
-(not (LYING-ON-T-01-74))
-(not (LYING-ON-T-01-75))
+(STANDING-ON-T-07-55)
+(not (LYING-ON-T-09-55))
+(not (LYING-ON-T-08-55))
 )
 )
-(:action STAND-UP-T-10-47-T-10-48-T-10-49-EAST
+(:action LAY-DOWN-T-04-46-T-04-47-T-04-48-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-48)
-(LYING-ON-T-10-47)
-(ACTIVE-T-10-49)
+(STANDING-ON-T-04-46)
+(ACTIVE-T-04-48)
+(ACTIVE-T-04-47)
 )
 :effect
 (and
-(STANDING-ON-T-10-49)
-(not (LYING-ON-T-10-47))
-(not (LYING-ON-T-10-48))
+(LYING-ON-T-04-48)
+(LYING-ON-T-04-47)
+(not (STANDING-ON-T-04-46))
 )
 )
-(:action STAND-UP-T-01-75-T-01-74-T-01-73-WEST
+(:action LAY-DOWN-T-04-52-T-04-53-T-04-54-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-74)
-(LYING-ON-T-01-75)
-(ACTIVE-T-01-73)
+(STANDING-ON-T-04-52)
+(ACTIVE-T-04-54)
+(ACTIVE-T-04-53)
 )
 :effect
 (and
-(STANDING-ON-T-01-73)
-(not (LYING-ON-T-01-75))
-(not (LYING-ON-T-01-74))
+(LYING-ON-T-04-54)
+(LYING-ON-T-04-53)
+(not (STANDING-ON-T-04-52))
 )
 )
-(:action STAND-UP-T-10-48-T-10-47-T-10-46-WEST
+(:action LAY-DOWN-T-04-52-T-05-52-T-06-52-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-47)
-(LYING-ON-T-10-48)
-(ACTIVE-T-10-46)
+(STANDING-ON-T-04-52)
+(ACTIVE-T-06-52)
+(ACTIVE-T-05-52)
 )
 :effect
 (and
-(STANDING-ON-T-10-46)
-(not (LYING-ON-T-10-48))
-(not (LYING-ON-T-10-47))
+(LYING-ON-T-06-52)
+(LYING-ON-T-05-52)
+(not (STANDING-ON-T-04-52))
 )
 )
-(:action LAY-DOWN-T-01-73-T-01-74-T-01-75-EAST
+(:action LAY-DOWN-T-07-55-T-08-55-T-09-55-SOUTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-73)
-(ACTIVE-T-01-75)
-(ACTIVE-T-01-74)
+(STANDING-ON-T-07-55)
+(ACTIVE-T-09-55)
+(ACTIVE-T-08-55)
 )
 :effect
 (and
-(LYING-ON-T-01-75)
-(LYING-ON-T-01-74)
-(not (STANDING-ON-T-01-73))
+(LYING-ON-T-09-55)
+(LYING-ON-T-08-55)
+(not (STANDING-ON-T-07-55))
 )
 )
-(:action LAY-DOWN-T-10-46-T-10-47-T-10-48-EAST
+(:action LAY-DOWN-T-04-46-T-04-45-T-04-44-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-46)
-(ACTIVE-T-10-48)
-(ACTIVE-T-10-47)
+(STANDING-ON-T-04-46)
+(ACTIVE-T-04-44)
+(ACTIVE-T-04-45)
 )
 :effect
 (and
-(LYING-ON-T-10-48)
-(LYING-ON-T-10-47)
-(not (STANDING-ON-T-10-46))
+(LYING-ON-T-04-44)
+(LYING-ON-T-04-45)
+(not (STANDING-ON-T-04-46))
 )
 )
-(:action LAY-DOWN-T-01-73-T-01-72-T-01-71-WEST
+(:action LAY-DOWN-T-04-52-T-04-51-T-04-50-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-73)
-(ACTIVE-T-01-71)
-(ACTIVE-T-01-72)
+(STANDING-ON-T-04-52)
+(ACTIVE-T-04-50)
+(ACTIVE-T-04-51)
 )
 :effect
 (and
-(LYING-ON-T-01-71)
-(LYING-ON-T-01-72)
-(not (STANDING-ON-T-01-73))
+(LYING-ON-T-04-50)
+(LYING-ON-T-04-51)
+(not (STANDING-ON-T-04-52))
 )
 )
-(:action LAY-DOWN-T-10-46-T-10-45-T-10-44-WEST
+(:action LAY-DOWN-T-07-55-T-07-54-T-07-53-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-46)
-(ACTIVE-T-10-44)
-(ACTIVE-T-10-45)
+(STANDING-ON-T-07-55)
+(ACTIVE-T-07-53)
+(ACTIVE-T-07-54)
 )
 :effect
 (and
-(LYING-ON-T-10-44)
-(LYING-ON-T-10-45)
-(not (STANDING-ON-T-10-46))
+(LYING-ON-T-07-53)
+(LYING-ON-T-07-54)
+(not (STANDING-ON-T-07-55))
 )
 )
-(:action STAND-UP-T-01-71-T-01-72-T-01-73-EAST
+(:action LAY-DOWN-T-07-55-T-06-55-T-05-55-NORTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-72)
-(LYING-ON-T-01-71)
-(ACTIVE-T-01-73)
+(STANDING-ON-T-07-55)
+(ACTIVE-T-05-55)
+(ACTIVE-T-06-55)
 )
 :effect
 (and
-(STANDING-ON-T-01-73)
-(not (LYING-ON-T-01-71))
-(not (LYING-ON-T-01-72))
+(LYING-ON-T-05-55)
+(LYING-ON-T-06-55)
+(not (STANDING-ON-T-07-55))
 )
 )
-(:action STAND-UP-T-10-44-T-10-45-T-10-46-EAST
+(:action STAND-UP-T-04-44-T-04-45-T-04-46-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-45)
-(LYING-ON-T-10-44)
-(ACTIVE-T-10-46)
+(LYING-ON-T-04-45)
+(LYING-ON-T-04-44)
+(ACTIVE-T-04-46)
 )
 :effect
 (and
-(STANDING-ON-T-10-46)
-(not (LYING-ON-T-10-44))
-(not (LYING-ON-T-10-45))
+(STANDING-ON-T-04-46)
+(not (LYING-ON-T-04-44))
+(not (LYING-ON-T-04-45))
 )
 )
-(:action STAND-UP-T-01-72-T-01-71-T-01-70-WEST
+(:action STAND-UP-T-04-53-T-04-54-T-04-55-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-71)
-(LYING-ON-T-01-72)
-(ACTIVE-T-01-70)
+(LYING-ON-T-04-54)
+(LYING-ON-T-04-53)
+(ACTIVE-T-04-55)
 )
 :effect
 (and
-(STANDING-ON-T-01-70)
-(not (LYING-ON-T-01-72))
-(not (LYING-ON-T-01-71))
+(STANDING-ON-T-04-55)
+(not (LYING-ON-T-04-53))
+(not (LYING-ON-T-04-54))
 )
 )
-(:action STAND-UP-T-10-45-T-10-44-T-10-43-WEST
+(:action STAND-UP-T-05-55-T-06-55-T-07-55-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-10-44)
-(LYING-ON-T-10-45)
+(LYING-ON-T-06-55)
+(LYING-ON-T-05-55)
+(ACTIVE-T-07-55)
+)
+:effect
+(and
+(STANDING-ON-T-07-55)
+(not (LYING-ON-T-05-55))
+(not (LYING-ON-T-06-55))
+)
+)
+(:action STAND-UP-T-04-45-T-04-44-T-04-43-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-44)
+(LYING-ON-T-04-45)
+(ACTIVE-T-04-43)
+)
+:effect
+(and
+(STANDING-ON-T-04-43)
+(not (LYING-ON-T-04-45))
+(not (LYING-ON-T-04-44))
+)
+)
+(:action STAND-UP-T-04-54-T-04-53-T-04-52-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-53)
+(LYING-ON-T-04-54)
+(ACTIVE-T-04-52)
+)
+:effect
+(and
+(STANDING-ON-T-04-52)
+(not (LYING-ON-T-04-54))
+(not (LYING-ON-T-04-53))
+)
+)
+(:action STAND-UP-T-06-55-T-05-55-T-04-55-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-55)
+(LYING-ON-T-06-55)
+(ACTIVE-T-04-55)
+)
+:effect
+(and
+(STANDING-ON-T-04-55)
+(not (LYING-ON-T-06-55))
+(not (LYING-ON-T-05-55))
+)
+)
+(:action LAY-DOWN-T-04-43-T-04-44-T-04-45-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-43)
+(ACTIVE-T-04-45)
+(ACTIVE-T-04-44)
+)
+:effect
+(and
+(LYING-ON-T-04-45)
+(LYING-ON-T-04-44)
+(not (STANDING-ON-T-04-43))
+)
+)
+(:action LAY-DOWN-T-04-55-T-04-56-T-04-57-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-55)
+(ACTIVE-T-04-57)
+(ACTIVE-T-04-56)
+)
+:effect
+(and
+(LYING-ON-T-04-57)
+(LYING-ON-T-04-56)
+(not (STANDING-ON-T-04-55))
+)
+)
+(:action LAY-DOWN-T-04-43-T-05-43-T-06-43-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-43)
+(ACTIVE-T-06-43)
+(ACTIVE-T-05-43)
+)
+:effect
+(and
+(LYING-ON-T-06-43)
+(LYING-ON-T-05-43)
+(not (STANDING-ON-T-04-43))
+)
+)
+(:action LAY-DOWN-T-04-55-T-05-55-T-06-55-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-55)
+(ACTIVE-T-06-55)
+(ACTIVE-T-05-55)
+)
+:effect
+(and
+(LYING-ON-T-06-55)
+(LYING-ON-T-05-55)
+(not (STANDING-ON-T-04-55))
+)
+)
+(:action LAY-DOWN-T-04-55-T-04-54-T-04-53-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-55)
+(ACTIVE-T-04-53)
+(ACTIVE-T-04-54)
+)
+:effect
+(and
+(LYING-ON-T-04-53)
+(LYING-ON-T-04-54)
+(not (STANDING-ON-T-04-55))
+)
+)
+(:action STAND-UP-T-04-56-T-04-57-T-04-58-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-57)
+(LYING-ON-T-04-56)
+(ACTIVE-T-04-58)
+)
+:effect
+(and
+(STANDING-ON-T-04-58)
+(not (LYING-ON-T-04-56))
+(not (LYING-ON-T-04-57))
+)
+)
+(:action STAND-UP-T-05-43-T-06-43-T-07-43-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-43)
+(LYING-ON-T-05-43)
+(ACTIVE-T-07-43)
+)
+:effect
+(and
+(STANDING-ON-T-07-43)
+(not (LYING-ON-T-05-43))
+(not (LYING-ON-T-06-43))
+)
+)
+(:action STAND-UP-T-04-57-T-04-56-T-04-55-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-56)
+(LYING-ON-T-04-57)
+(ACTIVE-T-04-55)
+)
+:effect
+(and
+(STANDING-ON-T-04-55)
+(not (LYING-ON-T-04-57))
+(not (LYING-ON-T-04-56))
+)
+)
+(:action STAND-UP-T-06-43-T-05-43-T-04-43-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-43)
+(LYING-ON-T-06-43)
+(ACTIVE-T-04-43)
+)
+:effect
+(and
+(STANDING-ON-T-04-43)
+(not (LYING-ON-T-06-43))
+(not (LYING-ON-T-05-43))
+)
+)
+(:action LAY-DOWN-T-04-58-T-04-59-T-04-60-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-58)
+(ACTIVE-T-04-60)
+(ACTIVE-T-04-59)
+)
+:effect
+(and
+(LYING-ON-T-04-60)
+(LYING-ON-T-04-59)
+(not (STANDING-ON-T-04-58))
+)
+)
+(:action LAY-DOWN-T-07-43-T-08-43-T-09-43-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-43)
+(ACTIVE-T-09-43)
+(ACTIVE-T-08-43)
+)
+:effect
+(and
+(LYING-ON-T-09-43)
+(LYING-ON-T-08-43)
+(not (STANDING-ON-T-07-43))
+)
+)
+(:action LAY-DOWN-T-04-58-T-04-57-T-04-56-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-58)
+(ACTIVE-T-04-56)
+(ACTIVE-T-04-57)
+)
+:effect
+(and
+(LYING-ON-T-04-56)
+(LYING-ON-T-04-57)
+(not (STANDING-ON-T-04-58))
+)
+)
+(:action LAY-DOWN-T-07-43-T-06-43-T-05-43-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-43)
+(ACTIVE-T-05-43)
+(ACTIVE-T-06-43)
+)
+:effect
+(and
+(LYING-ON-T-05-43)
+(LYING-ON-T-06-43)
+(not (STANDING-ON-T-07-43))
+)
+)
+(:action STAND-UP-T-04-59-T-04-60-T-04-61-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-60)
+(LYING-ON-T-04-59)
+(ACTIVE-T-04-61)
+)
+:effect
+(and
+(STANDING-ON-T-04-61)
+(not (LYING-ON-T-04-59))
+(not (LYING-ON-T-04-60))
+)
+)
+(:action STAND-UP-T-08-43-T-09-43-T-10-43-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-43)
+(LYING-ON-T-08-43)
 (ACTIVE-T-10-43)
 )
 :effect
 (and
 (STANDING-ON-T-10-43)
-(not (LYING-ON-T-10-45))
-(not (LYING-ON-T-10-44))
+(not (LYING-ON-T-08-43))
+(not (LYING-ON-T-09-43))
 )
 )
-(:action LAY-DOWN-T-01-70-T-01-71-T-01-72-EAST
+(:action STAND-UP-T-04-60-T-04-59-T-04-58-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-70)
-(ACTIVE-T-01-72)
-(ACTIVE-T-01-71)
+(LYING-ON-T-04-59)
+(LYING-ON-T-04-60)
+(ACTIVE-T-04-58)
 )
 :effect
 (and
-(LYING-ON-T-01-72)
-(LYING-ON-T-01-71)
-(not (STANDING-ON-T-01-70))
+(STANDING-ON-T-04-58)
+(not (LYING-ON-T-04-60))
+(not (LYING-ON-T-04-59))
 )
 )
-(:action LAY-DOWN-T-10-43-T-10-44-T-10-45-EAST
+(:action STAND-UP-T-09-43-T-08-43-T-07-43-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-10-43)
-(ACTIVE-T-10-45)
-(ACTIVE-T-10-44)
+(LYING-ON-T-08-43)
+(LYING-ON-T-09-43)
+(ACTIVE-T-07-43)
 )
 :effect
 (and
-(LYING-ON-T-10-45)
-(LYING-ON-T-10-44)
-(not (STANDING-ON-T-10-43))
+(STANDING-ON-T-07-43)
+(not (LYING-ON-T-09-43))
+(not (LYING-ON-T-08-43))
 )
 )
-(:action LAY-DOWN-T-01-70-T-01-69-T-01-68-WEST
+(:action LAY-DOWN-T-04-61-T-04-62-T-04-63-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-70)
-(ACTIVE-T-01-68)
-(ACTIVE-T-01-69)
+(STANDING-ON-T-04-61)
+(ACTIVE-T-04-63)
+(ACTIVE-T-04-62)
 )
 :effect
 (and
-(LYING-ON-T-01-68)
-(LYING-ON-T-01-69)
-(not (STANDING-ON-T-01-70))
+(LYING-ON-T-04-63)
+(LYING-ON-T-04-62)
+(not (STANDING-ON-T-04-61))
+)
+)
+(:action LAY-DOWN-T-04-61-T-04-60-T-04-59-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-61)
+(ACTIVE-T-04-59)
+(ACTIVE-T-04-60)
+)
+:effect
+(and
+(LYING-ON-T-04-59)
+(LYING-ON-T-04-60)
+(not (STANDING-ON-T-04-61))
 )
 )
 (:action LAY-DOWN-T-10-43-T-10-42-T-10-41-WEST
@@ -2446,19 +1486,34 @@
 (not (STANDING-ON-T-10-43))
 )
 )
-(:action STAND-UP-T-01-68-T-01-69-T-01-70-EAST
+(:action LAY-DOWN-T-10-43-T-09-43-T-08-43-NORTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-69)
-(LYING-ON-T-01-68)
-(ACTIVE-T-01-70)
+(STANDING-ON-T-10-43)
+(ACTIVE-T-08-43)
+(ACTIVE-T-09-43)
 )
 :effect
 (and
-(STANDING-ON-T-01-70)
-(not (LYING-ON-T-01-68))
-(not (LYING-ON-T-01-69))
+(LYING-ON-T-08-43)
+(LYING-ON-T-09-43)
+(not (STANDING-ON-T-10-43))
+)
+)
+(:action STAND-UP-T-04-62-T-04-63-T-04-64-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-63)
+(LYING-ON-T-04-62)
+(ACTIVE-T-04-64)
+)
+:effect
+(and
+(STANDING-ON-T-04-64)
+(not (LYING-ON-T-04-62))
+(not (LYING-ON-T-04-63))
 )
 )
 (:action STAND-UP-T-10-41-T-10-42-T-10-43-EAST
@@ -2476,19 +1531,19 @@
 (not (LYING-ON-T-10-42))
 )
 )
-(:action STAND-UP-T-01-69-T-01-68-T-01-67-WEST
+(:action STAND-UP-T-04-63-T-04-62-T-04-61-WEST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-68)
-(LYING-ON-T-01-69)
-(ACTIVE-T-01-67)
+(LYING-ON-T-04-62)
+(LYING-ON-T-04-63)
+(ACTIVE-T-04-61)
 )
 :effect
 (and
-(STANDING-ON-T-01-67)
-(not (LYING-ON-T-01-69))
-(not (LYING-ON-T-01-68))
+(STANDING-ON-T-04-61)
+(not (LYING-ON-T-04-63))
+(not (LYING-ON-T-04-62))
 )
 )
 (:action STAND-UP-T-10-42-T-10-41-T-10-40-WEST
@@ -2506,21 +1561,6 @@
 (not (LYING-ON-T-10-41))
 )
 )
-(:action LAY-DOWN-T-01-67-T-01-68-T-01-69-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-67)
-(ACTIVE-T-01-69)
-(ACTIVE-T-01-68)
-)
-:effect
-(and
-(LYING-ON-T-01-69)
-(LYING-ON-T-01-68)
-(not (STANDING-ON-T-01-67))
-)
-)
 (:action LAY-DOWN-T-10-40-T-10-41-T-10-42-EAST
 :parameters ()
 :precondition
@@ -2536,19 +1576,19 @@
 (not (STANDING-ON-T-10-40))
 )
 )
-(:action LAY-DOWN-T-01-67-T-01-66-T-01-65-WEST
+(:action LAY-DOWN-T-04-64-T-04-63-T-04-62-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-67)
-(ACTIVE-T-01-65)
-(ACTIVE-T-01-66)
+(STANDING-ON-T-04-64)
+(ACTIVE-T-04-62)
+(ACTIVE-T-04-63)
 )
 :effect
 (and
-(LYING-ON-T-01-65)
-(LYING-ON-T-01-66)
-(not (STANDING-ON-T-01-67))
+(LYING-ON-T-04-62)
+(LYING-ON-T-04-63)
+(not (STANDING-ON-T-04-64))
 )
 )
 (:action LAY-DOWN-T-10-40-T-10-39-T-10-38-WEST
@@ -2566,19 +1606,19 @@
 (not (STANDING-ON-T-10-40))
 )
 )
-(:action STAND-UP-T-01-65-T-01-66-T-01-67-EAST
+(:action LAY-DOWN-T-04-64-T-03-64-T-02-64-NORTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-66)
-(LYING-ON-T-01-65)
-(ACTIVE-T-01-67)
+(STANDING-ON-T-04-64)
+(ACTIVE-T-02-64)
+(ACTIVE-T-03-64)
 )
 :effect
 (and
-(STANDING-ON-T-01-67)
-(not (LYING-ON-T-01-65))
-(not (LYING-ON-T-01-66))
+(LYING-ON-T-02-64)
+(LYING-ON-T-03-64)
+(not (STANDING-ON-T-04-64))
 )
 )
 (:action STAND-UP-T-10-38-T-10-39-T-10-40-EAST
@@ -2596,19 +1636,19 @@
 (not (LYING-ON-T-10-39))
 )
 )
-(:action STAND-UP-T-01-66-T-01-65-T-01-64-WEST
+(:action STAND-UP-T-02-64-T-03-64-T-04-64-SOUTH
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-01-65)
-(LYING-ON-T-01-66)
-(ACTIVE-T-01-64)
+(LYING-ON-T-03-64)
+(LYING-ON-T-02-64)
+(ACTIVE-T-04-64)
 )
 :effect
 (and
-(STANDING-ON-T-01-64)
-(not (LYING-ON-T-01-66))
-(not (LYING-ON-T-01-65))
+(STANDING-ON-T-04-64)
+(not (LYING-ON-T-02-64))
+(not (LYING-ON-T-03-64))
 )
 )
 (:action STAND-UP-T-10-39-T-10-38-T-10-37-WEST
@@ -2626,19 +1666,19 @@
 (not (LYING-ON-T-10-38))
 )
 )
-(:action LAY-DOWN-T-01-64-T-01-65-T-01-66-EAST
+(:action STAND-UP-T-03-64-T-02-64-T-01-64-NORTH
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-64)
-(ACTIVE-T-01-66)
-(ACTIVE-T-01-65)
+(LYING-ON-T-02-64)
+(LYING-ON-T-03-64)
+(ACTIVE-T-01-64)
 )
 :effect
 (and
-(LYING-ON-T-01-66)
-(LYING-ON-T-01-65)
-(not (STANDING-ON-T-01-64))
+(STANDING-ON-T-01-64)
+(not (LYING-ON-T-03-64))
+(not (LYING-ON-T-02-64))
 )
 )
 (:action LAY-DOWN-T-10-37-T-10-38-T-10-39-EAST
@@ -2654,6 +1694,21 @@
 (LYING-ON-T-10-39)
 (LYING-ON-T-10-38)
 (not (STANDING-ON-T-10-37))
+)
+)
+(:action LAY-DOWN-T-01-64-T-02-64-T-03-64-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-64)
+(ACTIVE-T-03-64)
+(ACTIVE-T-02-64)
+)
+:effect
+(and
+(LYING-ON-T-03-64)
+(LYING-ON-T-02-64)
+(not (STANDING-ON-T-01-64))
 )
 )
 (:action LAY-DOWN-T-01-64-T-01-63-T-01-62-WEST
@@ -2911,21 +1966,6 @@
 (not (STANDING-ON-T-01-58))
 )
 )
-(:action LAY-DOWN-T-04-55-T-04-54-T-04-53-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-55)
-(ACTIVE-T-04-53)
-(ACTIVE-T-04-54)
-)
-:effect
-(and
-(LYING-ON-T-04-53)
-(LYING-ON-T-04-54)
-(not (STANDING-ON-T-04-55))
-)
-)
 (:action LAY-DOWN-T-10-31-T-10-30-T-10-29-WEST
 :parameters ()
 :precondition
@@ -2939,21 +1979,6 @@
 (LYING-ON-T-10-29)
 (LYING-ON-T-10-30)
 (not (STANDING-ON-T-10-31))
-)
-)
-(:action LAY-DOWN-T-04-55-T-03-55-T-02-55-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-55)
-(ACTIVE-T-02-55)
-(ACTIVE-T-03-55)
-)
-:effect
-(and
-(LYING-ON-T-02-55)
-(LYING-ON-T-03-55)
-(not (STANDING-ON-T-04-55))
 )
 )
 (:action STAND-UP-T-01-56-T-01-57-T-01-58-EAST
@@ -2971,21 +1996,6 @@
 (not (LYING-ON-T-01-57))
 )
 )
-(:action STAND-UP-T-04-53-T-04-54-T-04-55-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-54)
-(LYING-ON-T-04-53)
-(ACTIVE-T-04-55)
-)
-:effect
-(and
-(STANDING-ON-T-04-55)
-(not (LYING-ON-T-04-53))
-(not (LYING-ON-T-04-54))
-)
-)
 (:action STAND-UP-T-10-29-T-10-30-T-10-31-EAST
 :parameters ()
 :precondition
@@ -2999,21 +2009,6 @@
 (STANDING-ON-T-10-31)
 (not (LYING-ON-T-10-29))
 (not (LYING-ON-T-10-30))
-)
-)
-(:action STAND-UP-T-02-55-T-03-55-T-04-55-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-03-55)
-(LYING-ON-T-02-55)
-(ACTIVE-T-04-55)
-)
-:effect
-(and
-(STANDING-ON-T-04-55)
-(not (LYING-ON-T-02-55))
-(not (LYING-ON-T-03-55))
 )
 )
 (:action STAND-UP-T-01-57-T-01-56-T-01-55-WEST
@@ -3031,21 +2026,6 @@
 (not (LYING-ON-T-01-56))
 )
 )
-(:action STAND-UP-T-04-54-T-04-53-T-04-52-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-53)
-(LYING-ON-T-04-54)
-(ACTIVE-T-04-52)
-)
-:effect
-(and
-(STANDING-ON-T-04-52)
-(not (LYING-ON-T-04-54))
-(not (LYING-ON-T-04-53))
-)
-)
 (:action STAND-UP-T-10-30-T-10-29-T-10-28-WEST
 :parameters ()
 :precondition
@@ -3059,21 +2039,6 @@
 (STANDING-ON-T-10-28)
 (not (LYING-ON-T-10-30))
 (not (LYING-ON-T-10-29))
-)
-)
-(:action STAND-UP-T-03-55-T-02-55-T-01-55-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-02-55)
-(LYING-ON-T-03-55)
-(ACTIVE-T-01-55)
-)
-:effect
-(and
-(STANDING-ON-T-01-55)
-(not (LYING-ON-T-03-55))
-(not (LYING-ON-T-02-55))
 )
 )
 (:action LAY-DOWN-T-01-55-T-01-56-T-01-57-EAST
@@ -3091,21 +2056,6 @@
 (not (STANDING-ON-T-01-55))
 )
 )
-(:action LAY-DOWN-T-04-52-T-04-53-T-04-54-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-52)
-(ACTIVE-T-04-54)
-(ACTIVE-T-04-53)
-)
-:effect
-(and
-(LYING-ON-T-04-54)
-(LYING-ON-T-04-53)
-(not (STANDING-ON-T-04-52))
-)
-)
 (:action LAY-DOWN-T-10-28-T-10-29-T-10-30-EAST
 :parameters ()
 :precondition
@@ -3121,21 +2071,6 @@
 (not (STANDING-ON-T-10-28))
 )
 )
-(:action LAY-DOWN-T-01-55-T-02-55-T-03-55-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-55)
-(ACTIVE-T-03-55)
-(ACTIVE-T-02-55)
-)
-:effect
-(and
-(LYING-ON-T-03-55)
-(LYING-ON-T-02-55)
-(not (STANDING-ON-T-01-55))
-)
-)
 (:action LAY-DOWN-T-01-55-T-01-54-T-01-53-WEST
 :parameters ()
 :precondition
@@ -3149,21 +2084,6 @@
 (LYING-ON-T-01-53)
 (LYING-ON-T-01-54)
 (not (STANDING-ON-T-01-55))
-)
-)
-(:action LAY-DOWN-T-04-52-T-04-51-T-04-50-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-52)
-(ACTIVE-T-04-50)
-(ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-50)
-(LYING-ON-T-04-51)
-(not (STANDING-ON-T-04-52))
 )
 )
 (:action LAY-DOWN-T-10-28-T-10-27-T-10-26-WEST
@@ -3196,21 +2116,6 @@
 (not (LYING-ON-T-01-54))
 )
 )
-(:action STAND-UP-T-04-50-T-04-51-T-04-52-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-51)
-(LYING-ON-T-04-50)
-(ACTIVE-T-04-52)
-)
-:effect
-(and
-(STANDING-ON-T-04-52)
-(not (LYING-ON-T-04-50))
-(not (LYING-ON-T-04-51))
-)
-)
 (:action STAND-UP-T-10-26-T-10-27-T-10-28-EAST
 :parameters ()
 :precondition
@@ -3241,21 +2146,6 @@
 (not (LYING-ON-T-01-53))
 )
 )
-(:action STAND-UP-T-04-51-T-04-50-T-04-49-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-50)
-(LYING-ON-T-04-51)
-(ACTIVE-T-04-49)
-)
-:effect
-(and
-(STANDING-ON-T-04-49)
-(not (LYING-ON-T-04-51))
-(not (LYING-ON-T-04-50))
-)
-)
 (:action STAND-UP-T-10-27-T-10-26-T-10-25-WEST
 :parameters ()
 :precondition
@@ -3284,21 +2174,6 @@
 (LYING-ON-T-01-54)
 (LYING-ON-T-01-53)
 (not (STANDING-ON-T-01-52))
-)
-)
-(:action LAY-DOWN-T-04-49-T-04-50-T-04-51-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-49)
-(ACTIVE-T-04-51)
-(ACTIVE-T-04-50)
-)
-:effect
-(and
-(LYING-ON-T-04-51)
-(LYING-ON-T-04-50)
-(not (STANDING-ON-T-04-49))
 )
 )
 (:action LAY-DOWN-T-10-01-T-10-02-T-10-03-EAST
@@ -3346,82 +2221,6 @@
 (not (STANDING-ON-T-01-52))
 )
 )
-(:action LAY-DOWN-T-04-49-T-04-48-T-04-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-49)
-(ACTIVE-T-04-47)
-(ACTIVE-T-04-48)
-(NOT-ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(not (STANDING-ON-T-04-49))
-)
-)
-(:action LAY-DOWN-T-04-49-T-04-48-T-04-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-49)
-(ACTIVE-T-04-47)
-(ACTIVE-T-04-48)
-(NOT-ACTIVE-T-10-62)
-(NOT-ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(ACTIVE-T-04-51)
-(not (STANDING-ON-T-04-49))
-(not (NOT-ACTIVE-T-04-51))
-)
-)
-(:action LAY-DOWN-T-04-49-T-04-48-T-04-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-49)
-(ACTIVE-T-04-47)
-(ACTIVE-T-04-48)
-(ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(NOT-ACTIVE-T-10-62)
-(not (STANDING-ON-T-04-49))
-(not (ACTIVE-T-10-62))
-)
-)
-(:action LAY-DOWN-T-04-49-T-04-48-T-04-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-49)
-(ACTIVE-T-04-47)
-(ACTIVE-T-04-48)
-(ACTIVE-T-10-62)
-(NOT-ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(NOT-ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-(not (STANDING-ON-T-04-49))
-(not (ACTIVE-T-10-62))
-(not (NOT-ACTIVE-T-04-51))
-)
-)
 (:action LAY-DOWN-T-10-25-T-10-24-T-10-23-WEST
 :parameters ()
 :precondition
@@ -3450,21 +2249,6 @@
 (STANDING-ON-T-01-52)
 (not (LYING-ON-T-01-50))
 (not (LYING-ON-T-01-51))
-)
-)
-(:action STAND-UP-T-04-47-T-04-48-T-04-49-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
-(ACTIVE-T-04-49)
-)
-:effect
-(and
-(STANDING-ON-T-04-49)
-(not (LYING-ON-T-04-47))
-(not (LYING-ON-T-04-48))
 )
 )
 (:action STAND-UP-T-10-02-T-10-03-T-10-04-EAST
@@ -3512,40 +2296,6 @@
 (not (LYING-ON-T-01-50))
 )
 )
-(:action STAND-UP-T-04-48-T-04-47-T-04-46-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(ACTIVE-T-04-46)
-(ACTIVE-T-04-74)
-)
-:effect
-(and
-(STANDING-ON-T-04-46)
-(not (LYING-ON-T-04-48))
-(not (LYING-ON-T-04-47))
-)
-)
-(:action STAND-UP-T-04-48-T-04-47-T-04-46-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-47)
-(LYING-ON-T-04-48)
-(ACTIVE-T-04-46)
-(NOT-ACTIVE-T-04-74)
-)
-:effect
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-74)
-(not (LYING-ON-T-04-48))
-(not (LYING-ON-T-04-47))
-(not (NOT-ACTIVE-T-04-74))
-)
-)
 (:action STAND-UP-T-10-03-T-10-02-T-10-01-WEST
 :parameters ()
 :precondition
@@ -3591,82 +2341,6 @@
 (not (STANDING-ON-T-01-49))
 )
 )
-(:action LAY-DOWN-T-04-46-T-04-47-T-04-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-48)
-(ACTIVE-T-04-47)
-(NOT-ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
-(not (STANDING-ON-T-04-46))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-47-T-04-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-48)
-(ACTIVE-T-04-47)
-(NOT-ACTIVE-T-10-62)
-(NOT-ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
-(ACTIVE-T-04-51)
-(not (STANDING-ON-T-04-46))
-(not (NOT-ACTIVE-T-04-51))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-47-T-04-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-48)
-(ACTIVE-T-04-47)
-(ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
-(NOT-ACTIVE-T-10-62)
-(not (STANDING-ON-T-04-46))
-(not (ACTIVE-T-10-62))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-47-T-04-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-48)
-(ACTIVE-T-04-47)
-(ACTIVE-T-10-62)
-(NOT-ACTIVE-T-04-51)
-)
-:effect
-(and
-(LYING-ON-T-04-48)
-(LYING-ON-T-04-47)
-(NOT-ACTIVE-T-10-62)
-(ACTIVE-T-04-51)
-(not (STANDING-ON-T-04-46))
-(not (ACTIVE-T-10-62))
-(not (NOT-ACTIVE-T-04-51))
-)
-)
 (:action LAY-DOWN-T-10-04-T-10-05-T-10-06-EAST
 :parameters ()
 :precondition
@@ -3704,149 +2378,12 @@
 (STANDING-ON-T-01-49)
 (ACTIVE-T-01-47)
 (ACTIVE-T-01-48)
-(NOT-ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
 )
 :effect
 (and
 (LYING-ON-T-01-47)
 (LYING-ON-T-01-48)
 (not (STANDING-ON-T-01-49))
-)
-)
-(:action LAY-DOWN-T-01-49-T-01-48-T-01-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-49)
-(ACTIVE-T-01-47)
-(ACTIVE-T-01-48)
-(NOT-ACTIVE-T-04-74)
-(NOT-ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-47)
-(LYING-ON-T-01-48)
-(ACTIVE-T-01-51)
-(not (STANDING-ON-T-01-49))
-(not (NOT-ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-01-49-T-01-48-T-01-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-49)
-(ACTIVE-T-01-47)
-(ACTIVE-T-01-48)
-(ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-47)
-(LYING-ON-T-01-48)
-(NOT-ACTIVE-T-04-74)
-(not (STANDING-ON-T-01-49))
-(not (ACTIVE-T-04-74))
-)
-)
-(:action LAY-DOWN-T-01-49-T-01-48-T-01-47-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-49)
-(ACTIVE-T-01-47)
-(ACTIVE-T-01-48)
-(ACTIVE-T-04-74)
-(NOT-ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-47)
-(LYING-ON-T-01-48)
-(NOT-ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
-(not (STANDING-ON-T-01-49))
-(not (ACTIVE-T-04-74))
-(not (NOT-ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-45-T-04-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-44)
-(ACTIVE-T-04-45)
-(NOT-ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-44)
-(LYING-ON-T-04-45)
-(not (STANDING-ON-T-04-46))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-45-T-04-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-44)
-(ACTIVE-T-04-45)
-(NOT-ACTIVE-T-01-51)
-(NOT-ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-44)
-(LYING-ON-T-04-45)
-(ACTIVE-T-04-68)
-(not (STANDING-ON-T-04-46))
-(not (NOT-ACTIVE-T-04-68))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-45-T-04-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-44)
-(ACTIVE-T-04-45)
-(ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-44)
-(LYING-ON-T-04-45)
-(NOT-ACTIVE-T-01-51)
-(not (STANDING-ON-T-04-46))
-(not (ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-04-46-T-04-45-T-04-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-44)
-(ACTIVE-T-04-45)
-(ACTIVE-T-01-51)
-(NOT-ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-44)
-(LYING-ON-T-04-45)
-(NOT-ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-(not (STANDING-ON-T-04-46))
-(not (ACTIVE-T-01-51))
-(not (NOT-ACTIVE-T-04-68))
 )
 )
 (:action LAY-DOWN-T-10-04-T-10-03-T-10-02-WEST
@@ -3894,40 +2431,6 @@
 (not (LYING-ON-T-01-48))
 )
 )
-(:action STAND-UP-T-04-44-T-04-45-T-04-46-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(ACTIVE-T-04-46)
-(ACTIVE-T-04-74)
-)
-:effect
-(and
-(STANDING-ON-T-04-46)
-(not (LYING-ON-T-04-44))
-(not (LYING-ON-T-04-45))
-)
-)
-(:action STAND-UP-T-04-44-T-04-45-T-04-46-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(ACTIVE-T-04-46)
-(NOT-ACTIVE-T-04-74)
-)
-:effect
-(and
-(STANDING-ON-T-04-46)
-(ACTIVE-T-04-74)
-(not (LYING-ON-T-04-44))
-(not (LYING-ON-T-04-45))
-(not (NOT-ACTIVE-T-04-74))
-)
-)
 (:action STAND-UP-T-10-05-T-10-06-T-10-07-EAST
 :parameters ()
 :precondition
@@ -3965,46 +2468,12 @@
 (LYING-ON-T-01-47)
 (LYING-ON-T-01-48)
 (ACTIVE-T-01-46)
-(NOT-ACTIVE-T-04-68)
 )
 :effect
 (and
 (STANDING-ON-T-01-46)
 (not (LYING-ON-T-01-48))
 (not (LYING-ON-T-01-47))
-)
-)
-(:action STAND-UP-T-01-48-T-01-47-T-01-46-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-01-47)
-(LYING-ON-T-01-48)
-(ACTIVE-T-01-46)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(STANDING-ON-T-01-46)
-(NOT-ACTIVE-T-04-68)
-(not (LYING-ON-T-01-48))
-(not (LYING-ON-T-01-47))
-(not (ACTIVE-T-04-68))
-)
-)
-(:action STAND-UP-T-04-45-T-04-44-T-04-43-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-44)
-(LYING-ON-T-04-45)
-(ACTIVE-T-04-43)
-)
-:effect
-(and
-(STANDING-ON-T-04-43)
-(not (LYING-ON-T-04-45))
-(not (LYING-ON-T-04-44))
 )
 )
 (:action STAND-UP-T-10-06-T-10-05-T-10-04-WEST
@@ -4044,149 +2513,12 @@
 (STANDING-ON-T-01-46)
 (ACTIVE-T-01-48)
 (ACTIVE-T-01-47)
-(NOT-ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
 )
 :effect
 (and
 (LYING-ON-T-01-48)
 (LYING-ON-T-01-47)
 (not (STANDING-ON-T-01-46))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-47-T-01-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-48)
-(ACTIVE-T-01-47)
-(NOT-ACTIVE-T-04-74)
-(NOT-ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-48)
-(LYING-ON-T-01-47)
-(ACTIVE-T-01-51)
-(not (STANDING-ON-T-01-46))
-(not (NOT-ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-47-T-01-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-48)
-(ACTIVE-T-01-47)
-(ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-48)
-(LYING-ON-T-01-47)
-(NOT-ACTIVE-T-04-74)
-(not (STANDING-ON-T-01-46))
-(not (ACTIVE-T-04-74))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-47-T-01-48-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-48)
-(ACTIVE-T-01-47)
-(ACTIVE-T-04-74)
-(NOT-ACTIVE-T-01-51)
-)
-:effect
-(and
-(LYING-ON-T-01-48)
-(LYING-ON-T-01-47)
-(NOT-ACTIVE-T-04-74)
-(ACTIVE-T-01-51)
-(not (STANDING-ON-T-01-46))
-(not (ACTIVE-T-04-74))
-(not (NOT-ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-04-43-T-04-44-T-04-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-43)
-(ACTIVE-T-04-45)
-(ACTIVE-T-04-44)
-(NOT-ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(not (STANDING-ON-T-04-43))
-)
-)
-(:action LAY-DOWN-T-04-43-T-04-44-T-04-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-43)
-(ACTIVE-T-04-45)
-(ACTIVE-T-04-44)
-(NOT-ACTIVE-T-01-51)
-(NOT-ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(ACTIVE-T-04-68)
-(not (STANDING-ON-T-04-43))
-(not (NOT-ACTIVE-T-04-68))
-)
-)
-(:action LAY-DOWN-T-04-43-T-04-44-T-04-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-43)
-(ACTIVE-T-04-45)
-(ACTIVE-T-04-44)
-(ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(NOT-ACTIVE-T-01-51)
-(not (STANDING-ON-T-04-43))
-(not (ACTIVE-T-01-51))
-)
-)
-(:action LAY-DOWN-T-04-43-T-04-44-T-04-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-43)
-(ACTIVE-T-04-45)
-(ACTIVE-T-04-44)
-(ACTIVE-T-01-51)
-(NOT-ACTIVE-T-04-68)
-)
-:effect
-(and
-(LYING-ON-T-04-45)
-(LYING-ON-T-04-44)
-(NOT-ACTIVE-T-01-51)
-(ACTIVE-T-04-68)
-(not (STANDING-ON-T-04-43))
-(not (ACTIVE-T-01-51))
-(not (NOT-ACTIVE-T-04-68))
 )
 )
 (:action LAY-DOWN-T-10-07-T-10-08-T-10-09-EAST
@@ -4226,73 +2558,12 @@
 (STANDING-ON-T-01-46)
 (ACTIVE-T-01-44)
 (ACTIVE-T-01-45)
-(NOT-ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
 )
 :effect
 (and
 (LYING-ON-T-01-44)
 (LYING-ON-T-01-45)
 (not (STANDING-ON-T-01-46))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-45-T-01-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-44)
-(ACTIVE-T-01-45)
-(NOT-ACTIVE-T-04-51)
-(NOT-ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-44)
-(LYING-ON-T-01-45)
-(ACTIVE-T-10-62)
-(not (STANDING-ON-T-01-46))
-(not (NOT-ACTIVE-T-10-62))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-45-T-01-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-44)
-(ACTIVE-T-01-45)
-(ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-44)
-(LYING-ON-T-01-45)
-(NOT-ACTIVE-T-04-51)
-(not (STANDING-ON-T-01-46))
-(not (ACTIVE-T-04-51))
-)
-)
-(:action LAY-DOWN-T-01-46-T-01-45-T-01-44-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-46)
-(ACTIVE-T-01-44)
-(ACTIVE-T-01-45)
-(ACTIVE-T-04-51)
-(NOT-ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-44)
-(LYING-ON-T-01-45)
-(NOT-ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
-(not (STANDING-ON-T-01-46))
-(not (ACTIVE-T-04-51))
-(not (NOT-ACTIVE-T-10-62))
 )
 )
 (:action LAY-DOWN-T-10-07-T-10-06-T-10-05-WEST
@@ -4325,21 +2596,6 @@
 (not (STANDING-ON-T-10-19))
 )
 )
-(:action LAY-DOWN-T-04-43-T-03-43-T-02-43-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-43)
-(ACTIVE-T-02-43)
-(ACTIVE-T-03-43)
-)
-:effect
-(and
-(LYING-ON-T-02-43)
-(LYING-ON-T-03-43)
-(not (STANDING-ON-T-04-43))
-)
-)
 (:action STAND-UP-T-01-44-T-01-45-T-01-46-EAST
 :parameters ()
 :precondition
@@ -4347,31 +2603,12 @@
 (LYING-ON-T-01-45)
 (LYING-ON-T-01-44)
 (ACTIVE-T-01-46)
-(NOT-ACTIVE-T-04-68)
 )
 :effect
 (and
 (STANDING-ON-T-01-46)
 (not (LYING-ON-T-01-44))
 (not (LYING-ON-T-01-45))
-)
-)
-(:action STAND-UP-T-01-44-T-01-45-T-01-46-EAST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-01-45)
-(LYING-ON-T-01-44)
-(ACTIVE-T-01-46)
-(ACTIVE-T-04-68)
-)
-:effect
-(and
-(STANDING-ON-T-01-46)
-(NOT-ACTIVE-T-04-68)
-(not (LYING-ON-T-01-44))
-(not (LYING-ON-T-01-45))
-(not (ACTIVE-T-04-68))
 )
 )
 (:action STAND-UP-T-10-08-T-10-09-T-10-10-EAST
@@ -4402,21 +2639,6 @@
 (STANDING-ON-T-10-19)
 (not (LYING-ON-T-10-17))
 (not (LYING-ON-T-10-18))
-)
-)
-(:action STAND-UP-T-02-43-T-03-43-T-04-43-SOUTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-03-43)
-(LYING-ON-T-02-43)
-(ACTIVE-T-04-43)
-)
-:effect
-(and
-(STANDING-ON-T-04-43)
-(not (LYING-ON-T-02-43))
-(not (LYING-ON-T-03-43))
 )
 )
 (:action STAND-UP-T-01-45-T-01-44-T-01-43-WEST
@@ -4464,21 +2686,6 @@
 (not (LYING-ON-T-10-17))
 )
 )
-(:action STAND-UP-T-03-43-T-02-43-T-01-43-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-02-43)
-(LYING-ON-T-03-43)
-(ACTIVE-T-01-43)
-)
-:effect
-(and
-(STANDING-ON-T-01-43)
-(not (LYING-ON-T-03-43))
-(not (LYING-ON-T-02-43))
-)
-)
 (:action LAY-DOWN-T-01-43-T-01-44-T-01-45-EAST
 :parameters ()
 :precondition
@@ -4486,73 +2693,12 @@
 (STANDING-ON-T-01-43)
 (ACTIVE-T-01-45)
 (ACTIVE-T-01-44)
-(NOT-ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
 )
 :effect
 (and
 (LYING-ON-T-01-45)
 (LYING-ON-T-01-44)
 (not (STANDING-ON-T-01-43))
-)
-)
-(:action LAY-DOWN-T-01-43-T-01-44-T-01-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-43)
-(ACTIVE-T-01-45)
-(ACTIVE-T-01-44)
-(NOT-ACTIVE-T-04-51)
-(NOT-ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-45)
-(LYING-ON-T-01-44)
-(ACTIVE-T-10-62)
-(not (STANDING-ON-T-01-43))
-(not (NOT-ACTIVE-T-10-62))
-)
-)
-(:action LAY-DOWN-T-01-43-T-01-44-T-01-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-43)
-(ACTIVE-T-01-45)
-(ACTIVE-T-01-44)
-(ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-45)
-(LYING-ON-T-01-44)
-(NOT-ACTIVE-T-04-51)
-(not (STANDING-ON-T-01-43))
-(not (ACTIVE-T-04-51))
-)
-)
-(:action LAY-DOWN-T-01-43-T-01-44-T-01-45-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-43)
-(ACTIVE-T-01-45)
-(ACTIVE-T-01-44)
-(ACTIVE-T-04-51)
-(NOT-ACTIVE-T-10-62)
-)
-:effect
-(and
-(LYING-ON-T-01-45)
-(LYING-ON-T-01-44)
-(NOT-ACTIVE-T-04-51)
-(ACTIVE-T-10-62)
-(not (STANDING-ON-T-01-43))
-(not (ACTIVE-T-04-51))
-(not (NOT-ACTIVE-T-10-62))
 )
 )
 (:action LAY-DOWN-T-10-10-T-10-11-T-10-12-EAST
@@ -4583,21 +2729,6 @@
 (LYING-ON-T-10-18)
 (LYING-ON-T-10-17)
 (not (STANDING-ON-T-10-16))
-)
-)
-(:action LAY-DOWN-T-01-43-T-02-43-T-03-43-SOUTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-43)
-(ACTIVE-T-03-43)
-(ACTIVE-T-02-43)
-)
-:effect
-(and
-(LYING-ON-T-03-43)
-(LYING-ON-T-02-43)
-(not (STANDING-ON-T-01-43))
 )
 )
 (:action LAY-DOWN-T-01-43-T-01-42-T-01-41-WEST
@@ -5121,7 +3252,7 @@
 (STANDING-ON-T-04-34)
 (ACTIVE-T-04-32)
 (ACTIVE-T-04-33)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 )
 :effect
@@ -5138,7 +3269,7 @@
 (STANDING-ON-T-04-34)
 (ACTIVE-T-04-32)
 (ACTIVE-T-04-33)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (NOT-ACTIVE-T-04-36)
 )
 :effect
@@ -5157,16 +3288,16 @@
 (STANDING-ON-T-04-34)
 (ACTIVE-T-04-32)
 (ACTIVE-T-04-33)
-(ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 )
 :effect
 (and
 (LYING-ON-T-04-32)
 (LYING-ON-T-04-33)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (not (STANDING-ON-T-04-34))
-(not (ACTIVE-T-01-36))
+(not (ACTIVE-T-07-53))
 )
 )
 (:action LAY-DOWN-T-04-34-T-04-33-T-04-32-WEST
@@ -5176,17 +3307,17 @@
 (STANDING-ON-T-04-34)
 (ACTIVE-T-04-32)
 (ACTIVE-T-04-33)
-(ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 (NOT-ACTIVE-T-04-36)
 )
 :effect
 (and
 (LYING-ON-T-04-32)
 (LYING-ON-T-04-33)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 (not (STANDING-ON-T-04-34))
-(not (ACTIVE-T-01-36))
+(not (ACTIVE-T-07-53))
 (not (NOT-ACTIVE-T-04-36))
 )
 )
@@ -5291,12 +3422,31 @@
 (LYING-ON-T-04-32)
 (LYING-ON-T-04-33)
 (ACTIVE-T-04-31)
+(NOT-ACTIVE-T-04-53)
 )
 :effect
 (and
 (STANDING-ON-T-04-31)
 (not (LYING-ON-T-04-33))
 (not (LYING-ON-T-04-32))
+)
+)
+(:action STAND-UP-T-04-33-T-04-32-T-04-31-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-32)
+(LYING-ON-T-04-33)
+(ACTIVE-T-04-31)
+(ACTIVE-T-04-53)
+)
+:effect
+(and
+(STANDING-ON-T-04-31)
+(NOT-ACTIVE-T-04-53)
+(not (LYING-ON-T-04-33))
+(not (LYING-ON-T-04-32))
+(not (ACTIVE-T-04-53))
 )
 )
 (:action STAND-UP-T-07-12-T-07-11-T-07-10-WEST
@@ -5336,7 +3486,7 @@
 (STANDING-ON-T-04-31)
 (ACTIVE-T-04-33)
 (ACTIVE-T-04-32)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 )
 :effect
@@ -5353,7 +3503,7 @@
 (STANDING-ON-T-04-31)
 (ACTIVE-T-04-33)
 (ACTIVE-T-04-32)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (NOT-ACTIVE-T-04-36)
 )
 :effect
@@ -5372,16 +3522,16 @@
 (STANDING-ON-T-04-31)
 (ACTIVE-T-04-33)
 (ACTIVE-T-04-32)
-(ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 )
 :effect
 (and
 (LYING-ON-T-04-33)
 (LYING-ON-T-04-32)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (not (STANDING-ON-T-04-31))
-(not (ACTIVE-T-01-36))
+(not (ACTIVE-T-07-53))
 )
 )
 (:action LAY-DOWN-T-04-31-T-04-32-T-04-33-EAST
@@ -5391,17 +3541,17 @@
 (STANDING-ON-T-04-31)
 (ACTIVE-T-04-33)
 (ACTIVE-T-04-32)
-(ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 (NOT-ACTIVE-T-04-36)
 )
 :effect
 (and
 (LYING-ON-T-04-33)
 (LYING-ON-T-04-32)
-(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 (ACTIVE-T-04-36)
 (not (STANDING-ON-T-04-31))
-(not (ACTIVE-T-01-36))
+(not (ACTIVE-T-07-53))
 (not (NOT-ACTIVE-T-04-36))
 )
 )
@@ -5427,7 +3577,7 @@
 (STANDING-ON-T-01-34)
 (ACTIVE-T-01-32)
 (ACTIVE-T-01-33)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-07-53)
 (ACTIVE-T-01-36)
 )
 :effect
@@ -5444,7 +3594,7 @@
 (STANDING-ON-T-01-34)
 (ACTIVE-T-01-32)
 (ACTIVE-T-01-33)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-07-53)
 (NOT-ACTIVE-T-01-36)
 )
 :effect
@@ -5463,16 +3613,16 @@
 (STANDING-ON-T-01-34)
 (ACTIVE-T-01-32)
 (ACTIVE-T-01-33)
-(ACTIVE-T-04-36)
+(NOT-ACTIVE-T-07-53)
 (ACTIVE-T-01-36)
 )
 :effect
 (and
 (LYING-ON-T-01-32)
 (LYING-ON-T-01-33)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-07-53)
 (not (STANDING-ON-T-01-34))
-(not (ACTIVE-T-04-36))
+(not (NOT-ACTIVE-T-07-53))
 )
 )
 (:action LAY-DOWN-T-01-34-T-01-33-T-01-32-WEST
@@ -5482,18 +3632,94 @@
 (STANDING-ON-T-01-34)
 (ACTIVE-T-01-32)
 (ACTIVE-T-01-33)
-(ACTIVE-T-04-36)
+(NOT-ACTIVE-T-07-53)
 (NOT-ACTIVE-T-01-36)
 )
 :effect
 (and
 (LYING-ON-T-01-32)
 (LYING-ON-T-01-33)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-07-53)
 (ACTIVE-T-01-36)
 (not (STANDING-ON-T-01-34))
-(not (ACTIVE-T-04-36))
+(not (NOT-ACTIVE-T-07-53))
 (not (NOT-ACTIVE-T-01-36))
+)
+)
+(:action LAY-DOWN-T-04-31-T-04-30-T-04-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-31)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-30)
+(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-04-29)
+(LYING-ON-T-04-30)
+(not (STANDING-ON-T-04-31))
+)
+)
+(:action LAY-DOWN-T-04-31-T-04-30-T-04-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-31)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-30)
+(NOT-ACTIVE-T-01-36)
+(ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-04-29)
+(LYING-ON-T-04-30)
+(NOT-ACTIVE-T-04-47)
+(not (STANDING-ON-T-04-31))
+(not (ACTIVE-T-04-47))
+)
+)
+(:action LAY-DOWN-T-04-31-T-04-30-T-04-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-31)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-30)
+(ACTIVE-T-01-36)
+(NOT-ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-04-29)
+(LYING-ON-T-04-30)
+(NOT-ACTIVE-T-01-36)
+(not (STANDING-ON-T-04-31))
+(not (ACTIVE-T-01-36))
+)
+)
+(:action LAY-DOWN-T-04-31-T-04-30-T-04-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-31)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-30)
+(ACTIVE-T-01-36)
+(ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-04-29)
+(LYING-ON-T-04-30)
+(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-04-47)
+(not (STANDING-ON-T-04-31))
+(not (ACTIVE-T-01-36))
+(not (ACTIVE-T-04-47))
 )
 )
 (:action LAY-DOWN-T-07-10-T-07-09-T-07-08-WEST
@@ -5511,21 +3737,6 @@
 (not (STANDING-ON-T-07-10))
 )
 )
-(:action LAY-DOWN-T-04-31-T-03-31-T-02-31-NORTH
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-31)
-(ACTIVE-T-02-31)
-(ACTIVE-T-03-31)
-)
-:effect
-(and
-(LYING-ON-T-02-31)
-(LYING-ON-T-03-31)
-(not (STANDING-ON-T-04-31))
-)
-)
 (:action STAND-UP-T-01-32-T-01-33-T-01-34-EAST
 :parameters ()
 :precondition
@@ -5539,6 +3750,40 @@
 (STANDING-ON-T-01-34)
 (not (LYING-ON-T-01-32))
 (not (LYING-ON-T-01-33))
+)
+)
+(:action STAND-UP-T-04-29-T-04-30-T-04-31-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(ACTIVE-T-04-31)
+(NOT-ACTIVE-T-04-53)
+)
+:effect
+(and
+(STANDING-ON-T-04-31)
+(not (LYING-ON-T-04-29))
+(not (LYING-ON-T-04-30))
+)
+)
+(:action STAND-UP-T-04-29-T-04-30-T-04-31-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(ACTIVE-T-04-31)
+(ACTIVE-T-04-53)
+)
+:effect
+(and
+(STANDING-ON-T-04-31)
+(NOT-ACTIVE-T-04-53)
+(not (LYING-ON-T-04-29))
+(not (LYING-ON-T-04-30))
+(not (ACTIVE-T-04-53))
 )
 )
 (:action STAND-UP-T-07-08-T-07-09-T-07-10-EAST
@@ -5556,19 +3801,20 @@
 (not (LYING-ON-T-07-09))
 )
 )
-(:action STAND-UP-T-02-31-T-03-31-T-04-31-SOUTH
+(:action STAND-UP-T-01-33-T-01-32-T-01-31-WEST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-03-31)
-(LYING-ON-T-02-31)
-(ACTIVE-T-04-31)
+(LYING-ON-T-01-32)
+(LYING-ON-T-01-33)
+(ACTIVE-T-01-31)
+(ACTIVE-T-04-53)
 )
 :effect
 (and
-(STANDING-ON-T-04-31)
-(not (LYING-ON-T-02-31))
-(not (LYING-ON-T-03-31))
+(STANDING-ON-T-01-31)
+(not (LYING-ON-T-01-33))
+(not (LYING-ON-T-01-32))
 )
 )
 (:action STAND-UP-T-01-33-T-01-32-T-01-31-WEST
@@ -5578,12 +3824,30 @@
 (LYING-ON-T-01-32)
 (LYING-ON-T-01-33)
 (ACTIVE-T-01-31)
+(NOT-ACTIVE-T-04-53)
 )
 :effect
 (and
 (STANDING-ON-T-01-31)
+(ACTIVE-T-04-53)
 (not (LYING-ON-T-01-33))
 (not (LYING-ON-T-01-32))
+(not (NOT-ACTIVE-T-04-53))
+)
+)
+(:action STAND-UP-T-04-30-T-04-29-T-04-28-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-29)
+(LYING-ON-T-04-30)
+(ACTIVE-T-04-28)
+)
+:effect
+(and
+(STANDING-ON-T-04-28)
+(not (LYING-ON-T-04-30))
+(not (LYING-ON-T-04-29))
 )
 )
 (:action STAND-UP-T-07-09-T-07-08-T-07-07-WEST
@@ -5601,21 +3865,6 @@
 (not (LYING-ON-T-07-08))
 )
 )
-(:action STAND-UP-T-03-31-T-02-31-T-01-31-NORTH
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-02-31)
-(LYING-ON-T-03-31)
-(ACTIVE-T-01-31)
-)
-:effect
-(and
-(STANDING-ON-T-01-31)
-(not (LYING-ON-T-03-31))
-(not (LYING-ON-T-02-31))
-)
-)
 (:action LAY-DOWN-T-01-31-T-01-32-T-01-33-EAST
 :parameters ()
 :precondition
@@ -5623,8 +3872,8 @@
 (STANDING-ON-T-01-31)
 (ACTIVE-T-01-33)
 (ACTIVE-T-01-32)
-(NOT-ACTIVE-T-04-36)
 (ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 )
 :effect
 (and
@@ -5640,8 +3889,27 @@
 (STANDING-ON-T-01-31)
 (ACTIVE-T-01-33)
 (ACTIVE-T-01-32)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
+)
+:effect
+(and
+(LYING-ON-T-01-33)
+(LYING-ON-T-01-32)
+(ACTIVE-T-07-53)
+(not (STANDING-ON-T-01-31))
+(not (NOT-ACTIVE-T-07-53))
+)
+)
+(:action LAY-DOWN-T-01-31-T-01-32-T-01-33-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-31)
+(ACTIVE-T-01-33)
+(ACTIVE-T-01-32)
 (NOT-ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 )
 :effect
 (and
@@ -5659,37 +3927,94 @@
 (STANDING-ON-T-01-31)
 (ACTIVE-T-01-33)
 (ACTIVE-T-01-32)
-(ACTIVE-T-04-36)
-(ACTIVE-T-01-36)
+(NOT-ACTIVE-T-01-36)
+(NOT-ACTIVE-T-07-53)
 )
 :effect
 (and
 (LYING-ON-T-01-33)
 (LYING-ON-T-01-32)
-(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-01-36)
+(ACTIVE-T-07-53)
 (not (STANDING-ON-T-01-31))
-(not (ACTIVE-T-04-36))
+(not (NOT-ACTIVE-T-01-36))
+(not (NOT-ACTIVE-T-07-53))
 )
 )
-(:action LAY-DOWN-T-01-31-T-01-32-T-01-33-EAST
+(:action LAY-DOWN-T-04-28-T-04-29-T-04-30-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-01-31)
-(ACTIVE-T-01-33)
-(ACTIVE-T-01-32)
-(ACTIVE-T-04-36)
+(STANDING-ON-T-04-28)
+(ACTIVE-T-04-30)
+(ACTIVE-T-04-29)
+(NOT-ACTIVE-T-04-47)
 (NOT-ACTIVE-T-01-36)
 )
 :effect
 (and
-(LYING-ON-T-01-33)
-(LYING-ON-T-01-32)
-(NOT-ACTIVE-T-04-36)
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(not (STANDING-ON-T-04-28))
+)
+)
+(:action LAY-DOWN-T-04-28-T-04-29-T-04-30-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-28)
+(ACTIVE-T-04-30)
+(ACTIVE-T-04-29)
+(NOT-ACTIVE-T-04-47)
 (ACTIVE-T-01-36)
-(not (STANDING-ON-T-01-31))
-(not (ACTIVE-T-04-36))
-(not (NOT-ACTIVE-T-01-36))
+)
+:effect
+(and
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(NOT-ACTIVE-T-01-36)
+(not (STANDING-ON-T-04-28))
+(not (ACTIVE-T-01-36))
+)
+)
+(:action LAY-DOWN-T-04-28-T-04-29-T-04-30-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-28)
+(ACTIVE-T-04-30)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-47)
+(NOT-ACTIVE-T-01-36)
+)
+:effect
+(and
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(NOT-ACTIVE-T-04-47)
+(not (STANDING-ON-T-04-28))
+(not (ACTIVE-T-04-47))
+)
+)
+(:action LAY-DOWN-T-04-28-T-04-29-T-04-30-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-28)
+(ACTIVE-T-04-30)
+(ACTIVE-T-04-29)
+(ACTIVE-T-04-47)
+(ACTIVE-T-01-36)
+)
+:effect
+(and
+(LYING-ON-T-04-30)
+(LYING-ON-T-04-29)
+(NOT-ACTIVE-T-04-47)
+(NOT-ACTIVE-T-01-36)
+(not (STANDING-ON-T-04-28))
+(not (ACTIVE-T-04-47))
+(not (ACTIVE-T-01-36))
 )
 )
 (:action LAY-DOWN-T-07-07-T-07-08-T-07-09-EAST
@@ -5707,18 +4032,20 @@
 (not (STANDING-ON-T-07-07))
 )
 )
-(:action LAY-DOWN-T-01-31-T-02-31-T-03-31-SOUTH
+(:action LAY-DOWN-T-01-31-T-01-30-T-01-29-WEST
 :parameters ()
 :precondition
 (and
 (STANDING-ON-T-01-31)
-(ACTIVE-T-03-31)
-(ACTIVE-T-02-31)
+(ACTIVE-T-01-29)
+(ACTIVE-T-01-30)
+(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
 )
 :effect
 (and
-(LYING-ON-T-03-31)
-(LYING-ON-T-02-31)
+(LYING-ON-T-01-29)
+(LYING-ON-T-01-30)
 (not (STANDING-ON-T-01-31))
 )
 )
@@ -5729,27 +4056,56 @@
 (STANDING-ON-T-01-31)
 (ACTIVE-T-01-29)
 (ACTIVE-T-01-30)
+(NOT-ACTIVE-T-04-36)
+(NOT-ACTIVE-T-04-47)
 )
 :effect
 (and
 (LYING-ON-T-01-29)
 (LYING-ON-T-01-30)
+(ACTIVE-T-04-47)
 (not (STANDING-ON-T-01-31))
+(not (NOT-ACTIVE-T-04-47))
 )
 )
-(:action LAY-DOWN-T-04-28-T-04-27-T-04-26-WEST
+(:action LAY-DOWN-T-01-31-T-01-30-T-01-29-WEST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-04-28)
-(ACTIVE-T-04-26)
-(ACTIVE-T-04-27)
+(STANDING-ON-T-01-31)
+(ACTIVE-T-01-29)
+(ACTIVE-T-01-30)
+(ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
 )
 :effect
 (and
-(LYING-ON-T-04-26)
-(LYING-ON-T-04-27)
-(not (STANDING-ON-T-04-28))
+(LYING-ON-T-01-29)
+(LYING-ON-T-01-30)
+(NOT-ACTIVE-T-04-36)
+(not (STANDING-ON-T-01-31))
+(not (ACTIVE-T-04-36))
+)
+)
+(:action LAY-DOWN-T-01-31-T-01-30-T-01-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-31)
+(ACTIVE-T-01-29)
+(ACTIVE-T-01-30)
+(ACTIVE-T-04-36)
+(NOT-ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-01-29)
+(LYING-ON-T-01-30)
+(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
+(not (STANDING-ON-T-01-31))
+(not (ACTIVE-T-04-36))
+(not (NOT-ACTIVE-T-04-47))
 )
 )
 (:action LAY-DOWN-T-07-07-T-07-06-T-07-05-WEST
@@ -5759,8 +4115,8 @@
 (STANDING-ON-T-07-07)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-06)
+(NOT-ACTIVE-T-10-53)
 (NOT-ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
 )
 :effect
 (and
@@ -5776,27 +4132,8 @@
 (STANDING-ON-T-07-07)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-06)
-(NOT-ACTIVE-T-07-09)
-(NOT-ACTIVE-T-04-62)
-)
-:effect
-(and
-(LYING-ON-T-07-05)
-(LYING-ON-T-07-06)
-(ACTIVE-T-04-62)
-(not (STANDING-ON-T-07-07))
-(not (NOT-ACTIVE-T-04-62))
-)
-)
-(:action LAY-DOWN-T-07-07-T-07-06-T-07-05-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-07-07)
-(ACTIVE-T-07-05)
-(ACTIVE-T-07-06)
+(NOT-ACTIVE-T-10-53)
 (ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
 )
 :effect
 (and
@@ -5814,18 +4151,37 @@
 (STANDING-ON-T-07-07)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-06)
-(ACTIVE-T-07-09)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
+(NOT-ACTIVE-T-07-09)
 )
 :effect
 (and
 (LYING-ON-T-07-05)
 (LYING-ON-T-07-06)
-(NOT-ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 (not (STANDING-ON-T-07-07))
+(not (ACTIVE-T-10-53))
+)
+)
+(:action LAY-DOWN-T-07-07-T-07-06-T-07-05-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-07)
+(ACTIVE-T-07-05)
+(ACTIVE-T-07-06)
+(ACTIVE-T-10-53)
+(ACTIVE-T-07-09)
+)
+:effect
+(and
+(LYING-ON-T-07-05)
+(LYING-ON-T-07-06)
+(NOT-ACTIVE-T-10-53)
+(NOT-ACTIVE-T-07-09)
+(not (STANDING-ON-T-07-07))
+(not (ACTIVE-T-10-53))
 (not (ACTIVE-T-07-09))
-(not (NOT-ACTIVE-T-04-62))
 )
 )
 (:action LAY-DOWN-T-04-28-T-03-28-T-02-28-NORTH
@@ -5850,6 +4206,7 @@
 (LYING-ON-T-01-30)
 (LYING-ON-T-01-29)
 (ACTIVE-T-01-31)
+(ACTIVE-T-04-53)
 )
 :effect
 (and
@@ -5858,19 +4215,22 @@
 (not (LYING-ON-T-01-30))
 )
 )
-(:action STAND-UP-T-04-26-T-04-27-T-04-28-EAST
+(:action STAND-UP-T-01-29-T-01-30-T-01-31-EAST
 :parameters ()
 :precondition
 (and
-(LYING-ON-T-04-27)
-(LYING-ON-T-04-26)
-(ACTIVE-T-04-28)
+(LYING-ON-T-01-30)
+(LYING-ON-T-01-29)
+(ACTIVE-T-01-31)
+(NOT-ACTIVE-T-04-53)
 )
 :effect
 (and
-(STANDING-ON-T-04-28)
-(not (LYING-ON-T-04-26))
-(not (LYING-ON-T-04-27))
+(STANDING-ON-T-01-31)
+(ACTIVE-T-04-53)
+(not (LYING-ON-T-01-29))
+(not (LYING-ON-T-01-30))
+(not (NOT-ACTIVE-T-04-53))
 )
 )
 (:action STAND-UP-T-07-05-T-07-06-T-07-07-EAST
@@ -5918,21 +4278,6 @@
 (not (LYING-ON-T-01-29))
 )
 )
-(:action STAND-UP-T-04-27-T-04-26-T-04-25-WEST
-:parameters ()
-:precondition
-(and
-(LYING-ON-T-04-26)
-(LYING-ON-T-04-27)
-(ACTIVE-T-04-25)
-)
-:effect
-(and
-(STANDING-ON-T-04-25)
-(not (LYING-ON-T-04-27))
-(not (LYING-ON-T-04-26))
-)
-)
 (:action STAND-UP-T-07-06-T-07-05-T-07-04-WEST
 :parameters ()
 :precondition
@@ -5970,6 +4315,8 @@
 (STANDING-ON-T-01-28)
 (ACTIVE-T-01-30)
 (ACTIVE-T-01-29)
+(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
 )
 :effect
 (and
@@ -5978,19 +4325,63 @@
 (not (STANDING-ON-T-01-28))
 )
 )
-(:action LAY-DOWN-T-04-25-T-04-26-T-04-27-EAST
+(:action LAY-DOWN-T-01-28-T-01-29-T-01-30-EAST
 :parameters ()
 :precondition
 (and
-(STANDING-ON-T-04-25)
-(ACTIVE-T-04-27)
-(ACTIVE-T-04-26)
+(STANDING-ON-T-01-28)
+(ACTIVE-T-01-30)
+(ACTIVE-T-01-29)
+(NOT-ACTIVE-T-04-36)
+(NOT-ACTIVE-T-04-47)
 )
 :effect
 (and
-(LYING-ON-T-04-27)
-(LYING-ON-T-04-26)
-(not (STANDING-ON-T-04-25))
+(LYING-ON-T-01-30)
+(LYING-ON-T-01-29)
+(ACTIVE-T-04-47)
+(not (STANDING-ON-T-01-28))
+(not (NOT-ACTIVE-T-04-47))
+)
+)
+(:action LAY-DOWN-T-01-28-T-01-29-T-01-30-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-28)
+(ACTIVE-T-01-30)
+(ACTIVE-T-01-29)
+(ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-01-30)
+(LYING-ON-T-01-29)
+(NOT-ACTIVE-T-04-36)
+(not (STANDING-ON-T-01-28))
+(not (ACTIVE-T-04-36))
+)
+)
+(:action LAY-DOWN-T-01-28-T-01-29-T-01-30-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-28)
+(ACTIVE-T-01-30)
+(ACTIVE-T-01-29)
+(ACTIVE-T-04-36)
+(NOT-ACTIVE-T-04-47)
+)
+:effect
+(and
+(LYING-ON-T-01-30)
+(LYING-ON-T-01-29)
+(NOT-ACTIVE-T-04-36)
+(ACTIVE-T-04-47)
+(not (STANDING-ON-T-01-28))
+(not (ACTIVE-T-04-36))
+(not (NOT-ACTIVE-T-04-47))
 )
 )
 (:action LAY-DOWN-T-07-04-T-07-05-T-07-06-EAST
@@ -6001,7 +4392,7 @@
 (ACTIVE-T-07-06)
 (ACTIVE-T-07-05)
 (NOT-ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -6018,15 +4409,15 @@
 (ACTIVE-T-07-06)
 (ACTIVE-T-07-05)
 (NOT-ACTIVE-T-07-09)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
 (LYING-ON-T-07-06)
 (LYING-ON-T-07-05)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 (not (STANDING-ON-T-07-04))
-(not (NOT-ACTIVE-T-04-62))
+(not (ACTIVE-T-10-53))
 )
 )
 (:action LAY-DOWN-T-07-04-T-07-05-T-07-06-EAST
@@ -6037,7 +4428,7 @@
 (ACTIVE-T-07-06)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -6056,17 +4447,17 @@
 (ACTIVE-T-07-06)
 (ACTIVE-T-07-05)
 (ACTIVE-T-07-09)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
 (LYING-ON-T-07-06)
 (LYING-ON-T-07-05)
 (NOT-ACTIVE-T-07-09)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 (not (STANDING-ON-T-07-04))
 (not (ACTIVE-T-07-09))
-(not (NOT-ACTIVE-T-04-62))
+(not (ACTIVE-T-10-53))
 )
 )
 (:action LAY-DOWN-T-01-28-T-02-28-T-03-28-SOUTH
@@ -6111,6 +4502,21 @@
 (and
 (LYING-ON-T-04-23)
 (LYING-ON-T-04-24)
+(not (STANDING-ON-T-04-25))
+)
+)
+(:action LAY-DOWN-T-04-25-T-03-25-T-02-25-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-25)
+(ACTIVE-T-02-25)
+(ACTIVE-T-03-25)
+)
+:effect
+(and
+(LYING-ON-T-02-25)
+(LYING-ON-T-03-25)
 (not (STANDING-ON-T-04-25))
 )
 )
@@ -6159,6 +4565,21 @@
 (not (LYING-ON-T-04-24))
 )
 )
+(:action STAND-UP-T-02-25-T-03-25-T-04-25-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-25)
+(LYING-ON-T-02-25)
+(ACTIVE-T-04-25)
+)
+:effect
+(and
+(STANDING-ON-T-04-25)
+(not (LYING-ON-T-02-25))
+(not (LYING-ON-T-03-25))
+)
+)
 (:action STAND-UP-T-05-04-T-06-04-T-07-04-SOUTH
 :parameters ()
 :precondition
@@ -6202,6 +4623,21 @@
 (STANDING-ON-T-04-22)
 (not (LYING-ON-T-04-24))
 (not (LYING-ON-T-04-23))
+)
+)
+(:action STAND-UP-T-03-25-T-02-25-T-01-25-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-25)
+(LYING-ON-T-03-25)
+(ACTIVE-T-01-25)
+)
+:effect
+(and
+(STANDING-ON-T-01-25)
+(not (LYING-ON-T-03-25))
+(not (LYING-ON-T-02-25))
 )
 )
 (:action STAND-UP-T-06-04-T-05-04-T-04-04-NORTH
@@ -6325,6 +4761,21 @@
 (not (STANDING-ON-T-04-22))
 )
 )
+(:action LAY-DOWN-T-01-25-T-02-25-T-03-25-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-25)
+(ACTIVE-T-03-25)
+(ACTIVE-T-02-25)
+)
+:effect
+(and
+(LYING-ON-T-03-25)
+(LYING-ON-T-02-25)
+(not (STANDING-ON-T-01-25))
+)
+)
 (:action LAY-DOWN-T-04-04-T-05-04-T-06-04-SOUTH
 :parameters ()
 :precondition
@@ -6362,31 +4813,12 @@
 (STANDING-ON-T-04-22)
 (ACTIVE-T-04-20)
 (ACTIVE-T-04-21)
-(ACTIVE-T-04-23)
 )
 :effect
 (and
 (LYING-ON-T-04-20)
 (LYING-ON-T-04-21)
 (not (STANDING-ON-T-04-22))
-)
-)
-(:action LAY-DOWN-T-04-22-T-04-21-T-04-20-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-22)
-(ACTIVE-T-04-20)
-(ACTIVE-T-04-21)
-(NOT-ACTIVE-T-04-23)
-)
-:effect
-(and
-(LYING-ON-T-04-20)
-(LYING-ON-T-04-21)
-(ACTIVE-T-04-23)
-(not (STANDING-ON-T-04-22))
-(not (NOT-ACTIVE-T-04-23))
 )
 )
 (:action STAND-UP-T-01-23-T-01-24-T-01-25-EAST
@@ -6471,7 +4903,7 @@
 (LYING-ON-T-04-20)
 (LYING-ON-T-04-21)
 (ACTIVE-T-04-19)
-(NOT-ACTIVE-T-07-68)
+(ACTIVE-T-04-22)
 )
 :effect
 (and
@@ -6487,15 +4919,15 @@
 (LYING-ON-T-04-20)
 (LYING-ON-T-04-21)
 (ACTIVE-T-04-19)
-(ACTIVE-T-07-68)
+(NOT-ACTIVE-T-04-22)
 )
 :effect
 (and
 (STANDING-ON-T-04-19)
-(NOT-ACTIVE-T-07-68)
+(ACTIVE-T-04-22)
 (not (LYING-ON-T-04-21))
 (not (LYING-ON-T-04-20))
-(not (ACTIVE-T-07-68))
+(not (NOT-ACTIVE-T-04-22))
 )
 )
 (:action LAY-DOWN-T-01-22-T-01-23-T-01-24-EAST
@@ -6596,31 +5028,12 @@
 (STANDING-ON-T-04-19)
 (ACTIVE-T-04-21)
 (ACTIVE-T-04-20)
-(ACTIVE-T-04-23)
 )
 :effect
 (and
 (LYING-ON-T-04-21)
 (LYING-ON-T-04-20)
 (not (STANDING-ON-T-04-19))
-)
-)
-(:action LAY-DOWN-T-04-19-T-04-20-T-04-21-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-04-19)
-(ACTIVE-T-04-21)
-(ACTIVE-T-04-20)
-(NOT-ACTIVE-T-04-23)
-)
-:effect
-(and
-(LYING-ON-T-04-21)
-(LYING-ON-T-04-20)
-(ACTIVE-T-04-23)
-(not (STANDING-ON-T-04-19))
-(not (NOT-ACTIVE-T-04-23))
 )
 )
 (:action LAY-DOWN-T-01-22-T-01-21-T-01-20-WEST
@@ -6630,31 +5043,12 @@
 (STANDING-ON-T-01-22)
 (ACTIVE-T-01-20)
 (ACTIVE-T-01-21)
-(ACTIVE-T-01-23)
 )
 :effect
 (and
 (LYING-ON-T-01-20)
 (LYING-ON-T-01-21)
 (not (STANDING-ON-T-01-22))
-)
-)
-(:action LAY-DOWN-T-01-22-T-01-21-T-01-20-WEST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-22)
-(ACTIVE-T-01-20)
-(ACTIVE-T-01-21)
-(NOT-ACTIVE-T-01-23)
-)
-:effect
-(and
-(LYING-ON-T-01-20)
-(LYING-ON-T-01-21)
-(ACTIVE-T-01-23)
-(not (STANDING-ON-T-01-22))
-(not (NOT-ACTIVE-T-01-23))
 )
 )
 (:action LAY-DOWN-T-04-07-T-04-06-T-04-05-WEST
@@ -6740,8 +5134,8 @@
 (STANDING-ON-T-04-19)
 (ACTIVE-T-04-17)
 (ACTIVE-T-04-18)
-(NOT-ACTIVE-T-01-23)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-01-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
@@ -6757,16 +5151,16 @@
 (STANDING-ON-T-04-19)
 (ACTIVE-T-04-17)
 (ACTIVE-T-04-18)
-(NOT-ACTIVE-T-01-23)
-(ACTIVE-T-07-62)
+(NOT-ACTIVE-T-01-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-04-17)
 (LYING-ON-T-04-18)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-59)
 (not (STANDING-ON-T-04-19))
-(not (ACTIVE-T-07-62))
+(not (ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-04-19-T-04-18-T-04-17-WEST
@@ -6776,16 +5170,16 @@
 (STANDING-ON-T-04-19)
 (ACTIVE-T-04-17)
 (ACTIVE-T-04-18)
-(ACTIVE-T-01-23)
-(NOT-ACTIVE-T-07-62)
+(ACTIVE-T-01-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-04-17)
 (LYING-ON-T-04-18)
-(NOT-ACTIVE-T-01-23)
+(NOT-ACTIVE-T-01-22)
 (not (STANDING-ON-T-04-19))
-(not (ACTIVE-T-01-23))
+(not (ACTIVE-T-01-22))
 )
 )
 (:action LAY-DOWN-T-04-19-T-04-18-T-04-17-WEST
@@ -6795,18 +5189,18 @@
 (STANDING-ON-T-04-19)
 (ACTIVE-T-04-17)
 (ACTIVE-T-04-18)
-(ACTIVE-T-01-23)
-(ACTIVE-T-07-62)
+(ACTIVE-T-01-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-04-17)
 (LYING-ON-T-04-18)
-(NOT-ACTIVE-T-01-23)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-01-22)
+(NOT-ACTIVE-T-04-59)
 (not (STANDING-ON-T-04-19))
-(not (ACTIVE-T-01-23))
-(not (ACTIVE-T-07-62))
+(not (ACTIVE-T-01-22))
+(not (ACTIVE-T-04-59))
 )
 )
 (:action STAND-UP-T-01-20-T-01-21-T-01-22-EAST
@@ -6846,7 +5240,7 @@
 (LYING-ON-T-04-18)
 (LYING-ON-T-04-17)
 (ACTIVE-T-04-19)
-(NOT-ACTIVE-T-07-68)
+(ACTIVE-T-04-22)
 )
 :effect
 (and
@@ -6862,15 +5256,15 @@
 (LYING-ON-T-04-18)
 (LYING-ON-T-04-17)
 (ACTIVE-T-04-19)
-(ACTIVE-T-07-68)
+(NOT-ACTIVE-T-04-22)
 )
 :effect
 (and
 (STANDING-ON-T-04-19)
-(NOT-ACTIVE-T-07-68)
+(ACTIVE-T-04-22)
 (not (LYING-ON-T-04-17))
 (not (LYING-ON-T-04-18))
-(not (ACTIVE-T-07-68))
+(not (NOT-ACTIVE-T-04-22))
 )
 )
 (:action STAND-UP-T-01-21-T-01-20-T-01-19-WEST
@@ -6880,7 +5274,7 @@
 (LYING-ON-T-01-20)
 (LYING-ON-T-01-21)
 (ACTIVE-T-01-19)
-(ACTIVE-T-07-68)
+(ACTIVE-T-01-22)
 )
 :effect
 (and
@@ -6896,15 +5290,15 @@
 (LYING-ON-T-01-20)
 (LYING-ON-T-01-21)
 (ACTIVE-T-01-19)
-(NOT-ACTIVE-T-07-68)
+(NOT-ACTIVE-T-01-22)
 )
 :effect
 (and
 (STANDING-ON-T-01-19)
-(ACTIVE-T-07-68)
+(ACTIVE-T-01-22)
 (not (LYING-ON-T-01-21))
 (not (LYING-ON-T-01-20))
-(not (NOT-ACTIVE-T-07-68))
+(not (NOT-ACTIVE-T-01-22))
 )
 )
 (:action STAND-UP-T-04-09-T-04-08-T-04-07-WEST
@@ -6944,31 +5338,12 @@
 (STANDING-ON-T-01-19)
 (ACTIVE-T-01-21)
 (ACTIVE-T-01-20)
-(ACTIVE-T-01-23)
 )
 :effect
 (and
 (LYING-ON-T-01-21)
 (LYING-ON-T-01-20)
 (not (STANDING-ON-T-01-19))
-)
-)
-(:action LAY-DOWN-T-01-19-T-01-20-T-01-21-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-19)
-(ACTIVE-T-01-21)
-(ACTIVE-T-01-20)
-(NOT-ACTIVE-T-01-23)
-)
-:effect
-(and
-(LYING-ON-T-01-21)
-(LYING-ON-T-01-20)
-(ACTIVE-T-01-23)
-(not (STANDING-ON-T-01-19))
-(not (NOT-ACTIVE-T-01-23))
 )
 )
 (:action LAY-DOWN-T-04-10-T-04-11-T-04-12-EAST
@@ -6993,8 +5368,8 @@
 (STANDING-ON-T-04-16)
 (ACTIVE-T-04-18)
 (ACTIVE-T-04-17)
-(NOT-ACTIVE-T-07-62)
-(NOT-ACTIVE-T-01-23)
+(NOT-ACTIVE-T-04-59)
+(NOT-ACTIVE-T-01-22)
 )
 :effect
 (and
@@ -7010,16 +5385,16 @@
 (STANDING-ON-T-04-16)
 (ACTIVE-T-04-18)
 (ACTIVE-T-04-17)
-(NOT-ACTIVE-T-07-62)
-(ACTIVE-T-01-23)
+(NOT-ACTIVE-T-04-59)
+(ACTIVE-T-01-22)
 )
 :effect
 (and
 (LYING-ON-T-04-18)
 (LYING-ON-T-04-17)
-(NOT-ACTIVE-T-01-23)
+(NOT-ACTIVE-T-01-22)
 (not (STANDING-ON-T-04-16))
-(not (ACTIVE-T-01-23))
+(not (ACTIVE-T-01-22))
 )
 )
 (:action LAY-DOWN-T-04-16-T-04-17-T-04-18-EAST
@@ -7029,16 +5404,16 @@
 (STANDING-ON-T-04-16)
 (ACTIVE-T-04-18)
 (ACTIVE-T-04-17)
-(ACTIVE-T-07-62)
-(NOT-ACTIVE-T-01-23)
+(ACTIVE-T-04-59)
+(NOT-ACTIVE-T-01-22)
 )
 :effect
 (and
 (LYING-ON-T-04-18)
 (LYING-ON-T-04-17)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-59)
 (not (STANDING-ON-T-04-16))
-(not (ACTIVE-T-07-62))
+(not (ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-04-16-T-04-17-T-04-18-EAST
@@ -7048,18 +5423,18 @@
 (STANDING-ON-T-04-16)
 (ACTIVE-T-04-18)
 (ACTIVE-T-04-17)
-(ACTIVE-T-07-62)
-(ACTIVE-T-01-23)
+(ACTIVE-T-04-59)
+(ACTIVE-T-01-22)
 )
 :effect
 (and
 (LYING-ON-T-04-18)
 (LYING-ON-T-04-17)
-(NOT-ACTIVE-T-07-62)
-(NOT-ACTIVE-T-01-23)
+(NOT-ACTIVE-T-04-59)
+(NOT-ACTIVE-T-01-22)
 (not (STANDING-ON-T-04-16))
-(not (ACTIVE-T-07-62))
-(not (ACTIVE-T-01-23))
+(not (ACTIVE-T-04-59))
+(not (ACTIVE-T-01-22))
 )
 )
 (:action LAY-DOWN-T-01-19-T-01-18-T-01-17-WEST
@@ -7069,8 +5444,8 @@
 (STANDING-ON-T-01-19)
 (ACTIVE-T-01-17)
 (ACTIVE-T-01-18)
-(NOT-ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
@@ -7086,16 +5461,16 @@
 (STANDING-ON-T-01-19)
 (ACTIVE-T-01-17)
 (ACTIVE-T-01-18)
-(NOT-ACTIVE-T-04-23)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-17)
 (LYING-ON-T-01-18)
-(ACTIVE-T-07-62)
+(ACTIVE-T-04-59)
 (not (STANDING-ON-T-01-19))
-(not (NOT-ACTIVE-T-07-62))
+(not (NOT-ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-01-19-T-01-18-T-01-17-WEST
@@ -7105,16 +5480,16 @@
 (STANDING-ON-T-01-19)
 (ACTIVE-T-01-17)
 (ACTIVE-T-01-18)
-(ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-17)
 (LYING-ON-T-01-18)
-(NOT-ACTIVE-T-04-23)
+(NOT-ACTIVE-T-04-22)
 (not (STANDING-ON-T-01-19))
-(not (ACTIVE-T-04-23))
+(not (ACTIVE-T-04-22))
 )
 )
 (:action LAY-DOWN-T-01-19-T-01-18-T-01-17-WEST
@@ -7124,18 +5499,18 @@
 (STANDING-ON-T-01-19)
 (ACTIVE-T-01-17)
 (ACTIVE-T-01-18)
-(ACTIVE-T-04-23)
-(NOT-ACTIVE-T-07-62)
+(ACTIVE-T-04-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-17)
 (LYING-ON-T-01-18)
-(NOT-ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 (not (STANDING-ON-T-01-19))
-(not (ACTIVE-T-04-23))
-(not (NOT-ACTIVE-T-07-62))
+(not (ACTIVE-T-04-22))
+(not (NOT-ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-04-10-T-04-09-T-04-08-WEST
@@ -7236,7 +5611,7 @@
 (LYING-ON-T-01-18)
 (LYING-ON-T-01-17)
 (ACTIVE-T-01-19)
-(ACTIVE-T-07-68)
+(ACTIVE-T-01-22)
 )
 :effect
 (and
@@ -7252,15 +5627,15 @@
 (LYING-ON-T-01-18)
 (LYING-ON-T-01-17)
 (ACTIVE-T-01-19)
-(NOT-ACTIVE-T-07-68)
+(NOT-ACTIVE-T-01-22)
 )
 :effect
 (and
 (STANDING-ON-T-01-19)
-(ACTIVE-T-07-68)
+(ACTIVE-T-01-22)
 (not (LYING-ON-T-01-17))
 (not (LYING-ON-T-01-18))
-(not (NOT-ACTIVE-T-07-68))
+(not (NOT-ACTIVE-T-01-22))
 )
 )
 (:action STAND-UP-T-04-11-T-04-12-T-04-13-EAST
@@ -7345,8 +5720,8 @@
 (STANDING-ON-T-01-16)
 (ACTIVE-T-01-18)
 (ACTIVE-T-01-17)
-(NOT-ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
@@ -7362,16 +5737,16 @@
 (STANDING-ON-T-01-16)
 (ACTIVE-T-01-18)
 (ACTIVE-T-01-17)
-(NOT-ACTIVE-T-04-23)
-(NOT-ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-18)
 (LYING-ON-T-01-17)
-(ACTIVE-T-07-62)
+(ACTIVE-T-04-59)
 (not (STANDING-ON-T-01-16))
-(not (NOT-ACTIVE-T-07-62))
+(not (NOT-ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-01-16-T-01-17-T-01-18-EAST
@@ -7381,16 +5756,16 @@
 (STANDING-ON-T-01-16)
 (ACTIVE-T-01-18)
 (ACTIVE-T-01-17)
-(ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-18)
 (LYING-ON-T-01-17)
-(NOT-ACTIVE-T-04-23)
+(NOT-ACTIVE-T-04-22)
 (not (STANDING-ON-T-01-16))
-(not (ACTIVE-T-04-23))
+(not (ACTIVE-T-04-22))
 )
 )
 (:action LAY-DOWN-T-01-16-T-01-17-T-01-18-EAST
@@ -7400,18 +5775,18 @@
 (STANDING-ON-T-01-16)
 (ACTIVE-T-01-18)
 (ACTIVE-T-01-17)
-(ACTIVE-T-04-23)
-(NOT-ACTIVE-T-07-62)
+(ACTIVE-T-04-22)
+(NOT-ACTIVE-T-04-59)
 )
 :effect
 (and
 (LYING-ON-T-01-18)
 (LYING-ON-T-01-17)
-(NOT-ACTIVE-T-04-23)
-(ACTIVE-T-07-62)
+(NOT-ACTIVE-T-04-22)
+(ACTIVE-T-04-59)
 (not (STANDING-ON-T-01-16))
-(not (ACTIVE-T-04-23))
-(not (NOT-ACTIVE-T-07-62))
+(not (ACTIVE-T-04-22))
+(not (NOT-ACTIVE-T-04-59))
 )
 )
 (:action LAY-DOWN-T-01-16-T-02-16-T-03-16-SOUTH
@@ -7711,7 +6086,7 @@
 (ACTIVE-T-01-05)
 (ACTIVE-T-01-06)
 (NOT-ACTIVE-T-10-05)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -7728,15 +6103,15 @@
 (ACTIVE-T-01-05)
 (ACTIVE-T-01-06)
 (NOT-ACTIVE-T-10-05)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 )
 :effect
 (and
 (LYING-ON-T-01-05)
 (LYING-ON-T-01-06)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 (not (STANDING-ON-T-01-07))
-(not (ACTIVE-T-04-62))
+(not (NOT-ACTIVE-T-10-53))
 )
 )
 (:action LAY-DOWN-T-01-07-T-01-06-T-01-05-WEST
@@ -7747,7 +6122,7 @@
 (ACTIVE-T-01-05)
 (ACTIVE-T-01-06)
 (ACTIVE-T-10-05)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -7766,17 +6141,17 @@
 (ACTIVE-T-01-05)
 (ACTIVE-T-01-06)
 (ACTIVE-T-10-05)
-(ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-53)
 )
 :effect
 (and
 (LYING-ON-T-01-05)
 (LYING-ON-T-01-06)
 (NOT-ACTIVE-T-10-05)
-(NOT-ACTIVE-T-04-62)
+(ACTIVE-T-10-53)
 (not (STANDING-ON-T-01-07))
 (not (ACTIVE-T-10-05))
-(not (ACTIVE-T-04-62))
+(not (NOT-ACTIVE-T-10-53))
 )
 )
 (:action STAND-UP-T-01-05-T-01-06-T-01-07-EAST
@@ -7835,8 +6210,8 @@
 (STANDING-ON-T-01-04)
 (ACTIVE-T-01-06)
 (ACTIVE-T-01-05)
-(NOT-ACTIVE-T-04-62)
 (NOT-ACTIVE-T-10-05)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -7852,8 +6227,27 @@
 (STANDING-ON-T-01-04)
 (ACTIVE-T-01-06)
 (ACTIVE-T-01-05)
-(NOT-ACTIVE-T-04-62)
+(NOT-ACTIVE-T-10-05)
+(NOT-ACTIVE-T-10-53)
+)
+:effect
+(and
+(LYING-ON-T-01-06)
+(LYING-ON-T-01-05)
+(ACTIVE-T-10-53)
+(not (STANDING-ON-T-01-04))
+(not (NOT-ACTIVE-T-10-53))
+)
+)
+(:action LAY-DOWN-T-01-04-T-01-05-T-01-06-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-04)
+(ACTIVE-T-01-06)
+(ACTIVE-T-01-05)
 (ACTIVE-T-10-05)
+(ACTIVE-T-10-53)
 )
 :effect
 (and
@@ -7871,37 +6265,18 @@
 (STANDING-ON-T-01-04)
 (ACTIVE-T-01-06)
 (ACTIVE-T-01-05)
-(ACTIVE-T-04-62)
-(NOT-ACTIVE-T-10-05)
-)
-:effect
-(and
-(LYING-ON-T-01-06)
-(LYING-ON-T-01-05)
-(NOT-ACTIVE-T-04-62)
-(not (STANDING-ON-T-01-04))
-(not (ACTIVE-T-04-62))
-)
-)
-(:action LAY-DOWN-T-01-04-T-01-05-T-01-06-EAST
-:parameters ()
-:precondition
-(and
-(STANDING-ON-T-01-04)
-(ACTIVE-T-01-06)
-(ACTIVE-T-01-05)
-(ACTIVE-T-04-62)
 (ACTIVE-T-10-05)
+(NOT-ACTIVE-T-10-53)
 )
 :effect
 (and
 (LYING-ON-T-01-06)
 (LYING-ON-T-01-05)
-(NOT-ACTIVE-T-04-62)
 (NOT-ACTIVE-T-10-05)
+(ACTIVE-T-10-53)
 (not (STANDING-ON-T-01-04))
-(not (ACTIVE-T-04-62))
 (not (ACTIVE-T-10-05))
+(not (NOT-ACTIVE-T-10-53))
 )
 )
 (:action LAY-DOWN-T-01-04-T-01-03-T-01-02-WEST

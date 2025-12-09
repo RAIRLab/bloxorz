@@ -262,7 +262,6 @@ def _to_ascii(grid: List[List[str]]) -> str:
     m = {'.': ' ', 'X': 'X', 'Y': 'Y', 'I': 'I', 'G': 'G'}
     return "\n".join("".join(m[ch] for ch in row) for row in grid)
 
-# NOTE(nico): Repo expects two‑char tokens; keep this in sync with gen_pddl.py.
 def _to_tokens2(grid: List[List[str]]) -> str:
     """
     Two-char encoding: 'XX','YY','II','GG','  ' (two spaces).

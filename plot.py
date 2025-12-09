@@ -10,13 +10,21 @@ csv_directory = 'results'
 
 combined_df = pd.read_csv("results/master.csv")
 
+label_mapping = {
+    'ipc2023_odin': 'Odin',
+    'ipc2023_scorpion_2023': 'Scorpion',
+    'ipc2023_fdss_2023_agl': 'FDSS-AGL',
+    'ipc2023_fdss_2023_sat': 'FDSS-SAT',
+    'lama' : "Lama"
+}
+
 # our columns are: planner,generator,difficulty,instance,name,time_taken,expanded_states,plan_length
 
-bjolp_df = combined_df[combined_df['planner'] == 'seq-opt-bjolp']
+odin_df = combined_df[combined_df['planner'] == 'ipc2023_odin']
 plt.rcParams.update({'font.size': 16})
 plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
-# Begin by plotting average optimal plan length vs difficulty for bjolp for each generator
-avg_plan_length = bjolp_df.groupby(['generator', 'difficulty'])['plan_length'].mean().reset_index()
+# Begin by plotting average optimal plan length vs difficulty for odin for each generator
+avg_plan_length = odin_df.groupby(['generator', 'difficulty'])['plan_length'].mean().reset_index()
 plt.figure(figsize=(10, 6))
 for generator in avg_plan_length['generator'].unique():
     gen_data = avg_plan_length[avg_plan_length['generator'] == generator]
@@ -31,15 +39,15 @@ plt.savefig('plots/avg_plan_length_bjolp.png')
 plt.close()
 
 # Next plot averge expanded states vs difficulty for bjolp for each generator
-avg_expanded_states = bjolp_df.groupby(['generator', 'difficulty'])['expanded_states'].mean().reset_index()
+avg_expanded_states = odin_df.groupby(['generator', 'difficulty'])['expanded_states'].mean().reset_index()
 plt.figure(figsize=(10, 6))
 for generator in avg_expanded_states['generator'].unique():
     gen_data = avg_expanded_states[avg_expanded_states['generator'] == generator]
     plt.plot(gen_data['difficulty'] + 1, gen_data['expanded_states'], marker='o', label=generator)
-plt.title('Generator Difficulty vs Average BJOLP Expanded States')
+plt.title('Generator Difficulty vs Average Odin Expanded States')
 plt.xlabel('Generator Difficulty')
 plt.yscale('log')
-plt.ylabel('Average BJOLP Expanded States')
+plt.ylabel('Average Odin Expanded States')
 plt.grid()
 plt.legend()
 plt.savefig('plots/avg_expanded_states_bjolp.png')
@@ -69,9 +77,9 @@ for generator in generators:
             plt.plot(planner_data['difficulty'] + 1, planner_data['time_taken'], 
                      marker=marker_map[planner],
                      linestyle=linestyle_map[planner],
-                     label=planner)
+                     label=label_mapping.get(planner))
     
-    plt.title(f'Generator Difficulty vs Average Time Taken - {generator}')
+    plt.title(f'Generator Difficulty vs Average Time Taken - {label_mapping.get(generator)}')
     plt.xlabel('Generator Difficulty')
     plt.ylabel('Average Time Taken (s)')
     plt.yscale('log')
@@ -81,34 +89,81 @@ for generator in generators:
     plt.close()
 
 
-# Now plot average plan length vs difficulty for planner and generator pairs.
-# Make all lines of the same generator the same color, use a solid line for bjolp and dotted lines for others.
+# # Now plot average plan length vs difficulty for planner and generator pairs.
+# # Make all lines of the same generator the same color, use a solid line for bjolp and dotted lines for others.
 
-avg_plan_length_all = combined_df.groupby(['planner', 'generator', 'difficulty'])['plan_length'].mean().reset_index()
-plt.figure(figsize=(10, 6))
+# avg_plan_length_all = combined_df.groupby(['planner', 'generator', 'difficulty'])['plan_length'].mean().reset_index()
+# plt.figure(figsize=(10, 6))
 
-# Define colors for each generator
-generators = avg_plan_length_all['generator'].unique()
-colors = plt.cm.tab10(range(len(generators)))
-color_map = {generator: colors[i] for i, generator in enumerate(generators)}
+# # Define colors for each generator
+# generators = avg_plan_length_all['generator'].unique()
+# colors = plt.cm.tab10(range(len(generators)))
+# color_map = {generator: colors[i] for i, generator in enumerate(generators)}
 
-for generator in generators:
-    gen_data = avg_plan_length_all[avg_plan_length_all['generator'] == generator]
+# for generator in generators:
+#     gen_data = avg_plan_length_all[avg_plan_length_all['generator'] == generator]
     
-    for planner in gen_data['planner'].unique():
-        planner_data = gen_data[gen_data['planner'] == planner]
-        linestyle = '-' if planner == 'seq-opt-bjolp' else '--'
-        plt.plot(planner_data['difficulty'] + 1, planner_data['plan_length'],
-                 marker='o',
-                 linestyle=linestyle,
-                 color=color_map[generator],
-                 label=f'{generator} - {planner}')
+#     for planner in gen_data['planner'].unique():
+#         planner_data = gen_data[gen_data['planner'] == planner]
+#         linestyle = '-' if planner == 'seq-opt-bjolp' else '--'
+#         plt.plot(planner_data['difficulty'] + 1, planner_data['plan_length'],
+#                  marker='o',
+#                  linestyle=linestyle,
+#                  color=color_map[generator],
+#                  label=f'{label_mapping.get(generator)} - {label_mapping.get(planner)}')
 
-plt.title('Generator Difficulty vs Average Plan Length')
+# plt.title('Generator Difficulty vs Average Plan Length')
+# plt.xlabel('Generator Difficulty')
+# plt.ylabel('Average Plan Length')
+# plt.yscale('log')
+# plt.grid()
+# plt.legend()
+# plt.savefig('plots/avg_plan_length_all.png')
+# plt.close()
+
+# Next plot averge expanded states vs difficulty for all planners, just for QSAT
+qsat_expanded_states = combined_df[combined_df['generator'] == 'QSAT'].groupby(['planner', 'difficulty'])['expanded_states'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+for planner in qsat_expanded_states['planner'].unique():
+    planner_data = qsat_expanded_states[qsat_expanded_states['planner'] == planner]
+    plt.plot(planner_data['difficulty'] + 1, planner_data['expanded_states'], marker='o', label=label_mapping.get(planner))
+plt.title('QSAT: Difficulty vs Average Expanded States')
 plt.xlabel('Generator Difficulty')
-plt.ylabel('Average Plan Length')
 plt.yscale('log')
+plt.ylabel('Average Expanded States')
 plt.grid()
 plt.legend()
-plt.savefig('plots/avg_plan_length_all.png')
+plt.savefig('plots/qsat_avg_expanded_states_all.png')
 plt.close()
+
+
+# Next plot the averge plan length vs difficulty for all planners, just for QSAT
+qsat_plan_length = combined_df[combined_df['generator'] == 'QSAT'].groupby(['planner', 'difficulty'])['plan_length'].mean().reset_index()
+plt.figure(figsize=(10, 6))
+for planner in qsat_plan_length['planner'].unique():
+    planner_data = qsat_plan_length[qsat_plan_length['planner'] == planner]
+    plt.plot(planner_data['difficulty'] + 1, planner_data['plan_length'], marker='o', label=label_mapping.get(planner))
+plt.title('QSAT: Difficulty vs Average Plan Length')
+plt.xlabel('Generator Difficulty')
+#plt.yscale('log')
+plt.ylabel('Average Plan Length')
+plt.grid()
+plt.legend()
+plt.savefig('plots/qsat_avg_plan_length_all.png')
+plt.close()
+
+# Write the average time, expanded states and plan length for each planner and generator as a csv table file, just for QSAT 
+
+summary_df = combined_df[combined_df['generator'] == 'QSAT'].groupby(['planner', 'generator', 'difficulty']).agg({
+    'time_taken': 'mean',
+    'expanded_states': 'mean',
+    'plan_length': 'mean'
+}).reset_index()
+
+# Map planner labels
+summary_df['planner'] = summary_df['planner'].map(label_mapping)
+
+# Remove generator column as it's always QSAT
+summary_df = summary_df.drop(columns=['generator'])
+
+summary_df.to_csv('results/summary_stats.csv', float_format='%.2f', index=False)
