@@ -13,8 +13,8 @@ combined_df = pd.read_csv("results/master.csv")
 label_mapping = {
     'ipc2023_odin': 'Odin (O)',
     'ipc2023_scorpion_2023': 'Scorpion (S)',
-    'ipc2023_fdss_2023_agl': 'FS',
-    'ipc2023_fdss_2023_sat': 'FA',
+    'ipc2023_fdss_2023_agl': 'FA',
+    'ipc2023_fdss_2023_sat': 'FS',
     'lama' : "Lama (L)"
 }
 
