@@ -1,0 +1,12 @@
+;∀ x1 ∃ x2 ∃ x3 . ((x3) ∧ (x3 ∨ x3 ∨ x1) ∧ (x2))
+
+IIIXXXXXXXXXd09e01e06XXXXXXA06XXXXXXXXXXXXXXXXXXd11e02e10XXXXXXA10XXXXXXXXXXXXXXXXXXd13e03e04e05e12XXXXXXA12XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
+                                    XXX      XXX                        XXX      XXX                                 XXX                                                                     XXX
+         XXXe09e08A08d08d06XXXXXXXXXXXX      XXXd10d02e11XXXXXXA11XXXXXXXXX      XXXd12d03d04d05e13XXXXXXA13XXXXXXXXXXXX      XXXXXXXXXXXXA03XXXXXXXXXXXXXXXA04XXXXXXXXXXXXXXXA02XXXXXXXXXXXXXXX
+         XXX                                                                                                                  XXX                        XXX      XXX                           
+         XXX                                                                                                                  XXX                        XXX      XXX                           
+         XXXd01d07XXXXXXA07XXXXXXXXXe07                                                                                       XXX                        XXXA05XXXXXX                           
+                                    XXX                                                                                       XXX                        XXX      XXX                           
+                                    XXX                                                                                       XXX                        XXX      XXX                           
+GGGXXXXXXXXXA09XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                        XXXA01XXXXXX                           

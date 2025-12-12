@@ -1,11 +1,16 @@
+"""
+Yellow‑Large generator (Bloxorz)
 
 # Yellow-Large generator (Bloxorz)
 
 from __future__ import annotations
+import time
 import random
 import time
 from dataclasses import dataclass
 from typing import List, Tuple, Set, Optional
+
+from bloxorz.solve import solve_bloxorz_maze
 
 # ---------------- basics ----------------
 def in_bounds(h: int, w: int, r: int, c: int) -> bool:
@@ -408,18 +413,6 @@ def _to_ascii(grid: List[List[str]]) -> str:
     m = {'.': ' ', 'X': 'X', 'Y': 'Y', 'I': 'I', 'G': 'G'}
     return "\n".join("".join(m[ch] for ch in row) for row in grid)
 
-def _from_ascii(s: str) -> List[List[str]]:
-    """
-    Parse an encoding=1 ASCII map back into a grid of single-char tokens.
-    Spaces are treated as '.' (void).
-    """
-    g: List[List[str]] = []
-    for line in s.splitlines():
-        row = [('.' if ch == ' ' else ch) for ch in line]
-        g.append(row)
-    return g
-
- # The repo expects two-char tokens; keep this in sync with gen_pddl.py.
 def _to_tokens2(grid: List[List[str]]) -> str:
     """
     Two-char encoding: 'XX','YY','II','GG','  ' (two spaces).
@@ -628,6 +621,8 @@ def generate_level(complexity_0_9: int, seed: Optional[int] = None) -> str:
       - No printing or file I/O here.
       - Guarantees presence of I and G, basic separation, and solvability.
     """
+    if seed is None:
+        seed = int(time.time() * 1000) % 1000000
     if not isinstance(complexity_0_9, int):
         raise TypeError("complexity must be an int in 0..9")
     if complexity_0_9 < 0 or complexity_0_9 > 9:
@@ -636,36 +631,14 @@ def generate_level(complexity_0_9: int, seed: Optional[int] = None) -> str:
     # Map 0..9 → 1..20 (inclusive)
     mapped = 1 + round(complexity_0_9 * 19 / 9)
 
-    base_seed = seed if seed is not None else (int(time.time() * 1000) % 1000)
-    MIN_LEN = 8        # bump to 10–12 if "harder" is requested
-    MAX_TRIES = 200
 
-    # Try nearby seeds until we get a good one (validate quickly with encoding=1)
-    for bump in range(MAX_TRIES):
-        try_seed = base_seed + bump
-        ascii_lvl = generate(mapped, try_seed, encoding=1)
-        grid = _from_ascii(ascii_lvl)
-
-        sp = _find(grid, 'I'); gp = _find(grid, 'G')
-        if not sp or not gp:
+def generate_level_og(complexity_0_9: int) -> str:
+    while True:
+        try:
+            level = generate_level(complexity_0_9)
+            if "II" not in level or "GG" not in level:
+                continue
+        except Exception as e:
             continue
-        # Avoid trivial adjacency
-        if _manhattan(sp, gp) < 3:
-            continue
-        mv = _min_moves(grid)
-        if mv is None or mv < MIN_LEN:
-            continue
-
-        # Good → return two-char tokens for the repo
-        return generate(mapped, try_seed, encoding=2)
-
-    # Fallback: first solvable one even if short
-    for bump in range(MAX_TRIES, MAX_TRIES + 200):
-        try_seed = base_seed + bump
-        ascii_lvl = generate(mapped, try_seed, encoding=1)
-        grid = _from_ascii(ascii_lvl)
-        if _min_moves(grid) is not None:
-            return generate(mapped, try_seed, encoding=2)
-
-    # Last resort
-    return generate(mapped, base_seed, encoding=2)
+        if solve_bloxorz_maze(level) is not None:
+            return level

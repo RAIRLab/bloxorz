@@ -261,13 +261,19 @@ def generate_qsat_level(f : QBF) -> str:
     level_string = "\n".join(level_lines)
     return level_string
 
+def generate_and_shuffle(n, m):
+    # n ones, then zeros up to position m
+    arr = [1]*n + [0]*(m - n)
+    random.shuffle(arr)
+    return arr
+
 def random_qsat_formula(n : int) -> QBF:
-    num_vars = (n // 3) + 1
+    num_vars = n + 5 #max(n, 4)
     num_clauses = n + 2
-    quantifiers = [random.choice([0, 1]) for _ in range(num_vars)]
+    quantifiers = generate_and_shuffle(n, num_vars)
     clauses = []
     for _ in range(num_clauses):
-        clause_size = random.randint(2, 5)
+        clause_size = random.randint(1, 3)
         clause = []
         for _ in range(clause_size):
             var = random.randint(1, num_vars)
@@ -276,8 +282,51 @@ def random_qsat_formula(n : int) -> QBF:
         clauses.append(clause)
     return QBF(quantifiers, clauses)
 
+def is_satisfiable(f : QBF) -> bool:
+    """ Brute-force check if the QBF formula is satisfiable. """
+    def eval_clause(clause : list[int], assignment : dict[int, bool]) -> bool:
+        for lit in clause:
+            var = abs(lit)
+            val = assignment[var]
+            if (lit > 0 and val) or (lit < 0 and not val):
+                return True
+        return False
+
+    def eval_qbf(f : QBF, assignment : dict[int, bool], var_index : int) -> bool:
+        if var_index >= len(f.quantifiers):
+            # Evaluate the formula
+            for clause in f.clauses:
+                if not eval_clause(clause, assignment):
+                    return False
+            return True
+        q = f.quantifiers[var_index]
+        var = var_index + 1
+        if q == 0:
+            # Existential quantifier
+            assignment[var] = True
+            if eval_qbf(f, assignment, var_index + 1):
+                return True
+            assignment[var] = False
+            if eval_qbf(f, assignment, var_index + 1):
+                return True
+            return False
+        else:
+            # Universal quantifier
+            assignment[var] = True
+            if not eval_qbf(f, assignment, var_index + 1):
+                return False
+            assignment[var] = False
+            if not eval_qbf(f, assignment, var_index + 1):
+                return False
+            return True
+
+    return eval_qbf(f, {}, 0)
+
 def generate_random_qsat_level(n : int) -> str:
-    f = random_qsat_formula(n)
+    while True:
+        f = random_qsat_formula(n)
+        if is_satisfiable(f):
+            break
     level = generate_qsat_level(f)
     level = ";" + str(f) + "\n" + level 
     return level

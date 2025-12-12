@@ -6,5 +6,8 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "kstar-planner>=1.4.16",
+    "lab>=8.6",
+    "matplotlib>=3.10.7",
+    "pandas>=2.3.3",
     "tqdm>=4.67.1",
 ]

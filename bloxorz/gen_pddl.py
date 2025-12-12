@@ -173,7 +173,7 @@ def parse_maze_text(maze_text: str) -> Tuple[Set[Coord], Coord, Coord, int, int,
                     except ValueError:
                         raise ValueError(f"Invalid disabled toggle ID in tile '{ch}' at ({r}, {c})")
                     toggles.append(ToggleTile(row=r, col=c, state='disabled', id=toggle_id))
-            else:
+            elif ch != "  ":
                 raise ValueError(f"Unknown tile code '{ch}' at ({r}, {c})")
 
     if not starts:
@@ -248,8 +248,11 @@ def format_pddl(
 
     # Objects section (row-wise, matching your example style)
     obj_lines: List[str] = []
-    blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
-    obj_lines.append(f"(:objects {' '.join(blocks)} - block")
+    if len(goals) > 1:
+        blocks = [f"b-{n}" for n in range(1, len(starts) + 1)]
+        obj_lines.append(f"(:objects {' '.join(blocks)} - block")
+    else:
+        obj_lines.append(f"(:objects ")
     tiles = []
     for r in sorted(rows.keys()):
         cols = rows[r]
@@ -314,18 +317,28 @@ def format_pddl(
 
     # Start positions
 
-    for n, start in enumerate(starts, start=1):
-        init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
-        init_lines.append(f"  (occupied {tn(start)})")
+    if len(goals) > 1:
+        for n, start in enumerate(starts, start=1):
+            init_lines.append(f"\n  (standing-on b-{n} {tn(start)})")
+            init_lines.append(f"  (occupied {tn(start)})")
 
-    init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
 
-    # Goals
-    goal_lines: List[str] = []
-    for g in goals:
-        goal_lines.append(f"(occupied {tn(g)})")
+        # Goals
+        goal_lines: List[str] = []
+        for g in goals:
+            goal_lines.append(f"(occupied {tn(g)})")
 
-    goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+        goal_block = "(:goal (and \n  " + "\n  ".join(goal_lines) + "\n))"
+    else:
+        start = starts[0]
+        init_lines.append(f"\n  (standing-on {tn(start)})")
+
+        init_block = "(:init\n" + "\n".join(init_lines) + "\n)"
+
+        # Goals
+        goal = goals[0]
+        goal_block = f"(:goal (and \n  (standing-on {tn(goal)})\n))"
 
     # Top-level
     lines: List[str] = []

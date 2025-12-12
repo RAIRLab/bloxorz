@@ -171,7 +171,7 @@ def generate_maze_all_params(n: int, m: int, k: int, seed: Optional[int] = None,
     return "\n".join(lines) + "\n"
 
 def generate_maze(n) -> str:
-    n = n + 1
+    n = n + 3
     r = n + 3 + random.randint(-n, n)
     c = n + 3 + random.randint(-n, n)
     k = random.randint(0, r * c // 2 - 2)

@@ -33,12 +33,6 @@ try:
 except ImportError:
     SOLVER_AVAILABLE = False
 
-# Optional solver integration for validation
-try:
-    from ..bloxorz.solve import solve_bloxorz_maze
-    SOLVER_AVAILABLE = True
-except ImportError:
-    SOLVER_AVAILABLE = False
 
 
 def has_full_yellow_line(grid, section_start_row=None, section_end_row=None):
@@ -305,19 +299,10 @@ def generate_bloxorz_grid(n, rows, cols, yellow_ratio=0.3, validate_solvable=Tru
     return None
 
 def generate_YY_bridge_problem(n) -> str:
+    n = (n // 2) + 4
     seed = int(time() * 1000) % 1000
     random.seed(seed)
-    if n % 3 == 0:
-        r = 3
-        c = 4
-    elif n % 3 == 1:
-        r = 4
-        c = 5
-    else:
-        r = 5
-        c = 6
-    island_count = n // 3
-    while (grid := generate_bloxorz_grid(island_count, rows=r, cols=c, yellow_ratio=0.3)) is None:
+    while (grid := generate_bloxorz_grid(n-4, rows=n, cols=n, yellow_ratio=0.3)) is None:
         pass
     grid_string = "\n".join("".join(row) for row in grid)
     return grid_string

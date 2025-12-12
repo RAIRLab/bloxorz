@@ -5,9 +5,12 @@ build/
 dist/
 wheels/
 *.egg-info
-levels/*/**
-levels-pddl/*/**
-plans/*/**
+#levels/*/**
+#levels-pddl-adl/*/**
+#levels-pddl-strips/*/**
+#plans/*/**
+#logs/*
+#plots
 
 # Virtual environments
 .venv

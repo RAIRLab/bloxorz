@@ -1,0 +1,22177 @@
+(define (domain grounded-STRIPS-BLOXORZ)
+(:requirements
+:strips
+)
+(:predicates
+(LYING-ON-T-57-15)
+(LYING-ON-T-57-14)
+(STANDING-ON-T-57-16)
+(LYING-ON-T-55-16)
+(LYING-ON-T-56-16)
+(STANDING-ON-T-54-16)
+(LYING-ON-T-52-16)
+(LYING-ON-T-53-16)
+(STANDING-ON-T-51-16)
+(LYING-ON-T-49-16)
+(LYING-ON-T-50-16)
+(STANDING-ON-T-48-16)
+(LYING-ON-T-48-14)
+(LYING-ON-T-48-15)
+(STANDING-ON-T-48-13)
+(LYING-ON-T-46-13)
+(LYING-ON-T-47-13)
+(LYING-ON-T-46-12)
+(LYING-ON-T-47-12)
+(STANDING-ON-T-45-12)
+(LYING-ON-T-45-10)
+(LYING-ON-T-45-11)
+(LYING-ON-T-44-10)
+(LYING-ON-T-44-11)
+(LYING-ON-T-43-10)
+(LYING-ON-T-43-11)
+(STANDING-ON-T-43-11)
+(STANDING-ON-T-43-10)
+(STANDING-ON-T-43-09)
+(STANDING-ON-T-45-11)
+(STANDING-ON-T-45-10)
+(LYING-ON-T-41-09)
+(LYING-ON-T-42-09)
+(LYING-ON-T-43-09)
+(LYING-ON-T-45-12)
+(STANDING-ON-T-41-09)
+(STANDING-ON-T-47-12)
+(LYING-ON-T-41-08)
+(LYING-ON-T-42-08)
+(LYING-ON-T-41-07)
+(LYING-ON-T-42-07)
+(STANDING-ON-T-40-07)
+(STANDING-ON-T-42-07)
+(STANDING-ON-T-41-07)
+(STANDING-ON-T-42-09)
+(LYING-ON-T-40-07)
+(LYING-ON-T-40-05)
+(LYING-ON-T-40-06)
+(STANDING-ON-T-40-05)
+(LYING-ON-T-39-05)
+(LYING-ON-T-39-06)
+(LYING-ON-T-38-05)
+(LYING-ON-T-38-06)
+(STANDING-ON-T-38-06)
+(STANDING-ON-T-38-05)
+(STANDING-ON-T-38-04)
+(STANDING-ON-T-40-06)
+(LYING-ON-T-36-04)
+(LYING-ON-T-37-04)
+(LYING-ON-T-38-04)
+(STANDING-ON-T-36-04)
+(STANDING-ON-T-35-04)
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-01)
+(LYING-ON-T-37-01)
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-06)
+(LYING-ON-T-35-05)
+(STANDING-ON-T-35-03)
+(STANDING-ON-T-35-02)
+(STANDING-ON-T-35-01)
+(STANDING-ON-T-37-02)
+(STANDING-ON-T-37-01)
+(STANDING-ON-T-36-02)
+(STANDING-ON-T-36-01)
+(STANDING-ON-T-37-03)
+(STANDING-ON-T-37-04)
+(STANDING-ON-T-36-03)
+(STANDING-ON-T-35-07)
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-01)
+(LYING-ON-T-35-09)
+(LYING-ON-T-35-08)
+(STANDING-ON-T-35-10)
+(STANDING-ON-T-35-06)
+(STANDING-ON-T-35-05)
+(LYING-ON-T-35-12)
+(LYING-ON-T-35-11)
+(LYING-ON-T-35-07)
+(STANDING-ON-T-35-13)
+(STANDING-ON-T-35-09)
+(STANDING-ON-T-35-08)
+(LYING-ON-T-35-15)
+(LYING-ON-T-35-14)
+(LYING-ON-T-35-10)
+(STANDING-ON-T-35-16)
+(STANDING-ON-T-35-12)
+(STANDING-ON-T-35-11)
+(LYING-ON-T-35-18)
+(LYING-ON-T-35-17)
+(LYING-ON-T-35-13)
+(STANDING-ON-T-35-19)
+(STANDING-ON-T-35-15)
+(STANDING-ON-T-35-14)
+(LYING-ON-T-33-19)
+(LYING-ON-T-34-19)
+(LYING-ON-T-35-16)
+(STANDING-ON-T-35-18)
+(STANDING-ON-T-35-17)
+(LYING-ON-T-33-20)
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-21)
+(LYING-ON-T-33-21)
+(LYING-ON-T-35-19)
+(STANDING-ON-T-33-19)
+(STANDING-ON-T-32-21)
+(STANDING-ON-T-34-19)
+(STANDING-ON-T-34-21)
+(STANDING-ON-T-33-21)
+(LYING-ON-T-32-21)
+(LYING-ON-T-32-23)
+(LYING-ON-T-32-22)
+(STANDING-ON-T-32-23)
+(LYING-ON-T-31-22)
+(LYING-ON-T-31-23)
+(LYING-ON-T-30-22)
+(LYING-ON-T-30-23)
+(STANDING-ON-T-30-23)
+(STANDING-ON-T-30-22)
+(STANDING-ON-T-32-22)
+(STANDING-ON-T-30-24)
+(LYING-ON-T-28-24)
+(LYING-ON-T-29-24)
+(LYING-ON-T-30-24)
+(STANDING-ON-T-28-24)
+(LYING-ON-T-28-25)
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-26)
+(LYING-ON-T-28-26)
+(STANDING-ON-T-27-26)
+(STANDING-ON-T-29-24)
+(STANDING-ON-T-29-26)
+(STANDING-ON-T-28-26)
+(LYING-ON-T-27-26)
+(LYING-ON-T-27-28)
+(LYING-ON-T-27-27)
+(STANDING-ON-T-27-28)
+(LYING-ON-T-26-27)
+(LYING-ON-T-26-28)
+(LYING-ON-T-25-27)
+(LYING-ON-T-25-28)
+(STANDING-ON-T-25-28)
+(STANDING-ON-T-25-27)
+(STANDING-ON-T-27-27)
+(STANDING-ON-T-25-29)
+(LYING-ON-T-23-29)
+(LYING-ON-T-24-29)
+(LYING-ON-T-25-29)
+(STANDING-ON-T-23-29)
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+(STANDING-ON-T-22-31)
+(STANDING-ON-T-22-30)
+(STANDING-ON-T-24-29)
+(STANDING-ON-T-24-32)
+(STANDING-ON-T-24-31)
+(STANDING-ON-T-23-32)
+(STANDING-ON-T-23-31)
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-30)
+(LYING-ON-T-21-31)
+(LYING-ON-T-23-32)
+(LYING-ON-T-24-32)
+(LYING-ON-T-22-32)
+(LYING-ON-T-21-32)
+(STANDING-ON-T-22-32)
+(STANDING-ON-T-21-32)
+(STANDING-ON-T-21-31)
+(STANDING-ON-T-21-30)
+(STANDING-ON-T-24-30)
+(STANDING-ON-T-23-30)
+(STANDING-ON-T-21-33)
+(LYING-ON-T-21-35)
+(LYING-ON-T-21-34)
+(LYING-ON-T-21-33)
+(STANDING-ON-T-21-36)
+(STANDING-ON-T-21-35)
+(STANDING-ON-T-21-34)
+(LYING-ON-T-21-38)
+(LYING-ON-T-21-37)
+(LYING-ON-T-21-36)
+(STANDING-ON-T-21-39)
+(STANDING-ON-T-21-38)
+(STANDING-ON-T-21-37)
+(LYING-ON-T-21-41)
+(LYING-ON-T-21-40)
+(LYING-ON-T-21-39)
+(STANDING-ON-T-21-42)
+(STANDING-ON-T-21-41)
+(STANDING-ON-T-21-40)
+(LYING-ON-T-19-42)
+(LYING-ON-T-20-42)
+(LYING-ON-T-21-43)
+(LYING-ON-T-21-42)
+(STANDING-ON-T-19-42)
+(STANDING-ON-T-21-43)
+(LYING-ON-T-20-43)
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-44)
+(STANDING-ON-T-19-43)
+(STANDING-ON-T-19-45)
+(STANDING-ON-T-19-44)
+(LYING-ON-T-17-45)
+(LYING-ON-T-18-45)
+(LYING-ON-T-17-44)
+(LYING-ON-T-18-44)
+(LYING-ON-T-21-45)
+(LYING-ON-T-20-45)
+(LYING-ON-T-19-45)
+(STANDING-ON-T-18-45)
+(STANDING-ON-T-17-45)
+(STANDING-ON-T-17-44)
+(STANDING-ON-T-16-45)
+(STANDING-ON-T-16-44)
+(STANDING-ON-T-17-43)
+(STANDING-ON-T-22-45)
+(STANDING-ON-T-21-45)
+(STANDING-ON-T-20-45)
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-45)
+(LYING-ON-T-16-43)
+(LYING-ON-T-17-43)
+(LYING-ON-T-24-45)
+(LYING-ON-T-23-45)
+(LYING-ON-T-22-45)
+(STANDING-ON-T-16-43)
+(STANDING-ON-T-25-45)
+(STANDING-ON-T-24-45)
+(STANDING-ON-T-23-45)
+(STANDING-ON-T-18-44)
+(LYING-ON-T-27-45)
+(LYING-ON-T-26-45)
+(LYING-ON-T-25-45)
+(STANDING-ON-T-28-45)
+(STANDING-ON-T-27-45)
+(STANDING-ON-T-26-45)
+(LYING-ON-T-30-45)
+(LYING-ON-T-29-45)
+(LYING-ON-T-28-45)
+(STANDING-ON-T-31-45)
+(STANDING-ON-T-30-45)
+(STANDING-ON-T-29-45)
+(LYING-ON-T-33-45)
+(LYING-ON-T-32-45)
+(LYING-ON-T-31-45)
+(STANDING-ON-T-34-45)
+(STANDING-ON-T-33-45)
+(STANDING-ON-T-32-45)
+(LYING-ON-T-36-45)
+(LYING-ON-T-35-45)
+(LYING-ON-T-34-45)
+(STANDING-ON-T-37-45)
+(STANDING-ON-T-36-45)
+(STANDING-ON-T-35-45)
+(LYING-ON-T-39-45)
+(LYING-ON-T-38-45)
+(LYING-ON-T-37-45)
+(STANDING-ON-T-40-45)
+(STANDING-ON-T-39-45)
+(STANDING-ON-T-38-45)
+(LYING-ON-T-42-45)
+(LYING-ON-T-41-45)
+(LYING-ON-T-40-45)
+(STANDING-ON-T-43-45)
+(STANDING-ON-T-42-45)
+(STANDING-ON-T-41-45)
+(LYING-ON-T-45-45)
+(LYING-ON-T-44-45)
+(LYING-ON-T-43-45)
+(STANDING-ON-T-46-45)
+(STANDING-ON-T-45-45)
+(STANDING-ON-T-44-45)
+(LYING-ON-T-48-45)
+(LYING-ON-T-47-45)
+(LYING-ON-T-46-45)
+(STANDING-ON-T-49-45)
+(STANDING-ON-T-48-45)
+(STANDING-ON-T-47-45)
+(LYING-ON-T-51-45)
+(LYING-ON-T-50-45)
+(LYING-ON-T-49-45)
+(STANDING-ON-T-52-45)
+(STANDING-ON-T-51-45)
+(STANDING-ON-T-50-45)
+(LYING-ON-T-54-45)
+(LYING-ON-T-53-45)
+(LYING-ON-T-52-45)
+(STANDING-ON-T-55-45)
+(STANDING-ON-T-54-45)
+(STANDING-ON-T-53-45)
+(LYING-ON-T-57-45)
+(LYING-ON-T-56-45)
+(LYING-ON-T-55-45)
+(STANDING-ON-T-58-45)
+(STANDING-ON-T-57-45)
+(STANDING-ON-T-56-45)
+(LYING-ON-T-60-45)
+(LYING-ON-T-59-45)
+(LYING-ON-T-58-45)
+(STANDING-ON-T-61-45)
+(STANDING-ON-T-60-45)
+(STANDING-ON-T-59-45)
+(LYING-ON-T-63-45)
+(LYING-ON-T-62-45)
+(LYING-ON-T-61-45)
+(STANDING-ON-T-64-45)
+(STANDING-ON-T-63-45)
+(STANDING-ON-T-62-45)
+(LYING-ON-T-66-45)
+(LYING-ON-T-65-45)
+(LYING-ON-T-64-45)
+(STANDING-ON-T-67-45)
+(STANDING-ON-T-66-45)
+(STANDING-ON-T-65-45)
+(LYING-ON-T-68-45)
+(LYING-ON-T-67-45)
+(STANDING-ON-T-68-45)
+(LYING-ON-T-68-47)
+(LYING-ON-T-68-46)
+(STANDING-ON-T-68-47)
+(LYING-ON-T-69-46)
+(LYING-ON-T-69-47)
+(LYING-ON-T-70-47)
+(STANDING-ON-T-70-47)
+(STANDING-ON-T-70-46)
+(LYING-ON-T-70-46)
+(LYING-ON-T-70-48)
+(STANDING-ON-T-68-46)
+(STANDING-ON-T-70-48)
+(LYING-ON-T-72-48)
+(LYING-ON-T-71-48)
+(STANDING-ON-T-72-48)
+(LYING-ON-T-71-49)
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-50)
+(LYING-ON-T-71-50)
+(STANDING-ON-T-71-48)
+(STANDING-ON-T-73-50)
+(STANDING-ON-T-72-50)
+(STANDING-ON-T-71-50)
+(LYING-ON-T-73-50)
+(LYING-ON-T-73-52)
+(LYING-ON-T-73-51)
+(STANDING-ON-T-73-52)
+(LYING-ON-T-74-51)
+(LYING-ON-T-74-52)
+(LYING-ON-T-75-52)
+(STANDING-ON-T-75-52)
+(STANDING-ON-T-75-51)
+(LYING-ON-T-75-51)
+(LYING-ON-T-75-53)
+(STANDING-ON-T-73-51)
+(STANDING-ON-T-75-53)
+(LYING-ON-T-77-53)
+(LYING-ON-T-76-53)
+(STANDING-ON-T-77-53)
+(LYING-ON-T-76-54)
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-55)
+(LYING-ON-T-76-55)
+(STANDING-ON-T-76-53)
+(STANDING-ON-T-78-55)
+(STANDING-ON-T-77-55)
+(STANDING-ON-T-76-55)
+(LYING-ON-T-78-55)
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-56)
+(STANDING-ON-T-78-58)
+(STANDING-ON-T-78-57)
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-58)
+(LYING-ON-T-79-58)
+(LYING-ON-T-76-58)
+(LYING-ON-T-77-58)
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+(STANDING-ON-T-77-58)
+(STANDING-ON-T-76-58)
+(STANDING-ON-T-75-58)
+(STANDING-ON-T-80-56)
+(STANDING-ON-T-79-56)
+(STANDING-ON-T-78-56)
+(STANDING-ON-T-81-58)
+(STANDING-ON-T-81-57)
+(STANDING-ON-T-80-58)
+(STANDING-ON-T-80-57)
+(STANDING-ON-T-79-58)
+(LYING-ON-T-80-56)
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-58)
+(LYING-ON-T-81-56)
+(LYING-ON-T-75-58)
+(LYING-ON-T-74-58)
+(LYING-ON-T-73-58)
+(STANDING-ON-T-79-57)
+(STANDING-ON-T-74-58)
+(STANDING-ON-T-73-58)
+(STANDING-ON-T-72-58)
+(STANDING-ON-T-81-56)
+(LYING-ON-T-72-58)
+(LYING-ON-T-71-58)
+(LYING-ON-T-70-58)
+(STANDING-ON-T-71-58)
+(STANDING-ON-T-70-58)
+(STANDING-ON-T-69-58)
+(LYING-ON-T-69-58)
+(LYING-ON-T-68-58)
+(LYING-ON-T-67-58)
+(STANDING-ON-T-68-58)
+(STANDING-ON-T-67-58)
+(STANDING-ON-T-66-58)
+(LYING-ON-T-66-58)
+(LYING-ON-T-65-58)
+(LYING-ON-T-64-58)
+(STANDING-ON-T-65-58)
+(STANDING-ON-T-64-58)
+(STANDING-ON-T-63-58)
+(LYING-ON-T-63-58)
+(LYING-ON-T-62-58)
+(LYING-ON-T-61-58)
+(STANDING-ON-T-62-58)
+(STANDING-ON-T-61-58)
+(STANDING-ON-T-60-58)
+(LYING-ON-T-60-58)
+(LYING-ON-T-59-58)
+(LYING-ON-T-58-58)
+(STANDING-ON-T-59-58)
+(STANDING-ON-T-58-58)
+(STANDING-ON-T-57-58)
+(LYING-ON-T-57-58)
+(LYING-ON-T-56-58)
+(LYING-ON-T-55-58)
+(STANDING-ON-T-56-58)
+(STANDING-ON-T-55-58)
+(STANDING-ON-T-54-58)
+(LYING-ON-T-54-58)
+(LYING-ON-T-53-58)
+(LYING-ON-T-52-58)
+(STANDING-ON-T-53-58)
+(STANDING-ON-T-52-58)
+(STANDING-ON-T-51-58)
+(LYING-ON-T-51-58)
+(LYING-ON-T-50-58)
+(LYING-ON-T-49-58)
+(STANDING-ON-T-50-58)
+(STANDING-ON-T-49-58)
+(STANDING-ON-T-48-58)
+(LYING-ON-T-48-58)
+(LYING-ON-T-47-58)
+(LYING-ON-T-46-58)
+(STANDING-ON-T-47-58)
+(STANDING-ON-T-46-58)
+(STANDING-ON-T-45-58)
+(LYING-ON-T-45-58)
+(LYING-ON-T-44-58)
+(LYING-ON-T-43-58)
+(STANDING-ON-T-44-58)
+(STANDING-ON-T-43-58)
+(STANDING-ON-T-42-58)
+(LYING-ON-T-42-58)
+(LYING-ON-T-41-58)
+(LYING-ON-T-40-58)
+(STANDING-ON-T-41-58)
+(STANDING-ON-T-40-58)
+(STANDING-ON-T-39-58)
+(LYING-ON-T-39-58)
+(LYING-ON-T-38-58)
+(LYING-ON-T-37-58)
+(STANDING-ON-T-38-58)
+(STANDING-ON-T-37-58)
+(STANDING-ON-T-36-58)
+(LYING-ON-T-36-58)
+(LYING-ON-T-35-58)
+(LYING-ON-T-34-58)
+(STANDING-ON-T-35-58)
+(STANDING-ON-T-34-58)
+(STANDING-ON-T-33-58)
+(LYING-ON-T-33-58)
+(LYING-ON-T-32-58)
+(LYING-ON-T-31-58)
+(STANDING-ON-T-32-58)
+(STANDING-ON-T-31-58)
+(STANDING-ON-T-30-58)
+(LYING-ON-T-30-58)
+(LYING-ON-T-29-58)
+(LYING-ON-T-28-58)
+(STANDING-ON-T-29-58)
+(STANDING-ON-T-28-58)
+(STANDING-ON-T-27-58)
+(LYING-ON-T-27-58)
+(LYING-ON-T-26-58)
+(LYING-ON-T-25-58)
+(STANDING-ON-T-26-58)
+(STANDING-ON-T-25-58)
+(STANDING-ON-T-24-58)
+(LYING-ON-T-24-58)
+(LYING-ON-T-23-58)
+(LYING-ON-T-22-58)
+(STANDING-ON-T-23-58)
+(STANDING-ON-T-22-58)
+(STANDING-ON-T-21-58)
+(LYING-ON-T-21-58)
+(LYING-ON-T-20-58)
+(LYING-ON-T-19-58)
+(STANDING-ON-T-20-58)
+(STANDING-ON-T-19-58)
+(STANDING-ON-T-18-58)
+(LYING-ON-T-18-58)
+(LYING-ON-T-17-58)
+(LYING-ON-T-16-58)
+(STANDING-ON-T-17-58)
+(STANDING-ON-T-16-58)
+(STANDING-ON-T-15-58)
+(LYING-ON-T-15-58)
+(LYING-ON-T-14-58)
+(LYING-ON-T-13-58)
+(STANDING-ON-T-14-58)
+(STANDING-ON-T-13-58)
+(LYING-ON-T-13-59)
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-60)
+(LYING-ON-T-13-60)
+(STANDING-ON-T-12-60)
+(STANDING-ON-T-14-60)
+(STANDING-ON-T-13-60)
+(LYING-ON-T-12-60)
+(LYING-ON-T-12-62)
+(LYING-ON-T-12-61)
+(STANDING-ON-T-12-62)
+(LYING-ON-T-11-61)
+(LYING-ON-T-11-62)
+(LYING-ON-T-10-61)
+(LYING-ON-T-10-62)
+(STANDING-ON-T-10-62)
+(STANDING-ON-T-10-61)
+(STANDING-ON-T-12-61)
+(STANDING-ON-T-10-63)
+(LYING-ON-T-08-63)
+(LYING-ON-T-09-63)
+(LYING-ON-T-10-63)
+(STANDING-ON-T-08-63)
+(LYING-ON-T-08-64)
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-65)
+(LYING-ON-T-08-65)
+(STANDING-ON-T-07-65)
+(STANDING-ON-T-09-63)
+(STANDING-ON-T-09-65)
+(STANDING-ON-T-08-65)
+(LYING-ON-T-07-65)
+(LYING-ON-T-07-67)
+(LYING-ON-T-07-66)
+(STANDING-ON-T-07-67)
+(LYING-ON-T-06-66)
+(LYING-ON-T-06-67)
+(LYING-ON-T-05-66)
+(LYING-ON-T-05-67)
+(STANDING-ON-T-05-67)
+(STANDING-ON-T-05-66)
+(STANDING-ON-T-07-66)
+(STANDING-ON-T-05-68)
+(LYING-ON-T-03-68)
+(LYING-ON-T-04-68)
+(LYING-ON-T-05-68)
+(STANDING-ON-T-03-68)
+(LYING-ON-T-03-69)
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+(STANDING-ON-T-02-70)
+(STANDING-ON-T-04-68)
+(STANDING-ON-T-04-71)
+(STANDING-ON-T-04-70)
+(STANDING-ON-T-03-71)
+(STANDING-ON-T-03-70)
+(LYING-ON-T-03-71)
+(LYING-ON-T-04-71)
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-70)
+(LYING-ON-T-02-72)
+(STANDING-ON-T-02-71)
+(STANDING-ON-T-01-71)
+(STANDING-ON-T-01-70)
+(STANDING-ON-T-04-69)
+(STANDING-ON-T-03-69)
+(STANDING-ON-T-02-72)
+(STANDING-ON-T-01-72)
+(LYING-ON-T-01-72)
+(STANDING-ON-T-57-13)
+)
+(:action STAND-UP-T-01-72-T-01-71-T-01-70-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-72)
+)
+:effect
+(and
+(STANDING-ON-T-01-70)
+(not (LYING-ON-T-01-72))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action LAY-DOWN-T-01-70-T-01-71-T-01-72-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-70)
+)
+:effect
+(and
+(LYING-ON-T-01-72)
+(LYING-ON-T-01-71)
+(not (STANDING-ON-T-01-70))
+)
+)
+(:action LAY-DOWN-T-03-69-T-03-70-T-03-71-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-69)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-03-70)
+(not (STANDING-ON-T-03-69))
+)
+)
+(:action LAY-DOWN-T-04-69-T-04-70-T-04-71-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-69)
+)
+:effect
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-04-70)
+(not (STANDING-ON-T-04-69))
+)
+)
+(:action LAY-DOWN-T-01-70-T-02-70-T-03-70-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-70)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-02-70)
+(not (STANDING-ON-T-01-70))
+)
+)
+(:action LAY-DOWN-T-01-71-T-02-71-T-03-71-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-71)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-02-71)
+(not (STANDING-ON-T-01-71))
+)
+)
+(:action LAY-DOWN-T-02-71-T-03-71-T-04-71-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-03-71)
+(not (STANDING-ON-T-02-71))
+)
+)
+(:action LAY-DOWN-T-01-72-T-01-71-T-01-70-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-01-72)
+)
+:effect
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-01-71)
+(not (STANDING-ON-T-01-72))
+)
+)
+(:action LAY-DOWN-T-02-72-T-02-71-T-02-70-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-02-72)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-02-71)
+(not (STANDING-ON-T-02-72))
+)
+)
+(:action ROLL-T-02-70-T-01-70-T-02-71-T-01-71-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-01-71)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-01-70))
+)
+)
+(:action ROLL-T-02-71-T-01-71-T-02-72-T-01-72-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-02-72)
+(LYING-ON-T-01-72)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action ROLL-T-01-70-T-02-70-T-01-71-T-02-71-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-01-70)
+)
+:effect
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-01-70))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action ROLL-T-03-70-T-02-70-T-03-71-T-02-71-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action ROLL-T-01-71-T-02-71-T-01-72-T-02-72-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-01-71)
+)
+:effect
+(and
+(LYING-ON-T-01-72)
+(LYING-ON-T-02-72)
+(not (LYING-ON-T-01-71))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-02-70-T-03-70-T-02-71-T-03-71-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-03-71)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-01-71-T-01-70-T-02-71-T-02-70-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-01-71)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+(not (LYING-ON-T-01-71))
+(not (LYING-ON-T-01-70))
+)
+)
+(:action ROLL-T-01-70-T-01-71-T-02-70-T-02-71-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-70)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-01-70))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action ROLL-T-01-72-T-01-71-T-02-72-T-02-71-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-72)
+)
+:effect
+(and
+(LYING-ON-T-02-72)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-01-72))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action ROLL-T-01-71-T-01-72-T-02-71-T-02-72-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-72)
+(LYING-ON-T-01-71)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-72)
+(not (LYING-ON-T-01-71))
+(not (LYING-ON-T-01-72))
+)
+)
+(:action ROLL-T-02-71-T-02-70-T-03-71-T-03-70-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action ROLL-T-02-70-T-02-71-T-03-70-T-03-71-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-71)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-03-71-T-03-70-T-04-71-T-04-70-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-04-70)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-03-70-T-03-71-T-04-70-T-04-71-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-71)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action ROLL-T-02-71-T-01-71-T-02-70-T-01-70-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-01-70)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action ROLL-T-02-72-T-01-72-T-02-71-T-01-71-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-72)
+(LYING-ON-T-02-72)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-01-71)
+(not (LYING-ON-T-02-72))
+(not (LYING-ON-T-01-72))
+)
+)
+(:action ROLL-T-01-71-T-02-71-T-01-70-T-02-70-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-01-71)
+)
+:effect
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-02-70)
+(not (LYING-ON-T-01-71))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-03-71-T-02-71-T-03-70-T-02-70-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-02-70)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-01-72-T-02-72-T-01-71-T-02-71-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-72)
+(LYING-ON-T-01-72)
+)
+:effect
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-01-72))
+(not (LYING-ON-T-02-72))
+)
+)
+(:action ROLL-T-02-71-T-03-71-T-02-70-T-03-70-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action ROLL-T-04-71-T-03-71-T-04-70-T-03-70-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-04-71)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-04-71))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action ROLL-T-03-71-T-04-71-T-03-70-T-04-70-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-04-70)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-04-71))
+)
+)
+(:action ROLL-T-02-71-T-02-70-T-01-71-T-01-70-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-70)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action ROLL-T-02-70-T-02-71-T-01-70-T-01-71-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-01-71)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-02-72-T-02-71-T-01-72-T-01-71-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-72)
+)
+:effect
+(and
+(LYING-ON-T-01-72)
+(LYING-ON-T-01-71)
+(not (LYING-ON-T-02-72))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action ROLL-T-02-71-T-02-72-T-01-71-T-01-72-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-72)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-72)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-02-72))
+)
+)
+(:action ROLL-T-03-71-T-03-70-T-02-71-T-02-70-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-03-70-T-03-71-T-02-70-T-02-71-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-02-71)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action ROLL-T-04-71-T-04-70-T-03-71-T-03-70-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-71)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-04-71))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action ROLL-T-04-70-T-04-71-T-03-70-T-03-71-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-71)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-04-71))
+)
+)
+(:action STAND-UP-T-01-70-T-01-71-T-01-72-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-01-70)
+)
+:effect
+(and
+(STANDING-ON-T-01-72)
+(not (LYING-ON-T-01-70))
+(not (LYING-ON-T-01-71))
+)
+)
+(:action STAND-UP-T-02-70-T-02-71-T-02-72-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(STANDING-ON-T-02-72)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action STAND-UP-T-01-70-T-02-70-T-03-70-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-01-70)
+)
+:effect
+(and
+(STANDING-ON-T-03-70)
+(not (LYING-ON-T-01-70))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action STAND-UP-T-01-71-T-02-71-T-03-71-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-01-71)
+)
+:effect
+(and
+(STANDING-ON-T-03-71)
+(not (LYING-ON-T-01-71))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action STAND-UP-T-02-70-T-03-70-T-04-70-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-02-70)
+)
+:effect
+(and
+(STANDING-ON-T-04-70)
+(not (LYING-ON-T-02-70))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action STAND-UP-T-02-71-T-03-71-T-04-71-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-02-71)
+)
+:effect
+(and
+(STANDING-ON-T-04-71)
+(not (LYING-ON-T-02-71))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action STAND-UP-T-02-72-T-02-71-T-02-70-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-02-72)
+)
+:effect
+(and
+(STANDING-ON-T-02-70)
+(not (LYING-ON-T-02-72))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action STAND-UP-T-03-71-T-03-70-T-03-69-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(STANDING-ON-T-03-69)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action STAND-UP-T-04-71-T-04-70-T-04-69-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-71)
+)
+:effect
+(and
+(STANDING-ON-T-04-69)
+(not (LYING-ON-T-04-71))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action STAND-UP-T-03-70-T-02-70-T-01-70-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(STANDING-ON-T-01-70)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-02-70))
+)
+)
+(:action STAND-UP-T-03-71-T-02-71-T-01-71-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-03-71)
+)
+:effect
+(and
+(STANDING-ON-T-01-71)
+(not (LYING-ON-T-03-71))
+(not (LYING-ON-T-02-71))
+)
+)
+(:action STAND-UP-T-04-71-T-03-71-T-02-71-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-04-71)
+)
+:effect
+(and
+(STANDING-ON-T-02-71)
+(not (LYING-ON-T-04-71))
+(not (LYING-ON-T-03-71))
+)
+)
+(:action LAY-DOWN-T-02-70-T-02-71-T-02-72-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-02-72)
+(LYING-ON-T-02-71)
+(not (STANDING-ON-T-02-70))
+)
+)
+(:action LAY-DOWN-T-04-68-T-04-69-T-04-70-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-68)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-69)
+(not (STANDING-ON-T-04-68))
+)
+)
+(:action LAY-DOWN-T-02-70-T-03-70-T-04-70-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-02-70)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+(not (STANDING-ON-T-02-70))
+)
+)
+(:action LAY-DOWN-T-03-70-T-03-69-T-03-68-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-03-69)
+(not (STANDING-ON-T-03-70))
+)
+)
+(:action LAY-DOWN-T-03-71-T-03-70-T-03-69-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-70)
+(not (STANDING-ON-T-03-71))
+)
+)
+(:action LAY-DOWN-T-04-70-T-04-69-T-04-68-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-04-69)
+(not (STANDING-ON-T-04-70))
+)
+)
+(:action LAY-DOWN-T-04-71-T-04-70-T-04-69-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-71)
+)
+:effect
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-70)
+(not (STANDING-ON-T-04-71))
+)
+)
+(:action LAY-DOWN-T-03-70-T-02-70-T-01-70-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-01-70)
+(LYING-ON-T-02-70)
+(not (STANDING-ON-T-03-70))
+)
+)
+(:action LAY-DOWN-T-03-71-T-02-71-T-01-71-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-71)
+)
+:effect
+(and
+(LYING-ON-T-01-71)
+(LYING-ON-T-02-71)
+(not (STANDING-ON-T-03-71))
+)
+)
+(:action LAY-DOWN-T-04-70-T-03-70-T-02-70-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-02-70)
+(LYING-ON-T-03-70)
+(not (STANDING-ON-T-04-70))
+)
+)
+(:action LAY-DOWN-T-04-71-T-03-71-T-02-71-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-04-71)
+)
+:effect
+(and
+(LYING-ON-T-02-71)
+(LYING-ON-T-03-71)
+(not (STANDING-ON-T-04-71))
+)
+)
+(:action ROLL-T-04-70-T-03-70-T-04-71-T-03-71-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-04-71)
+(LYING-ON-T-03-71)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-03-69-T-04-69-T-03-70-T-04-70-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-03-69)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-04-70)
+(not (LYING-ON-T-03-69))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action ROLL-T-03-70-T-04-70-T-03-71-T-04-71-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-03-71)
+(LYING-ON-T-04-71)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action ROLL-T-03-69-T-03-68-T-04-69-T-04-68-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-03-69)
+)
+:effect
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-68)
+(not (LYING-ON-T-03-69))
+(not (LYING-ON-T-03-68))
+)
+)
+(:action ROLL-T-03-68-T-03-69-T-04-68-T-04-69-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-68)
+)
+:effect
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-04-69)
+(not (LYING-ON-T-03-68))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action ROLL-T-03-70-T-03-69-T-04-70-T-04-69-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-69)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action ROLL-T-03-69-T-03-70-T-04-69-T-04-70-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-69)
+)
+:effect
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-70)
+(not (LYING-ON-T-03-69))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-04-69-T-03-69-T-04-68-T-03-68-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-04-69)
+)
+:effect
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-03-68)
+(not (LYING-ON-T-04-69))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action ROLL-T-04-70-T-03-70-T-04-69-T-03-69-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-03-69)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action ROLL-T-03-69-T-04-69-T-03-68-T-04-68-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-03-69)
+)
+:effect
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-04-68)
+(not (LYING-ON-T-03-69))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action ROLL-T-03-70-T-04-70-T-03-69-T-04-69-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-04-69)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action ROLL-T-04-69-T-04-68-T-03-69-T-03-68-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-04-69)
+)
+:effect
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-68)
+(not (LYING-ON-T-04-69))
+(not (LYING-ON-T-04-68))
+)
+)
+(:action ROLL-T-04-68-T-04-69-T-03-68-T-03-69-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-68)
+)
+:effect
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-03-69)
+(not (LYING-ON-T-04-68))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action ROLL-T-04-70-T-04-69-T-03-70-T-03-69-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-69)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action ROLL-T-04-69-T-04-70-T-03-69-T-03-70-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-69)
+)
+:effect
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-04-69))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action STAND-UP-T-03-68-T-03-69-T-03-70-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-68)
+)
+:effect
+(and
+(STANDING-ON-T-03-70)
+(not (LYING-ON-T-03-68))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action STAND-UP-T-03-69-T-03-70-T-03-71-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-69)
+)
+:effect
+(and
+(STANDING-ON-T-03-71)
+(not (LYING-ON-T-03-69))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action STAND-UP-T-04-68-T-04-69-T-04-70-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-68)
+)
+:effect
+(and
+(STANDING-ON-T-04-70)
+(not (LYING-ON-T-04-68))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action STAND-UP-T-04-69-T-04-70-T-04-71-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-04-69)
+)
+:effect
+(and
+(STANDING-ON-T-04-71)
+(not (LYING-ON-T-04-69))
+(not (LYING-ON-T-04-70))
+)
+)
+(:action STAND-UP-T-03-70-T-03-69-T-03-68-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-03-70)
+)
+:effect
+(and
+(STANDING-ON-T-03-68)
+(not (LYING-ON-T-03-70))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action STAND-UP-T-04-70-T-04-69-T-04-68-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(STANDING-ON-T-04-68)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-04-69))
+)
+)
+(:action STAND-UP-T-04-70-T-03-70-T-02-70-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-04-70)
+)
+:effect
+(and
+(STANDING-ON-T-02-70)
+(not (LYING-ON-T-04-70))
+(not (LYING-ON-T-03-70))
+)
+)
+(:action LAY-DOWN-T-03-68-T-03-69-T-03-70-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-68)
+)
+:effect
+(and
+(LYING-ON-T-03-70)
+(LYING-ON-T-03-69)
+(not (STANDING-ON-T-03-68))
+)
+)
+(:action LAY-DOWN-T-03-68-T-04-68-T-05-68-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-03-68)
+)
+:effect
+(and
+(LYING-ON-T-05-68)
+(LYING-ON-T-04-68)
+(not (STANDING-ON-T-03-68))
+)
+)
+(:action ROLL-T-04-68-T-03-68-T-04-69-T-03-69-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-04-68)
+)
+:effect
+(and
+(LYING-ON-T-04-69)
+(LYING-ON-T-03-69)
+(not (LYING-ON-T-04-68))
+(not (LYING-ON-T-03-68))
+)
+)
+(:action ROLL-T-04-69-T-03-69-T-04-70-T-03-70-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-04-69)
+)
+:effect
+(and
+(LYING-ON-T-04-70)
+(LYING-ON-T-03-70)
+(not (LYING-ON-T-04-69))
+(not (LYING-ON-T-03-69))
+)
+)
+(:action ROLL-T-03-68-T-04-68-T-03-69-T-04-69-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-03-68)
+)
+:effect
+(and
+(LYING-ON-T-03-69)
+(LYING-ON-T-04-69)
+(not (LYING-ON-T-03-68))
+(not (LYING-ON-T-04-68))
+)
+)
+(:action STAND-UP-T-03-68-T-04-68-T-05-68-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-03-68)
+)
+:effect
+(and
+(STANDING-ON-T-05-68)
+(not (LYING-ON-T-03-68))
+(not (LYING-ON-T-04-68))
+)
+)
+(:action STAND-UP-T-05-68-T-05-67-T-05-66-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-05-68)
+)
+:effect
+(and
+(STANDING-ON-T-05-66)
+(not (LYING-ON-T-05-68))
+(not (LYING-ON-T-05-67))
+)
+)
+(:action STAND-UP-T-05-68-T-04-68-T-03-68-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-04-68)
+(LYING-ON-T-05-68)
+)
+:effect
+(and
+(STANDING-ON-T-03-68)
+(not (LYING-ON-T-05-68))
+(not (LYING-ON-T-04-68))
+)
+)
+(:action LAY-DOWN-T-05-66-T-05-67-T-05-68-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-05-66)
+)
+:effect
+(and
+(LYING-ON-T-05-68)
+(LYING-ON-T-05-67)
+(not (STANDING-ON-T-05-66))
+)
+)
+(:action LAY-DOWN-T-05-66-T-06-66-T-07-66-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-05-66)
+)
+:effect
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-06-66)
+(not (STANDING-ON-T-05-66))
+)
+)
+(:action LAY-DOWN-T-05-67-T-06-67-T-07-67-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-05-67)
+)
+:effect
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-06-67)
+(not (STANDING-ON-T-05-67))
+)
+)
+(:action LAY-DOWN-T-05-68-T-05-67-T-05-66-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-05-68)
+)
+:effect
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-05-67)
+(not (STANDING-ON-T-05-68))
+)
+)
+(:action LAY-DOWN-T-05-68-T-04-68-T-03-68-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-05-68)
+)
+:effect
+(and
+(LYING-ON-T-03-68)
+(LYING-ON-T-04-68)
+(not (STANDING-ON-T-05-68))
+)
+)
+(:action LAY-DOWN-T-07-66-T-06-66-T-05-66-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-66)
+)
+:effect
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-06-66)
+(not (STANDING-ON-T-07-66))
+)
+)
+(:action STAND-UP-T-05-66-T-05-67-T-05-68-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-05-66)
+)
+:effect
+(and
+(STANDING-ON-T-05-68)
+(not (LYING-ON-T-05-66))
+(not (LYING-ON-T-05-67))
+)
+)
+(:action STAND-UP-T-05-66-T-06-66-T-07-66-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-05-66)
+)
+:effect
+(and
+(STANDING-ON-T-07-66)
+(not (LYING-ON-T-05-66))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action STAND-UP-T-05-67-T-06-67-T-07-67-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-05-67)
+)
+:effect
+(and
+(STANDING-ON-T-07-67)
+(not (LYING-ON-T-05-67))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action STAND-UP-T-07-66-T-06-66-T-05-66-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-07-66)
+)
+:effect
+(and
+(STANDING-ON-T-05-66)
+(not (LYING-ON-T-07-66))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action STAND-UP-T-07-67-T-06-67-T-05-67-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-07-67)
+)
+:effect
+(and
+(STANDING-ON-T-05-67)
+(not (LYING-ON-T-07-67))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action LAY-DOWN-T-07-67-T-07-66-T-07-65-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-67)
+)
+:effect
+(and
+(LYING-ON-T-07-65)
+(LYING-ON-T-07-66)
+(not (STANDING-ON-T-07-67))
+)
+)
+(:action LAY-DOWN-T-07-67-T-06-67-T-05-67-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-67)
+)
+:effect
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-06-67)
+(not (STANDING-ON-T-07-67))
+)
+)
+(:action ROLL-T-06-66-T-05-66-T-06-67-T-05-67-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-06-66)
+)
+:effect
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-05-67)
+(not (LYING-ON-T-06-66))
+(not (LYING-ON-T-05-66))
+)
+)
+(:action ROLL-T-05-66-T-06-66-T-05-67-T-06-67-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-05-66)
+)
+:effect
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-06-67)
+(not (LYING-ON-T-05-66))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action ROLL-T-07-66-T-06-66-T-07-67-T-06-67-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-07-66)
+)
+:effect
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-06-67)
+(not (LYING-ON-T-07-66))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action ROLL-T-06-66-T-07-66-T-06-67-T-07-67-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-06-66)
+)
+:effect
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-07-67)
+(not (LYING-ON-T-06-66))
+(not (LYING-ON-T-07-66))
+)
+)
+(:action ROLL-T-05-67-T-05-66-T-06-67-T-06-66-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-05-67)
+)
+:effect
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-06-66)
+(not (LYING-ON-T-05-67))
+(not (LYING-ON-T-05-66))
+)
+)
+(:action ROLL-T-05-66-T-05-67-T-06-66-T-06-67-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-05-66)
+)
+:effect
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-06-67)
+(not (LYING-ON-T-05-66))
+(not (LYING-ON-T-05-67))
+)
+)
+(:action ROLL-T-06-67-T-06-66-T-07-67-T-07-66-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-06-67)
+)
+:effect
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-07-66)
+(not (LYING-ON-T-06-67))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action ROLL-T-06-66-T-06-67-T-07-66-T-07-67-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-06-66)
+)
+:effect
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-07-67)
+(not (LYING-ON-T-06-66))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action ROLL-T-06-67-T-05-67-T-06-66-T-05-66-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-06-67)
+)
+:effect
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-05-66)
+(not (LYING-ON-T-06-67))
+(not (LYING-ON-T-05-67))
+)
+)
+(:action ROLL-T-05-67-T-06-67-T-05-66-T-06-66-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-05-67)
+)
+:effect
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-06-66)
+(not (LYING-ON-T-05-67))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action ROLL-T-07-67-T-06-67-T-07-66-T-06-66-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-07-67)
+)
+:effect
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-06-66)
+(not (LYING-ON-T-07-67))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action ROLL-T-06-67-T-07-67-T-06-66-T-07-66-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-06-67)
+)
+:effect
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-07-66)
+(not (LYING-ON-T-06-67))
+(not (LYING-ON-T-07-67))
+)
+)
+(:action ROLL-T-06-67-T-06-66-T-05-67-T-05-66-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-06-67)
+)
+:effect
+(and
+(LYING-ON-T-05-67)
+(LYING-ON-T-05-66)
+(not (LYING-ON-T-06-67))
+(not (LYING-ON-T-06-66))
+)
+)
+(:action ROLL-T-06-66-T-06-67-T-05-66-T-05-67-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-06-66)
+)
+:effect
+(and
+(LYING-ON-T-05-66)
+(LYING-ON-T-05-67)
+(not (LYING-ON-T-06-66))
+(not (LYING-ON-T-06-67))
+)
+)
+(:action ROLL-T-07-67-T-07-66-T-06-67-T-06-66-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-07-67)
+)
+:effect
+(and
+(LYING-ON-T-06-67)
+(LYING-ON-T-06-66)
+(not (LYING-ON-T-07-67))
+(not (LYING-ON-T-07-66))
+)
+)
+(:action ROLL-T-07-66-T-07-67-T-06-66-T-06-67-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-07-66)
+)
+:effect
+(and
+(LYING-ON-T-06-66)
+(LYING-ON-T-06-67)
+(not (LYING-ON-T-07-66))
+(not (LYING-ON-T-07-67))
+)
+)
+(:action STAND-UP-T-07-65-T-07-66-T-07-67-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-07-65)
+)
+:effect
+(and
+(STANDING-ON-T-07-67)
+(not (LYING-ON-T-07-65))
+(not (LYING-ON-T-07-66))
+)
+)
+(:action STAND-UP-T-07-65-T-08-65-T-09-65-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-07-65)
+)
+:effect
+(and
+(STANDING-ON-T-09-65)
+(not (LYING-ON-T-07-65))
+(not (LYING-ON-T-08-65))
+)
+)
+(:action STAND-UP-T-07-67-T-07-66-T-07-65-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-07-66)
+(LYING-ON-T-07-67)
+)
+:effect
+(and
+(STANDING-ON-T-07-65)
+(not (LYING-ON-T-07-67))
+(not (LYING-ON-T-07-66))
+)
+)
+(:action LAY-DOWN-T-07-65-T-07-66-T-07-67-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-65)
+)
+:effect
+(and
+(LYING-ON-T-07-67)
+(LYING-ON-T-07-66)
+(not (STANDING-ON-T-07-65))
+)
+)
+(:action LAY-DOWN-T-09-63-T-09-64-T-09-65-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-09-63)
+)
+:effect
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-09-64)
+(not (STANDING-ON-T-09-63))
+)
+)
+(:action LAY-DOWN-T-07-65-T-08-65-T-09-65-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-07-65)
+)
+:effect
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-08-65)
+(not (STANDING-ON-T-07-65))
+)
+)
+(:action LAY-DOWN-T-08-65-T-08-64-T-08-63-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-08-65)
+)
+:effect
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-08-64)
+(not (STANDING-ON-T-08-65))
+)
+)
+(:action LAY-DOWN-T-09-65-T-09-64-T-09-63-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-09-65)
+)
+:effect
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-09-64)
+(not (STANDING-ON-T-09-65))
+)
+)
+(:action LAY-DOWN-T-09-65-T-08-65-T-07-65-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-09-65)
+)
+:effect
+(and
+(LYING-ON-T-07-65)
+(LYING-ON-T-08-65)
+(not (STANDING-ON-T-09-65))
+)
+)
+(:action ROLL-T-08-64-T-09-64-T-08-65-T-09-65-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-08-64)
+)
+:effect
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-09-65)
+(not (LYING-ON-T-08-64))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action ROLL-T-08-64-T-08-63-T-09-64-T-09-63-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-08-64)
+)
+:effect
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-63)
+(not (LYING-ON-T-08-64))
+(not (LYING-ON-T-08-63))
+)
+)
+(:action ROLL-T-08-63-T-08-64-T-09-63-T-09-64-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-63)
+)
+:effect
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-09-64)
+(not (LYING-ON-T-08-63))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action ROLL-T-08-65-T-08-64-T-09-65-T-09-64-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-65)
+)
+:effect
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-09-64)
+(not (LYING-ON-T-08-65))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action ROLL-T-08-64-T-08-65-T-09-64-T-09-65-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-08-64)
+)
+:effect
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-65)
+(not (LYING-ON-T-08-64))
+(not (LYING-ON-T-08-65))
+)
+)
+(:action ROLL-T-09-64-T-08-64-T-09-63-T-08-63-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-09-64)
+)
+:effect
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-08-63)
+(not (LYING-ON-T-09-64))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action ROLL-T-09-65-T-08-65-T-09-64-T-08-64-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-09-65)
+)
+:effect
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-08-64)
+(not (LYING-ON-T-09-65))
+(not (LYING-ON-T-08-65))
+)
+)
+(:action ROLL-T-08-64-T-09-64-T-08-63-T-09-63-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-08-64)
+)
+:effect
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-09-63)
+(not (LYING-ON-T-08-64))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action ROLL-T-08-65-T-09-65-T-08-64-T-09-64-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-08-65)
+)
+:effect
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-09-64)
+(not (LYING-ON-T-08-65))
+(not (LYING-ON-T-09-65))
+)
+)
+(:action ROLL-T-09-64-T-09-63-T-08-64-T-08-63-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-09-64)
+)
+:effect
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-63)
+(not (LYING-ON-T-09-64))
+(not (LYING-ON-T-09-63))
+)
+)
+(:action ROLL-T-09-63-T-09-64-T-08-63-T-08-64-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-63)
+)
+:effect
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-08-64)
+(not (LYING-ON-T-09-63))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action ROLL-T-09-65-T-09-64-T-08-65-T-08-64-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-65)
+)
+:effect
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-08-64)
+(not (LYING-ON-T-09-65))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action ROLL-T-09-64-T-09-65-T-08-64-T-08-65-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-09-64)
+)
+:effect
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-65)
+(not (LYING-ON-T-09-64))
+(not (LYING-ON-T-09-65))
+)
+)
+(:action STAND-UP-T-08-63-T-08-64-T-08-65-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-63)
+)
+:effect
+(and
+(STANDING-ON-T-08-65)
+(not (LYING-ON-T-08-63))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action STAND-UP-T-09-63-T-09-64-T-09-65-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-63)
+)
+:effect
+(and
+(STANDING-ON-T-09-65)
+(not (LYING-ON-T-09-63))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action STAND-UP-T-08-65-T-08-64-T-08-63-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-08-65)
+)
+:effect
+(and
+(STANDING-ON-T-08-63)
+(not (LYING-ON-T-08-65))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action STAND-UP-T-09-65-T-09-64-T-09-63-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-09-65)
+)
+:effect
+(and
+(STANDING-ON-T-09-63)
+(not (LYING-ON-T-09-65))
+(not (LYING-ON-T-09-64))
+)
+)
+(:action STAND-UP-T-09-65-T-08-65-T-07-65-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-09-65)
+)
+:effect
+(and
+(STANDING-ON-T-07-65)
+(not (LYING-ON-T-09-65))
+(not (LYING-ON-T-08-65))
+)
+)
+(:action LAY-DOWN-T-08-63-T-08-64-T-08-65-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-08-63)
+)
+:effect
+(and
+(LYING-ON-T-08-65)
+(LYING-ON-T-08-64)
+(not (STANDING-ON-T-08-63))
+)
+)
+(:action LAY-DOWN-T-08-63-T-09-63-T-10-63-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-08-63)
+)
+:effect
+(and
+(LYING-ON-T-10-63)
+(LYING-ON-T-09-63)
+(not (STANDING-ON-T-08-63))
+)
+)
+(:action ROLL-T-09-63-T-08-63-T-09-64-T-08-64-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-09-63)
+)
+:effect
+(and
+(LYING-ON-T-09-64)
+(LYING-ON-T-08-64)
+(not (LYING-ON-T-09-63))
+(not (LYING-ON-T-08-63))
+)
+)
+(:action ROLL-T-09-64-T-08-64-T-09-65-T-08-65-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-09-64)
+)
+:effect
+(and
+(LYING-ON-T-09-65)
+(LYING-ON-T-08-65)
+(not (LYING-ON-T-09-64))
+(not (LYING-ON-T-08-64))
+)
+)
+(:action ROLL-T-08-63-T-09-63-T-08-64-T-09-64-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-08-63)
+)
+:effect
+(and
+(LYING-ON-T-08-64)
+(LYING-ON-T-09-64)
+(not (LYING-ON-T-08-63))
+(not (LYING-ON-T-09-63))
+)
+)
+(:action STAND-UP-T-08-63-T-09-63-T-10-63-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-08-63)
+)
+:effect
+(and
+(STANDING-ON-T-10-63)
+(not (LYING-ON-T-08-63))
+(not (LYING-ON-T-09-63))
+)
+)
+(:action STAND-UP-T-10-63-T-10-62-T-10-61-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-10-63)
+)
+:effect
+(and
+(STANDING-ON-T-10-61)
+(not (LYING-ON-T-10-63))
+(not (LYING-ON-T-10-62))
+)
+)
+(:action STAND-UP-T-10-63-T-09-63-T-08-63-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-09-63)
+(LYING-ON-T-10-63)
+)
+:effect
+(and
+(STANDING-ON-T-08-63)
+(not (LYING-ON-T-10-63))
+(not (LYING-ON-T-09-63))
+)
+)
+(:action LAY-DOWN-T-10-61-T-10-62-T-10-63-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-61)
+)
+:effect
+(and
+(LYING-ON-T-10-63)
+(LYING-ON-T-10-62)
+(not (STANDING-ON-T-10-61))
+)
+)
+(:action LAY-DOWN-T-10-61-T-11-61-T-12-61-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-61)
+)
+:effect
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-11-61)
+(not (STANDING-ON-T-10-61))
+)
+)
+(:action LAY-DOWN-T-10-62-T-11-62-T-12-62-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-62)
+)
+:effect
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-11-62)
+(not (STANDING-ON-T-10-62))
+)
+)
+(:action LAY-DOWN-T-10-63-T-10-62-T-10-61-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-63)
+)
+:effect
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-10-62)
+(not (STANDING-ON-T-10-63))
+)
+)
+(:action LAY-DOWN-T-10-63-T-09-63-T-08-63-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-10-63)
+)
+:effect
+(and
+(LYING-ON-T-08-63)
+(LYING-ON-T-09-63)
+(not (STANDING-ON-T-10-63))
+)
+)
+(:action LAY-DOWN-T-12-61-T-11-61-T-10-61-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-12-61)
+)
+:effect
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-11-61)
+(not (STANDING-ON-T-12-61))
+)
+)
+(:action STAND-UP-T-10-61-T-10-62-T-10-63-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-10-61)
+)
+:effect
+(and
+(STANDING-ON-T-10-63)
+(not (LYING-ON-T-10-61))
+(not (LYING-ON-T-10-62))
+)
+)
+(:action STAND-UP-T-10-61-T-11-61-T-12-61-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-10-61)
+)
+:effect
+(and
+(STANDING-ON-T-12-61)
+(not (LYING-ON-T-10-61))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action STAND-UP-T-10-62-T-11-62-T-12-62-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-10-62)
+)
+:effect
+(and
+(STANDING-ON-T-12-62)
+(not (LYING-ON-T-10-62))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action STAND-UP-T-12-61-T-11-61-T-10-61-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-12-61)
+)
+:effect
+(and
+(STANDING-ON-T-10-61)
+(not (LYING-ON-T-12-61))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action STAND-UP-T-12-62-T-11-62-T-10-62-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-12-62)
+)
+:effect
+(and
+(STANDING-ON-T-10-62)
+(not (LYING-ON-T-12-62))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action LAY-DOWN-T-12-62-T-12-61-T-12-60-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-12-62)
+)
+:effect
+(and
+(LYING-ON-T-12-60)
+(LYING-ON-T-12-61)
+(not (STANDING-ON-T-12-62))
+)
+)
+(:action LAY-DOWN-T-12-62-T-11-62-T-10-62-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-12-62)
+)
+:effect
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-11-62)
+(not (STANDING-ON-T-12-62))
+)
+)
+(:action ROLL-T-11-61-T-10-61-T-11-62-T-10-62-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-11-61)
+)
+:effect
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-10-62)
+(not (LYING-ON-T-11-61))
+(not (LYING-ON-T-10-61))
+)
+)
+(:action ROLL-T-10-61-T-11-61-T-10-62-T-11-62-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-10-61)
+)
+:effect
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-11-62)
+(not (LYING-ON-T-10-61))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action ROLL-T-12-61-T-11-61-T-12-62-T-11-62-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-12-61)
+)
+:effect
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-11-62)
+(not (LYING-ON-T-12-61))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action ROLL-T-11-61-T-12-61-T-11-62-T-12-62-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-11-61)
+)
+:effect
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-12-62)
+(not (LYING-ON-T-11-61))
+(not (LYING-ON-T-12-61))
+)
+)
+(:action ROLL-T-10-62-T-10-61-T-11-62-T-11-61-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-10-62)
+)
+:effect
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-11-61)
+(not (LYING-ON-T-10-62))
+(not (LYING-ON-T-10-61))
+)
+)
+(:action ROLL-T-10-61-T-10-62-T-11-61-T-11-62-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-10-61)
+)
+:effect
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-11-62)
+(not (LYING-ON-T-10-61))
+(not (LYING-ON-T-10-62))
+)
+)
+(:action ROLL-T-11-62-T-11-61-T-12-62-T-12-61-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-11-62)
+)
+:effect
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-12-61)
+(not (LYING-ON-T-11-62))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action ROLL-T-11-61-T-11-62-T-12-61-T-12-62-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-11-61)
+)
+:effect
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-12-62)
+(not (LYING-ON-T-11-61))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action ROLL-T-11-62-T-10-62-T-11-61-T-10-61-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-11-62)
+)
+:effect
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-10-61)
+(not (LYING-ON-T-11-62))
+(not (LYING-ON-T-10-62))
+)
+)
+(:action ROLL-T-10-62-T-11-62-T-10-61-T-11-61-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-10-62)
+)
+:effect
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-11-61)
+(not (LYING-ON-T-10-62))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action ROLL-T-12-62-T-11-62-T-12-61-T-11-61-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-12-62)
+)
+:effect
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-11-61)
+(not (LYING-ON-T-12-62))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action ROLL-T-11-62-T-12-62-T-11-61-T-12-61-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-11-62)
+)
+:effect
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-12-61)
+(not (LYING-ON-T-11-62))
+(not (LYING-ON-T-12-62))
+)
+)
+(:action ROLL-T-11-62-T-11-61-T-10-62-T-10-61-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-11-62)
+)
+:effect
+(and
+(LYING-ON-T-10-62)
+(LYING-ON-T-10-61)
+(not (LYING-ON-T-11-62))
+(not (LYING-ON-T-11-61))
+)
+)
+(:action ROLL-T-11-61-T-11-62-T-10-61-T-10-62-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-11-61)
+)
+:effect
+(and
+(LYING-ON-T-10-61)
+(LYING-ON-T-10-62)
+(not (LYING-ON-T-11-61))
+(not (LYING-ON-T-11-62))
+)
+)
+(:action ROLL-T-12-62-T-12-61-T-11-62-T-11-61-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-12-62)
+)
+:effect
+(and
+(LYING-ON-T-11-62)
+(LYING-ON-T-11-61)
+(not (LYING-ON-T-12-62))
+(not (LYING-ON-T-12-61))
+)
+)
+(:action ROLL-T-12-61-T-12-62-T-11-61-T-11-62-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-12-61)
+)
+:effect
+(and
+(LYING-ON-T-11-61)
+(LYING-ON-T-11-62)
+(not (LYING-ON-T-12-61))
+(not (LYING-ON-T-12-62))
+)
+)
+(:action STAND-UP-T-12-60-T-12-61-T-12-62-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-12-60)
+)
+:effect
+(and
+(STANDING-ON-T-12-62)
+(not (LYING-ON-T-12-60))
+(not (LYING-ON-T-12-61))
+)
+)
+(:action STAND-UP-T-12-60-T-13-60-T-14-60-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-12-60)
+)
+:effect
+(and
+(STANDING-ON-T-14-60)
+(not (LYING-ON-T-12-60))
+(not (LYING-ON-T-13-60))
+)
+)
+(:action STAND-UP-T-12-62-T-12-61-T-12-60-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-12-61)
+(LYING-ON-T-12-62)
+)
+:effect
+(and
+(STANDING-ON-T-12-60)
+(not (LYING-ON-T-12-62))
+(not (LYING-ON-T-12-61))
+)
+)
+(:action LAY-DOWN-T-12-60-T-12-61-T-12-62-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-12-60)
+)
+:effect
+(and
+(LYING-ON-T-12-62)
+(LYING-ON-T-12-61)
+(not (STANDING-ON-T-12-60))
+)
+)
+(:action LAY-DOWN-T-12-60-T-13-60-T-14-60-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-12-60)
+)
+:effect
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-13-60)
+(not (STANDING-ON-T-12-60))
+)
+)
+(:action LAY-DOWN-T-13-60-T-13-59-T-13-58-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-13-60)
+)
+:effect
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-13-59)
+(not (STANDING-ON-T-13-60))
+)
+)
+(:action LAY-DOWN-T-14-60-T-14-59-T-14-58-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-14-60)
+)
+:effect
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-14-59)
+(not (STANDING-ON-T-14-60))
+)
+)
+(:action LAY-DOWN-T-14-60-T-13-60-T-12-60-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-14-60)
+)
+:effect
+(and
+(LYING-ON-T-12-60)
+(LYING-ON-T-13-60)
+(not (STANDING-ON-T-14-60))
+)
+)
+(:action ROLL-T-13-59-T-14-59-T-13-60-T-14-60-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-13-59)
+)
+:effect
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-14-60)
+(not (LYING-ON-T-13-59))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action ROLL-T-13-59-T-13-58-T-14-59-T-14-58-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-13-59)
+)
+:effect
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-58)
+(not (LYING-ON-T-13-59))
+(not (LYING-ON-T-13-58))
+)
+)
+(:action ROLL-T-13-58-T-13-59-T-14-58-T-14-59-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-58)
+)
+:effect
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-14-59)
+(not (LYING-ON-T-13-58))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action ROLL-T-13-60-T-13-59-T-14-60-T-14-59-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-60)
+)
+:effect
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-14-59)
+(not (LYING-ON-T-13-60))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action ROLL-T-13-59-T-13-60-T-14-59-T-14-60-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-13-59)
+)
+:effect
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-60)
+(not (LYING-ON-T-13-59))
+(not (LYING-ON-T-13-60))
+)
+)
+(:action ROLL-T-14-59-T-13-59-T-14-58-T-13-58-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-14-59)
+)
+:effect
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-13-58)
+(not (LYING-ON-T-14-59))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action ROLL-T-14-60-T-13-60-T-14-59-T-13-59-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-14-60)
+)
+:effect
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-13-59)
+(not (LYING-ON-T-14-60))
+(not (LYING-ON-T-13-60))
+)
+)
+(:action ROLL-T-13-59-T-14-59-T-13-58-T-14-58-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-13-59)
+)
+:effect
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-14-58)
+(not (LYING-ON-T-13-59))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action ROLL-T-13-60-T-14-60-T-13-59-T-14-59-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-13-60)
+)
+:effect
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-14-59)
+(not (LYING-ON-T-13-60))
+(not (LYING-ON-T-14-60))
+)
+)
+(:action ROLL-T-14-59-T-14-58-T-13-59-T-13-58-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-14-59)
+)
+:effect
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-58)
+(not (LYING-ON-T-14-59))
+(not (LYING-ON-T-14-58))
+)
+)
+(:action ROLL-T-14-58-T-14-59-T-13-58-T-13-59-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-58)
+)
+:effect
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-13-59)
+(not (LYING-ON-T-14-58))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action ROLL-T-14-60-T-14-59-T-13-60-T-13-59-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-60)
+)
+:effect
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-13-59)
+(not (LYING-ON-T-14-60))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action ROLL-T-14-59-T-14-60-T-13-59-T-13-60-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-14-59)
+)
+:effect
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-60)
+(not (LYING-ON-T-14-59))
+(not (LYING-ON-T-14-60))
+)
+)
+(:action STAND-UP-T-13-58-T-13-59-T-13-60-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-58)
+)
+:effect
+(and
+(STANDING-ON-T-13-60)
+(not (LYING-ON-T-13-58))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action STAND-UP-T-14-58-T-14-59-T-14-60-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-58)
+)
+:effect
+(and
+(STANDING-ON-T-14-60)
+(not (LYING-ON-T-14-58))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action STAND-UP-T-13-60-T-13-59-T-13-58-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-13-60)
+)
+:effect
+(and
+(STANDING-ON-T-13-58)
+(not (LYING-ON-T-13-60))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action STAND-UP-T-14-60-T-14-59-T-14-58-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-14-60)
+)
+:effect
+(and
+(STANDING-ON-T-14-58)
+(not (LYING-ON-T-14-60))
+(not (LYING-ON-T-14-59))
+)
+)
+(:action STAND-UP-T-14-60-T-13-60-T-12-60-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-14-60)
+)
+:effect
+(and
+(STANDING-ON-T-12-60)
+(not (LYING-ON-T-14-60))
+(not (LYING-ON-T-13-60))
+)
+)
+(:action LAY-DOWN-T-13-58-T-13-59-T-13-60-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-13-58)
+)
+:effect
+(and
+(LYING-ON-T-13-60)
+(LYING-ON-T-13-59)
+(not (STANDING-ON-T-13-58))
+)
+)
+(:action LAY-DOWN-T-14-58-T-14-59-T-14-60-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-14-58)
+)
+:effect
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-14-59)
+(not (STANDING-ON-T-14-58))
+)
+)
+(:action LAY-DOWN-T-13-58-T-14-58-T-15-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-13-58)
+)
+:effect
+(and
+(LYING-ON-T-15-58)
+(LYING-ON-T-14-58)
+(not (STANDING-ON-T-13-58))
+)
+)
+(:action LAY-DOWN-T-14-58-T-15-58-T-16-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-14-58)
+)
+:effect
+(and
+(LYING-ON-T-16-58)
+(LYING-ON-T-15-58)
+(not (STANDING-ON-T-14-58))
+)
+)
+(:action ROLL-T-14-58-T-13-58-T-14-59-T-13-59-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-14-58)
+)
+:effect
+(and
+(LYING-ON-T-14-59)
+(LYING-ON-T-13-59)
+(not (LYING-ON-T-14-58))
+(not (LYING-ON-T-13-58))
+)
+)
+(:action ROLL-T-14-59-T-13-59-T-14-60-T-13-60-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-14-59)
+)
+:effect
+(and
+(LYING-ON-T-14-60)
+(LYING-ON-T-13-60)
+(not (LYING-ON-T-14-59))
+(not (LYING-ON-T-13-59))
+)
+)
+(:action ROLL-T-13-58-T-14-58-T-13-59-T-14-59-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-13-58)
+)
+:effect
+(and
+(LYING-ON-T-13-59)
+(LYING-ON-T-14-59)
+(not (LYING-ON-T-13-58))
+(not (LYING-ON-T-14-58))
+)
+)
+(:action STAND-UP-T-13-58-T-14-58-T-15-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-13-58)
+)
+:effect
+(and
+(STANDING-ON-T-15-58)
+(not (LYING-ON-T-13-58))
+(not (LYING-ON-T-14-58))
+)
+)
+(:action STAND-UP-T-14-58-T-15-58-T-16-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-15-58)
+(LYING-ON-T-14-58)
+)
+:effect
+(and
+(STANDING-ON-T-16-58)
+(not (LYING-ON-T-14-58))
+(not (LYING-ON-T-15-58))
+)
+)
+(:action STAND-UP-T-15-58-T-16-58-T-17-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-58)
+(LYING-ON-T-15-58)
+)
+:effect
+(and
+(STANDING-ON-T-17-58)
+(not (LYING-ON-T-15-58))
+(not (LYING-ON-T-16-58))
+)
+)
+(:action STAND-UP-T-15-58-T-14-58-T-13-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-15-58)
+)
+:effect
+(and
+(STANDING-ON-T-13-58)
+(not (LYING-ON-T-15-58))
+(not (LYING-ON-T-14-58))
+)
+)
+(:action STAND-UP-T-16-58-T-15-58-T-14-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-15-58)
+(LYING-ON-T-16-58)
+)
+:effect
+(and
+(STANDING-ON-T-14-58)
+(not (LYING-ON-T-16-58))
+(not (LYING-ON-T-15-58))
+)
+)
+(:action LAY-DOWN-T-15-58-T-16-58-T-17-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-15-58)
+)
+:effect
+(and
+(LYING-ON-T-17-58)
+(LYING-ON-T-16-58)
+(not (STANDING-ON-T-15-58))
+)
+)
+(:action LAY-DOWN-T-16-58-T-17-58-T-18-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-58)
+)
+:effect
+(and
+(LYING-ON-T-18-58)
+(LYING-ON-T-17-58)
+(not (STANDING-ON-T-16-58))
+)
+)
+(:action LAY-DOWN-T-17-58-T-18-58-T-19-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-58)
+)
+:effect
+(and
+(LYING-ON-T-19-58)
+(LYING-ON-T-18-58)
+(not (STANDING-ON-T-17-58))
+)
+)
+(:action LAY-DOWN-T-15-58-T-14-58-T-13-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-15-58)
+)
+:effect
+(and
+(LYING-ON-T-13-58)
+(LYING-ON-T-14-58)
+(not (STANDING-ON-T-15-58))
+)
+)
+(:action LAY-DOWN-T-16-58-T-15-58-T-14-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-58)
+)
+:effect
+(and
+(LYING-ON-T-14-58)
+(LYING-ON-T-15-58)
+(not (STANDING-ON-T-16-58))
+)
+)
+(:action LAY-DOWN-T-17-58-T-16-58-T-15-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-58)
+)
+:effect
+(and
+(LYING-ON-T-15-58)
+(LYING-ON-T-16-58)
+(not (STANDING-ON-T-17-58))
+)
+)
+(:action STAND-UP-T-16-58-T-17-58-T-18-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-58)
+(LYING-ON-T-16-58)
+)
+:effect
+(and
+(STANDING-ON-T-18-58)
+(not (LYING-ON-T-16-58))
+(not (LYING-ON-T-17-58))
+)
+)
+(:action STAND-UP-T-17-58-T-18-58-T-19-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-58)
+(LYING-ON-T-17-58)
+)
+:effect
+(and
+(STANDING-ON-T-19-58)
+(not (LYING-ON-T-17-58))
+(not (LYING-ON-T-18-58))
+)
+)
+(:action STAND-UP-T-18-58-T-19-58-T-20-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-58)
+(LYING-ON-T-18-58)
+)
+:effect
+(and
+(STANDING-ON-T-20-58)
+(not (LYING-ON-T-18-58))
+(not (LYING-ON-T-19-58))
+)
+)
+(:action STAND-UP-T-17-58-T-16-58-T-15-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-58)
+(LYING-ON-T-17-58)
+)
+:effect
+(and
+(STANDING-ON-T-15-58)
+(not (LYING-ON-T-17-58))
+(not (LYING-ON-T-16-58))
+)
+)
+(:action STAND-UP-T-18-58-T-17-58-T-16-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-58)
+(LYING-ON-T-18-58)
+)
+:effect
+(and
+(STANDING-ON-T-16-58)
+(not (LYING-ON-T-18-58))
+(not (LYING-ON-T-17-58))
+)
+)
+(:action STAND-UP-T-19-58-T-18-58-T-17-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-58)
+(LYING-ON-T-19-58)
+)
+:effect
+(and
+(STANDING-ON-T-17-58)
+(not (LYING-ON-T-19-58))
+(not (LYING-ON-T-18-58))
+)
+)
+(:action LAY-DOWN-T-18-58-T-19-58-T-20-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-18-58)
+)
+:effect
+(and
+(LYING-ON-T-20-58)
+(LYING-ON-T-19-58)
+(not (STANDING-ON-T-18-58))
+)
+)
+(:action LAY-DOWN-T-19-58-T-20-58-T-21-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-58)
+)
+:effect
+(and
+(LYING-ON-T-21-58)
+(LYING-ON-T-20-58)
+(not (STANDING-ON-T-19-58))
+)
+)
+(:action LAY-DOWN-T-20-58-T-21-58-T-22-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-20-58)
+)
+:effect
+(and
+(LYING-ON-T-22-58)
+(LYING-ON-T-21-58)
+(not (STANDING-ON-T-20-58))
+)
+)
+(:action LAY-DOWN-T-18-58-T-17-58-T-16-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-18-58)
+)
+:effect
+(and
+(LYING-ON-T-16-58)
+(LYING-ON-T-17-58)
+(not (STANDING-ON-T-18-58))
+)
+)
+(:action LAY-DOWN-T-19-58-T-18-58-T-17-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-58)
+)
+:effect
+(and
+(LYING-ON-T-17-58)
+(LYING-ON-T-18-58)
+(not (STANDING-ON-T-19-58))
+)
+)
+(:action LAY-DOWN-T-20-58-T-19-58-T-18-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-20-58)
+)
+:effect
+(and
+(LYING-ON-T-18-58)
+(LYING-ON-T-19-58)
+(not (STANDING-ON-T-20-58))
+)
+)
+(:action STAND-UP-T-19-58-T-20-58-T-21-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-58)
+(LYING-ON-T-19-58)
+)
+:effect
+(and
+(STANDING-ON-T-21-58)
+(not (LYING-ON-T-19-58))
+(not (LYING-ON-T-20-58))
+)
+)
+(:action STAND-UP-T-20-58-T-21-58-T-22-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-58)
+(LYING-ON-T-20-58)
+)
+:effect
+(and
+(STANDING-ON-T-22-58)
+(not (LYING-ON-T-20-58))
+(not (LYING-ON-T-21-58))
+)
+)
+(:action STAND-UP-T-21-58-T-22-58-T-23-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-58)
+(LYING-ON-T-21-58)
+)
+:effect
+(and
+(STANDING-ON-T-23-58)
+(not (LYING-ON-T-21-58))
+(not (LYING-ON-T-22-58))
+)
+)
+(:action STAND-UP-T-20-58-T-19-58-T-18-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-58)
+(LYING-ON-T-20-58)
+)
+:effect
+(and
+(STANDING-ON-T-18-58)
+(not (LYING-ON-T-20-58))
+(not (LYING-ON-T-19-58))
+)
+)
+(:action STAND-UP-T-21-58-T-20-58-T-19-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-58)
+(LYING-ON-T-21-58)
+)
+:effect
+(and
+(STANDING-ON-T-19-58)
+(not (LYING-ON-T-21-58))
+(not (LYING-ON-T-20-58))
+)
+)
+(:action STAND-UP-T-22-58-T-21-58-T-20-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-58)
+(LYING-ON-T-22-58)
+)
+:effect
+(and
+(STANDING-ON-T-20-58)
+(not (LYING-ON-T-22-58))
+(not (LYING-ON-T-21-58))
+)
+)
+(:action LAY-DOWN-T-21-58-T-22-58-T-23-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-58)
+)
+:effect
+(and
+(LYING-ON-T-23-58)
+(LYING-ON-T-22-58)
+(not (STANDING-ON-T-21-58))
+)
+)
+(:action LAY-DOWN-T-22-58-T-23-58-T-24-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-58)
+)
+:effect
+(and
+(LYING-ON-T-24-58)
+(LYING-ON-T-23-58)
+(not (STANDING-ON-T-22-58))
+)
+)
+(:action LAY-DOWN-T-23-58-T-24-58-T-25-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-58)
+)
+:effect
+(and
+(LYING-ON-T-25-58)
+(LYING-ON-T-24-58)
+(not (STANDING-ON-T-23-58))
+)
+)
+(:action LAY-DOWN-T-21-58-T-20-58-T-19-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-58)
+)
+:effect
+(and
+(LYING-ON-T-19-58)
+(LYING-ON-T-20-58)
+(not (STANDING-ON-T-21-58))
+)
+)
+(:action LAY-DOWN-T-22-58-T-21-58-T-20-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-58)
+)
+:effect
+(and
+(LYING-ON-T-20-58)
+(LYING-ON-T-21-58)
+(not (STANDING-ON-T-22-58))
+)
+)
+(:action LAY-DOWN-T-23-58-T-22-58-T-21-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-58)
+)
+:effect
+(and
+(LYING-ON-T-21-58)
+(LYING-ON-T-22-58)
+(not (STANDING-ON-T-23-58))
+)
+)
+(:action STAND-UP-T-22-58-T-23-58-T-24-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-58)
+(LYING-ON-T-22-58)
+)
+:effect
+(and
+(STANDING-ON-T-24-58)
+(not (LYING-ON-T-22-58))
+(not (LYING-ON-T-23-58))
+)
+)
+(:action STAND-UP-T-23-58-T-24-58-T-25-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-58)
+(LYING-ON-T-23-58)
+)
+:effect
+(and
+(STANDING-ON-T-25-58)
+(not (LYING-ON-T-23-58))
+(not (LYING-ON-T-24-58))
+)
+)
+(:action STAND-UP-T-24-58-T-25-58-T-26-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-58)
+(LYING-ON-T-24-58)
+)
+:effect
+(and
+(STANDING-ON-T-26-58)
+(not (LYING-ON-T-24-58))
+(not (LYING-ON-T-25-58))
+)
+)
+(:action STAND-UP-T-23-58-T-22-58-T-21-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-58)
+(LYING-ON-T-23-58)
+)
+:effect
+(and
+(STANDING-ON-T-21-58)
+(not (LYING-ON-T-23-58))
+(not (LYING-ON-T-22-58))
+)
+)
+(:action STAND-UP-T-24-58-T-23-58-T-22-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-58)
+(LYING-ON-T-24-58)
+)
+:effect
+(and
+(STANDING-ON-T-22-58)
+(not (LYING-ON-T-24-58))
+(not (LYING-ON-T-23-58))
+)
+)
+(:action STAND-UP-T-25-58-T-24-58-T-23-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-58)
+(LYING-ON-T-25-58)
+)
+:effect
+(and
+(STANDING-ON-T-23-58)
+(not (LYING-ON-T-25-58))
+(not (LYING-ON-T-24-58))
+)
+)
+(:action LAY-DOWN-T-24-58-T-25-58-T-26-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-58)
+)
+:effect
+(and
+(LYING-ON-T-26-58)
+(LYING-ON-T-25-58)
+(not (STANDING-ON-T-24-58))
+)
+)
+(:action LAY-DOWN-T-25-58-T-26-58-T-27-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-58)
+)
+:effect
+(and
+(LYING-ON-T-27-58)
+(LYING-ON-T-26-58)
+(not (STANDING-ON-T-25-58))
+)
+)
+(:action LAY-DOWN-T-26-58-T-27-58-T-28-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-26-58)
+)
+:effect
+(and
+(LYING-ON-T-28-58)
+(LYING-ON-T-27-58)
+(not (STANDING-ON-T-26-58))
+)
+)
+(:action LAY-DOWN-T-24-58-T-23-58-T-22-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-58)
+)
+:effect
+(and
+(LYING-ON-T-22-58)
+(LYING-ON-T-23-58)
+(not (STANDING-ON-T-24-58))
+)
+)
+(:action LAY-DOWN-T-25-58-T-24-58-T-23-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-58)
+)
+:effect
+(and
+(LYING-ON-T-23-58)
+(LYING-ON-T-24-58)
+(not (STANDING-ON-T-25-58))
+)
+)
+(:action LAY-DOWN-T-26-58-T-25-58-T-24-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-26-58)
+)
+:effect
+(and
+(LYING-ON-T-24-58)
+(LYING-ON-T-25-58)
+(not (STANDING-ON-T-26-58))
+)
+)
+(:action STAND-UP-T-25-58-T-26-58-T-27-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-58)
+(LYING-ON-T-25-58)
+)
+:effect
+(and
+(STANDING-ON-T-27-58)
+(not (LYING-ON-T-25-58))
+(not (LYING-ON-T-26-58))
+)
+)
+(:action STAND-UP-T-26-58-T-27-58-T-28-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-58)
+(LYING-ON-T-26-58)
+)
+:effect
+(and
+(STANDING-ON-T-28-58)
+(not (LYING-ON-T-26-58))
+(not (LYING-ON-T-27-58))
+)
+)
+(:action STAND-UP-T-27-58-T-28-58-T-29-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-58)
+(LYING-ON-T-27-58)
+)
+:effect
+(and
+(STANDING-ON-T-29-58)
+(not (LYING-ON-T-27-58))
+(not (LYING-ON-T-28-58))
+)
+)
+(:action STAND-UP-T-26-58-T-25-58-T-24-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-58)
+(LYING-ON-T-26-58)
+)
+:effect
+(and
+(STANDING-ON-T-24-58)
+(not (LYING-ON-T-26-58))
+(not (LYING-ON-T-25-58))
+)
+)
+(:action STAND-UP-T-27-58-T-26-58-T-25-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-58)
+(LYING-ON-T-27-58)
+)
+:effect
+(and
+(STANDING-ON-T-25-58)
+(not (LYING-ON-T-27-58))
+(not (LYING-ON-T-26-58))
+)
+)
+(:action STAND-UP-T-28-58-T-27-58-T-26-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-58)
+(LYING-ON-T-28-58)
+)
+:effect
+(and
+(STANDING-ON-T-26-58)
+(not (LYING-ON-T-28-58))
+(not (LYING-ON-T-27-58))
+)
+)
+(:action LAY-DOWN-T-27-58-T-28-58-T-29-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-58)
+)
+:effect
+(and
+(LYING-ON-T-29-58)
+(LYING-ON-T-28-58)
+(not (STANDING-ON-T-27-58))
+)
+)
+(:action LAY-DOWN-T-28-58-T-29-58-T-30-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-58)
+)
+:effect
+(and
+(LYING-ON-T-30-58)
+(LYING-ON-T-29-58)
+(not (STANDING-ON-T-28-58))
+)
+)
+(:action LAY-DOWN-T-29-58-T-30-58-T-31-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-58)
+)
+:effect
+(and
+(LYING-ON-T-31-58)
+(LYING-ON-T-30-58)
+(not (STANDING-ON-T-29-58))
+)
+)
+(:action LAY-DOWN-T-27-58-T-26-58-T-25-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-58)
+)
+:effect
+(and
+(LYING-ON-T-25-58)
+(LYING-ON-T-26-58)
+(not (STANDING-ON-T-27-58))
+)
+)
+(:action LAY-DOWN-T-28-58-T-27-58-T-26-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-58)
+)
+:effect
+(and
+(LYING-ON-T-26-58)
+(LYING-ON-T-27-58)
+(not (STANDING-ON-T-28-58))
+)
+)
+(:action LAY-DOWN-T-29-58-T-28-58-T-27-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-58)
+)
+:effect
+(and
+(LYING-ON-T-27-58)
+(LYING-ON-T-28-58)
+(not (STANDING-ON-T-29-58))
+)
+)
+(:action STAND-UP-T-28-58-T-29-58-T-30-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-58)
+(LYING-ON-T-28-58)
+)
+:effect
+(and
+(STANDING-ON-T-30-58)
+(not (LYING-ON-T-28-58))
+(not (LYING-ON-T-29-58))
+)
+)
+(:action STAND-UP-T-29-58-T-30-58-T-31-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-58)
+(LYING-ON-T-29-58)
+)
+:effect
+(and
+(STANDING-ON-T-31-58)
+(not (LYING-ON-T-29-58))
+(not (LYING-ON-T-30-58))
+)
+)
+(:action STAND-UP-T-30-58-T-31-58-T-32-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-58)
+(LYING-ON-T-30-58)
+)
+:effect
+(and
+(STANDING-ON-T-32-58)
+(not (LYING-ON-T-30-58))
+(not (LYING-ON-T-31-58))
+)
+)
+(:action STAND-UP-T-29-58-T-28-58-T-27-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-58)
+(LYING-ON-T-29-58)
+)
+:effect
+(and
+(STANDING-ON-T-27-58)
+(not (LYING-ON-T-29-58))
+(not (LYING-ON-T-28-58))
+)
+)
+(:action STAND-UP-T-30-58-T-29-58-T-28-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-58)
+(LYING-ON-T-30-58)
+)
+:effect
+(and
+(STANDING-ON-T-28-58)
+(not (LYING-ON-T-30-58))
+(not (LYING-ON-T-29-58))
+)
+)
+(:action STAND-UP-T-31-58-T-30-58-T-29-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-58)
+(LYING-ON-T-31-58)
+)
+:effect
+(and
+(STANDING-ON-T-29-58)
+(not (LYING-ON-T-31-58))
+(not (LYING-ON-T-30-58))
+)
+)
+(:action LAY-DOWN-T-30-58-T-31-58-T-32-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-58)
+)
+:effect
+(and
+(LYING-ON-T-32-58)
+(LYING-ON-T-31-58)
+(not (STANDING-ON-T-30-58))
+)
+)
+(:action LAY-DOWN-T-31-58-T-32-58-T-33-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-31-58)
+)
+:effect
+(and
+(LYING-ON-T-33-58)
+(LYING-ON-T-32-58)
+(not (STANDING-ON-T-31-58))
+)
+)
+(:action LAY-DOWN-T-32-58-T-33-58-T-34-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-58)
+)
+:effect
+(and
+(LYING-ON-T-34-58)
+(LYING-ON-T-33-58)
+(not (STANDING-ON-T-32-58))
+)
+)
+(:action LAY-DOWN-T-30-58-T-29-58-T-28-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-58)
+)
+:effect
+(and
+(LYING-ON-T-28-58)
+(LYING-ON-T-29-58)
+(not (STANDING-ON-T-30-58))
+)
+)
+(:action LAY-DOWN-T-31-58-T-30-58-T-29-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-31-58)
+)
+:effect
+(and
+(LYING-ON-T-29-58)
+(LYING-ON-T-30-58)
+(not (STANDING-ON-T-31-58))
+)
+)
+(:action LAY-DOWN-T-32-58-T-31-58-T-30-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-58)
+)
+:effect
+(and
+(LYING-ON-T-30-58)
+(LYING-ON-T-31-58)
+(not (STANDING-ON-T-32-58))
+)
+)
+(:action STAND-UP-T-31-58-T-32-58-T-33-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-58)
+(LYING-ON-T-31-58)
+)
+:effect
+(and
+(STANDING-ON-T-33-58)
+(not (LYING-ON-T-31-58))
+(not (LYING-ON-T-32-58))
+)
+)
+(:action STAND-UP-T-32-58-T-33-58-T-34-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-58)
+(LYING-ON-T-32-58)
+)
+:effect
+(and
+(STANDING-ON-T-34-58)
+(not (LYING-ON-T-32-58))
+(not (LYING-ON-T-33-58))
+)
+)
+(:action STAND-UP-T-33-58-T-34-58-T-35-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-58)
+(LYING-ON-T-33-58)
+)
+:effect
+(and
+(STANDING-ON-T-35-58)
+(not (LYING-ON-T-33-58))
+(not (LYING-ON-T-34-58))
+)
+)
+(:action STAND-UP-T-32-58-T-31-58-T-30-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-58)
+(LYING-ON-T-32-58)
+)
+:effect
+(and
+(STANDING-ON-T-30-58)
+(not (LYING-ON-T-32-58))
+(not (LYING-ON-T-31-58))
+)
+)
+(:action STAND-UP-T-33-58-T-32-58-T-31-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-58)
+(LYING-ON-T-33-58)
+)
+:effect
+(and
+(STANDING-ON-T-31-58)
+(not (LYING-ON-T-33-58))
+(not (LYING-ON-T-32-58))
+)
+)
+(:action STAND-UP-T-34-58-T-33-58-T-32-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-58)
+(LYING-ON-T-34-58)
+)
+:effect
+(and
+(STANDING-ON-T-32-58)
+(not (LYING-ON-T-34-58))
+(not (LYING-ON-T-33-58))
+)
+)
+(:action LAY-DOWN-T-33-58-T-34-58-T-35-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-58)
+)
+:effect
+(and
+(LYING-ON-T-35-58)
+(LYING-ON-T-34-58)
+(not (STANDING-ON-T-33-58))
+)
+)
+(:action LAY-DOWN-T-34-58-T-35-58-T-36-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-58)
+)
+:effect
+(and
+(LYING-ON-T-36-58)
+(LYING-ON-T-35-58)
+(not (STANDING-ON-T-34-58))
+)
+)
+(:action LAY-DOWN-T-35-58-T-36-58-T-37-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-58)
+)
+:effect
+(and
+(LYING-ON-T-37-58)
+(LYING-ON-T-36-58)
+(not (STANDING-ON-T-35-58))
+)
+)
+(:action LAY-DOWN-T-33-58-T-32-58-T-31-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-58)
+)
+:effect
+(and
+(LYING-ON-T-31-58)
+(LYING-ON-T-32-58)
+(not (STANDING-ON-T-33-58))
+)
+)
+(:action LAY-DOWN-T-34-58-T-33-58-T-32-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-58)
+)
+:effect
+(and
+(LYING-ON-T-32-58)
+(LYING-ON-T-33-58)
+(not (STANDING-ON-T-34-58))
+)
+)
+(:action LAY-DOWN-T-35-58-T-34-58-T-33-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-58)
+)
+:effect
+(and
+(LYING-ON-T-33-58)
+(LYING-ON-T-34-58)
+(not (STANDING-ON-T-35-58))
+)
+)
+(:action STAND-UP-T-34-58-T-35-58-T-36-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-58)
+(LYING-ON-T-34-58)
+)
+:effect
+(and
+(STANDING-ON-T-36-58)
+(not (LYING-ON-T-34-58))
+(not (LYING-ON-T-35-58))
+)
+)
+(:action STAND-UP-T-35-58-T-36-58-T-37-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-58)
+(LYING-ON-T-35-58)
+)
+:effect
+(and
+(STANDING-ON-T-37-58)
+(not (LYING-ON-T-35-58))
+(not (LYING-ON-T-36-58))
+)
+)
+(:action STAND-UP-T-36-58-T-37-58-T-38-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-58)
+(LYING-ON-T-36-58)
+)
+:effect
+(and
+(STANDING-ON-T-38-58)
+(not (LYING-ON-T-36-58))
+(not (LYING-ON-T-37-58))
+)
+)
+(:action STAND-UP-T-35-58-T-34-58-T-33-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-58)
+(LYING-ON-T-35-58)
+)
+:effect
+(and
+(STANDING-ON-T-33-58)
+(not (LYING-ON-T-35-58))
+(not (LYING-ON-T-34-58))
+)
+)
+(:action STAND-UP-T-36-58-T-35-58-T-34-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-58)
+(LYING-ON-T-36-58)
+)
+:effect
+(and
+(STANDING-ON-T-34-58)
+(not (LYING-ON-T-36-58))
+(not (LYING-ON-T-35-58))
+)
+)
+(:action STAND-UP-T-37-58-T-36-58-T-35-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-58)
+(LYING-ON-T-37-58)
+)
+:effect
+(and
+(STANDING-ON-T-35-58)
+(not (LYING-ON-T-37-58))
+(not (LYING-ON-T-36-58))
+)
+)
+(:action LAY-DOWN-T-36-58-T-37-58-T-38-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-58)
+)
+:effect
+(and
+(LYING-ON-T-38-58)
+(LYING-ON-T-37-58)
+(not (STANDING-ON-T-36-58))
+)
+)
+(:action LAY-DOWN-T-37-58-T-38-58-T-39-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-58)
+)
+:effect
+(and
+(LYING-ON-T-39-58)
+(LYING-ON-T-38-58)
+(not (STANDING-ON-T-37-58))
+)
+)
+(:action LAY-DOWN-T-38-58-T-39-58-T-40-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-58)
+)
+:effect
+(and
+(LYING-ON-T-40-58)
+(LYING-ON-T-39-58)
+(not (STANDING-ON-T-38-58))
+)
+)
+(:action LAY-DOWN-T-36-58-T-35-58-T-34-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-58)
+)
+:effect
+(and
+(LYING-ON-T-34-58)
+(LYING-ON-T-35-58)
+(not (STANDING-ON-T-36-58))
+)
+)
+(:action LAY-DOWN-T-37-58-T-36-58-T-35-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-58)
+)
+:effect
+(and
+(LYING-ON-T-35-58)
+(LYING-ON-T-36-58)
+(not (STANDING-ON-T-37-58))
+)
+)
+(:action LAY-DOWN-T-38-58-T-37-58-T-36-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-58)
+)
+:effect
+(and
+(LYING-ON-T-36-58)
+(LYING-ON-T-37-58)
+(not (STANDING-ON-T-38-58))
+)
+)
+(:action STAND-UP-T-37-58-T-38-58-T-39-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-58)
+(LYING-ON-T-37-58)
+)
+:effect
+(and
+(STANDING-ON-T-39-58)
+(not (LYING-ON-T-37-58))
+(not (LYING-ON-T-38-58))
+)
+)
+(:action STAND-UP-T-38-58-T-39-58-T-40-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-58)
+(LYING-ON-T-38-58)
+)
+:effect
+(and
+(STANDING-ON-T-40-58)
+(not (LYING-ON-T-38-58))
+(not (LYING-ON-T-39-58))
+)
+)
+(:action STAND-UP-T-39-58-T-40-58-T-41-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-58)
+(LYING-ON-T-39-58)
+)
+:effect
+(and
+(STANDING-ON-T-41-58)
+(not (LYING-ON-T-39-58))
+(not (LYING-ON-T-40-58))
+)
+)
+(:action STAND-UP-T-38-58-T-37-58-T-36-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-58)
+(LYING-ON-T-38-58)
+)
+:effect
+(and
+(STANDING-ON-T-36-58)
+(not (LYING-ON-T-38-58))
+(not (LYING-ON-T-37-58))
+)
+)
+(:action STAND-UP-T-39-58-T-38-58-T-37-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-58)
+(LYING-ON-T-39-58)
+)
+:effect
+(and
+(STANDING-ON-T-37-58)
+(not (LYING-ON-T-39-58))
+(not (LYING-ON-T-38-58))
+)
+)
+(:action STAND-UP-T-40-58-T-39-58-T-38-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-58)
+(LYING-ON-T-40-58)
+)
+:effect
+(and
+(STANDING-ON-T-38-58)
+(not (LYING-ON-T-40-58))
+(not (LYING-ON-T-39-58))
+)
+)
+(:action LAY-DOWN-T-39-58-T-40-58-T-41-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-39-58)
+)
+:effect
+(and
+(LYING-ON-T-41-58)
+(LYING-ON-T-40-58)
+(not (STANDING-ON-T-39-58))
+)
+)
+(:action LAY-DOWN-T-40-58-T-41-58-T-42-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-58)
+)
+:effect
+(and
+(LYING-ON-T-42-58)
+(LYING-ON-T-41-58)
+(not (STANDING-ON-T-40-58))
+)
+)
+(:action LAY-DOWN-T-41-58-T-42-58-T-43-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-58)
+)
+:effect
+(and
+(LYING-ON-T-43-58)
+(LYING-ON-T-42-58)
+(not (STANDING-ON-T-41-58))
+)
+)
+(:action LAY-DOWN-T-39-58-T-38-58-T-37-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-39-58)
+)
+:effect
+(and
+(LYING-ON-T-37-58)
+(LYING-ON-T-38-58)
+(not (STANDING-ON-T-39-58))
+)
+)
+(:action LAY-DOWN-T-40-58-T-39-58-T-38-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-58)
+)
+:effect
+(and
+(LYING-ON-T-38-58)
+(LYING-ON-T-39-58)
+(not (STANDING-ON-T-40-58))
+)
+)
+(:action LAY-DOWN-T-41-58-T-40-58-T-39-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-58)
+)
+:effect
+(and
+(LYING-ON-T-39-58)
+(LYING-ON-T-40-58)
+(not (STANDING-ON-T-41-58))
+)
+)
+(:action STAND-UP-T-40-58-T-41-58-T-42-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-58)
+(LYING-ON-T-40-58)
+)
+:effect
+(and
+(STANDING-ON-T-42-58)
+(not (LYING-ON-T-40-58))
+(not (LYING-ON-T-41-58))
+)
+)
+(:action STAND-UP-T-41-58-T-42-58-T-43-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-58)
+(LYING-ON-T-41-58)
+)
+:effect
+(and
+(STANDING-ON-T-43-58)
+(not (LYING-ON-T-41-58))
+(not (LYING-ON-T-42-58))
+)
+)
+(:action STAND-UP-T-42-58-T-43-58-T-44-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-58)
+(LYING-ON-T-42-58)
+)
+:effect
+(and
+(STANDING-ON-T-44-58)
+(not (LYING-ON-T-42-58))
+(not (LYING-ON-T-43-58))
+)
+)
+(:action STAND-UP-T-41-58-T-40-58-T-39-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-58)
+(LYING-ON-T-41-58)
+)
+:effect
+(and
+(STANDING-ON-T-39-58)
+(not (LYING-ON-T-41-58))
+(not (LYING-ON-T-40-58))
+)
+)
+(:action STAND-UP-T-42-58-T-41-58-T-40-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-58)
+(LYING-ON-T-42-58)
+)
+:effect
+(and
+(STANDING-ON-T-40-58)
+(not (LYING-ON-T-42-58))
+(not (LYING-ON-T-41-58))
+)
+)
+(:action STAND-UP-T-43-58-T-42-58-T-41-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-58)
+(LYING-ON-T-43-58)
+)
+:effect
+(and
+(STANDING-ON-T-41-58)
+(not (LYING-ON-T-43-58))
+(not (LYING-ON-T-42-58))
+)
+)
+(:action LAY-DOWN-T-42-58-T-43-58-T-44-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-58)
+)
+:effect
+(and
+(LYING-ON-T-44-58)
+(LYING-ON-T-43-58)
+(not (STANDING-ON-T-42-58))
+)
+)
+(:action LAY-DOWN-T-43-58-T-44-58-T-45-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-58)
+)
+:effect
+(and
+(LYING-ON-T-45-58)
+(LYING-ON-T-44-58)
+(not (STANDING-ON-T-43-58))
+)
+)
+(:action LAY-DOWN-T-44-58-T-45-58-T-46-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-44-58)
+)
+:effect
+(and
+(LYING-ON-T-46-58)
+(LYING-ON-T-45-58)
+(not (STANDING-ON-T-44-58))
+)
+)
+(:action LAY-DOWN-T-42-58-T-41-58-T-40-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-58)
+)
+:effect
+(and
+(LYING-ON-T-40-58)
+(LYING-ON-T-41-58)
+(not (STANDING-ON-T-42-58))
+)
+)
+(:action LAY-DOWN-T-43-58-T-42-58-T-41-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-58)
+)
+:effect
+(and
+(LYING-ON-T-41-58)
+(LYING-ON-T-42-58)
+(not (STANDING-ON-T-43-58))
+)
+)
+(:action LAY-DOWN-T-44-58-T-43-58-T-42-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-44-58)
+)
+:effect
+(and
+(LYING-ON-T-42-58)
+(LYING-ON-T-43-58)
+(not (STANDING-ON-T-44-58))
+)
+)
+(:action STAND-UP-T-43-58-T-44-58-T-45-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-58)
+(LYING-ON-T-43-58)
+)
+:effect
+(and
+(STANDING-ON-T-45-58)
+(not (LYING-ON-T-43-58))
+(not (LYING-ON-T-44-58))
+)
+)
+(:action STAND-UP-T-44-58-T-45-58-T-46-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-58)
+(LYING-ON-T-44-58)
+)
+:effect
+(and
+(STANDING-ON-T-46-58)
+(not (LYING-ON-T-44-58))
+(not (LYING-ON-T-45-58))
+)
+)
+(:action STAND-UP-T-45-58-T-46-58-T-47-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-58)
+(LYING-ON-T-45-58)
+)
+:effect
+(and
+(STANDING-ON-T-47-58)
+(not (LYING-ON-T-45-58))
+(not (LYING-ON-T-46-58))
+)
+)
+(:action STAND-UP-T-44-58-T-43-58-T-42-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-58)
+(LYING-ON-T-44-58)
+)
+:effect
+(and
+(STANDING-ON-T-42-58)
+(not (LYING-ON-T-44-58))
+(not (LYING-ON-T-43-58))
+)
+)
+(:action STAND-UP-T-45-58-T-44-58-T-43-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-58)
+(LYING-ON-T-45-58)
+)
+:effect
+(and
+(STANDING-ON-T-43-58)
+(not (LYING-ON-T-45-58))
+(not (LYING-ON-T-44-58))
+)
+)
+(:action STAND-UP-T-46-58-T-45-58-T-44-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-58)
+(LYING-ON-T-46-58)
+)
+:effect
+(and
+(STANDING-ON-T-44-58)
+(not (LYING-ON-T-46-58))
+(not (LYING-ON-T-45-58))
+)
+)
+(:action LAY-DOWN-T-45-58-T-46-58-T-47-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-58)
+)
+:effect
+(and
+(LYING-ON-T-47-58)
+(LYING-ON-T-46-58)
+(not (STANDING-ON-T-45-58))
+)
+)
+(:action LAY-DOWN-T-46-58-T-47-58-T-48-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-46-58)
+)
+:effect
+(and
+(LYING-ON-T-48-58)
+(LYING-ON-T-47-58)
+(not (STANDING-ON-T-46-58))
+)
+)
+(:action LAY-DOWN-T-47-58-T-48-58-T-49-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-47-58)
+)
+:effect
+(and
+(LYING-ON-T-49-58)
+(LYING-ON-T-48-58)
+(not (STANDING-ON-T-47-58))
+)
+)
+(:action LAY-DOWN-T-45-58-T-44-58-T-43-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-58)
+)
+:effect
+(and
+(LYING-ON-T-43-58)
+(LYING-ON-T-44-58)
+(not (STANDING-ON-T-45-58))
+)
+)
+(:action LAY-DOWN-T-46-58-T-45-58-T-44-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-46-58)
+)
+:effect
+(and
+(LYING-ON-T-44-58)
+(LYING-ON-T-45-58)
+(not (STANDING-ON-T-46-58))
+)
+)
+(:action LAY-DOWN-T-47-58-T-46-58-T-45-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-47-58)
+)
+:effect
+(and
+(LYING-ON-T-45-58)
+(LYING-ON-T-46-58)
+(not (STANDING-ON-T-47-58))
+)
+)
+(:action STAND-UP-T-46-58-T-47-58-T-48-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-58)
+(LYING-ON-T-46-58)
+)
+:effect
+(and
+(STANDING-ON-T-48-58)
+(not (LYING-ON-T-46-58))
+(not (LYING-ON-T-47-58))
+)
+)
+(:action STAND-UP-T-47-58-T-48-58-T-49-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-58)
+(LYING-ON-T-47-58)
+)
+:effect
+(and
+(STANDING-ON-T-49-58)
+(not (LYING-ON-T-47-58))
+(not (LYING-ON-T-48-58))
+)
+)
+(:action STAND-UP-T-48-58-T-49-58-T-50-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-49-58)
+(LYING-ON-T-48-58)
+)
+:effect
+(and
+(STANDING-ON-T-50-58)
+(not (LYING-ON-T-48-58))
+(not (LYING-ON-T-49-58))
+)
+)
+(:action STAND-UP-T-47-58-T-46-58-T-45-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-58)
+(LYING-ON-T-47-58)
+)
+:effect
+(and
+(STANDING-ON-T-45-58)
+(not (LYING-ON-T-47-58))
+(not (LYING-ON-T-46-58))
+)
+)
+(:action STAND-UP-T-48-58-T-47-58-T-46-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-58)
+(LYING-ON-T-48-58)
+)
+:effect
+(and
+(STANDING-ON-T-46-58)
+(not (LYING-ON-T-48-58))
+(not (LYING-ON-T-47-58))
+)
+)
+(:action STAND-UP-T-49-58-T-48-58-T-47-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-58)
+(LYING-ON-T-49-58)
+)
+:effect
+(and
+(STANDING-ON-T-47-58)
+(not (LYING-ON-T-49-58))
+(not (LYING-ON-T-48-58))
+)
+)
+(:action LAY-DOWN-T-48-58-T-49-58-T-50-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-58)
+)
+:effect
+(and
+(LYING-ON-T-50-58)
+(LYING-ON-T-49-58)
+(not (STANDING-ON-T-48-58))
+)
+)
+(:action LAY-DOWN-T-49-58-T-50-58-T-51-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-49-58)
+)
+:effect
+(and
+(LYING-ON-T-51-58)
+(LYING-ON-T-50-58)
+(not (STANDING-ON-T-49-58))
+)
+)
+(:action LAY-DOWN-T-50-58-T-51-58-T-52-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-50-58)
+)
+:effect
+(and
+(LYING-ON-T-52-58)
+(LYING-ON-T-51-58)
+(not (STANDING-ON-T-50-58))
+)
+)
+(:action LAY-DOWN-T-48-58-T-47-58-T-46-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-58)
+)
+:effect
+(and
+(LYING-ON-T-46-58)
+(LYING-ON-T-47-58)
+(not (STANDING-ON-T-48-58))
+)
+)
+(:action LAY-DOWN-T-49-58-T-48-58-T-47-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-49-58)
+)
+:effect
+(and
+(LYING-ON-T-47-58)
+(LYING-ON-T-48-58)
+(not (STANDING-ON-T-49-58))
+)
+)
+(:action LAY-DOWN-T-50-58-T-49-58-T-48-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-50-58)
+)
+:effect
+(and
+(LYING-ON-T-48-58)
+(LYING-ON-T-49-58)
+(not (STANDING-ON-T-50-58))
+)
+)
+(:action STAND-UP-T-49-58-T-50-58-T-51-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-50-58)
+(LYING-ON-T-49-58)
+)
+:effect
+(and
+(STANDING-ON-T-51-58)
+(not (LYING-ON-T-49-58))
+(not (LYING-ON-T-50-58))
+)
+)
+(:action STAND-UP-T-50-58-T-51-58-T-52-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-51-58)
+(LYING-ON-T-50-58)
+)
+:effect
+(and
+(STANDING-ON-T-52-58)
+(not (LYING-ON-T-50-58))
+(not (LYING-ON-T-51-58))
+)
+)
+(:action STAND-UP-T-51-58-T-52-58-T-53-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-52-58)
+(LYING-ON-T-51-58)
+)
+:effect
+(and
+(STANDING-ON-T-53-58)
+(not (LYING-ON-T-51-58))
+(not (LYING-ON-T-52-58))
+)
+)
+(:action STAND-UP-T-50-58-T-49-58-T-48-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-49-58)
+(LYING-ON-T-50-58)
+)
+:effect
+(and
+(STANDING-ON-T-48-58)
+(not (LYING-ON-T-50-58))
+(not (LYING-ON-T-49-58))
+)
+)
+(:action STAND-UP-T-51-58-T-50-58-T-49-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-50-58)
+(LYING-ON-T-51-58)
+)
+:effect
+(and
+(STANDING-ON-T-49-58)
+(not (LYING-ON-T-51-58))
+(not (LYING-ON-T-50-58))
+)
+)
+(:action STAND-UP-T-52-58-T-51-58-T-50-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-51-58)
+(LYING-ON-T-52-58)
+)
+:effect
+(and
+(STANDING-ON-T-50-58)
+(not (LYING-ON-T-52-58))
+(not (LYING-ON-T-51-58))
+)
+)
+(:action LAY-DOWN-T-51-58-T-52-58-T-53-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-58)
+)
+:effect
+(and
+(LYING-ON-T-53-58)
+(LYING-ON-T-52-58)
+(not (STANDING-ON-T-51-58))
+)
+)
+(:action LAY-DOWN-T-52-58-T-53-58-T-54-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-52-58)
+)
+:effect
+(and
+(LYING-ON-T-54-58)
+(LYING-ON-T-53-58)
+(not (STANDING-ON-T-52-58))
+)
+)
+(:action LAY-DOWN-T-53-58-T-54-58-T-55-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-53-58)
+)
+:effect
+(and
+(LYING-ON-T-55-58)
+(LYING-ON-T-54-58)
+(not (STANDING-ON-T-53-58))
+)
+)
+(:action LAY-DOWN-T-51-58-T-50-58-T-49-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-58)
+)
+:effect
+(and
+(LYING-ON-T-49-58)
+(LYING-ON-T-50-58)
+(not (STANDING-ON-T-51-58))
+)
+)
+(:action LAY-DOWN-T-52-58-T-51-58-T-50-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-52-58)
+)
+:effect
+(and
+(LYING-ON-T-50-58)
+(LYING-ON-T-51-58)
+(not (STANDING-ON-T-52-58))
+)
+)
+(:action LAY-DOWN-T-53-58-T-52-58-T-51-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-53-58)
+)
+:effect
+(and
+(LYING-ON-T-51-58)
+(LYING-ON-T-52-58)
+(not (STANDING-ON-T-53-58))
+)
+)
+(:action STAND-UP-T-52-58-T-53-58-T-54-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-53-58)
+(LYING-ON-T-52-58)
+)
+:effect
+(and
+(STANDING-ON-T-54-58)
+(not (LYING-ON-T-52-58))
+(not (LYING-ON-T-53-58))
+)
+)
+(:action STAND-UP-T-53-58-T-54-58-T-55-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-54-58)
+(LYING-ON-T-53-58)
+)
+:effect
+(and
+(STANDING-ON-T-55-58)
+(not (LYING-ON-T-53-58))
+(not (LYING-ON-T-54-58))
+)
+)
+(:action STAND-UP-T-54-58-T-55-58-T-56-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-55-58)
+(LYING-ON-T-54-58)
+)
+:effect
+(and
+(STANDING-ON-T-56-58)
+(not (LYING-ON-T-54-58))
+(not (LYING-ON-T-55-58))
+)
+)
+(:action STAND-UP-T-53-58-T-52-58-T-51-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-52-58)
+(LYING-ON-T-53-58)
+)
+:effect
+(and
+(STANDING-ON-T-51-58)
+(not (LYING-ON-T-53-58))
+(not (LYING-ON-T-52-58))
+)
+)
+(:action STAND-UP-T-54-58-T-53-58-T-52-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-53-58)
+(LYING-ON-T-54-58)
+)
+:effect
+(and
+(STANDING-ON-T-52-58)
+(not (LYING-ON-T-54-58))
+(not (LYING-ON-T-53-58))
+)
+)
+(:action STAND-UP-T-55-58-T-54-58-T-53-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-54-58)
+(LYING-ON-T-55-58)
+)
+:effect
+(and
+(STANDING-ON-T-53-58)
+(not (LYING-ON-T-55-58))
+(not (LYING-ON-T-54-58))
+)
+)
+(:action LAY-DOWN-T-54-58-T-55-58-T-56-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-58)
+)
+:effect
+(and
+(LYING-ON-T-56-58)
+(LYING-ON-T-55-58)
+(not (STANDING-ON-T-54-58))
+)
+)
+(:action LAY-DOWN-T-55-58-T-56-58-T-57-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-55-58)
+)
+:effect
+(and
+(LYING-ON-T-57-58)
+(LYING-ON-T-56-58)
+(not (STANDING-ON-T-55-58))
+)
+)
+(:action LAY-DOWN-T-56-58-T-57-58-T-58-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-56-58)
+)
+:effect
+(and
+(LYING-ON-T-58-58)
+(LYING-ON-T-57-58)
+(not (STANDING-ON-T-56-58))
+)
+)
+(:action LAY-DOWN-T-54-58-T-53-58-T-52-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-58)
+)
+:effect
+(and
+(LYING-ON-T-52-58)
+(LYING-ON-T-53-58)
+(not (STANDING-ON-T-54-58))
+)
+)
+(:action LAY-DOWN-T-55-58-T-54-58-T-53-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-55-58)
+)
+:effect
+(and
+(LYING-ON-T-53-58)
+(LYING-ON-T-54-58)
+(not (STANDING-ON-T-55-58))
+)
+)
+(:action LAY-DOWN-T-56-58-T-55-58-T-54-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-56-58)
+)
+:effect
+(and
+(LYING-ON-T-54-58)
+(LYING-ON-T-55-58)
+(not (STANDING-ON-T-56-58))
+)
+)
+(:action STAND-UP-T-55-58-T-56-58-T-57-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-56-58)
+(LYING-ON-T-55-58)
+)
+:effect
+(and
+(STANDING-ON-T-57-58)
+(not (LYING-ON-T-55-58))
+(not (LYING-ON-T-56-58))
+)
+)
+(:action STAND-UP-T-56-58-T-57-58-T-58-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-58)
+(LYING-ON-T-56-58)
+)
+:effect
+(and
+(STANDING-ON-T-58-58)
+(not (LYING-ON-T-56-58))
+(not (LYING-ON-T-57-58))
+)
+)
+(:action STAND-UP-T-57-58-T-58-58-T-59-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-58-58)
+(LYING-ON-T-57-58)
+)
+:effect
+(and
+(STANDING-ON-T-59-58)
+(not (LYING-ON-T-57-58))
+(not (LYING-ON-T-58-58))
+)
+)
+(:action STAND-UP-T-56-58-T-55-58-T-54-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-55-58)
+(LYING-ON-T-56-58)
+)
+:effect
+(and
+(STANDING-ON-T-54-58)
+(not (LYING-ON-T-56-58))
+(not (LYING-ON-T-55-58))
+)
+)
+(:action STAND-UP-T-57-58-T-56-58-T-55-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-56-58)
+(LYING-ON-T-57-58)
+)
+:effect
+(and
+(STANDING-ON-T-55-58)
+(not (LYING-ON-T-57-58))
+(not (LYING-ON-T-56-58))
+)
+)
+(:action STAND-UP-T-58-58-T-57-58-T-56-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-58)
+(LYING-ON-T-58-58)
+)
+:effect
+(and
+(STANDING-ON-T-56-58)
+(not (LYING-ON-T-58-58))
+(not (LYING-ON-T-57-58))
+)
+)
+(:action LAY-DOWN-T-57-58-T-58-58-T-59-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-58)
+)
+:effect
+(and
+(LYING-ON-T-59-58)
+(LYING-ON-T-58-58)
+(not (STANDING-ON-T-57-58))
+)
+)
+(:action LAY-DOWN-T-58-58-T-59-58-T-60-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-58-58)
+)
+:effect
+(and
+(LYING-ON-T-60-58)
+(LYING-ON-T-59-58)
+(not (STANDING-ON-T-58-58))
+)
+)
+(:action LAY-DOWN-T-59-58-T-60-58-T-61-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-59-58)
+)
+:effect
+(and
+(LYING-ON-T-61-58)
+(LYING-ON-T-60-58)
+(not (STANDING-ON-T-59-58))
+)
+)
+(:action LAY-DOWN-T-57-58-T-56-58-T-55-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-58)
+)
+:effect
+(and
+(LYING-ON-T-55-58)
+(LYING-ON-T-56-58)
+(not (STANDING-ON-T-57-58))
+)
+)
+(:action LAY-DOWN-T-58-58-T-57-58-T-56-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-58-58)
+)
+:effect
+(and
+(LYING-ON-T-56-58)
+(LYING-ON-T-57-58)
+(not (STANDING-ON-T-58-58))
+)
+)
+(:action LAY-DOWN-T-59-58-T-58-58-T-57-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-59-58)
+)
+:effect
+(and
+(LYING-ON-T-57-58)
+(LYING-ON-T-58-58)
+(not (STANDING-ON-T-59-58))
+)
+)
+(:action STAND-UP-T-58-58-T-59-58-T-60-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-59-58)
+(LYING-ON-T-58-58)
+)
+:effect
+(and
+(STANDING-ON-T-60-58)
+(not (LYING-ON-T-58-58))
+(not (LYING-ON-T-59-58))
+)
+)
+(:action STAND-UP-T-59-58-T-60-58-T-61-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-60-58)
+(LYING-ON-T-59-58)
+)
+:effect
+(and
+(STANDING-ON-T-61-58)
+(not (LYING-ON-T-59-58))
+(not (LYING-ON-T-60-58))
+)
+)
+(:action STAND-UP-T-60-58-T-61-58-T-62-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-61-58)
+(LYING-ON-T-60-58)
+)
+:effect
+(and
+(STANDING-ON-T-62-58)
+(not (LYING-ON-T-60-58))
+(not (LYING-ON-T-61-58))
+)
+)
+(:action STAND-UP-T-59-58-T-58-58-T-57-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-58-58)
+(LYING-ON-T-59-58)
+)
+:effect
+(and
+(STANDING-ON-T-57-58)
+(not (LYING-ON-T-59-58))
+(not (LYING-ON-T-58-58))
+)
+)
+(:action STAND-UP-T-60-58-T-59-58-T-58-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-59-58)
+(LYING-ON-T-60-58)
+)
+:effect
+(and
+(STANDING-ON-T-58-58)
+(not (LYING-ON-T-60-58))
+(not (LYING-ON-T-59-58))
+)
+)
+(:action STAND-UP-T-61-58-T-60-58-T-59-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-60-58)
+(LYING-ON-T-61-58)
+)
+:effect
+(and
+(STANDING-ON-T-59-58)
+(not (LYING-ON-T-61-58))
+(not (LYING-ON-T-60-58))
+)
+)
+(:action LAY-DOWN-T-60-58-T-61-58-T-62-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-60-58)
+)
+:effect
+(and
+(LYING-ON-T-62-58)
+(LYING-ON-T-61-58)
+(not (STANDING-ON-T-60-58))
+)
+)
+(:action LAY-DOWN-T-61-58-T-62-58-T-63-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-61-58)
+)
+:effect
+(and
+(LYING-ON-T-63-58)
+(LYING-ON-T-62-58)
+(not (STANDING-ON-T-61-58))
+)
+)
+(:action LAY-DOWN-T-62-58-T-63-58-T-64-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-62-58)
+)
+:effect
+(and
+(LYING-ON-T-64-58)
+(LYING-ON-T-63-58)
+(not (STANDING-ON-T-62-58))
+)
+)
+(:action LAY-DOWN-T-60-58-T-59-58-T-58-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-60-58)
+)
+:effect
+(and
+(LYING-ON-T-58-58)
+(LYING-ON-T-59-58)
+(not (STANDING-ON-T-60-58))
+)
+)
+(:action LAY-DOWN-T-61-58-T-60-58-T-59-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-61-58)
+)
+:effect
+(and
+(LYING-ON-T-59-58)
+(LYING-ON-T-60-58)
+(not (STANDING-ON-T-61-58))
+)
+)
+(:action LAY-DOWN-T-62-58-T-61-58-T-60-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-62-58)
+)
+:effect
+(and
+(LYING-ON-T-60-58)
+(LYING-ON-T-61-58)
+(not (STANDING-ON-T-62-58))
+)
+)
+(:action STAND-UP-T-61-58-T-62-58-T-63-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-62-58)
+(LYING-ON-T-61-58)
+)
+:effect
+(and
+(STANDING-ON-T-63-58)
+(not (LYING-ON-T-61-58))
+(not (LYING-ON-T-62-58))
+)
+)
+(:action STAND-UP-T-62-58-T-63-58-T-64-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-63-58)
+(LYING-ON-T-62-58)
+)
+:effect
+(and
+(STANDING-ON-T-64-58)
+(not (LYING-ON-T-62-58))
+(not (LYING-ON-T-63-58))
+)
+)
+(:action STAND-UP-T-63-58-T-64-58-T-65-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-64-58)
+(LYING-ON-T-63-58)
+)
+:effect
+(and
+(STANDING-ON-T-65-58)
+(not (LYING-ON-T-63-58))
+(not (LYING-ON-T-64-58))
+)
+)
+(:action STAND-UP-T-62-58-T-61-58-T-60-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-61-58)
+(LYING-ON-T-62-58)
+)
+:effect
+(and
+(STANDING-ON-T-60-58)
+(not (LYING-ON-T-62-58))
+(not (LYING-ON-T-61-58))
+)
+)
+(:action STAND-UP-T-63-58-T-62-58-T-61-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-62-58)
+(LYING-ON-T-63-58)
+)
+:effect
+(and
+(STANDING-ON-T-61-58)
+(not (LYING-ON-T-63-58))
+(not (LYING-ON-T-62-58))
+)
+)
+(:action STAND-UP-T-64-58-T-63-58-T-62-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-63-58)
+(LYING-ON-T-64-58)
+)
+:effect
+(and
+(STANDING-ON-T-62-58)
+(not (LYING-ON-T-64-58))
+(not (LYING-ON-T-63-58))
+)
+)
+(:action LAY-DOWN-T-63-58-T-64-58-T-65-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-63-58)
+)
+:effect
+(and
+(LYING-ON-T-65-58)
+(LYING-ON-T-64-58)
+(not (STANDING-ON-T-63-58))
+)
+)
+(:action LAY-DOWN-T-64-58-T-65-58-T-66-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-64-58)
+)
+:effect
+(and
+(LYING-ON-T-66-58)
+(LYING-ON-T-65-58)
+(not (STANDING-ON-T-64-58))
+)
+)
+(:action LAY-DOWN-T-65-58-T-66-58-T-67-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-65-58)
+)
+:effect
+(and
+(LYING-ON-T-67-58)
+(LYING-ON-T-66-58)
+(not (STANDING-ON-T-65-58))
+)
+)
+(:action LAY-DOWN-T-63-58-T-62-58-T-61-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-63-58)
+)
+:effect
+(and
+(LYING-ON-T-61-58)
+(LYING-ON-T-62-58)
+(not (STANDING-ON-T-63-58))
+)
+)
+(:action LAY-DOWN-T-64-58-T-63-58-T-62-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-64-58)
+)
+:effect
+(and
+(LYING-ON-T-62-58)
+(LYING-ON-T-63-58)
+(not (STANDING-ON-T-64-58))
+)
+)
+(:action LAY-DOWN-T-65-58-T-64-58-T-63-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-65-58)
+)
+:effect
+(and
+(LYING-ON-T-63-58)
+(LYING-ON-T-64-58)
+(not (STANDING-ON-T-65-58))
+)
+)
+(:action STAND-UP-T-64-58-T-65-58-T-66-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-65-58)
+(LYING-ON-T-64-58)
+)
+:effect
+(and
+(STANDING-ON-T-66-58)
+(not (LYING-ON-T-64-58))
+(not (LYING-ON-T-65-58))
+)
+)
+(:action STAND-UP-T-65-58-T-66-58-T-67-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-66-58)
+(LYING-ON-T-65-58)
+)
+:effect
+(and
+(STANDING-ON-T-67-58)
+(not (LYING-ON-T-65-58))
+(not (LYING-ON-T-66-58))
+)
+)
+(:action STAND-UP-T-66-58-T-67-58-T-68-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-67-58)
+(LYING-ON-T-66-58)
+)
+:effect
+(and
+(STANDING-ON-T-68-58)
+(not (LYING-ON-T-66-58))
+(not (LYING-ON-T-67-58))
+)
+)
+(:action STAND-UP-T-65-58-T-64-58-T-63-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-64-58)
+(LYING-ON-T-65-58)
+)
+:effect
+(and
+(STANDING-ON-T-63-58)
+(not (LYING-ON-T-65-58))
+(not (LYING-ON-T-64-58))
+)
+)
+(:action STAND-UP-T-66-58-T-65-58-T-64-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-65-58)
+(LYING-ON-T-66-58)
+)
+:effect
+(and
+(STANDING-ON-T-64-58)
+(not (LYING-ON-T-66-58))
+(not (LYING-ON-T-65-58))
+)
+)
+(:action STAND-UP-T-67-58-T-66-58-T-65-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-66-58)
+(LYING-ON-T-67-58)
+)
+:effect
+(and
+(STANDING-ON-T-65-58)
+(not (LYING-ON-T-67-58))
+(not (LYING-ON-T-66-58))
+)
+)
+(:action LAY-DOWN-T-66-58-T-67-58-T-68-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-66-58)
+)
+:effect
+(and
+(LYING-ON-T-68-58)
+(LYING-ON-T-67-58)
+(not (STANDING-ON-T-66-58))
+)
+)
+(:action LAY-DOWN-T-67-58-T-68-58-T-69-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-67-58)
+)
+:effect
+(and
+(LYING-ON-T-69-58)
+(LYING-ON-T-68-58)
+(not (STANDING-ON-T-67-58))
+)
+)
+(:action LAY-DOWN-T-68-58-T-69-58-T-70-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-58)
+)
+:effect
+(and
+(LYING-ON-T-70-58)
+(LYING-ON-T-69-58)
+(not (STANDING-ON-T-68-58))
+)
+)
+(:action LAY-DOWN-T-66-58-T-65-58-T-64-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-66-58)
+)
+:effect
+(and
+(LYING-ON-T-64-58)
+(LYING-ON-T-65-58)
+(not (STANDING-ON-T-66-58))
+)
+)
+(:action LAY-DOWN-T-67-58-T-66-58-T-65-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-67-58)
+)
+:effect
+(and
+(LYING-ON-T-65-58)
+(LYING-ON-T-66-58)
+(not (STANDING-ON-T-67-58))
+)
+)
+(:action LAY-DOWN-T-68-58-T-67-58-T-66-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-58)
+)
+:effect
+(and
+(LYING-ON-T-66-58)
+(LYING-ON-T-67-58)
+(not (STANDING-ON-T-68-58))
+)
+)
+(:action STAND-UP-T-67-58-T-68-58-T-69-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-58)
+(LYING-ON-T-67-58)
+)
+:effect
+(and
+(STANDING-ON-T-69-58)
+(not (LYING-ON-T-67-58))
+(not (LYING-ON-T-68-58))
+)
+)
+(:action STAND-UP-T-68-58-T-69-58-T-70-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-58)
+(LYING-ON-T-68-58)
+)
+:effect
+(and
+(STANDING-ON-T-70-58)
+(not (LYING-ON-T-68-58))
+(not (LYING-ON-T-69-58))
+)
+)
+(:action STAND-UP-T-69-58-T-70-58-T-71-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-58)
+(LYING-ON-T-69-58)
+)
+:effect
+(and
+(STANDING-ON-T-71-58)
+(not (LYING-ON-T-69-58))
+(not (LYING-ON-T-70-58))
+)
+)
+(:action STAND-UP-T-68-58-T-67-58-T-66-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-67-58)
+(LYING-ON-T-68-58)
+)
+:effect
+(and
+(STANDING-ON-T-66-58)
+(not (LYING-ON-T-68-58))
+(not (LYING-ON-T-67-58))
+)
+)
+(:action STAND-UP-T-69-58-T-68-58-T-67-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-58)
+(LYING-ON-T-69-58)
+)
+:effect
+(and
+(STANDING-ON-T-67-58)
+(not (LYING-ON-T-69-58))
+(not (LYING-ON-T-68-58))
+)
+)
+(:action STAND-UP-T-70-58-T-69-58-T-68-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-58)
+(LYING-ON-T-70-58)
+)
+:effect
+(and
+(STANDING-ON-T-68-58)
+(not (LYING-ON-T-70-58))
+(not (LYING-ON-T-69-58))
+)
+)
+(:action LAY-DOWN-T-69-58-T-70-58-T-71-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-69-58)
+)
+:effect
+(and
+(LYING-ON-T-71-58)
+(LYING-ON-T-70-58)
+(not (STANDING-ON-T-69-58))
+)
+)
+(:action LAY-DOWN-T-70-58-T-71-58-T-72-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-58)
+)
+:effect
+(and
+(LYING-ON-T-72-58)
+(LYING-ON-T-71-58)
+(not (STANDING-ON-T-70-58))
+)
+)
+(:action LAY-DOWN-T-71-58-T-72-58-T-73-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-71-58)
+)
+:effect
+(and
+(LYING-ON-T-73-58)
+(LYING-ON-T-72-58)
+(not (STANDING-ON-T-71-58))
+)
+)
+(:action LAY-DOWN-T-69-58-T-68-58-T-67-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-69-58)
+)
+:effect
+(and
+(LYING-ON-T-67-58)
+(LYING-ON-T-68-58)
+(not (STANDING-ON-T-69-58))
+)
+)
+(:action LAY-DOWN-T-70-58-T-69-58-T-68-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-58)
+)
+:effect
+(and
+(LYING-ON-T-68-58)
+(LYING-ON-T-69-58)
+(not (STANDING-ON-T-70-58))
+)
+)
+(:action LAY-DOWN-T-71-58-T-70-58-T-69-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-71-58)
+)
+:effect
+(and
+(LYING-ON-T-69-58)
+(LYING-ON-T-70-58)
+(not (STANDING-ON-T-71-58))
+)
+)
+(:action STAND-UP-T-70-58-T-71-58-T-72-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-58)
+(LYING-ON-T-70-58)
+)
+:effect
+(and
+(STANDING-ON-T-72-58)
+(not (LYING-ON-T-70-58))
+(not (LYING-ON-T-71-58))
+)
+)
+(:action STAND-UP-T-71-58-T-72-58-T-73-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-58)
+(LYING-ON-T-71-58)
+)
+:effect
+(and
+(STANDING-ON-T-73-58)
+(not (LYING-ON-T-71-58))
+(not (LYING-ON-T-72-58))
+)
+)
+(:action STAND-UP-T-72-58-T-73-58-T-74-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-58)
+(LYING-ON-T-72-58)
+)
+:effect
+(and
+(STANDING-ON-T-74-58)
+(not (LYING-ON-T-72-58))
+(not (LYING-ON-T-73-58))
+)
+)
+(:action STAND-UP-T-71-58-T-70-58-T-69-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-58)
+(LYING-ON-T-71-58)
+)
+:effect
+(and
+(STANDING-ON-T-69-58)
+(not (LYING-ON-T-71-58))
+(not (LYING-ON-T-70-58))
+)
+)
+(:action STAND-UP-T-72-58-T-71-58-T-70-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-58)
+(LYING-ON-T-72-58)
+)
+:effect
+(and
+(STANDING-ON-T-70-58)
+(not (LYING-ON-T-72-58))
+(not (LYING-ON-T-71-58))
+)
+)
+(:action STAND-UP-T-73-58-T-72-58-T-71-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-58)
+(LYING-ON-T-73-58)
+)
+:effect
+(and
+(STANDING-ON-T-71-58)
+(not (LYING-ON-T-73-58))
+(not (LYING-ON-T-72-58))
+)
+)
+(:action LAY-DOWN-T-81-56-T-81-57-T-81-58-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-81-56)
+)
+:effect
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-81-57)
+(not (STANDING-ON-T-81-56))
+)
+)
+(:action LAY-DOWN-T-72-58-T-73-58-T-74-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-72-58)
+)
+:effect
+(and
+(LYING-ON-T-74-58)
+(LYING-ON-T-73-58)
+(not (STANDING-ON-T-72-58))
+)
+)
+(:action LAY-DOWN-T-73-58-T-74-58-T-75-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-58)
+)
+:effect
+(and
+(LYING-ON-T-75-58)
+(LYING-ON-T-74-58)
+(not (STANDING-ON-T-73-58))
+)
+)
+(:action LAY-DOWN-T-74-58-T-75-58-T-76-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-74-58)
+)
+:effect
+(and
+(LYING-ON-T-76-58)
+(LYING-ON-T-75-58)
+(not (STANDING-ON-T-74-58))
+)
+)
+(:action LAY-DOWN-T-79-57-T-80-57-T-81-57-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-80-57)
+(not (STANDING-ON-T-79-57))
+)
+)
+(:action LAY-DOWN-T-72-58-T-71-58-T-70-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-72-58)
+)
+:effect
+(and
+(LYING-ON-T-70-58)
+(LYING-ON-T-71-58)
+(not (STANDING-ON-T-72-58))
+)
+)
+(:action LAY-DOWN-T-73-58-T-72-58-T-71-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-58)
+)
+:effect
+(and
+(LYING-ON-T-71-58)
+(LYING-ON-T-72-58)
+(not (STANDING-ON-T-73-58))
+)
+)
+(:action LAY-DOWN-T-74-58-T-73-58-T-72-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-74-58)
+)
+:effect
+(and
+(LYING-ON-T-72-58)
+(LYING-ON-T-73-58)
+(not (STANDING-ON-T-74-58))
+)
+)
+(:action LAY-DOWN-T-81-56-T-80-56-T-79-56-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-81-56)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-80-56)
+(not (STANDING-ON-T-81-56))
+)
+)
+(:action ROLL-T-81-57-T-80-57-T-81-56-T-80-56-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-81-57)
+)
+:effect
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-80-56)
+(not (LYING-ON-T-81-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-81-58-T-80-58-T-81-57-T-80-57-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-81-58)
+)
+:effect
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-81-58))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action ROLL-T-80-57-T-81-57-T-80-56-T-81-56-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-81-56)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action ROLL-T-80-58-T-81-58-T-80-57-T-81-57-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-81-57)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-81-58))
+)
+)
+(:action ROLL-T-80-57-T-80-56-T-79-57-T-79-56-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-56)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action ROLL-T-80-56-T-80-57-T-79-56-T-79-57-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-81-57-T-81-56-T-80-57-T-80-56-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-81-57)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-56)
+(not (LYING-ON-T-81-57))
+(not (LYING-ON-T-81-56))
+)
+)
+(:action ROLL-T-81-56-T-81-57-T-80-56-T-80-57-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-56)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-81-56))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action ROLL-T-81-58-T-81-57-T-80-58-T-80-57-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-58)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-81-58))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action ROLL-T-81-57-T-81-58-T-80-57-T-80-58-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-81-57)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-58)
+(not (LYING-ON-T-81-57))
+(not (LYING-ON-T-81-58))
+)
+)
+(:action STAND-UP-T-80-56-T-80-57-T-80-58-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(STANDING-ON-T-80-58)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action STAND-UP-T-81-56-T-81-57-T-81-58-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-56)
+)
+:effect
+(and
+(STANDING-ON-T-81-58)
+(not (LYING-ON-T-81-56))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action STAND-UP-T-73-58-T-74-58-T-75-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-58)
+(LYING-ON-T-73-58)
+)
+:effect
+(and
+(STANDING-ON-T-75-58)
+(not (LYING-ON-T-73-58))
+(not (LYING-ON-T-74-58))
+)
+)
+(:action STAND-UP-T-74-58-T-75-58-T-76-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-58)
+(LYING-ON-T-74-58)
+)
+:effect
+(and
+(STANDING-ON-T-76-58)
+(not (LYING-ON-T-74-58))
+(not (LYING-ON-T-75-58))
+)
+)
+(:action STAND-UP-T-75-58-T-76-58-T-77-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-58)
+(LYING-ON-T-75-58)
+)
+:effect
+(and
+(STANDING-ON-T-77-58)
+(not (LYING-ON-T-75-58))
+(not (LYING-ON-T-76-58))
+)
+)
+(:action STAND-UP-T-79-56-T-80-56-T-81-56-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(STANDING-ON-T-81-56)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action STAND-UP-T-81-58-T-81-57-T-81-56-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-58)
+)
+:effect
+(and
+(STANDING-ON-T-81-56)
+(not (LYING-ON-T-81-58))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action STAND-UP-T-74-58-T-73-58-T-72-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-58)
+(LYING-ON-T-74-58)
+)
+:effect
+(and
+(STANDING-ON-T-72-58)
+(not (LYING-ON-T-74-58))
+(not (LYING-ON-T-73-58))
+)
+)
+(:action STAND-UP-T-75-58-T-74-58-T-73-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-58)
+(LYING-ON-T-75-58)
+)
+:effect
+(and
+(STANDING-ON-T-73-58)
+(not (LYING-ON-T-75-58))
+(not (LYING-ON-T-74-58))
+)
+)
+(:action STAND-UP-T-76-58-T-75-58-T-74-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-58)
+(LYING-ON-T-76-58)
+)
+:effect
+(and
+(STANDING-ON-T-74-58)
+(not (LYING-ON-T-76-58))
+(not (LYING-ON-T-75-58))
+)
+)
+(:action STAND-UP-T-80-56-T-79-56-T-78-56-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(STANDING-ON-T-78-56)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action STAND-UP-T-81-56-T-80-56-T-79-56-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-81-56)
+)
+:effect
+(and
+(STANDING-ON-T-79-56)
+(not (LYING-ON-T-81-56))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action STAND-UP-T-81-57-T-80-57-T-79-57-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-81-57)
+)
+:effect
+(and
+(STANDING-ON-T-79-57)
+(not (LYING-ON-T-81-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action STAND-UP-T-81-58-T-80-58-T-79-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-81-58)
+)
+:effect
+(and
+(STANDING-ON-T-79-58)
+(not (LYING-ON-T-81-58))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action LAY-DOWN-T-78-56-T-78-57-T-78-58-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-56)
+)
+:effect
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-78-57)
+(not (STANDING-ON-T-78-56))
+)
+)
+(:action LAY-DOWN-T-79-56-T-79-57-T-79-58-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-79-57)
+(not (STANDING-ON-T-79-56))
+)
+)
+(:action LAY-DOWN-T-80-56-T-80-57-T-80-58-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+(not (STANDING-ON-T-80-56))
+)
+)
+(:action LAY-DOWN-T-75-58-T-76-58-T-77-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-58)
+)
+:effect
+(and
+(LYING-ON-T-77-58)
+(LYING-ON-T-76-58)
+(not (STANDING-ON-T-75-58))
+)
+)
+(:action LAY-DOWN-T-76-58-T-77-58-T-78-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-76-58)
+)
+:effect
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-77-58)
+(not (STANDING-ON-T-76-58))
+)
+)
+(:action LAY-DOWN-T-77-58-T-78-58-T-79-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-77-58)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-78-58)
+(not (STANDING-ON-T-77-58))
+)
+)
+(:action LAY-DOWN-T-78-56-T-79-56-T-80-56-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-56)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-79-56)
+(not (STANDING-ON-T-78-56))
+)
+)
+(:action LAY-DOWN-T-79-56-T-80-56-T-81-56-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-80-56)
+(not (STANDING-ON-T-79-56))
+)
+)
+(:action LAY-DOWN-T-79-58-T-80-58-T-81-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-80-58)
+(not (STANDING-ON-T-79-58))
+)
+)
+(:action LAY-DOWN-T-79-58-T-79-57-T-79-56-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+(not (STANDING-ON-T-79-58))
+)
+)
+(:action LAY-DOWN-T-80-58-T-80-57-T-80-56-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-80-57)
+(not (STANDING-ON-T-80-58))
+)
+)
+(:action LAY-DOWN-T-81-58-T-81-57-T-81-56-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-81-58)
+)
+:effect
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-81-57)
+(not (STANDING-ON-T-81-58))
+)
+)
+(:action LAY-DOWN-T-75-58-T-74-58-T-73-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-58)
+)
+:effect
+(and
+(LYING-ON-T-73-58)
+(LYING-ON-T-74-58)
+(not (STANDING-ON-T-75-58))
+)
+)
+(:action LAY-DOWN-T-76-58-T-75-58-T-74-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-76-58)
+)
+:effect
+(and
+(LYING-ON-T-74-58)
+(LYING-ON-T-75-58)
+(not (STANDING-ON-T-76-58))
+)
+)
+(:action LAY-DOWN-T-77-58-T-76-58-T-75-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-77-58)
+)
+:effect
+(and
+(LYING-ON-T-75-58)
+(LYING-ON-T-76-58)
+(not (STANDING-ON-T-77-58))
+)
+)
+(:action LAY-DOWN-T-79-58-T-78-58-T-77-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-77-58)
+(LYING-ON-T-78-58)
+(not (STANDING-ON-T-79-58))
+)
+)
+(:action LAY-DOWN-T-80-56-T-79-56-T-78-56-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-79-56)
+(not (STANDING-ON-T-80-56))
+)
+)
+(:action LAY-DOWN-T-80-57-T-79-57-T-78-57-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-79-57)
+(not (STANDING-ON-T-80-57))
+)
+)
+(:action LAY-DOWN-T-80-58-T-79-58-T-78-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-79-58)
+(not (STANDING-ON-T-80-58))
+)
+)
+(:action LAY-DOWN-T-81-57-T-80-57-T-79-57-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-81-57)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+(not (STANDING-ON-T-81-57))
+)
+)
+(:action LAY-DOWN-T-81-58-T-80-58-T-79-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-81-58)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-80-58)
+(not (STANDING-ON-T-81-58))
+)
+)
+(:action ROLL-T-80-56-T-79-56-T-80-57-T-79-57-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action ROLL-T-80-57-T-79-57-T-80-58-T-79-58-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-79-58)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-79-56-T-80-56-T-79-57-T-80-57-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action ROLL-T-81-56-T-80-56-T-81-57-T-80-57-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-81-56)
+)
+:effect
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-81-56))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action ROLL-T-79-57-T-80-57-T-79-58-T-80-58-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-80-58)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-81-57-T-80-57-T-81-58-T-80-58-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-81-57)
+)
+:effect
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-80-58)
+(not (LYING-ON-T-81-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-80-56-T-81-56-T-80-57-T-81-57-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-81-57)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-81-56))
+)
+)
+(:action ROLL-T-80-57-T-81-57-T-80-58-T-81-58-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-81-58)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-81-57))
+)
+)
+(:action ROLL-T-78-58-T-78-57-T-79-58-T-79-57-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-58)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-78-58))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action ROLL-T-78-57-T-78-58-T-79-57-T-79-58-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-58)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-78-58))
+)
+)
+(:action ROLL-T-79-57-T-79-56-T-80-57-T-80-56-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-56)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action ROLL-T-79-56-T-79-57-T-80-56-T-80-57-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-79-58-T-79-57-T-80-58-T-80-57-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-79-57-T-79-58-T-80-57-T-80-58-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-58)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action ROLL-T-80-57-T-80-56-T-81-57-T-81-56-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-56)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-80-56))
+)
+)
+(:action ROLL-T-80-56-T-80-57-T-81-56-T-81-57-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-56)
+)
+:effect
+(and
+(LYING-ON-T-81-56)
+(LYING-ON-T-81-57)
+(not (LYING-ON-T-80-56))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-80-58-T-80-57-T-81-58-T-81-57-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-81-58)
+(LYING-ON-T-81-57)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-80-57-T-80-58-T-81-57-T-81-58-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-81-57)
+(LYING-ON-T-81-58)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action ROLL-T-79-57-T-78-57-T-79-56-T-78-56-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-78-56)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action ROLL-T-79-58-T-78-58-T-79-57-T-78-57-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-57)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-78-58))
+)
+)
+(:action ROLL-T-78-57-T-79-57-T-78-56-T-79-56-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-79-56)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-80-57-T-79-57-T-80-56-T-79-56-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-80-56)
+(LYING-ON-T-79-56)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-78-58-T-79-58-T-78-57-T-79-57-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-78-58)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-78-58))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action ROLL-T-80-58-T-79-58-T-80-57-T-79-57-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action ROLL-T-79-57-T-80-57-T-79-56-T-80-56-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-80-56)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-79-58-T-80-58-T-79-57-T-80-57-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action ROLL-T-79-57-T-79-56-T-78-57-T-78-56-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-56)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action ROLL-T-79-56-T-79-57-T-78-56-T-78-57-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-78-57)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-79-58-T-79-57-T-78-58-T-78-57-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-78-57)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-79-57-T-79-58-T-78-57-T-78-58-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-58)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action ROLL-T-80-58-T-80-57-T-79-58-T-79-57-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action ROLL-T-80-57-T-80-58-T-79-57-T-79-58-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-58)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action STAND-UP-T-79-56-T-79-57-T-79-58-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(STANDING-ON-T-79-58)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action STAND-UP-T-76-58-T-77-58-T-78-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-58)
+(LYING-ON-T-76-58)
+)
+:effect
+(and
+(STANDING-ON-T-78-58)
+(not (LYING-ON-T-76-58))
+(not (LYING-ON-T-77-58))
+)
+)
+(:action STAND-UP-T-77-58-T-78-58-T-79-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-77-58)
+)
+:effect
+(and
+(STANDING-ON-T-79-58)
+(not (LYING-ON-T-77-58))
+(not (LYING-ON-T-78-58))
+)
+)
+(:action STAND-UP-T-78-56-T-79-56-T-80-56-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-78-56)
+)
+:effect
+(and
+(STANDING-ON-T-80-56)
+(not (LYING-ON-T-78-56))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action STAND-UP-T-78-57-T-79-57-T-80-57-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(STANDING-ON-T-80-57)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action STAND-UP-T-78-58-T-79-58-T-80-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-78-58)
+)
+:effect
+(and
+(STANDING-ON-T-80-58)
+(not (LYING-ON-T-78-58))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action STAND-UP-T-79-57-T-80-57-T-81-57-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(STANDING-ON-T-81-57)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action STAND-UP-T-79-58-T-80-58-T-81-58-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(STANDING-ON-T-81-58)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-80-58))
+)
+)
+(:action STAND-UP-T-78-58-T-78-57-T-78-56-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-58)
+)
+:effect
+(and
+(STANDING-ON-T-78-56)
+(not (LYING-ON-T-78-58))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action STAND-UP-T-79-58-T-79-57-T-79-56-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(STANDING-ON-T-79-56)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action STAND-UP-T-80-58-T-80-57-T-80-56-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(STANDING-ON-T-80-56)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-80-57))
+)
+)
+(:action STAND-UP-T-77-58-T-76-58-T-75-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-58)
+(LYING-ON-T-77-58)
+)
+:effect
+(and
+(STANDING-ON-T-75-58)
+(not (LYING-ON-T-77-58))
+(not (LYING-ON-T-76-58))
+)
+)
+(:action STAND-UP-T-78-58-T-77-58-T-76-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-58)
+(LYING-ON-T-78-58)
+)
+:effect
+(and
+(STANDING-ON-T-76-58)
+(not (LYING-ON-T-78-58))
+(not (LYING-ON-T-77-58))
+)
+)
+(:action STAND-UP-T-79-58-T-78-58-T-77-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-79-58)
+)
+:effect
+(and
+(STANDING-ON-T-77-58)
+(not (LYING-ON-T-79-58))
+(not (LYING-ON-T-78-58))
+)
+)
+(:action STAND-UP-T-80-57-T-79-57-T-78-57-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-80-57)
+)
+:effect
+(and
+(STANDING-ON-T-78-57)
+(not (LYING-ON-T-80-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action STAND-UP-T-80-58-T-79-58-T-78-58-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-80-58)
+)
+:effect
+(and
+(STANDING-ON-T-78-58)
+(not (LYING-ON-T-80-58))
+(not (LYING-ON-T-79-58))
+)
+)
+(:action LAY-DOWN-T-78-57-T-79-57-T-80-57-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-80-57)
+(LYING-ON-T-79-57)
+(not (STANDING-ON-T-78-57))
+)
+)
+(:action LAY-DOWN-T-78-58-T-79-58-T-80-58-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-58)
+)
+:effect
+(and
+(LYING-ON-T-80-58)
+(LYING-ON-T-79-58)
+(not (STANDING-ON-T-78-58))
+)
+)
+(:action LAY-DOWN-T-78-57-T-78-56-T-78-55-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-78-55)
+(LYING-ON-T-78-56)
+(not (STANDING-ON-T-78-57))
+)
+)
+(:action LAY-DOWN-T-78-58-T-78-57-T-78-56-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-58)
+)
+:effect
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-78-57)
+(not (STANDING-ON-T-78-58))
+)
+)
+(:action LAY-DOWN-T-78-58-T-77-58-T-76-58-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-58)
+)
+:effect
+(and
+(LYING-ON-T-76-58)
+(LYING-ON-T-77-58)
+(not (STANDING-ON-T-78-58))
+)
+)
+(:action ROLL-T-79-56-T-78-56-T-79-57-T-78-57-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-79-56)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-57)
+(not (LYING-ON-T-79-56))
+(not (LYING-ON-T-78-56))
+)
+)
+(:action ROLL-T-79-57-T-78-57-T-79-58-T-78-58-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-79-57)
+)
+:effect
+(and
+(LYING-ON-T-79-58)
+(LYING-ON-T-78-58)
+(not (LYING-ON-T-79-57))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action ROLL-T-78-56-T-79-56-T-78-57-T-79-57-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-78-56)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-78-56))
+(not (LYING-ON-T-79-56))
+)
+)
+(:action ROLL-T-78-57-T-79-57-T-78-58-T-79-58-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-78-58)
+(LYING-ON-T-79-58)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-79-57))
+)
+)
+(:action ROLL-T-78-57-T-78-56-T-79-57-T-79-56-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(LYING-ON-T-79-57)
+(LYING-ON-T-79-56)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-78-56))
+)
+)
+(:action ROLL-T-78-56-T-78-57-T-79-56-T-79-57-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-56)
+)
+:effect
+(and
+(LYING-ON-T-79-56)
+(LYING-ON-T-79-57)
+(not (LYING-ON-T-78-56))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action STAND-UP-T-78-55-T-78-56-T-78-57-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-78-55)
+)
+:effect
+(and
+(STANDING-ON-T-78-57)
+(not (LYING-ON-T-78-55))
+(not (LYING-ON-T-78-56))
+)
+)
+(:action STAND-UP-T-78-56-T-78-57-T-78-58-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-56)
+)
+:effect
+(and
+(STANDING-ON-T-78-58)
+(not (LYING-ON-T-78-56))
+(not (LYING-ON-T-78-57))
+)
+)
+(:action STAND-UP-T-78-57-T-78-56-T-78-55-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-78-56)
+(LYING-ON-T-78-57)
+)
+:effect
+(and
+(STANDING-ON-T-78-55)
+(not (LYING-ON-T-78-57))
+(not (LYING-ON-T-78-56))
+)
+)
+(:action STAND-UP-T-78-55-T-77-55-T-76-55-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-78-55)
+)
+:effect
+(and
+(STANDING-ON-T-76-55)
+(not (LYING-ON-T-78-55))
+(not (LYING-ON-T-77-55))
+)
+)
+(:action LAY-DOWN-T-76-53-T-76-54-T-76-55-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-76-53)
+)
+:effect
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-76-54)
+(not (STANDING-ON-T-76-53))
+)
+)
+(:action LAY-DOWN-T-78-55-T-78-56-T-78-57-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-55)
+)
+:effect
+(and
+(LYING-ON-T-78-57)
+(LYING-ON-T-78-56)
+(not (STANDING-ON-T-78-55))
+)
+)
+(:action LAY-DOWN-T-76-55-T-77-55-T-78-55-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-76-55)
+)
+:effect
+(and
+(LYING-ON-T-78-55)
+(LYING-ON-T-77-55)
+(not (STANDING-ON-T-76-55))
+)
+)
+(:action LAY-DOWN-T-76-55-T-76-54-T-76-53-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-76-55)
+)
+:effect
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-76-54)
+(not (STANDING-ON-T-76-55))
+)
+)
+(:action LAY-DOWN-T-77-55-T-77-54-T-77-53-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-77-55)
+)
+:effect
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-77-54)
+(not (STANDING-ON-T-77-55))
+)
+)
+(:action LAY-DOWN-T-78-55-T-77-55-T-76-55-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-78-55)
+)
+:effect
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-77-55)
+(not (STANDING-ON-T-78-55))
+)
+)
+(:action ROLL-T-76-54-T-77-54-T-76-55-T-77-55-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-76-54)
+)
+:effect
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-77-55)
+(not (LYING-ON-T-76-54))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action ROLL-T-76-54-T-76-53-T-77-54-T-77-53-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-76-54)
+)
+:effect
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-53)
+(not (LYING-ON-T-76-54))
+(not (LYING-ON-T-76-53))
+)
+)
+(:action ROLL-T-76-53-T-76-54-T-77-53-T-77-54-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-53)
+)
+:effect
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-77-54)
+(not (LYING-ON-T-76-53))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action ROLL-T-76-55-T-76-54-T-77-55-T-77-54-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-55)
+)
+:effect
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-77-54)
+(not (LYING-ON-T-76-55))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action ROLL-T-76-54-T-76-55-T-77-54-T-77-55-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-76-54)
+)
+:effect
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-55)
+(not (LYING-ON-T-76-54))
+(not (LYING-ON-T-76-55))
+)
+)
+(:action ROLL-T-77-54-T-76-54-T-77-53-T-76-53-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-77-54)
+)
+:effect
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-76-53)
+(not (LYING-ON-T-77-54))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action ROLL-T-77-55-T-76-55-T-77-54-T-76-54-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-77-55)
+)
+:effect
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-76-54)
+(not (LYING-ON-T-77-55))
+(not (LYING-ON-T-76-55))
+)
+)
+(:action ROLL-T-76-54-T-77-54-T-76-53-T-77-53-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-76-54)
+)
+:effect
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-77-53)
+(not (LYING-ON-T-76-54))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action ROLL-T-76-55-T-77-55-T-76-54-T-77-54-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-76-55)
+)
+:effect
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-77-54)
+(not (LYING-ON-T-76-55))
+(not (LYING-ON-T-77-55))
+)
+)
+(:action ROLL-T-77-54-T-77-53-T-76-54-T-76-53-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-77-54)
+)
+:effect
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-53)
+(not (LYING-ON-T-77-54))
+(not (LYING-ON-T-77-53))
+)
+)
+(:action ROLL-T-77-53-T-77-54-T-76-53-T-76-54-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-53)
+)
+:effect
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-76-54)
+(not (LYING-ON-T-77-53))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action ROLL-T-77-55-T-77-54-T-76-55-T-76-54-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-55)
+)
+:effect
+(and
+(LYING-ON-T-76-55)
+(LYING-ON-T-76-54)
+(not (LYING-ON-T-77-55))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action ROLL-T-77-54-T-77-55-T-76-54-T-76-55-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-77-54)
+)
+:effect
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-55)
+(not (LYING-ON-T-77-54))
+(not (LYING-ON-T-77-55))
+)
+)
+(:action STAND-UP-T-76-53-T-76-54-T-76-55-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-53)
+)
+:effect
+(and
+(STANDING-ON-T-76-55)
+(not (LYING-ON-T-76-53))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action STAND-UP-T-77-53-T-77-54-T-77-55-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-53)
+)
+:effect
+(and
+(STANDING-ON-T-77-55)
+(not (LYING-ON-T-77-53))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action STAND-UP-T-76-55-T-77-55-T-78-55-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-76-55)
+)
+:effect
+(and
+(STANDING-ON-T-78-55)
+(not (LYING-ON-T-76-55))
+(not (LYING-ON-T-77-55))
+)
+)
+(:action STAND-UP-T-76-55-T-76-54-T-76-53-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-76-55)
+)
+:effect
+(and
+(STANDING-ON-T-76-53)
+(not (LYING-ON-T-76-55))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action STAND-UP-T-77-55-T-77-54-T-77-53-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-77-55)
+)
+:effect
+(and
+(STANDING-ON-T-77-53)
+(not (LYING-ON-T-77-55))
+(not (LYING-ON-T-77-54))
+)
+)
+(:action LAY-DOWN-T-77-53-T-77-54-T-77-55-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-77-53)
+)
+:effect
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-77-54)
+(not (STANDING-ON-T-77-53))
+)
+)
+(:action LAY-DOWN-T-77-53-T-76-53-T-75-53-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-77-53)
+)
+:effect
+(and
+(LYING-ON-T-75-53)
+(LYING-ON-T-76-53)
+(not (STANDING-ON-T-77-53))
+)
+)
+(:action ROLL-T-77-53-T-76-53-T-77-54-T-76-54-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-77-53)
+)
+:effect
+(and
+(LYING-ON-T-77-54)
+(LYING-ON-T-76-54)
+(not (LYING-ON-T-77-53))
+(not (LYING-ON-T-76-53))
+)
+)
+(:action ROLL-T-77-54-T-76-54-T-77-55-T-76-55-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-77-54)
+)
+:effect
+(and
+(LYING-ON-T-77-55)
+(LYING-ON-T-76-55)
+(not (LYING-ON-T-77-54))
+(not (LYING-ON-T-76-54))
+)
+)
+(:action ROLL-T-76-53-T-77-53-T-76-54-T-77-54-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-76-53)
+)
+:effect
+(and
+(LYING-ON-T-76-54)
+(LYING-ON-T-77-54)
+(not (LYING-ON-T-76-53))
+(not (LYING-ON-T-77-53))
+)
+)
+(:action STAND-UP-T-75-53-T-76-53-T-77-53-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-75-53)
+)
+:effect
+(and
+(STANDING-ON-T-77-53)
+(not (LYING-ON-T-75-53))
+(not (LYING-ON-T-76-53))
+)
+)
+(:action STAND-UP-T-77-53-T-76-53-T-75-53-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-76-53)
+(LYING-ON-T-77-53)
+)
+:effect
+(and
+(STANDING-ON-T-75-53)
+(not (LYING-ON-T-77-53))
+(not (LYING-ON-T-76-53))
+)
+)
+(:action LAY-DOWN-T-73-51-T-74-51-T-75-51-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-51)
+)
+:effect
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-74-51)
+(not (STANDING-ON-T-73-51))
+)
+)
+(:action LAY-DOWN-T-75-53-T-76-53-T-77-53-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-53)
+)
+:effect
+(and
+(LYING-ON-T-77-53)
+(LYING-ON-T-76-53)
+(not (STANDING-ON-T-75-53))
+)
+)
+(:action LAY-DOWN-T-75-53-T-75-52-T-75-51-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-53)
+)
+:effect
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-75-52)
+(not (STANDING-ON-T-75-53))
+)
+)
+(:action ROLL-T-75-52-T-75-51-T-74-52-T-74-51-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-75-52)
+)
+:effect
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-74-51)
+(not (LYING-ON-T-75-52))
+(not (LYING-ON-T-75-51))
+)
+)
+(:action ROLL-T-75-51-T-75-52-T-74-51-T-74-52-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-75-51)
+)
+:effect
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-74-52)
+(not (LYING-ON-T-75-51))
+(not (LYING-ON-T-75-52))
+)
+)
+(:action STAND-UP-T-75-51-T-75-52-T-75-53-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-75-51)
+)
+:effect
+(and
+(STANDING-ON-T-75-53)
+(not (LYING-ON-T-75-51))
+(not (LYING-ON-T-75-52))
+)
+)
+(:action STAND-UP-T-75-53-T-75-52-T-75-51-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-75-53)
+)
+:effect
+(and
+(STANDING-ON-T-75-51)
+(not (LYING-ON-T-75-53))
+(not (LYING-ON-T-75-52))
+)
+)
+(:action STAND-UP-T-75-51-T-74-51-T-73-51-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-75-51)
+)
+:effect
+(and
+(STANDING-ON-T-73-51)
+(not (LYING-ON-T-75-51))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action LAY-DOWN-T-75-51-T-75-52-T-75-53-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-51)
+)
+:effect
+(and
+(LYING-ON-T-75-53)
+(LYING-ON-T-75-52)
+(not (STANDING-ON-T-75-51))
+)
+)
+(:action LAY-DOWN-T-75-51-T-74-51-T-73-51-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-51)
+)
+:effect
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-74-51)
+(not (STANDING-ON-T-75-51))
+)
+)
+(:action LAY-DOWN-T-75-52-T-74-52-T-73-52-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-75-52)
+)
+:effect
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-74-52)
+(not (STANDING-ON-T-75-52))
+)
+)
+(:action ROLL-T-75-51-T-74-51-T-75-52-T-74-52-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-75-51)
+)
+:effect
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-74-52)
+(not (LYING-ON-T-75-51))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action ROLL-T-74-51-T-75-51-T-74-52-T-75-52-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-74-51)
+)
+:effect
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-75-52)
+(not (LYING-ON-T-74-51))
+(not (LYING-ON-T-75-51))
+)
+)
+(:action ROLL-T-74-52-T-74-51-T-75-52-T-75-51-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-74-52)
+)
+:effect
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-75-51)
+(not (LYING-ON-T-74-52))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action ROLL-T-74-51-T-74-52-T-75-51-T-75-52-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-74-51)
+)
+:effect
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-75-52)
+(not (LYING-ON-T-74-51))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action ROLL-T-74-52-T-73-52-T-74-51-T-73-51-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-74-52)
+)
+:effect
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-73-51)
+(not (LYING-ON-T-74-52))
+(not (LYING-ON-T-73-52))
+)
+)
+(:action ROLL-T-73-52-T-74-52-T-73-51-T-74-51-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-73-52)
+)
+:effect
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-74-51)
+(not (LYING-ON-T-73-52))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action ROLL-T-75-52-T-74-52-T-75-51-T-74-51-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-75-52)
+)
+:effect
+(and
+(LYING-ON-T-75-51)
+(LYING-ON-T-74-51)
+(not (LYING-ON-T-75-52))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action ROLL-T-74-52-T-75-52-T-74-51-T-75-51-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-74-52)
+)
+:effect
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-75-51)
+(not (LYING-ON-T-74-52))
+(not (LYING-ON-T-75-52))
+)
+)
+(:action ROLL-T-74-52-T-74-51-T-73-52-T-73-51-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-74-52)
+)
+:effect
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-73-51)
+(not (LYING-ON-T-74-52))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action ROLL-T-74-51-T-74-52-T-73-51-T-73-52-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-74-51)
+)
+:effect
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-73-52)
+(not (LYING-ON-T-74-51))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action STAND-UP-T-73-51-T-74-51-T-75-51-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-73-51)
+)
+:effect
+(and
+(STANDING-ON-T-75-51)
+(not (LYING-ON-T-73-51))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action STAND-UP-T-73-52-T-74-52-T-75-52-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-73-52)
+)
+:effect
+(and
+(STANDING-ON-T-75-52)
+(not (LYING-ON-T-73-52))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action STAND-UP-T-75-52-T-74-52-T-73-52-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-75-52)
+)
+:effect
+(and
+(STANDING-ON-T-73-52)
+(not (LYING-ON-T-75-52))
+(not (LYING-ON-T-74-52))
+)
+)
+(:action LAY-DOWN-T-73-52-T-74-52-T-75-52-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-52)
+)
+:effect
+(and
+(LYING-ON-T-75-52)
+(LYING-ON-T-74-52)
+(not (STANDING-ON-T-73-52))
+)
+)
+(:action LAY-DOWN-T-73-52-T-73-51-T-73-50-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-52)
+)
+:effect
+(and
+(LYING-ON-T-73-50)
+(LYING-ON-T-73-51)
+(not (STANDING-ON-T-73-52))
+)
+)
+(:action ROLL-T-74-51-T-73-51-T-74-52-T-73-52-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-74-51)
+)
+:effect
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-73-52)
+(not (LYING-ON-T-74-51))
+(not (LYING-ON-T-73-51))
+)
+)
+(:action ROLL-T-73-51-T-74-51-T-73-52-T-74-52-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-73-51)
+)
+:effect
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-74-52)
+(not (LYING-ON-T-73-51))
+(not (LYING-ON-T-74-51))
+)
+)
+(:action ROLL-T-73-52-T-73-51-T-74-52-T-74-51-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-73-52)
+)
+:effect
+(and
+(LYING-ON-T-74-52)
+(LYING-ON-T-74-51)
+(not (LYING-ON-T-73-52))
+(not (LYING-ON-T-73-51))
+)
+)
+(:action ROLL-T-73-51-T-73-52-T-74-51-T-74-52-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-73-51)
+)
+:effect
+(and
+(LYING-ON-T-74-51)
+(LYING-ON-T-74-52)
+(not (LYING-ON-T-73-51))
+(not (LYING-ON-T-73-52))
+)
+)
+(:action STAND-UP-T-73-50-T-73-51-T-73-52-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-73-50)
+)
+:effect
+(and
+(STANDING-ON-T-73-52)
+(not (LYING-ON-T-73-50))
+(not (LYING-ON-T-73-51))
+)
+)
+(:action STAND-UP-T-73-52-T-73-51-T-73-50-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-73-51)
+(LYING-ON-T-73-52)
+)
+:effect
+(and
+(STANDING-ON-T-73-50)
+(not (LYING-ON-T-73-52))
+(not (LYING-ON-T-73-51))
+)
+)
+(:action STAND-UP-T-73-50-T-72-50-T-71-50-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-73-50)
+)
+:effect
+(and
+(STANDING-ON-T-71-50)
+(not (LYING-ON-T-73-50))
+(not (LYING-ON-T-72-50))
+)
+)
+(:action LAY-DOWN-T-71-48-T-71-49-T-71-50-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-71-48)
+)
+:effect
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-71-49)
+(not (STANDING-ON-T-71-48))
+)
+)
+(:action LAY-DOWN-T-73-50-T-73-51-T-73-52-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-50)
+)
+:effect
+(and
+(LYING-ON-T-73-52)
+(LYING-ON-T-73-51)
+(not (STANDING-ON-T-73-50))
+)
+)
+(:action LAY-DOWN-T-71-50-T-72-50-T-73-50-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-71-50)
+)
+:effect
+(and
+(LYING-ON-T-73-50)
+(LYING-ON-T-72-50)
+(not (STANDING-ON-T-71-50))
+)
+)
+(:action LAY-DOWN-T-71-50-T-71-49-T-71-48-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-71-50)
+)
+:effect
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-71-49)
+(not (STANDING-ON-T-71-50))
+)
+)
+(:action LAY-DOWN-T-72-50-T-72-49-T-72-48-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-72-50)
+)
+:effect
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-72-49)
+(not (STANDING-ON-T-72-50))
+)
+)
+(:action LAY-DOWN-T-73-50-T-72-50-T-71-50-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-73-50)
+)
+:effect
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-72-50)
+(not (STANDING-ON-T-73-50))
+)
+)
+(:action ROLL-T-71-49-T-72-49-T-71-50-T-72-50-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-71-49)
+)
+:effect
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-72-50)
+(not (LYING-ON-T-71-49))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action ROLL-T-71-49-T-71-48-T-72-49-T-72-48-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-71-49)
+)
+:effect
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-48)
+(not (LYING-ON-T-71-49))
+(not (LYING-ON-T-71-48))
+)
+)
+(:action ROLL-T-71-48-T-71-49-T-72-48-T-72-49-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-48)
+)
+:effect
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-72-49)
+(not (LYING-ON-T-71-48))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action ROLL-T-71-50-T-71-49-T-72-50-T-72-49-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-50)
+)
+:effect
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-72-49)
+(not (LYING-ON-T-71-50))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action ROLL-T-71-49-T-71-50-T-72-49-T-72-50-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-71-49)
+)
+:effect
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-50)
+(not (LYING-ON-T-71-49))
+(not (LYING-ON-T-71-50))
+)
+)
+(:action ROLL-T-72-49-T-71-49-T-72-48-T-71-48-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-72-49)
+)
+:effect
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-71-48)
+(not (LYING-ON-T-72-49))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action ROLL-T-72-50-T-71-50-T-72-49-T-71-49-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-72-50)
+)
+:effect
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-71-49)
+(not (LYING-ON-T-72-50))
+(not (LYING-ON-T-71-50))
+)
+)
+(:action ROLL-T-71-49-T-72-49-T-71-48-T-72-48-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-71-49)
+)
+:effect
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-72-48)
+(not (LYING-ON-T-71-49))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action ROLL-T-71-50-T-72-50-T-71-49-T-72-49-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-71-50)
+)
+:effect
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-72-49)
+(not (LYING-ON-T-71-50))
+(not (LYING-ON-T-72-50))
+)
+)
+(:action ROLL-T-72-49-T-72-48-T-71-49-T-71-48-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-72-49)
+)
+:effect
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-48)
+(not (LYING-ON-T-72-49))
+(not (LYING-ON-T-72-48))
+)
+)
+(:action ROLL-T-72-48-T-72-49-T-71-48-T-71-49-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-48)
+)
+:effect
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-71-49)
+(not (LYING-ON-T-72-48))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action ROLL-T-72-50-T-72-49-T-71-50-T-71-49-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-50)
+)
+:effect
+(and
+(LYING-ON-T-71-50)
+(LYING-ON-T-71-49)
+(not (LYING-ON-T-72-50))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action ROLL-T-72-49-T-72-50-T-71-49-T-71-50-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-72-49)
+)
+:effect
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-50)
+(not (LYING-ON-T-72-49))
+(not (LYING-ON-T-72-50))
+)
+)
+(:action STAND-UP-T-71-48-T-71-49-T-71-50-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-48)
+)
+:effect
+(and
+(STANDING-ON-T-71-50)
+(not (LYING-ON-T-71-48))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action STAND-UP-T-72-48-T-72-49-T-72-50-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-48)
+)
+:effect
+(and
+(STANDING-ON-T-72-50)
+(not (LYING-ON-T-72-48))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action STAND-UP-T-71-50-T-72-50-T-73-50-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-71-50)
+)
+:effect
+(and
+(STANDING-ON-T-73-50)
+(not (LYING-ON-T-71-50))
+(not (LYING-ON-T-72-50))
+)
+)
+(:action STAND-UP-T-71-50-T-71-49-T-71-48-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-71-50)
+)
+:effect
+(and
+(STANDING-ON-T-71-48)
+(not (LYING-ON-T-71-50))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action STAND-UP-T-72-50-T-72-49-T-72-48-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-72-50)
+)
+:effect
+(and
+(STANDING-ON-T-72-48)
+(not (LYING-ON-T-72-50))
+(not (LYING-ON-T-72-49))
+)
+)
+(:action LAY-DOWN-T-72-48-T-72-49-T-72-50-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-72-48)
+)
+:effect
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-72-49)
+(not (STANDING-ON-T-72-48))
+)
+)
+(:action LAY-DOWN-T-72-48-T-71-48-T-70-48-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-72-48)
+)
+:effect
+(and
+(LYING-ON-T-70-48)
+(LYING-ON-T-71-48)
+(not (STANDING-ON-T-72-48))
+)
+)
+(:action ROLL-T-72-48-T-71-48-T-72-49-T-71-49-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-72-48)
+)
+:effect
+(and
+(LYING-ON-T-72-49)
+(LYING-ON-T-71-49)
+(not (LYING-ON-T-72-48))
+(not (LYING-ON-T-71-48))
+)
+)
+(:action ROLL-T-72-49-T-71-49-T-72-50-T-71-50-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-72-49)
+)
+:effect
+(and
+(LYING-ON-T-72-50)
+(LYING-ON-T-71-50)
+(not (LYING-ON-T-72-49))
+(not (LYING-ON-T-71-49))
+)
+)
+(:action ROLL-T-71-48-T-72-48-T-71-49-T-72-49-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-71-48)
+)
+:effect
+(and
+(LYING-ON-T-71-49)
+(LYING-ON-T-72-49)
+(not (LYING-ON-T-71-48))
+(not (LYING-ON-T-72-48))
+)
+)
+(:action STAND-UP-T-70-48-T-71-48-T-72-48-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-70-48)
+)
+:effect
+(and
+(STANDING-ON-T-72-48)
+(not (LYING-ON-T-70-48))
+(not (LYING-ON-T-71-48))
+)
+)
+(:action STAND-UP-T-72-48-T-71-48-T-70-48-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-71-48)
+(LYING-ON-T-72-48)
+)
+:effect
+(and
+(STANDING-ON-T-70-48)
+(not (LYING-ON-T-72-48))
+(not (LYING-ON-T-71-48))
+)
+)
+(:action LAY-DOWN-T-68-46-T-69-46-T-70-46-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-46)
+)
+:effect
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-69-46)
+(not (STANDING-ON-T-68-46))
+)
+)
+(:action LAY-DOWN-T-70-48-T-71-48-T-72-48-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-48)
+)
+:effect
+(and
+(LYING-ON-T-72-48)
+(LYING-ON-T-71-48)
+(not (STANDING-ON-T-70-48))
+)
+)
+(:action LAY-DOWN-T-70-48-T-70-47-T-70-46-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-48)
+)
+:effect
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-70-47)
+(not (STANDING-ON-T-70-48))
+)
+)
+(:action ROLL-T-70-47-T-70-46-T-69-47-T-69-46-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-70-47)
+)
+:effect
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-69-46)
+(not (LYING-ON-T-70-47))
+(not (LYING-ON-T-70-46))
+)
+)
+(:action ROLL-T-70-46-T-70-47-T-69-46-T-69-47-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-70-46)
+)
+:effect
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-69-47)
+(not (LYING-ON-T-70-46))
+(not (LYING-ON-T-70-47))
+)
+)
+(:action STAND-UP-T-70-46-T-70-47-T-70-48-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-70-46)
+)
+:effect
+(and
+(STANDING-ON-T-70-48)
+(not (LYING-ON-T-70-46))
+(not (LYING-ON-T-70-47))
+)
+)
+(:action STAND-UP-T-70-48-T-70-47-T-70-46-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-70-48)
+)
+:effect
+(and
+(STANDING-ON-T-70-46)
+(not (LYING-ON-T-70-48))
+(not (LYING-ON-T-70-47))
+)
+)
+(:action STAND-UP-T-70-46-T-69-46-T-68-46-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-70-46)
+)
+:effect
+(and
+(STANDING-ON-T-68-46)
+(not (LYING-ON-T-70-46))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action LAY-DOWN-T-70-46-T-70-47-T-70-48-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-46)
+)
+:effect
+(and
+(LYING-ON-T-70-48)
+(LYING-ON-T-70-47)
+(not (STANDING-ON-T-70-46))
+)
+)
+(:action LAY-DOWN-T-70-46-T-69-46-T-68-46-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-46)
+)
+:effect
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-69-46)
+(not (STANDING-ON-T-70-46))
+)
+)
+(:action LAY-DOWN-T-70-47-T-69-47-T-68-47-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-70-47)
+)
+:effect
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-69-47)
+(not (STANDING-ON-T-70-47))
+)
+)
+(:action ROLL-T-70-46-T-69-46-T-70-47-T-69-47-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-70-46)
+)
+:effect
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-69-47)
+(not (LYING-ON-T-70-46))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action ROLL-T-69-46-T-70-46-T-69-47-T-70-47-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-69-46)
+)
+:effect
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-70-47)
+(not (LYING-ON-T-69-46))
+(not (LYING-ON-T-70-46))
+)
+)
+(:action ROLL-T-69-47-T-69-46-T-70-47-T-70-46-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-69-47)
+)
+:effect
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-70-46)
+(not (LYING-ON-T-69-47))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action ROLL-T-69-46-T-69-47-T-70-46-T-70-47-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-69-46)
+)
+:effect
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-70-47)
+(not (LYING-ON-T-69-46))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action ROLL-T-69-47-T-68-47-T-69-46-T-68-46-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-69-47)
+)
+:effect
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-68-46)
+(not (LYING-ON-T-69-47))
+(not (LYING-ON-T-68-47))
+)
+)
+(:action ROLL-T-68-47-T-69-47-T-68-46-T-69-46-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-68-47)
+)
+:effect
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-69-46)
+(not (LYING-ON-T-68-47))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action ROLL-T-70-47-T-69-47-T-70-46-T-69-46-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-70-47)
+)
+:effect
+(and
+(LYING-ON-T-70-46)
+(LYING-ON-T-69-46)
+(not (LYING-ON-T-70-47))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action ROLL-T-69-47-T-70-47-T-69-46-T-70-46-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-69-47)
+)
+:effect
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-70-46)
+(not (LYING-ON-T-69-47))
+(not (LYING-ON-T-70-47))
+)
+)
+(:action ROLL-T-69-47-T-69-46-T-68-47-T-68-46-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-69-47)
+)
+:effect
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-68-46)
+(not (LYING-ON-T-69-47))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action ROLL-T-69-46-T-69-47-T-68-46-T-68-47-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-69-46)
+)
+:effect
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-68-47)
+(not (LYING-ON-T-69-46))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action STAND-UP-T-68-46-T-69-46-T-70-46-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-68-46)
+)
+:effect
+(and
+(STANDING-ON-T-70-46)
+(not (LYING-ON-T-68-46))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action STAND-UP-T-68-47-T-69-47-T-70-47-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-68-47)
+)
+:effect
+(and
+(STANDING-ON-T-70-47)
+(not (LYING-ON-T-68-47))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action STAND-UP-T-70-47-T-69-47-T-68-47-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-70-47)
+)
+:effect
+(and
+(STANDING-ON-T-68-47)
+(not (LYING-ON-T-70-47))
+(not (LYING-ON-T-69-47))
+)
+)
+(:action LAY-DOWN-T-68-47-T-69-47-T-70-47-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-47)
+)
+:effect
+(and
+(LYING-ON-T-70-47)
+(LYING-ON-T-69-47)
+(not (STANDING-ON-T-68-47))
+)
+)
+(:action LAY-DOWN-T-68-47-T-68-46-T-68-45-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-47)
+)
+:effect
+(and
+(LYING-ON-T-68-45)
+(LYING-ON-T-68-46)
+(not (STANDING-ON-T-68-47))
+)
+)
+(:action ROLL-T-69-46-T-68-46-T-69-47-T-68-47-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-69-46)
+)
+:effect
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-68-47)
+(not (LYING-ON-T-69-46))
+(not (LYING-ON-T-68-46))
+)
+)
+(:action ROLL-T-68-46-T-69-46-T-68-47-T-69-47-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-68-46)
+)
+:effect
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-69-47)
+(not (LYING-ON-T-68-46))
+(not (LYING-ON-T-69-46))
+)
+)
+(:action ROLL-T-68-47-T-68-46-T-69-47-T-69-46-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-68-47)
+)
+:effect
+(and
+(LYING-ON-T-69-47)
+(LYING-ON-T-69-46)
+(not (LYING-ON-T-68-47))
+(not (LYING-ON-T-68-46))
+)
+)
+(:action ROLL-T-68-46-T-68-47-T-69-46-T-69-47-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-68-46)
+)
+:effect
+(and
+(LYING-ON-T-69-46)
+(LYING-ON-T-69-47)
+(not (LYING-ON-T-68-46))
+(not (LYING-ON-T-68-47))
+)
+)
+(:action STAND-UP-T-68-45-T-68-46-T-68-47-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-68-45)
+)
+:effect
+(and
+(STANDING-ON-T-68-47)
+(not (LYING-ON-T-68-45))
+(not (LYING-ON-T-68-46))
+)
+)
+(:action STAND-UP-T-68-47-T-68-46-T-68-45-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-68-46)
+(LYING-ON-T-68-47)
+)
+:effect
+(and
+(STANDING-ON-T-68-45)
+(not (LYING-ON-T-68-47))
+(not (LYING-ON-T-68-46))
+)
+)
+(:action LAY-DOWN-T-68-45-T-68-46-T-68-47-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-45)
+)
+:effect
+(and
+(LYING-ON-T-68-47)
+(LYING-ON-T-68-46)
+(not (STANDING-ON-T-68-45))
+)
+)
+(:action LAY-DOWN-T-68-45-T-67-45-T-66-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-68-45)
+)
+:effect
+(and
+(LYING-ON-T-66-45)
+(LYING-ON-T-67-45)
+(not (STANDING-ON-T-68-45))
+)
+)
+(:action STAND-UP-T-66-45-T-67-45-T-68-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-67-45)
+(LYING-ON-T-66-45)
+)
+:effect
+(and
+(STANDING-ON-T-68-45)
+(not (LYING-ON-T-66-45))
+(not (LYING-ON-T-67-45))
+)
+)
+(:action STAND-UP-T-67-45-T-66-45-T-65-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-66-45)
+(LYING-ON-T-67-45)
+)
+:effect
+(and
+(STANDING-ON-T-65-45)
+(not (LYING-ON-T-67-45))
+(not (LYING-ON-T-66-45))
+)
+)
+(:action STAND-UP-T-68-45-T-67-45-T-66-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-67-45)
+(LYING-ON-T-68-45)
+)
+:effect
+(and
+(STANDING-ON-T-66-45)
+(not (LYING-ON-T-68-45))
+(not (LYING-ON-T-67-45))
+)
+)
+(:action LAY-DOWN-T-65-45-T-66-45-T-67-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-65-45)
+)
+:effect
+(and
+(LYING-ON-T-67-45)
+(LYING-ON-T-66-45)
+(not (STANDING-ON-T-65-45))
+)
+)
+(:action LAY-DOWN-T-66-45-T-67-45-T-68-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-66-45)
+)
+:effect
+(and
+(LYING-ON-T-68-45)
+(LYING-ON-T-67-45)
+(not (STANDING-ON-T-66-45))
+)
+)
+(:action LAY-DOWN-T-65-45-T-64-45-T-63-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-65-45)
+)
+:effect
+(and
+(LYING-ON-T-63-45)
+(LYING-ON-T-64-45)
+(not (STANDING-ON-T-65-45))
+)
+)
+(:action LAY-DOWN-T-66-45-T-65-45-T-64-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-66-45)
+)
+:effect
+(and
+(LYING-ON-T-64-45)
+(LYING-ON-T-65-45)
+(not (STANDING-ON-T-66-45))
+)
+)
+(:action LAY-DOWN-T-67-45-T-66-45-T-65-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-67-45)
+)
+:effect
+(and
+(LYING-ON-T-65-45)
+(LYING-ON-T-66-45)
+(not (STANDING-ON-T-67-45))
+)
+)
+(:action STAND-UP-T-63-45-T-64-45-T-65-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-64-45)
+(LYING-ON-T-63-45)
+)
+:effect
+(and
+(STANDING-ON-T-65-45)
+(not (LYING-ON-T-63-45))
+(not (LYING-ON-T-64-45))
+)
+)
+(:action STAND-UP-T-64-45-T-65-45-T-66-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-65-45)
+(LYING-ON-T-64-45)
+)
+:effect
+(and
+(STANDING-ON-T-66-45)
+(not (LYING-ON-T-64-45))
+(not (LYING-ON-T-65-45))
+)
+)
+(:action STAND-UP-T-65-45-T-66-45-T-67-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-66-45)
+(LYING-ON-T-65-45)
+)
+:effect
+(and
+(STANDING-ON-T-67-45)
+(not (LYING-ON-T-65-45))
+(not (LYING-ON-T-66-45))
+)
+)
+(:action STAND-UP-T-64-45-T-63-45-T-62-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-63-45)
+(LYING-ON-T-64-45)
+)
+:effect
+(and
+(STANDING-ON-T-62-45)
+(not (LYING-ON-T-64-45))
+(not (LYING-ON-T-63-45))
+)
+)
+(:action STAND-UP-T-65-45-T-64-45-T-63-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-64-45)
+(LYING-ON-T-65-45)
+)
+:effect
+(and
+(STANDING-ON-T-63-45)
+(not (LYING-ON-T-65-45))
+(not (LYING-ON-T-64-45))
+)
+)
+(:action STAND-UP-T-66-45-T-65-45-T-64-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-65-45)
+(LYING-ON-T-66-45)
+)
+:effect
+(and
+(STANDING-ON-T-64-45)
+(not (LYING-ON-T-66-45))
+(not (LYING-ON-T-65-45))
+)
+)
+(:action LAY-DOWN-T-62-45-T-63-45-T-64-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-62-45)
+)
+:effect
+(and
+(LYING-ON-T-64-45)
+(LYING-ON-T-63-45)
+(not (STANDING-ON-T-62-45))
+)
+)
+(:action LAY-DOWN-T-63-45-T-64-45-T-65-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-63-45)
+)
+:effect
+(and
+(LYING-ON-T-65-45)
+(LYING-ON-T-64-45)
+(not (STANDING-ON-T-63-45))
+)
+)
+(:action LAY-DOWN-T-64-45-T-65-45-T-66-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-64-45)
+)
+:effect
+(and
+(LYING-ON-T-66-45)
+(LYING-ON-T-65-45)
+(not (STANDING-ON-T-64-45))
+)
+)
+(:action LAY-DOWN-T-62-45-T-61-45-T-60-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-62-45)
+)
+:effect
+(and
+(LYING-ON-T-60-45)
+(LYING-ON-T-61-45)
+(not (STANDING-ON-T-62-45))
+)
+)
+(:action LAY-DOWN-T-63-45-T-62-45-T-61-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-63-45)
+)
+:effect
+(and
+(LYING-ON-T-61-45)
+(LYING-ON-T-62-45)
+(not (STANDING-ON-T-63-45))
+)
+)
+(:action LAY-DOWN-T-64-45-T-63-45-T-62-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-64-45)
+)
+:effect
+(and
+(LYING-ON-T-62-45)
+(LYING-ON-T-63-45)
+(not (STANDING-ON-T-64-45))
+)
+)
+(:action STAND-UP-T-60-45-T-61-45-T-62-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-61-45)
+(LYING-ON-T-60-45)
+)
+:effect
+(and
+(STANDING-ON-T-62-45)
+(not (LYING-ON-T-60-45))
+(not (LYING-ON-T-61-45))
+)
+)
+(:action STAND-UP-T-61-45-T-62-45-T-63-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-62-45)
+(LYING-ON-T-61-45)
+)
+:effect
+(and
+(STANDING-ON-T-63-45)
+(not (LYING-ON-T-61-45))
+(not (LYING-ON-T-62-45))
+)
+)
+(:action STAND-UP-T-62-45-T-63-45-T-64-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-63-45)
+(LYING-ON-T-62-45)
+)
+:effect
+(and
+(STANDING-ON-T-64-45)
+(not (LYING-ON-T-62-45))
+(not (LYING-ON-T-63-45))
+)
+)
+(:action STAND-UP-T-61-45-T-60-45-T-59-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-60-45)
+(LYING-ON-T-61-45)
+)
+:effect
+(and
+(STANDING-ON-T-59-45)
+(not (LYING-ON-T-61-45))
+(not (LYING-ON-T-60-45))
+)
+)
+(:action STAND-UP-T-62-45-T-61-45-T-60-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-61-45)
+(LYING-ON-T-62-45)
+)
+:effect
+(and
+(STANDING-ON-T-60-45)
+(not (LYING-ON-T-62-45))
+(not (LYING-ON-T-61-45))
+)
+)
+(:action STAND-UP-T-63-45-T-62-45-T-61-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-62-45)
+(LYING-ON-T-63-45)
+)
+:effect
+(and
+(STANDING-ON-T-61-45)
+(not (LYING-ON-T-63-45))
+(not (LYING-ON-T-62-45))
+)
+)
+(:action LAY-DOWN-T-59-45-T-60-45-T-61-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-59-45)
+)
+:effect
+(and
+(LYING-ON-T-61-45)
+(LYING-ON-T-60-45)
+(not (STANDING-ON-T-59-45))
+)
+)
+(:action LAY-DOWN-T-60-45-T-61-45-T-62-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-60-45)
+)
+:effect
+(and
+(LYING-ON-T-62-45)
+(LYING-ON-T-61-45)
+(not (STANDING-ON-T-60-45))
+)
+)
+(:action LAY-DOWN-T-61-45-T-62-45-T-63-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-61-45)
+)
+:effect
+(and
+(LYING-ON-T-63-45)
+(LYING-ON-T-62-45)
+(not (STANDING-ON-T-61-45))
+)
+)
+(:action LAY-DOWN-T-59-45-T-58-45-T-57-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-59-45)
+)
+:effect
+(and
+(LYING-ON-T-57-45)
+(LYING-ON-T-58-45)
+(not (STANDING-ON-T-59-45))
+)
+)
+(:action LAY-DOWN-T-60-45-T-59-45-T-58-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-60-45)
+)
+:effect
+(and
+(LYING-ON-T-58-45)
+(LYING-ON-T-59-45)
+(not (STANDING-ON-T-60-45))
+)
+)
+(:action LAY-DOWN-T-61-45-T-60-45-T-59-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-61-45)
+)
+:effect
+(and
+(LYING-ON-T-59-45)
+(LYING-ON-T-60-45)
+(not (STANDING-ON-T-61-45))
+)
+)
+(:action STAND-UP-T-57-45-T-58-45-T-59-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-58-45)
+(LYING-ON-T-57-45)
+)
+:effect
+(and
+(STANDING-ON-T-59-45)
+(not (LYING-ON-T-57-45))
+(not (LYING-ON-T-58-45))
+)
+)
+(:action STAND-UP-T-58-45-T-59-45-T-60-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-59-45)
+(LYING-ON-T-58-45)
+)
+:effect
+(and
+(STANDING-ON-T-60-45)
+(not (LYING-ON-T-58-45))
+(not (LYING-ON-T-59-45))
+)
+)
+(:action STAND-UP-T-59-45-T-60-45-T-61-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-60-45)
+(LYING-ON-T-59-45)
+)
+:effect
+(and
+(STANDING-ON-T-61-45)
+(not (LYING-ON-T-59-45))
+(not (LYING-ON-T-60-45))
+)
+)
+(:action STAND-UP-T-58-45-T-57-45-T-56-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-45)
+(LYING-ON-T-58-45)
+)
+:effect
+(and
+(STANDING-ON-T-56-45)
+(not (LYING-ON-T-58-45))
+(not (LYING-ON-T-57-45))
+)
+)
+(:action STAND-UP-T-59-45-T-58-45-T-57-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-58-45)
+(LYING-ON-T-59-45)
+)
+:effect
+(and
+(STANDING-ON-T-57-45)
+(not (LYING-ON-T-59-45))
+(not (LYING-ON-T-58-45))
+)
+)
+(:action STAND-UP-T-60-45-T-59-45-T-58-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-59-45)
+(LYING-ON-T-60-45)
+)
+:effect
+(and
+(STANDING-ON-T-58-45)
+(not (LYING-ON-T-60-45))
+(not (LYING-ON-T-59-45))
+)
+)
+(:action LAY-DOWN-T-56-45-T-57-45-T-58-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-56-45)
+)
+:effect
+(and
+(LYING-ON-T-58-45)
+(LYING-ON-T-57-45)
+(not (STANDING-ON-T-56-45))
+)
+)
+(:action LAY-DOWN-T-57-45-T-58-45-T-59-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-45)
+)
+:effect
+(and
+(LYING-ON-T-59-45)
+(LYING-ON-T-58-45)
+(not (STANDING-ON-T-57-45))
+)
+)
+(:action LAY-DOWN-T-58-45-T-59-45-T-60-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-58-45)
+)
+:effect
+(and
+(LYING-ON-T-60-45)
+(LYING-ON-T-59-45)
+(not (STANDING-ON-T-58-45))
+)
+)
+(:action LAY-DOWN-T-56-45-T-55-45-T-54-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-56-45)
+)
+:effect
+(and
+(LYING-ON-T-54-45)
+(LYING-ON-T-55-45)
+(not (STANDING-ON-T-56-45))
+)
+)
+(:action LAY-DOWN-T-57-45-T-56-45-T-55-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-45)
+)
+:effect
+(and
+(LYING-ON-T-55-45)
+(LYING-ON-T-56-45)
+(not (STANDING-ON-T-57-45))
+)
+)
+(:action LAY-DOWN-T-58-45-T-57-45-T-56-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-58-45)
+)
+:effect
+(and
+(LYING-ON-T-56-45)
+(LYING-ON-T-57-45)
+(not (STANDING-ON-T-58-45))
+)
+)
+(:action STAND-UP-T-54-45-T-55-45-T-56-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-55-45)
+(LYING-ON-T-54-45)
+)
+:effect
+(and
+(STANDING-ON-T-56-45)
+(not (LYING-ON-T-54-45))
+(not (LYING-ON-T-55-45))
+)
+)
+(:action STAND-UP-T-55-45-T-56-45-T-57-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-56-45)
+(LYING-ON-T-55-45)
+)
+:effect
+(and
+(STANDING-ON-T-57-45)
+(not (LYING-ON-T-55-45))
+(not (LYING-ON-T-56-45))
+)
+)
+(:action STAND-UP-T-56-45-T-57-45-T-58-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-45)
+(LYING-ON-T-56-45)
+)
+:effect
+(and
+(STANDING-ON-T-58-45)
+(not (LYING-ON-T-56-45))
+(not (LYING-ON-T-57-45))
+)
+)
+(:action STAND-UP-T-55-45-T-54-45-T-53-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-54-45)
+(LYING-ON-T-55-45)
+)
+:effect
+(and
+(STANDING-ON-T-53-45)
+(not (LYING-ON-T-55-45))
+(not (LYING-ON-T-54-45))
+)
+)
+(:action STAND-UP-T-56-45-T-55-45-T-54-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-55-45)
+(LYING-ON-T-56-45)
+)
+:effect
+(and
+(STANDING-ON-T-54-45)
+(not (LYING-ON-T-56-45))
+(not (LYING-ON-T-55-45))
+)
+)
+(:action STAND-UP-T-57-45-T-56-45-T-55-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-56-45)
+(LYING-ON-T-57-45)
+)
+:effect
+(and
+(STANDING-ON-T-55-45)
+(not (LYING-ON-T-57-45))
+(not (LYING-ON-T-56-45))
+)
+)
+(:action LAY-DOWN-T-53-45-T-54-45-T-55-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-53-45)
+)
+:effect
+(and
+(LYING-ON-T-55-45)
+(LYING-ON-T-54-45)
+(not (STANDING-ON-T-53-45))
+)
+)
+(:action LAY-DOWN-T-54-45-T-55-45-T-56-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-45)
+)
+:effect
+(and
+(LYING-ON-T-56-45)
+(LYING-ON-T-55-45)
+(not (STANDING-ON-T-54-45))
+)
+)
+(:action LAY-DOWN-T-55-45-T-56-45-T-57-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-55-45)
+)
+:effect
+(and
+(LYING-ON-T-57-45)
+(LYING-ON-T-56-45)
+(not (STANDING-ON-T-55-45))
+)
+)
+(:action LAY-DOWN-T-53-45-T-52-45-T-51-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-53-45)
+)
+:effect
+(and
+(LYING-ON-T-51-45)
+(LYING-ON-T-52-45)
+(not (STANDING-ON-T-53-45))
+)
+)
+(:action LAY-DOWN-T-54-45-T-53-45-T-52-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-45)
+)
+:effect
+(and
+(LYING-ON-T-52-45)
+(LYING-ON-T-53-45)
+(not (STANDING-ON-T-54-45))
+)
+)
+(:action LAY-DOWN-T-55-45-T-54-45-T-53-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-55-45)
+)
+:effect
+(and
+(LYING-ON-T-53-45)
+(LYING-ON-T-54-45)
+(not (STANDING-ON-T-55-45))
+)
+)
+(:action STAND-UP-T-51-45-T-52-45-T-53-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-52-45)
+(LYING-ON-T-51-45)
+)
+:effect
+(and
+(STANDING-ON-T-53-45)
+(not (LYING-ON-T-51-45))
+(not (LYING-ON-T-52-45))
+)
+)
+(:action STAND-UP-T-52-45-T-53-45-T-54-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-53-45)
+(LYING-ON-T-52-45)
+)
+:effect
+(and
+(STANDING-ON-T-54-45)
+(not (LYING-ON-T-52-45))
+(not (LYING-ON-T-53-45))
+)
+)
+(:action STAND-UP-T-53-45-T-54-45-T-55-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-54-45)
+(LYING-ON-T-53-45)
+)
+:effect
+(and
+(STANDING-ON-T-55-45)
+(not (LYING-ON-T-53-45))
+(not (LYING-ON-T-54-45))
+)
+)
+(:action STAND-UP-T-52-45-T-51-45-T-50-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-51-45)
+(LYING-ON-T-52-45)
+)
+:effect
+(and
+(STANDING-ON-T-50-45)
+(not (LYING-ON-T-52-45))
+(not (LYING-ON-T-51-45))
+)
+)
+(:action STAND-UP-T-53-45-T-52-45-T-51-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-52-45)
+(LYING-ON-T-53-45)
+)
+:effect
+(and
+(STANDING-ON-T-51-45)
+(not (LYING-ON-T-53-45))
+(not (LYING-ON-T-52-45))
+)
+)
+(:action STAND-UP-T-54-45-T-53-45-T-52-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-53-45)
+(LYING-ON-T-54-45)
+)
+:effect
+(and
+(STANDING-ON-T-52-45)
+(not (LYING-ON-T-54-45))
+(not (LYING-ON-T-53-45))
+)
+)
+(:action LAY-DOWN-T-50-45-T-51-45-T-52-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-50-45)
+)
+:effect
+(and
+(LYING-ON-T-52-45)
+(LYING-ON-T-51-45)
+(not (STANDING-ON-T-50-45))
+)
+)
+(:action LAY-DOWN-T-51-45-T-52-45-T-53-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-45)
+)
+:effect
+(and
+(LYING-ON-T-53-45)
+(LYING-ON-T-52-45)
+(not (STANDING-ON-T-51-45))
+)
+)
+(:action LAY-DOWN-T-52-45-T-53-45-T-54-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-52-45)
+)
+:effect
+(and
+(LYING-ON-T-54-45)
+(LYING-ON-T-53-45)
+(not (STANDING-ON-T-52-45))
+)
+)
+(:action LAY-DOWN-T-50-45-T-49-45-T-48-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-50-45)
+)
+:effect
+(and
+(LYING-ON-T-48-45)
+(LYING-ON-T-49-45)
+(not (STANDING-ON-T-50-45))
+)
+)
+(:action LAY-DOWN-T-51-45-T-50-45-T-49-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-45)
+)
+:effect
+(and
+(LYING-ON-T-49-45)
+(LYING-ON-T-50-45)
+(not (STANDING-ON-T-51-45))
+)
+)
+(:action LAY-DOWN-T-52-45-T-51-45-T-50-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-52-45)
+)
+:effect
+(and
+(LYING-ON-T-50-45)
+(LYING-ON-T-51-45)
+(not (STANDING-ON-T-52-45))
+)
+)
+(:action STAND-UP-T-48-45-T-49-45-T-50-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-49-45)
+(LYING-ON-T-48-45)
+)
+:effect
+(and
+(STANDING-ON-T-50-45)
+(not (LYING-ON-T-48-45))
+(not (LYING-ON-T-49-45))
+)
+)
+(:action STAND-UP-T-49-45-T-50-45-T-51-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-50-45)
+(LYING-ON-T-49-45)
+)
+:effect
+(and
+(STANDING-ON-T-51-45)
+(not (LYING-ON-T-49-45))
+(not (LYING-ON-T-50-45))
+)
+)
+(:action STAND-UP-T-50-45-T-51-45-T-52-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-51-45)
+(LYING-ON-T-50-45)
+)
+:effect
+(and
+(STANDING-ON-T-52-45)
+(not (LYING-ON-T-50-45))
+(not (LYING-ON-T-51-45))
+)
+)
+(:action STAND-UP-T-49-45-T-48-45-T-47-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-45)
+(LYING-ON-T-49-45)
+)
+:effect
+(and
+(STANDING-ON-T-47-45)
+(not (LYING-ON-T-49-45))
+(not (LYING-ON-T-48-45))
+)
+)
+(:action STAND-UP-T-50-45-T-49-45-T-48-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-49-45)
+(LYING-ON-T-50-45)
+)
+:effect
+(and
+(STANDING-ON-T-48-45)
+(not (LYING-ON-T-50-45))
+(not (LYING-ON-T-49-45))
+)
+)
+(:action STAND-UP-T-51-45-T-50-45-T-49-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-50-45)
+(LYING-ON-T-51-45)
+)
+:effect
+(and
+(STANDING-ON-T-49-45)
+(not (LYING-ON-T-51-45))
+(not (LYING-ON-T-50-45))
+)
+)
+(:action LAY-DOWN-T-47-45-T-48-45-T-49-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-47-45)
+)
+:effect
+(and
+(LYING-ON-T-49-45)
+(LYING-ON-T-48-45)
+(not (STANDING-ON-T-47-45))
+)
+)
+(:action LAY-DOWN-T-48-45-T-49-45-T-50-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-45)
+)
+:effect
+(and
+(LYING-ON-T-50-45)
+(LYING-ON-T-49-45)
+(not (STANDING-ON-T-48-45))
+)
+)
+(:action LAY-DOWN-T-49-45-T-50-45-T-51-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-49-45)
+)
+:effect
+(and
+(LYING-ON-T-51-45)
+(LYING-ON-T-50-45)
+(not (STANDING-ON-T-49-45))
+)
+)
+(:action LAY-DOWN-T-47-45-T-46-45-T-45-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-47-45)
+)
+:effect
+(and
+(LYING-ON-T-45-45)
+(LYING-ON-T-46-45)
+(not (STANDING-ON-T-47-45))
+)
+)
+(:action LAY-DOWN-T-48-45-T-47-45-T-46-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-45)
+)
+:effect
+(and
+(LYING-ON-T-46-45)
+(LYING-ON-T-47-45)
+(not (STANDING-ON-T-48-45))
+)
+)
+(:action LAY-DOWN-T-49-45-T-48-45-T-47-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-49-45)
+)
+:effect
+(and
+(LYING-ON-T-47-45)
+(LYING-ON-T-48-45)
+(not (STANDING-ON-T-49-45))
+)
+)
+(:action STAND-UP-T-45-45-T-46-45-T-47-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-45)
+(LYING-ON-T-45-45)
+)
+:effect
+(and
+(STANDING-ON-T-47-45)
+(not (LYING-ON-T-45-45))
+(not (LYING-ON-T-46-45))
+)
+)
+(:action STAND-UP-T-46-45-T-47-45-T-48-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-45)
+(LYING-ON-T-46-45)
+)
+:effect
+(and
+(STANDING-ON-T-48-45)
+(not (LYING-ON-T-46-45))
+(not (LYING-ON-T-47-45))
+)
+)
+(:action STAND-UP-T-47-45-T-48-45-T-49-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-45)
+(LYING-ON-T-47-45)
+)
+:effect
+(and
+(STANDING-ON-T-49-45)
+(not (LYING-ON-T-47-45))
+(not (LYING-ON-T-48-45))
+)
+)
+(:action STAND-UP-T-46-45-T-45-45-T-44-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-45)
+(LYING-ON-T-46-45)
+)
+:effect
+(and
+(STANDING-ON-T-44-45)
+(not (LYING-ON-T-46-45))
+(not (LYING-ON-T-45-45))
+)
+)
+(:action STAND-UP-T-47-45-T-46-45-T-45-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-45)
+(LYING-ON-T-47-45)
+)
+:effect
+(and
+(STANDING-ON-T-45-45)
+(not (LYING-ON-T-47-45))
+(not (LYING-ON-T-46-45))
+)
+)
+(:action STAND-UP-T-48-45-T-47-45-T-46-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-45)
+(LYING-ON-T-48-45)
+)
+:effect
+(and
+(STANDING-ON-T-46-45)
+(not (LYING-ON-T-48-45))
+(not (LYING-ON-T-47-45))
+)
+)
+(:action LAY-DOWN-T-44-45-T-45-45-T-46-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-44-45)
+)
+:effect
+(and
+(LYING-ON-T-46-45)
+(LYING-ON-T-45-45)
+(not (STANDING-ON-T-44-45))
+)
+)
+(:action LAY-DOWN-T-45-45-T-46-45-T-47-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-45)
+)
+:effect
+(and
+(LYING-ON-T-47-45)
+(LYING-ON-T-46-45)
+(not (STANDING-ON-T-45-45))
+)
+)
+(:action LAY-DOWN-T-46-45-T-47-45-T-48-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-46-45)
+)
+:effect
+(and
+(LYING-ON-T-48-45)
+(LYING-ON-T-47-45)
+(not (STANDING-ON-T-46-45))
+)
+)
+(:action LAY-DOWN-T-44-45-T-43-45-T-42-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-44-45)
+)
+:effect
+(and
+(LYING-ON-T-42-45)
+(LYING-ON-T-43-45)
+(not (STANDING-ON-T-44-45))
+)
+)
+(:action LAY-DOWN-T-45-45-T-44-45-T-43-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-45)
+)
+:effect
+(and
+(LYING-ON-T-43-45)
+(LYING-ON-T-44-45)
+(not (STANDING-ON-T-45-45))
+)
+)
+(:action LAY-DOWN-T-46-45-T-45-45-T-44-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-46-45)
+)
+:effect
+(and
+(LYING-ON-T-44-45)
+(LYING-ON-T-45-45)
+(not (STANDING-ON-T-46-45))
+)
+)
+(:action STAND-UP-T-42-45-T-43-45-T-44-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-45)
+(LYING-ON-T-42-45)
+)
+:effect
+(and
+(STANDING-ON-T-44-45)
+(not (LYING-ON-T-42-45))
+(not (LYING-ON-T-43-45))
+)
+)
+(:action STAND-UP-T-43-45-T-44-45-T-45-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-45)
+(LYING-ON-T-43-45)
+)
+:effect
+(and
+(STANDING-ON-T-45-45)
+(not (LYING-ON-T-43-45))
+(not (LYING-ON-T-44-45))
+)
+)
+(:action STAND-UP-T-44-45-T-45-45-T-46-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-45)
+(LYING-ON-T-44-45)
+)
+:effect
+(and
+(STANDING-ON-T-46-45)
+(not (LYING-ON-T-44-45))
+(not (LYING-ON-T-45-45))
+)
+)
+(:action STAND-UP-T-43-45-T-42-45-T-41-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-45)
+(LYING-ON-T-43-45)
+)
+:effect
+(and
+(STANDING-ON-T-41-45)
+(not (LYING-ON-T-43-45))
+(not (LYING-ON-T-42-45))
+)
+)
+(:action STAND-UP-T-44-45-T-43-45-T-42-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-45)
+(LYING-ON-T-44-45)
+)
+:effect
+(and
+(STANDING-ON-T-42-45)
+(not (LYING-ON-T-44-45))
+(not (LYING-ON-T-43-45))
+)
+)
+(:action STAND-UP-T-45-45-T-44-45-T-43-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-45)
+(LYING-ON-T-45-45)
+)
+:effect
+(and
+(STANDING-ON-T-43-45)
+(not (LYING-ON-T-45-45))
+(not (LYING-ON-T-44-45))
+)
+)
+(:action LAY-DOWN-T-41-45-T-42-45-T-43-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-45)
+)
+:effect
+(and
+(LYING-ON-T-43-45)
+(LYING-ON-T-42-45)
+(not (STANDING-ON-T-41-45))
+)
+)
+(:action LAY-DOWN-T-42-45-T-43-45-T-44-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-45)
+)
+:effect
+(and
+(LYING-ON-T-44-45)
+(LYING-ON-T-43-45)
+(not (STANDING-ON-T-42-45))
+)
+)
+(:action LAY-DOWN-T-43-45-T-44-45-T-45-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-45)
+)
+:effect
+(and
+(LYING-ON-T-45-45)
+(LYING-ON-T-44-45)
+(not (STANDING-ON-T-43-45))
+)
+)
+(:action LAY-DOWN-T-41-45-T-40-45-T-39-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-45)
+)
+:effect
+(and
+(LYING-ON-T-39-45)
+(LYING-ON-T-40-45)
+(not (STANDING-ON-T-41-45))
+)
+)
+(:action LAY-DOWN-T-42-45-T-41-45-T-40-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-45)
+)
+:effect
+(and
+(LYING-ON-T-40-45)
+(LYING-ON-T-41-45)
+(not (STANDING-ON-T-42-45))
+)
+)
+(:action LAY-DOWN-T-43-45-T-42-45-T-41-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-45)
+)
+:effect
+(and
+(LYING-ON-T-41-45)
+(LYING-ON-T-42-45)
+(not (STANDING-ON-T-43-45))
+)
+)
+(:action STAND-UP-T-39-45-T-40-45-T-41-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-45)
+(LYING-ON-T-39-45)
+)
+:effect
+(and
+(STANDING-ON-T-41-45)
+(not (LYING-ON-T-39-45))
+(not (LYING-ON-T-40-45))
+)
+)
+(:action STAND-UP-T-40-45-T-41-45-T-42-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-45)
+(LYING-ON-T-40-45)
+)
+:effect
+(and
+(STANDING-ON-T-42-45)
+(not (LYING-ON-T-40-45))
+(not (LYING-ON-T-41-45))
+)
+)
+(:action STAND-UP-T-41-45-T-42-45-T-43-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-45)
+(LYING-ON-T-41-45)
+)
+:effect
+(and
+(STANDING-ON-T-43-45)
+(not (LYING-ON-T-41-45))
+(not (LYING-ON-T-42-45))
+)
+)
+(:action STAND-UP-T-40-45-T-39-45-T-38-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-45)
+(LYING-ON-T-40-45)
+)
+:effect
+(and
+(STANDING-ON-T-38-45)
+(not (LYING-ON-T-40-45))
+(not (LYING-ON-T-39-45))
+)
+)
+(:action STAND-UP-T-41-45-T-40-45-T-39-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-45)
+(LYING-ON-T-41-45)
+)
+:effect
+(and
+(STANDING-ON-T-39-45)
+(not (LYING-ON-T-41-45))
+(not (LYING-ON-T-40-45))
+)
+)
+(:action STAND-UP-T-42-45-T-41-45-T-40-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-45)
+(LYING-ON-T-42-45)
+)
+:effect
+(and
+(STANDING-ON-T-40-45)
+(not (LYING-ON-T-42-45))
+(not (LYING-ON-T-41-45))
+)
+)
+(:action LAY-DOWN-T-38-45-T-39-45-T-40-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-45)
+)
+:effect
+(and
+(LYING-ON-T-40-45)
+(LYING-ON-T-39-45)
+(not (STANDING-ON-T-38-45))
+)
+)
+(:action LAY-DOWN-T-39-45-T-40-45-T-41-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-39-45)
+)
+:effect
+(and
+(LYING-ON-T-41-45)
+(LYING-ON-T-40-45)
+(not (STANDING-ON-T-39-45))
+)
+)
+(:action LAY-DOWN-T-40-45-T-41-45-T-42-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-45)
+)
+:effect
+(and
+(LYING-ON-T-42-45)
+(LYING-ON-T-41-45)
+(not (STANDING-ON-T-40-45))
+)
+)
+(:action LAY-DOWN-T-38-45-T-37-45-T-36-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-45)
+)
+:effect
+(and
+(LYING-ON-T-36-45)
+(LYING-ON-T-37-45)
+(not (STANDING-ON-T-38-45))
+)
+)
+(:action LAY-DOWN-T-39-45-T-38-45-T-37-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-39-45)
+)
+:effect
+(and
+(LYING-ON-T-37-45)
+(LYING-ON-T-38-45)
+(not (STANDING-ON-T-39-45))
+)
+)
+(:action LAY-DOWN-T-40-45-T-39-45-T-38-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-45)
+)
+:effect
+(and
+(LYING-ON-T-38-45)
+(LYING-ON-T-39-45)
+(not (STANDING-ON-T-40-45))
+)
+)
+(:action STAND-UP-T-36-45-T-37-45-T-38-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-45)
+(LYING-ON-T-36-45)
+)
+:effect
+(and
+(STANDING-ON-T-38-45)
+(not (LYING-ON-T-36-45))
+(not (LYING-ON-T-37-45))
+)
+)
+(:action STAND-UP-T-37-45-T-38-45-T-39-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-45)
+(LYING-ON-T-37-45)
+)
+:effect
+(and
+(STANDING-ON-T-39-45)
+(not (LYING-ON-T-37-45))
+(not (LYING-ON-T-38-45))
+)
+)
+(:action STAND-UP-T-38-45-T-39-45-T-40-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-45)
+(LYING-ON-T-38-45)
+)
+:effect
+(and
+(STANDING-ON-T-40-45)
+(not (LYING-ON-T-38-45))
+(not (LYING-ON-T-39-45))
+)
+)
+(:action STAND-UP-T-37-45-T-36-45-T-35-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-45)
+(LYING-ON-T-37-45)
+)
+:effect
+(and
+(STANDING-ON-T-35-45)
+(not (LYING-ON-T-37-45))
+(not (LYING-ON-T-36-45))
+)
+)
+(:action STAND-UP-T-38-45-T-37-45-T-36-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-45)
+(LYING-ON-T-38-45)
+)
+:effect
+(and
+(STANDING-ON-T-36-45)
+(not (LYING-ON-T-38-45))
+(not (LYING-ON-T-37-45))
+)
+)
+(:action STAND-UP-T-39-45-T-38-45-T-37-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-45)
+(LYING-ON-T-39-45)
+)
+:effect
+(and
+(STANDING-ON-T-37-45)
+(not (LYING-ON-T-39-45))
+(not (LYING-ON-T-38-45))
+)
+)
+(:action LAY-DOWN-T-35-45-T-36-45-T-37-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-45)
+)
+:effect
+(and
+(LYING-ON-T-37-45)
+(LYING-ON-T-36-45)
+(not (STANDING-ON-T-35-45))
+)
+)
+(:action LAY-DOWN-T-36-45-T-37-45-T-38-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-45)
+)
+:effect
+(and
+(LYING-ON-T-38-45)
+(LYING-ON-T-37-45)
+(not (STANDING-ON-T-36-45))
+)
+)
+(:action LAY-DOWN-T-37-45-T-38-45-T-39-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-45)
+)
+:effect
+(and
+(LYING-ON-T-39-45)
+(LYING-ON-T-38-45)
+(not (STANDING-ON-T-37-45))
+)
+)
+(:action LAY-DOWN-T-35-45-T-34-45-T-33-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-45)
+)
+:effect
+(and
+(LYING-ON-T-33-45)
+(LYING-ON-T-34-45)
+(not (STANDING-ON-T-35-45))
+)
+)
+(:action LAY-DOWN-T-36-45-T-35-45-T-34-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-45)
+)
+:effect
+(and
+(LYING-ON-T-34-45)
+(LYING-ON-T-35-45)
+(not (STANDING-ON-T-36-45))
+)
+)
+(:action LAY-DOWN-T-37-45-T-36-45-T-35-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-45)
+)
+:effect
+(and
+(LYING-ON-T-35-45)
+(LYING-ON-T-36-45)
+(not (STANDING-ON-T-37-45))
+)
+)
+(:action STAND-UP-T-33-45-T-34-45-T-35-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-45)
+(LYING-ON-T-33-45)
+)
+:effect
+(and
+(STANDING-ON-T-35-45)
+(not (LYING-ON-T-33-45))
+(not (LYING-ON-T-34-45))
+)
+)
+(:action STAND-UP-T-34-45-T-35-45-T-36-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-45)
+(LYING-ON-T-34-45)
+)
+:effect
+(and
+(STANDING-ON-T-36-45)
+(not (LYING-ON-T-34-45))
+(not (LYING-ON-T-35-45))
+)
+)
+(:action STAND-UP-T-35-45-T-36-45-T-37-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-45)
+(LYING-ON-T-35-45)
+)
+:effect
+(and
+(STANDING-ON-T-37-45)
+(not (LYING-ON-T-35-45))
+(not (LYING-ON-T-36-45))
+)
+)
+(:action STAND-UP-T-34-45-T-33-45-T-32-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-45)
+(LYING-ON-T-34-45)
+)
+:effect
+(and
+(STANDING-ON-T-32-45)
+(not (LYING-ON-T-34-45))
+(not (LYING-ON-T-33-45))
+)
+)
+(:action STAND-UP-T-35-45-T-34-45-T-33-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-45)
+(LYING-ON-T-35-45)
+)
+:effect
+(and
+(STANDING-ON-T-33-45)
+(not (LYING-ON-T-35-45))
+(not (LYING-ON-T-34-45))
+)
+)
+(:action STAND-UP-T-36-45-T-35-45-T-34-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-45)
+(LYING-ON-T-36-45)
+)
+:effect
+(and
+(STANDING-ON-T-34-45)
+(not (LYING-ON-T-36-45))
+(not (LYING-ON-T-35-45))
+)
+)
+(:action LAY-DOWN-T-32-45-T-33-45-T-34-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-45)
+)
+:effect
+(and
+(LYING-ON-T-34-45)
+(LYING-ON-T-33-45)
+(not (STANDING-ON-T-32-45))
+)
+)
+(:action LAY-DOWN-T-33-45-T-34-45-T-35-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-45)
+)
+:effect
+(and
+(LYING-ON-T-35-45)
+(LYING-ON-T-34-45)
+(not (STANDING-ON-T-33-45))
+)
+)
+(:action LAY-DOWN-T-34-45-T-35-45-T-36-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-45)
+)
+:effect
+(and
+(LYING-ON-T-36-45)
+(LYING-ON-T-35-45)
+(not (STANDING-ON-T-34-45))
+)
+)
+(:action LAY-DOWN-T-32-45-T-31-45-T-30-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-45)
+)
+:effect
+(and
+(LYING-ON-T-30-45)
+(LYING-ON-T-31-45)
+(not (STANDING-ON-T-32-45))
+)
+)
+(:action LAY-DOWN-T-33-45-T-32-45-T-31-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-45)
+)
+:effect
+(and
+(LYING-ON-T-31-45)
+(LYING-ON-T-32-45)
+(not (STANDING-ON-T-33-45))
+)
+)
+(:action LAY-DOWN-T-34-45-T-33-45-T-32-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-45)
+)
+:effect
+(and
+(LYING-ON-T-32-45)
+(LYING-ON-T-33-45)
+(not (STANDING-ON-T-34-45))
+)
+)
+(:action STAND-UP-T-30-45-T-31-45-T-32-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-45)
+(LYING-ON-T-30-45)
+)
+:effect
+(and
+(STANDING-ON-T-32-45)
+(not (LYING-ON-T-30-45))
+(not (LYING-ON-T-31-45))
+)
+)
+(:action STAND-UP-T-31-45-T-32-45-T-33-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-45)
+(LYING-ON-T-31-45)
+)
+:effect
+(and
+(STANDING-ON-T-33-45)
+(not (LYING-ON-T-31-45))
+(not (LYING-ON-T-32-45))
+)
+)
+(:action STAND-UP-T-32-45-T-33-45-T-34-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-45)
+(LYING-ON-T-32-45)
+)
+:effect
+(and
+(STANDING-ON-T-34-45)
+(not (LYING-ON-T-32-45))
+(not (LYING-ON-T-33-45))
+)
+)
+(:action STAND-UP-T-31-45-T-30-45-T-29-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-45)
+(LYING-ON-T-31-45)
+)
+:effect
+(and
+(STANDING-ON-T-29-45)
+(not (LYING-ON-T-31-45))
+(not (LYING-ON-T-30-45))
+)
+)
+(:action STAND-UP-T-32-45-T-31-45-T-30-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-45)
+(LYING-ON-T-32-45)
+)
+:effect
+(and
+(STANDING-ON-T-30-45)
+(not (LYING-ON-T-32-45))
+(not (LYING-ON-T-31-45))
+)
+)
+(:action STAND-UP-T-33-45-T-32-45-T-31-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-45)
+(LYING-ON-T-33-45)
+)
+:effect
+(and
+(STANDING-ON-T-31-45)
+(not (LYING-ON-T-33-45))
+(not (LYING-ON-T-32-45))
+)
+)
+(:action LAY-DOWN-T-29-45-T-30-45-T-31-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-45)
+)
+:effect
+(and
+(LYING-ON-T-31-45)
+(LYING-ON-T-30-45)
+(not (STANDING-ON-T-29-45))
+)
+)
+(:action LAY-DOWN-T-30-45-T-31-45-T-32-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-45)
+)
+:effect
+(and
+(LYING-ON-T-32-45)
+(LYING-ON-T-31-45)
+(not (STANDING-ON-T-30-45))
+)
+)
+(:action LAY-DOWN-T-31-45-T-32-45-T-33-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-31-45)
+)
+:effect
+(and
+(LYING-ON-T-33-45)
+(LYING-ON-T-32-45)
+(not (STANDING-ON-T-31-45))
+)
+)
+(:action LAY-DOWN-T-29-45-T-28-45-T-27-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-45)
+)
+:effect
+(and
+(LYING-ON-T-27-45)
+(LYING-ON-T-28-45)
+(not (STANDING-ON-T-29-45))
+)
+)
+(:action LAY-DOWN-T-30-45-T-29-45-T-28-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-45)
+)
+:effect
+(and
+(LYING-ON-T-28-45)
+(LYING-ON-T-29-45)
+(not (STANDING-ON-T-30-45))
+)
+)
+(:action LAY-DOWN-T-31-45-T-30-45-T-29-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-31-45)
+)
+:effect
+(and
+(LYING-ON-T-29-45)
+(LYING-ON-T-30-45)
+(not (STANDING-ON-T-31-45))
+)
+)
+(:action STAND-UP-T-27-45-T-28-45-T-29-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-45)
+(LYING-ON-T-27-45)
+)
+:effect
+(and
+(STANDING-ON-T-29-45)
+(not (LYING-ON-T-27-45))
+(not (LYING-ON-T-28-45))
+)
+)
+(:action STAND-UP-T-28-45-T-29-45-T-30-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-45)
+(LYING-ON-T-28-45)
+)
+:effect
+(and
+(STANDING-ON-T-30-45)
+(not (LYING-ON-T-28-45))
+(not (LYING-ON-T-29-45))
+)
+)
+(:action STAND-UP-T-29-45-T-30-45-T-31-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-45)
+(LYING-ON-T-29-45)
+)
+:effect
+(and
+(STANDING-ON-T-31-45)
+(not (LYING-ON-T-29-45))
+(not (LYING-ON-T-30-45))
+)
+)
+(:action STAND-UP-T-28-45-T-27-45-T-26-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-45)
+(LYING-ON-T-28-45)
+)
+:effect
+(and
+(STANDING-ON-T-26-45)
+(not (LYING-ON-T-28-45))
+(not (LYING-ON-T-27-45))
+)
+)
+(:action STAND-UP-T-29-45-T-28-45-T-27-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-45)
+(LYING-ON-T-29-45)
+)
+:effect
+(and
+(STANDING-ON-T-27-45)
+(not (LYING-ON-T-29-45))
+(not (LYING-ON-T-28-45))
+)
+)
+(:action STAND-UP-T-30-45-T-29-45-T-28-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-45)
+(LYING-ON-T-30-45)
+)
+:effect
+(and
+(STANDING-ON-T-28-45)
+(not (LYING-ON-T-30-45))
+(not (LYING-ON-T-29-45))
+)
+)
+(:action LAY-DOWN-T-26-45-T-27-45-T-28-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-26-45)
+)
+:effect
+(and
+(LYING-ON-T-28-45)
+(LYING-ON-T-27-45)
+(not (STANDING-ON-T-26-45))
+)
+)
+(:action LAY-DOWN-T-27-45-T-28-45-T-29-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-45)
+)
+:effect
+(and
+(LYING-ON-T-29-45)
+(LYING-ON-T-28-45)
+(not (STANDING-ON-T-27-45))
+)
+)
+(:action LAY-DOWN-T-28-45-T-29-45-T-30-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-45)
+)
+:effect
+(and
+(LYING-ON-T-30-45)
+(LYING-ON-T-29-45)
+(not (STANDING-ON-T-28-45))
+)
+)
+(:action LAY-DOWN-T-26-45-T-25-45-T-24-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-26-45)
+)
+:effect
+(and
+(LYING-ON-T-24-45)
+(LYING-ON-T-25-45)
+(not (STANDING-ON-T-26-45))
+)
+)
+(:action LAY-DOWN-T-27-45-T-26-45-T-25-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-45)
+)
+:effect
+(and
+(LYING-ON-T-25-45)
+(LYING-ON-T-26-45)
+(not (STANDING-ON-T-27-45))
+)
+)
+(:action LAY-DOWN-T-28-45-T-27-45-T-26-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-45)
+)
+:effect
+(and
+(LYING-ON-T-26-45)
+(LYING-ON-T-27-45)
+(not (STANDING-ON-T-28-45))
+)
+)
+(:action STAND-UP-T-24-45-T-25-45-T-26-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-45)
+(LYING-ON-T-24-45)
+)
+:effect
+(and
+(STANDING-ON-T-26-45)
+(not (LYING-ON-T-24-45))
+(not (LYING-ON-T-25-45))
+)
+)
+(:action STAND-UP-T-25-45-T-26-45-T-27-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-45)
+(LYING-ON-T-25-45)
+)
+:effect
+(and
+(STANDING-ON-T-27-45)
+(not (LYING-ON-T-25-45))
+(not (LYING-ON-T-26-45))
+)
+)
+(:action STAND-UP-T-26-45-T-27-45-T-28-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-45)
+(LYING-ON-T-26-45)
+)
+:effect
+(and
+(STANDING-ON-T-28-45)
+(not (LYING-ON-T-26-45))
+(not (LYING-ON-T-27-45))
+)
+)
+(:action STAND-UP-T-25-45-T-24-45-T-23-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-45)
+(LYING-ON-T-25-45)
+)
+:effect
+(and
+(STANDING-ON-T-23-45)
+(not (LYING-ON-T-25-45))
+(not (LYING-ON-T-24-45))
+)
+)
+(:action STAND-UP-T-26-45-T-25-45-T-24-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-45)
+(LYING-ON-T-26-45)
+)
+:effect
+(and
+(STANDING-ON-T-24-45)
+(not (LYING-ON-T-26-45))
+(not (LYING-ON-T-25-45))
+)
+)
+(:action STAND-UP-T-27-45-T-26-45-T-25-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-45)
+(LYING-ON-T-27-45)
+)
+:effect
+(and
+(STANDING-ON-T-25-45)
+(not (LYING-ON-T-27-45))
+(not (LYING-ON-T-26-45))
+)
+)
+(:action LAY-DOWN-T-16-43-T-16-44-T-16-45-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-43)
+)
+:effect
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-16-44)
+(not (STANDING-ON-T-16-43))
+)
+)
+(:action LAY-DOWN-T-23-45-T-24-45-T-25-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-45)
+)
+:effect
+(and
+(LYING-ON-T-25-45)
+(LYING-ON-T-24-45)
+(not (STANDING-ON-T-23-45))
+)
+)
+(:action LAY-DOWN-T-24-45-T-25-45-T-26-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-45)
+)
+:effect
+(and
+(LYING-ON-T-26-45)
+(LYING-ON-T-25-45)
+(not (STANDING-ON-T-24-45))
+)
+)
+(:action LAY-DOWN-T-25-45-T-26-45-T-27-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-45)
+)
+:effect
+(and
+(LYING-ON-T-27-45)
+(LYING-ON-T-26-45)
+(not (STANDING-ON-T-25-45))
+)
+)
+(:action LAY-DOWN-T-18-44-T-17-44-T-16-44-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-18-44)
+)
+:effect
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-17-44)
+(not (STANDING-ON-T-18-44))
+)
+)
+(:action LAY-DOWN-T-23-45-T-22-45-T-21-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-45)
+)
+:effect
+(and
+(LYING-ON-T-21-45)
+(LYING-ON-T-22-45)
+(not (STANDING-ON-T-23-45))
+)
+)
+(:action LAY-DOWN-T-24-45-T-23-45-T-22-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-45)
+)
+:effect
+(and
+(LYING-ON-T-22-45)
+(LYING-ON-T-23-45)
+(not (STANDING-ON-T-24-45))
+)
+)
+(:action LAY-DOWN-T-25-45-T-24-45-T-23-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-45)
+)
+:effect
+(and
+(LYING-ON-T-23-45)
+(LYING-ON-T-24-45)
+(not (STANDING-ON-T-25-45))
+)
+)
+(:action ROLL-T-17-44-T-17-43-T-16-44-T-16-43-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-43)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-43)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-17-43))
+)
+)
+(:action ROLL-T-17-43-T-17-44-T-16-43-T-16-44-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-43)
+)
+:effect
+(and
+(LYING-ON-T-16-43)
+(LYING-ON-T-16-44)
+(not (LYING-ON-T-17-43))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action STAND-UP-T-16-43-T-16-44-T-16-45-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-43)
+)
+:effect
+(and
+(STANDING-ON-T-16-45)
+(not (LYING-ON-T-16-43))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action STAND-UP-T-17-43-T-17-44-T-17-45-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-43)
+)
+:effect
+(and
+(STANDING-ON-T-17-45)
+(not (LYING-ON-T-17-43))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action STAND-UP-T-16-44-T-17-44-T-18-44-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-16-44)
+)
+:effect
+(and
+(STANDING-ON-T-18-44)
+(not (LYING-ON-T-16-44))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action STAND-UP-T-16-45-T-17-45-T-18-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-16-45)
+)
+:effect
+(and
+(STANDING-ON-T-18-45)
+(not (LYING-ON-T-16-45))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action STAND-UP-T-21-45-T-22-45-T-23-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-45)
+(LYING-ON-T-21-45)
+)
+:effect
+(and
+(STANDING-ON-T-23-45)
+(not (LYING-ON-T-21-45))
+(not (LYING-ON-T-22-45))
+)
+)
+(:action STAND-UP-T-22-45-T-23-45-T-24-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-45)
+(LYING-ON-T-22-45)
+)
+:effect
+(and
+(STANDING-ON-T-24-45)
+(not (LYING-ON-T-22-45))
+(not (LYING-ON-T-23-45))
+)
+)
+(:action STAND-UP-T-23-45-T-24-45-T-25-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-45)
+(LYING-ON-T-23-45)
+)
+:effect
+(and
+(STANDING-ON-T-25-45)
+(not (LYING-ON-T-23-45))
+(not (LYING-ON-T-24-45))
+)
+)
+(:action STAND-UP-T-16-45-T-16-44-T-16-43-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-45)
+)
+:effect
+(and
+(STANDING-ON-T-16-43)
+(not (LYING-ON-T-16-45))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action STAND-UP-T-22-45-T-21-45-T-20-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-45)
+(LYING-ON-T-22-45)
+)
+:effect
+(and
+(STANDING-ON-T-20-45)
+(not (LYING-ON-T-22-45))
+(not (LYING-ON-T-21-45))
+)
+)
+(:action STAND-UP-T-23-45-T-22-45-T-21-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-45)
+(LYING-ON-T-23-45)
+)
+:effect
+(and
+(STANDING-ON-T-21-45)
+(not (LYING-ON-T-23-45))
+(not (LYING-ON-T-22-45))
+)
+)
+(:action STAND-UP-T-24-45-T-23-45-T-22-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-45)
+(LYING-ON-T-24-45)
+)
+:effect
+(and
+(STANDING-ON-T-22-45)
+(not (LYING-ON-T-24-45))
+(not (LYING-ON-T-23-45))
+)
+)
+(:action LAY-DOWN-T-17-43-T-17-44-T-17-45-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-43)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-17-44)
+(not (STANDING-ON-T-17-43))
+)
+)
+(:action LAY-DOWN-T-16-44-T-17-44-T-18-44-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-44)
+)
+:effect
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-17-44)
+(not (STANDING-ON-T-16-44))
+)
+)
+(:action LAY-DOWN-T-16-45-T-17-45-T-18-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-45)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-17-45)
+(not (STANDING-ON-T-16-45))
+)
+)
+(:action LAY-DOWN-T-17-44-T-18-44-T-19-44-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-18-44)
+(not (STANDING-ON-T-17-44))
+)
+)
+(:action LAY-DOWN-T-17-45-T-18-45-T-19-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-18-45)
+(not (STANDING-ON-T-17-45))
+)
+)
+(:action LAY-DOWN-T-18-45-T-19-45-T-20-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-20-45)
+(LYING-ON-T-19-45)
+(not (STANDING-ON-T-18-45))
+)
+)
+(:action LAY-DOWN-T-20-45-T-21-45-T-22-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-20-45)
+)
+:effect
+(and
+(LYING-ON-T-22-45)
+(LYING-ON-T-21-45)
+(not (STANDING-ON-T-20-45))
+)
+)
+(:action LAY-DOWN-T-21-45-T-22-45-T-23-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-45)
+)
+:effect
+(and
+(LYING-ON-T-23-45)
+(LYING-ON-T-22-45)
+(not (STANDING-ON-T-21-45))
+)
+)
+(:action LAY-DOWN-T-22-45-T-23-45-T-24-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-45)
+)
+:effect
+(and
+(LYING-ON-T-24-45)
+(LYING-ON-T-23-45)
+(not (STANDING-ON-T-22-45))
+)
+)
+(:action LAY-DOWN-T-16-45-T-16-44-T-16-43-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-16-45)
+)
+:effect
+(and
+(LYING-ON-T-16-43)
+(LYING-ON-T-16-44)
+(not (STANDING-ON-T-16-45))
+)
+)
+(:action LAY-DOWN-T-17-45-T-17-44-T-17-43-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-17-43)
+(LYING-ON-T-17-44)
+(not (STANDING-ON-T-17-45))
+)
+)
+(:action LAY-DOWN-T-18-45-T-17-45-T-16-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-17-45)
+(not (STANDING-ON-T-18-45))
+)
+)
+(:action LAY-DOWN-T-20-45-T-19-45-T-18-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-20-45)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-19-45)
+(not (STANDING-ON-T-20-45))
+)
+)
+(:action LAY-DOWN-T-21-45-T-20-45-T-19-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-45)
+)
+:effect
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-20-45)
+(not (STANDING-ON-T-21-45))
+)
+)
+(:action LAY-DOWN-T-22-45-T-21-45-T-20-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-45)
+)
+:effect
+(and
+(LYING-ON-T-20-45)
+(LYING-ON-T-21-45)
+(not (STANDING-ON-T-22-45))
+)
+)
+(:action ROLL-T-17-43-T-16-43-T-17-44-T-16-44-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-43)
+(LYING-ON-T-17-43)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-16-44)
+(not (LYING-ON-T-17-43))
+(not (LYING-ON-T-16-43))
+)
+)
+(:action ROLL-T-17-44-T-16-44-T-17-45-T-16-45-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-16-45)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action ROLL-T-16-43-T-17-43-T-16-44-T-17-44-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-43)
+(LYING-ON-T-16-43)
+)
+:effect
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-16-43))
+(not (LYING-ON-T-17-43))
+)
+)
+(:action ROLL-T-16-44-T-17-44-T-16-45-T-17-45-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-16-44)
+)
+:effect
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-17-45)
+(not (LYING-ON-T-16-44))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action ROLL-T-18-44-T-17-44-T-18-45-T-17-45-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-18-44)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-17-45)
+(not (LYING-ON-T-18-44))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action ROLL-T-17-44-T-18-44-T-17-45-T-18-45-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-18-45)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action ROLL-T-19-44-T-18-44-T-19-45-T-18-45-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-19-44)
+)
+:effect
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-18-45)
+(not (LYING-ON-T-19-44))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action ROLL-T-18-44-T-19-44-T-18-45-T-19-45-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-18-44)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-19-45)
+(not (LYING-ON-T-18-44))
+(not (LYING-ON-T-19-44))
+)
+)
+(:action ROLL-T-16-44-T-16-43-T-17-44-T-17-43-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-43)
+(LYING-ON-T-16-44)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-43)
+(not (LYING-ON-T-16-44))
+(not (LYING-ON-T-16-43))
+)
+)
+(:action ROLL-T-16-43-T-16-44-T-17-43-T-17-44-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-43)
+)
+:effect
+(and
+(LYING-ON-T-17-43)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-16-43))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action ROLL-T-16-45-T-16-44-T-17-45-T-17-44-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-45)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-16-45))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action ROLL-T-16-44-T-16-45-T-17-44-T-17-45-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-16-44)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-45)
+(not (LYING-ON-T-16-44))
+(not (LYING-ON-T-16-45))
+)
+)
+(:action ROLL-T-17-45-T-17-44-T-18-45-T-18-44-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-18-44)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action ROLL-T-17-44-T-17-45-T-18-44-T-18-45-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-18-45)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action ROLL-T-18-45-T-18-44-T-19-45-T-19-44-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-19-44)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action ROLL-T-18-44-T-18-45-T-19-44-T-19-45-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-18-44)
+)
+:effect
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-19-45)
+(not (LYING-ON-T-18-44))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action ROLL-T-17-44-T-16-44-T-17-43-T-16-43-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-17-43)
+(LYING-ON-T-16-43)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-16-44))
+)
+)
+(:action ROLL-T-17-45-T-16-45-T-17-44-T-16-44-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-16-44)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-16-45))
+)
+)
+(:action ROLL-T-16-44-T-17-44-T-16-43-T-17-43-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-16-44)
+)
+:effect
+(and
+(LYING-ON-T-16-43)
+(LYING-ON-T-17-43)
+(not (LYING-ON-T-16-44))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action ROLL-T-16-45-T-17-45-T-16-44-T-17-44-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-16-45)
+)
+:effect
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-16-45))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action ROLL-T-18-45-T-17-45-T-18-44-T-17-44-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action ROLL-T-17-45-T-18-45-T-17-44-T-18-44-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-18-44)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action ROLL-T-19-45-T-18-45-T-19-44-T-18-44-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-19-45)
+)
+:effect
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-18-44)
+(not (LYING-ON-T-19-45))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action ROLL-T-18-45-T-19-45-T-18-44-T-19-44-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-19-44)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-19-45))
+)
+)
+(:action ROLL-T-17-45-T-17-44-T-16-45-T-16-44-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(LYING-ON-T-16-45)
+(LYING-ON-T-16-44)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action ROLL-T-17-44-T-17-45-T-16-44-T-16-45-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(LYING-ON-T-16-44)
+(LYING-ON-T-16-45)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action ROLL-T-18-45-T-18-44-T-17-45-T-17-44-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-17-44)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action ROLL-T-18-44-T-18-45-T-17-44-T-17-45-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-18-44)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-45)
+(not (LYING-ON-T-18-44))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action ROLL-T-19-45-T-19-44-T-18-45-T-18-44-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-19-45)
+)
+:effect
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-18-44)
+(not (LYING-ON-T-19-45))
+(not (LYING-ON-T-19-44))
+)
+)
+(:action ROLL-T-19-44-T-19-45-T-18-44-T-18-45-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-19-44)
+)
+:effect
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-18-45)
+(not (LYING-ON-T-19-44))
+(not (LYING-ON-T-19-45))
+)
+)
+(:action STAND-UP-T-17-44-T-18-44-T-19-44-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-17-44)
+)
+:effect
+(and
+(STANDING-ON-T-19-44)
+(not (LYING-ON-T-17-44))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action STAND-UP-T-17-45-T-18-45-T-19-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(STANDING-ON-T-19-45)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action STAND-UP-T-18-45-T-19-45-T-20-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(STANDING-ON-T-20-45)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-19-45))
+)
+)
+(:action STAND-UP-T-19-45-T-20-45-T-21-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-45)
+(LYING-ON-T-19-45)
+)
+:effect
+(and
+(STANDING-ON-T-21-45)
+(not (LYING-ON-T-19-45))
+(not (LYING-ON-T-20-45))
+)
+)
+(:action STAND-UP-T-20-45-T-21-45-T-22-45-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-45)
+(LYING-ON-T-20-45)
+)
+:effect
+(and
+(STANDING-ON-T-22-45)
+(not (LYING-ON-T-20-45))
+(not (LYING-ON-T-21-45))
+)
+)
+(:action STAND-UP-T-17-45-T-17-44-T-17-43-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-17-45)
+)
+:effect
+(and
+(STANDING-ON-T-17-43)
+(not (LYING-ON-T-17-45))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action STAND-UP-T-19-45-T-19-44-T-19-43-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-19-45)
+)
+:effect
+(and
+(STANDING-ON-T-19-43)
+(not (LYING-ON-T-19-45))
+(not (LYING-ON-T-19-44))
+)
+)
+(:action STAND-UP-T-18-44-T-17-44-T-16-44-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-18-44)
+)
+:effect
+(and
+(STANDING-ON-T-16-44)
+(not (LYING-ON-T-18-44))
+(not (LYING-ON-T-17-44))
+)
+)
+(:action STAND-UP-T-18-45-T-17-45-T-16-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-18-45)
+)
+:effect
+(and
+(STANDING-ON-T-16-45)
+(not (LYING-ON-T-18-45))
+(not (LYING-ON-T-17-45))
+)
+)
+(:action STAND-UP-T-19-44-T-18-44-T-17-44-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-44)
+(LYING-ON-T-19-44)
+)
+:effect
+(and
+(STANDING-ON-T-17-44)
+(not (LYING-ON-T-19-44))
+(not (LYING-ON-T-18-44))
+)
+)
+(:action STAND-UP-T-19-45-T-18-45-T-17-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-18-45)
+(LYING-ON-T-19-45)
+)
+:effect
+(and
+(STANDING-ON-T-17-45)
+(not (LYING-ON-T-19-45))
+(not (LYING-ON-T-18-45))
+)
+)
+(:action STAND-UP-T-20-45-T-19-45-T-18-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-20-45)
+)
+:effect
+(and
+(STANDING-ON-T-18-45)
+(not (LYING-ON-T-20-45))
+(not (LYING-ON-T-19-45))
+)
+)
+(:action STAND-UP-T-21-45-T-20-45-T-19-45-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-45)
+(LYING-ON-T-21-45)
+)
+:effect
+(and
+(STANDING-ON-T-19-45)
+(not (LYING-ON-T-21-45))
+(not (LYING-ON-T-20-45))
+)
+)
+(:action LAY-DOWN-T-19-43-T-19-44-T-19-45-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-43)
+)
+:effect
+(and
+(LYING-ON-T-19-45)
+(LYING-ON-T-19-44)
+(not (STANDING-ON-T-19-43))
+)
+)
+(:action LAY-DOWN-T-19-43-T-20-43-T-21-43-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-43)
+)
+:effect
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-20-43)
+(not (STANDING-ON-T-19-43))
+)
+)
+(:action LAY-DOWN-T-19-45-T-20-45-T-21-45-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-45)
+)
+:effect
+(and
+(LYING-ON-T-21-45)
+(LYING-ON-T-20-45)
+(not (STANDING-ON-T-19-45))
+)
+)
+(:action LAY-DOWN-T-19-44-T-19-43-T-19-42-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-44)
+)
+:effect
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-19-43)
+(not (STANDING-ON-T-19-44))
+)
+)
+(:action LAY-DOWN-T-19-45-T-19-44-T-19-43-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-45)
+)
+:effect
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-44)
+(not (STANDING-ON-T-19-45))
+)
+)
+(:action LAY-DOWN-T-19-44-T-18-44-T-17-44-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-44)
+)
+:effect
+(and
+(LYING-ON-T-17-44)
+(LYING-ON-T-18-44)
+(not (STANDING-ON-T-19-44))
+)
+)
+(:action LAY-DOWN-T-19-45-T-18-45-T-17-45-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-45)
+)
+:effect
+(and
+(LYING-ON-T-17-45)
+(LYING-ON-T-18-45)
+(not (STANDING-ON-T-19-45))
+)
+)
+(:action STAND-UP-T-19-42-T-19-43-T-19-44-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-42)
+)
+:effect
+(and
+(STANDING-ON-T-19-44)
+(not (LYING-ON-T-19-42))
+(not (LYING-ON-T-19-43))
+)
+)
+(:action STAND-UP-T-19-43-T-19-44-T-19-45-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-19-43)
+)
+:effect
+(and
+(STANDING-ON-T-19-45)
+(not (LYING-ON-T-19-43))
+(not (LYING-ON-T-19-44))
+)
+)
+(:action STAND-UP-T-19-43-T-20-43-T-21-43-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-19-43)
+)
+:effect
+(and
+(STANDING-ON-T-21-43)
+(not (LYING-ON-T-19-43))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action STAND-UP-T-19-44-T-19-43-T-19-42-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-44)
+)
+:effect
+(and
+(STANDING-ON-T-19-42)
+(not (LYING-ON-T-19-44))
+(not (LYING-ON-T-19-43))
+)
+)
+(:action STAND-UP-T-21-43-T-20-43-T-19-43-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-21-43)
+)
+:effect
+(and
+(STANDING-ON-T-19-43)
+(not (LYING-ON-T-21-43))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action LAY-DOWN-T-19-42-T-19-43-T-19-44-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-42)
+)
+:effect
+(and
+(LYING-ON-T-19-44)
+(LYING-ON-T-19-43)
+(not (STANDING-ON-T-19-42))
+)
+)
+(:action LAY-DOWN-T-19-42-T-20-42-T-21-42-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-19-42)
+)
+:effect
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-20-42)
+(not (STANDING-ON-T-19-42))
+)
+)
+(:action LAY-DOWN-T-21-43-T-21-42-T-21-41-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-43)
+)
+:effect
+(and
+(LYING-ON-T-21-41)
+(LYING-ON-T-21-42)
+(not (STANDING-ON-T-21-43))
+)
+)
+(:action LAY-DOWN-T-21-43-T-20-43-T-19-43-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-43)
+)
+:effect
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-20-43)
+(not (STANDING-ON-T-21-43))
+)
+)
+(:action ROLL-T-20-42-T-19-42-T-20-43-T-19-43-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-20-42)
+)
+:effect
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-19-43)
+(not (LYING-ON-T-20-42))
+(not (LYING-ON-T-19-42))
+)
+)
+(:action ROLL-T-19-42-T-20-42-T-19-43-T-20-43-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-19-42)
+)
+:effect
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-20-43)
+(not (LYING-ON-T-19-42))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action ROLL-T-21-42-T-20-42-T-21-43-T-20-43-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-21-42)
+)
+:effect
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-20-43)
+(not (LYING-ON-T-21-42))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action ROLL-T-20-42-T-21-42-T-20-43-T-21-43-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-20-42)
+)
+:effect
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-21-43)
+(not (LYING-ON-T-20-42))
+(not (LYING-ON-T-21-42))
+)
+)
+(:action ROLL-T-19-43-T-19-42-T-20-43-T-20-42-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-19-43)
+)
+:effect
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-20-42)
+(not (LYING-ON-T-19-43))
+(not (LYING-ON-T-19-42))
+)
+)
+(:action ROLL-T-19-42-T-19-43-T-20-42-T-20-43-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-42)
+)
+:effect
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-20-43)
+(not (LYING-ON-T-19-42))
+(not (LYING-ON-T-19-43))
+)
+)
+(:action ROLL-T-20-43-T-20-42-T-21-43-T-21-42-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-20-43)
+)
+:effect
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-21-42)
+(not (LYING-ON-T-20-43))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action ROLL-T-20-42-T-20-43-T-21-42-T-21-43-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-20-42)
+)
+:effect
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-21-43)
+(not (LYING-ON-T-20-42))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action ROLL-T-20-43-T-19-43-T-20-42-T-19-42-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-20-43)
+)
+:effect
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-19-42)
+(not (LYING-ON-T-20-43))
+(not (LYING-ON-T-19-43))
+)
+)
+(:action ROLL-T-19-43-T-20-43-T-19-42-T-20-42-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-19-43)
+)
+:effect
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-20-42)
+(not (LYING-ON-T-19-43))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action ROLL-T-21-43-T-20-43-T-21-42-T-20-42-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-21-43)
+)
+:effect
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-20-42)
+(not (LYING-ON-T-21-43))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action ROLL-T-20-43-T-21-43-T-20-42-T-21-42-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-20-43)
+)
+:effect
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-21-42)
+(not (LYING-ON-T-20-43))
+(not (LYING-ON-T-21-43))
+)
+)
+(:action ROLL-T-20-43-T-20-42-T-19-43-T-19-42-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-20-43)
+)
+:effect
+(and
+(LYING-ON-T-19-43)
+(LYING-ON-T-19-42)
+(not (LYING-ON-T-20-43))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action ROLL-T-20-42-T-20-43-T-19-42-T-19-43-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-20-42)
+)
+:effect
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-19-43)
+(not (LYING-ON-T-20-42))
+(not (LYING-ON-T-20-43))
+)
+)
+(:action ROLL-T-21-43-T-21-42-T-20-43-T-20-42-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-21-43)
+)
+:effect
+(and
+(LYING-ON-T-20-43)
+(LYING-ON-T-20-42)
+(not (LYING-ON-T-21-43))
+(not (LYING-ON-T-21-42))
+)
+)
+(:action ROLL-T-21-42-T-21-43-T-20-42-T-20-43-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-21-42)
+)
+:effect
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-20-43)
+(not (LYING-ON-T-21-42))
+(not (LYING-ON-T-21-43))
+)
+)
+(:action STAND-UP-T-21-41-T-21-42-T-21-43-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-21-41)
+)
+:effect
+(and
+(STANDING-ON-T-21-43)
+(not (LYING-ON-T-21-41))
+(not (LYING-ON-T-21-42))
+)
+)
+(:action STAND-UP-T-19-42-T-20-42-T-21-42-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-19-42)
+)
+:effect
+(and
+(STANDING-ON-T-21-42)
+(not (LYING-ON-T-19-42))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action STAND-UP-T-21-42-T-21-41-T-21-40-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-41)
+(LYING-ON-T-21-42)
+)
+:effect
+(and
+(STANDING-ON-T-21-40)
+(not (LYING-ON-T-21-42))
+(not (LYING-ON-T-21-41))
+)
+)
+(:action STAND-UP-T-21-43-T-21-42-T-21-41-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-21-43)
+)
+:effect
+(and
+(STANDING-ON-T-21-41)
+(not (LYING-ON-T-21-43))
+(not (LYING-ON-T-21-42))
+)
+)
+(:action STAND-UP-T-21-42-T-20-42-T-19-42-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-20-42)
+(LYING-ON-T-21-42)
+)
+:effect
+(and
+(STANDING-ON-T-19-42)
+(not (LYING-ON-T-21-42))
+(not (LYING-ON-T-20-42))
+)
+)
+(:action LAY-DOWN-T-21-40-T-21-41-T-21-42-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-40)
+)
+:effect
+(and
+(LYING-ON-T-21-42)
+(LYING-ON-T-21-41)
+(not (STANDING-ON-T-21-40))
+)
+)
+(:action LAY-DOWN-T-21-41-T-21-42-T-21-43-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-41)
+)
+:effect
+(and
+(LYING-ON-T-21-43)
+(LYING-ON-T-21-42)
+(not (STANDING-ON-T-21-41))
+)
+)
+(:action LAY-DOWN-T-21-40-T-21-39-T-21-38-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-40)
+)
+:effect
+(and
+(LYING-ON-T-21-38)
+(LYING-ON-T-21-39)
+(not (STANDING-ON-T-21-40))
+)
+)
+(:action LAY-DOWN-T-21-41-T-21-40-T-21-39-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-41)
+)
+:effect
+(and
+(LYING-ON-T-21-39)
+(LYING-ON-T-21-40)
+(not (STANDING-ON-T-21-41))
+)
+)
+(:action LAY-DOWN-T-21-42-T-21-41-T-21-40-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-42)
+)
+:effect
+(and
+(LYING-ON-T-21-40)
+(LYING-ON-T-21-41)
+(not (STANDING-ON-T-21-42))
+)
+)
+(:action LAY-DOWN-T-21-42-T-20-42-T-19-42-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-42)
+)
+:effect
+(and
+(LYING-ON-T-19-42)
+(LYING-ON-T-20-42)
+(not (STANDING-ON-T-21-42))
+)
+)
+(:action STAND-UP-T-21-38-T-21-39-T-21-40-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-39)
+(LYING-ON-T-21-38)
+)
+:effect
+(and
+(STANDING-ON-T-21-40)
+(not (LYING-ON-T-21-38))
+(not (LYING-ON-T-21-39))
+)
+)
+(:action STAND-UP-T-21-39-T-21-40-T-21-41-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-40)
+(LYING-ON-T-21-39)
+)
+:effect
+(and
+(STANDING-ON-T-21-41)
+(not (LYING-ON-T-21-39))
+(not (LYING-ON-T-21-40))
+)
+)
+(:action STAND-UP-T-21-40-T-21-41-T-21-42-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-41)
+(LYING-ON-T-21-40)
+)
+:effect
+(and
+(STANDING-ON-T-21-42)
+(not (LYING-ON-T-21-40))
+(not (LYING-ON-T-21-41))
+)
+)
+(:action STAND-UP-T-21-39-T-21-38-T-21-37-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-38)
+(LYING-ON-T-21-39)
+)
+:effect
+(and
+(STANDING-ON-T-21-37)
+(not (LYING-ON-T-21-39))
+(not (LYING-ON-T-21-38))
+)
+)
+(:action STAND-UP-T-21-40-T-21-39-T-21-38-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-39)
+(LYING-ON-T-21-40)
+)
+:effect
+(and
+(STANDING-ON-T-21-38)
+(not (LYING-ON-T-21-40))
+(not (LYING-ON-T-21-39))
+)
+)
+(:action STAND-UP-T-21-41-T-21-40-T-21-39-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-40)
+(LYING-ON-T-21-41)
+)
+:effect
+(and
+(STANDING-ON-T-21-39)
+(not (LYING-ON-T-21-41))
+(not (LYING-ON-T-21-40))
+)
+)
+(:action LAY-DOWN-T-21-37-T-21-38-T-21-39-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-37)
+)
+:effect
+(and
+(LYING-ON-T-21-39)
+(LYING-ON-T-21-38)
+(not (STANDING-ON-T-21-37))
+)
+)
+(:action LAY-DOWN-T-21-38-T-21-39-T-21-40-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-38)
+)
+:effect
+(and
+(LYING-ON-T-21-40)
+(LYING-ON-T-21-39)
+(not (STANDING-ON-T-21-38))
+)
+)
+(:action LAY-DOWN-T-21-39-T-21-40-T-21-41-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-39)
+)
+:effect
+(and
+(LYING-ON-T-21-41)
+(LYING-ON-T-21-40)
+(not (STANDING-ON-T-21-39))
+)
+)
+(:action LAY-DOWN-T-21-37-T-21-36-T-21-35-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-37)
+)
+:effect
+(and
+(LYING-ON-T-21-35)
+(LYING-ON-T-21-36)
+(not (STANDING-ON-T-21-37))
+)
+)
+(:action LAY-DOWN-T-21-38-T-21-37-T-21-36-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-38)
+)
+:effect
+(and
+(LYING-ON-T-21-36)
+(LYING-ON-T-21-37)
+(not (STANDING-ON-T-21-38))
+)
+)
+(:action LAY-DOWN-T-21-39-T-21-38-T-21-37-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-39)
+)
+:effect
+(and
+(LYING-ON-T-21-37)
+(LYING-ON-T-21-38)
+(not (STANDING-ON-T-21-39))
+)
+)
+(:action STAND-UP-T-21-35-T-21-36-T-21-37-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-36)
+(LYING-ON-T-21-35)
+)
+:effect
+(and
+(STANDING-ON-T-21-37)
+(not (LYING-ON-T-21-35))
+(not (LYING-ON-T-21-36))
+)
+)
+(:action STAND-UP-T-21-36-T-21-37-T-21-38-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-37)
+(LYING-ON-T-21-36)
+)
+:effect
+(and
+(STANDING-ON-T-21-38)
+(not (LYING-ON-T-21-36))
+(not (LYING-ON-T-21-37))
+)
+)
+(:action STAND-UP-T-21-37-T-21-38-T-21-39-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-38)
+(LYING-ON-T-21-37)
+)
+:effect
+(and
+(STANDING-ON-T-21-39)
+(not (LYING-ON-T-21-37))
+(not (LYING-ON-T-21-38))
+)
+)
+(:action STAND-UP-T-21-36-T-21-35-T-21-34-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-35)
+(LYING-ON-T-21-36)
+)
+:effect
+(and
+(STANDING-ON-T-21-34)
+(not (LYING-ON-T-21-36))
+(not (LYING-ON-T-21-35))
+)
+)
+(:action STAND-UP-T-21-37-T-21-36-T-21-35-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-36)
+(LYING-ON-T-21-37)
+)
+:effect
+(and
+(STANDING-ON-T-21-35)
+(not (LYING-ON-T-21-37))
+(not (LYING-ON-T-21-36))
+)
+)
+(:action STAND-UP-T-21-38-T-21-37-T-21-36-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-37)
+(LYING-ON-T-21-38)
+)
+:effect
+(and
+(STANDING-ON-T-21-36)
+(not (LYING-ON-T-21-38))
+(not (LYING-ON-T-21-37))
+)
+)
+(:action LAY-DOWN-T-21-34-T-21-35-T-21-36-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-34)
+)
+:effect
+(and
+(LYING-ON-T-21-36)
+(LYING-ON-T-21-35)
+(not (STANDING-ON-T-21-34))
+)
+)
+(:action LAY-DOWN-T-21-35-T-21-36-T-21-37-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-35)
+)
+:effect
+(and
+(LYING-ON-T-21-37)
+(LYING-ON-T-21-36)
+(not (STANDING-ON-T-21-35))
+)
+)
+(:action LAY-DOWN-T-21-36-T-21-37-T-21-38-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-36)
+)
+:effect
+(and
+(LYING-ON-T-21-38)
+(LYING-ON-T-21-37)
+(not (STANDING-ON-T-21-36))
+)
+)
+(:action LAY-DOWN-T-21-34-T-21-33-T-21-32-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-34)
+)
+:effect
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-33)
+(not (STANDING-ON-T-21-34))
+)
+)
+(:action LAY-DOWN-T-21-35-T-21-34-T-21-33-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-35)
+)
+:effect
+(and
+(LYING-ON-T-21-33)
+(LYING-ON-T-21-34)
+(not (STANDING-ON-T-21-35))
+)
+)
+(:action LAY-DOWN-T-21-36-T-21-35-T-21-34-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-36)
+)
+:effect
+(and
+(LYING-ON-T-21-34)
+(LYING-ON-T-21-35)
+(not (STANDING-ON-T-21-36))
+)
+)
+(:action STAND-UP-T-21-32-T-21-33-T-21-34-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-33)
+(LYING-ON-T-21-32)
+)
+:effect
+(and
+(STANDING-ON-T-21-34)
+(not (LYING-ON-T-21-32))
+(not (LYING-ON-T-21-33))
+)
+)
+(:action STAND-UP-T-21-33-T-21-34-T-21-35-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-34)
+(LYING-ON-T-21-33)
+)
+:effect
+(and
+(STANDING-ON-T-21-35)
+(not (LYING-ON-T-21-33))
+(not (LYING-ON-T-21-34))
+)
+)
+(:action STAND-UP-T-21-34-T-21-35-T-21-36-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-35)
+(LYING-ON-T-21-34)
+)
+:effect
+(and
+(STANDING-ON-T-21-36)
+(not (LYING-ON-T-21-34))
+(not (LYING-ON-T-21-35))
+)
+)
+(:action STAND-UP-T-21-33-T-21-32-T-21-31-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-33)
+)
+:effect
+(and
+(STANDING-ON-T-21-31)
+(not (LYING-ON-T-21-33))
+(not (LYING-ON-T-21-32))
+)
+)
+(:action STAND-UP-T-21-34-T-21-33-T-21-32-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-33)
+(LYING-ON-T-21-34)
+)
+:effect
+(and
+(STANDING-ON-T-21-32)
+(not (LYING-ON-T-21-34))
+(not (LYING-ON-T-21-33))
+)
+)
+(:action STAND-UP-T-21-35-T-21-34-T-21-33-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-34)
+(LYING-ON-T-21-35)
+)
+:effect
+(and
+(STANDING-ON-T-21-33)
+(not (LYING-ON-T-21-35))
+(not (LYING-ON-T-21-34))
+)
+)
+(:action LAY-DOWN-T-21-30-T-21-31-T-21-32-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-30)
+)
+:effect
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-31)
+(not (STANDING-ON-T-21-30))
+)
+)
+(:action LAY-DOWN-T-21-31-T-21-32-T-21-33-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-21-33)
+(LYING-ON-T-21-32)
+(not (STANDING-ON-T-21-31))
+)
+)
+(:action LAY-DOWN-T-21-32-T-21-33-T-21-34-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-32)
+)
+:effect
+(and
+(LYING-ON-T-21-34)
+(LYING-ON-T-21-33)
+(not (STANDING-ON-T-21-32))
+)
+)
+(:action LAY-DOWN-T-21-33-T-21-34-T-21-35-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-33)
+)
+:effect
+(and
+(LYING-ON-T-21-35)
+(LYING-ON-T-21-34)
+(not (STANDING-ON-T-21-33))
+)
+)
+(:action LAY-DOWN-T-23-30-T-23-31-T-23-32-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-23-31)
+(not (STANDING-ON-T-23-30))
+)
+)
+(:action LAY-DOWN-T-24-30-T-24-31-T-24-32-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-24-31)
+(not (STANDING-ON-T-24-30))
+)
+)
+(:action LAY-DOWN-T-21-30-T-22-30-T-23-30-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-30)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-22-30)
+(not (STANDING-ON-T-21-30))
+)
+)
+(:action LAY-DOWN-T-21-31-T-22-31-T-23-31-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+(not (STANDING-ON-T-21-31))
+)
+)
+(:action LAY-DOWN-T-21-32-T-22-32-T-23-32-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-32)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-22-32)
+(not (STANDING-ON-T-21-32))
+)
+)
+(:action LAY-DOWN-T-22-32-T-23-32-T-24-32-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-23-32)
+(not (STANDING-ON-T-22-32))
+)
+)
+(:action LAY-DOWN-T-21-32-T-21-31-T-21-30-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-32)
+)
+:effect
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-21-31)
+(not (STANDING-ON-T-21-32))
+)
+)
+(:action LAY-DOWN-T-21-33-T-21-32-T-21-31-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-21-33)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-32)
+(not (STANDING-ON-T-21-33))
+)
+)
+(:action LAY-DOWN-T-22-32-T-22-31-T-22-30-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+(not (STANDING-ON-T-22-32))
+)
+)
+(:action LAY-DOWN-T-23-30-T-22-30-T-21-30-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-22-30)
+(not (STANDING-ON-T-23-30))
+)
+)
+(:action LAY-DOWN-T-24-30-T-23-30-T-22-30-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-23-30)
+(not (STANDING-ON-T-24-30))
+)
+)
+(:action ROLL-T-21-32-T-21-31-T-22-32-T-22-31-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-32)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-21-32))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action ROLL-T-21-31-T-21-32-T-22-31-T-22-32-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-32)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-21-32))
+)
+)
+(:action ROLL-T-22-32-T-22-31-T-23-32-T-23-31-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-22-31-T-22-32-T-23-31-T-23-32-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-32)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action ROLL-T-23-32-T-23-31-T-24-32-T-24-31-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-24-31)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-23-31-T-23-32-T-24-31-T-24-32-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-32)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action ROLL-T-22-32-T-21-32-T-22-31-T-21-31-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-31)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-21-32))
+)
+)
+(:action ROLL-T-21-32-T-22-32-T-21-31-T-22-31-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-21-32)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-21-32))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action ROLL-T-23-32-T-22-32-T-23-31-T-22-31-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action ROLL-T-22-32-T-23-32-T-22-31-T-23-31-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action ROLL-T-24-32-T-23-32-T-24-31-T-23-31-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-24-32)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-24-32))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action ROLL-T-23-32-T-24-32-T-23-31-T-24-31-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-24-31)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-24-32))
+)
+)
+(:action ROLL-T-22-32-T-22-31-T-21-32-T-21-31-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-31)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-22-31-T-22-32-T-21-31-T-21-32-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-32)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action ROLL-T-23-32-T-23-31-T-22-32-T-22-31-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-23-31-T-23-32-T-22-31-T-22-32-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-32)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action ROLL-T-24-32-T-24-31-T-23-32-T-23-31-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-32)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-24-32))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action ROLL-T-24-31-T-24-32-T-23-31-T-23-32-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-32)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-24-32))
+)
+)
+(:action STAND-UP-T-21-30-T-21-31-T-21-32-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-30)
+)
+:effect
+(and
+(STANDING-ON-T-21-32)
+(not (LYING-ON-T-21-30))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action STAND-UP-T-21-31-T-21-32-T-21-33-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(STANDING-ON-T-21-33)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-21-32))
+)
+)
+(:action STAND-UP-T-22-30-T-22-31-T-22-32-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(STANDING-ON-T-22-32)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action STAND-UP-T-21-30-T-22-30-T-23-30-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-21-30)
+)
+:effect
+(and
+(STANDING-ON-T-23-30)
+(not (LYING-ON-T-21-30))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action STAND-UP-T-21-31-T-22-31-T-23-31-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(STANDING-ON-T-23-31)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action STAND-UP-T-21-32-T-22-32-T-23-32-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-21-32)
+)
+:effect
+(and
+(STANDING-ON-T-23-32)
+(not (LYING-ON-T-21-32))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action STAND-UP-T-22-30-T-23-30-T-24-30-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(STANDING-ON-T-24-30)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action STAND-UP-T-22-31-T-23-31-T-24-31-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(STANDING-ON-T-24-31)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action STAND-UP-T-22-32-T-23-32-T-24-32-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(STANDING-ON-T-24-32)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action STAND-UP-T-21-32-T-21-31-T-21-30-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-32)
+)
+:effect
+(and
+(STANDING-ON-T-21-30)
+(not (LYING-ON-T-21-32))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action STAND-UP-T-22-32-T-22-31-T-22-30-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-32)
+)
+:effect
+(and
+(STANDING-ON-T-22-30)
+(not (LYING-ON-T-22-32))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action STAND-UP-T-23-32-T-23-31-T-23-30-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(STANDING-ON-T-23-30)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action STAND-UP-T-24-32-T-24-31-T-24-30-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-32)
+)
+:effect
+(and
+(STANDING-ON-T-24-30)
+(not (LYING-ON-T-24-32))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action STAND-UP-T-23-30-T-22-30-T-21-30-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(STANDING-ON-T-21-30)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action STAND-UP-T-23-31-T-22-31-T-21-31-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(STANDING-ON-T-21-31)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action STAND-UP-T-23-32-T-22-32-T-21-32-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-23-32)
+)
+:effect
+(and
+(STANDING-ON-T-21-32)
+(not (LYING-ON-T-23-32))
+(not (LYING-ON-T-22-32))
+)
+)
+(:action STAND-UP-T-24-32-T-23-32-T-22-32-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-24-32)
+)
+:effect
+(and
+(STANDING-ON-T-22-32)
+(not (LYING-ON-T-24-32))
+(not (LYING-ON-T-23-32))
+)
+)
+(:action LAY-DOWN-T-22-30-T-22-31-T-22-32-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-22-31)
+(not (STANDING-ON-T-22-30))
+)
+)
+(:action LAY-DOWN-T-24-29-T-24-30-T-24-31-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-29)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-30)
+(not (STANDING-ON-T-24-29))
+)
+)
+(:action LAY-DOWN-T-22-30-T-23-30-T-24-30-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-23-30)
+(not (STANDING-ON-T-22-30))
+)
+)
+(:action LAY-DOWN-T-22-31-T-23-31-T-24-31-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+(not (STANDING-ON-T-22-31))
+)
+)
+(:action LAY-DOWN-T-23-31-T-23-30-T-23-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-23-30)
+(not (STANDING-ON-T-23-31))
+)
+)
+(:action LAY-DOWN-T-23-32-T-23-31-T-23-30-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+(not (STANDING-ON-T-23-32))
+)
+)
+(:action LAY-DOWN-T-24-31-T-24-30-T-24-29-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-24-30)
+(not (STANDING-ON-T-24-31))
+)
+)
+(:action LAY-DOWN-T-24-32-T-24-31-T-24-30-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-32)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-31)
+(not (STANDING-ON-T-24-32))
+)
+)
+(:action LAY-DOWN-T-23-31-T-22-31-T-21-31-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-22-31)
+(not (STANDING-ON-T-23-31))
+)
+)
+(:action LAY-DOWN-T-23-32-T-22-32-T-21-32-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-32)
+)
+:effect
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-22-32)
+(not (STANDING-ON-T-23-32))
+)
+)
+(:action LAY-DOWN-T-24-31-T-23-31-T-22-31-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+(not (STANDING-ON-T-24-31))
+)
+)
+(:action LAY-DOWN-T-24-32-T-23-32-T-22-32-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-24-32)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-23-32)
+(not (STANDING-ON-T-24-32))
+)
+)
+(:action ROLL-T-22-30-T-21-30-T-22-31-T-21-31-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-31)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-21-30))
+)
+)
+(:action ROLL-T-22-31-T-21-31-T-22-32-T-21-32-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-21-32)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action ROLL-T-21-30-T-22-30-T-21-31-T-22-31-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-21-30)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-21-30))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action ROLL-T-23-30-T-22-30-T-23-31-T-22-31-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action ROLL-T-21-31-T-22-31-T-21-32-T-22-32-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-21-32)
+(LYING-ON-T-22-32)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-23-31-T-22-31-T-23-32-T-22-32-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-22-32)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-22-30-T-23-30-T-22-31-T-23-31-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-22-31-T-23-31-T-22-32-T-23-32-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-22-32)
+(LYING-ON-T-23-32)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-24-31-T-23-31-T-24-32-T-23-32-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-24-32)
+(LYING-ON-T-23-32)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-23-30-T-24-30-T-23-31-T-24-31-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-24-31)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action ROLL-T-23-31-T-24-31-T-23-32-T-24-32-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-23-32)
+(LYING-ON-T-24-32)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action ROLL-T-21-31-T-21-30-T-22-31-T-22-30-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-30)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-21-30))
+)
+)
+(:action ROLL-T-21-30-T-21-31-T-22-30-T-22-31-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-30)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-21-30))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action ROLL-T-22-31-T-22-30-T-23-31-T-23-30-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action ROLL-T-22-30-T-22-31-T-23-30-T-23-31-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-23-30-T-23-29-T-24-30-T-24-29-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-29)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-23-29))
+)
+)
+(:action ROLL-T-23-29-T-23-30-T-24-29-T-24-30-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-29)
+)
+:effect
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-24-30)
+(not (LYING-ON-T-23-29))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-23-31-T-23-30-T-24-31-T-24-30-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-30)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-23-30-T-23-31-T-24-30-T-24-31-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-31)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-22-31-T-21-31-T-22-30-T-21-30-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-21-30)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-21-31))
+)
+)
+(:action ROLL-T-21-31-T-22-31-T-21-30-T-22-30-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-21-31)
+)
+:effect
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-22-30)
+(not (LYING-ON-T-21-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-23-31-T-22-31-T-23-30-T-22-30-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-22-30)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-24-30-T-23-30-T-24-29-T-23-29-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-23-29)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-22-31-T-23-31-T-22-30-T-23-30-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-24-31-T-23-31-T-24-30-T-23-30-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-23-30-T-24-30-T-23-29-T-24-29-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-24-29)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action ROLL-T-23-31-T-24-31-T-23-30-T-24-30-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action ROLL-T-22-31-T-22-30-T-21-31-T-21-30-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+)
+:effect
+(and
+(LYING-ON-T-21-31)
+(LYING-ON-T-21-30)
+(not (LYING-ON-T-22-31))
+(not (LYING-ON-T-22-30))
+)
+)
+(:action ROLL-T-22-30-T-22-31-T-21-30-T-21-31-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-30)
+)
+:effect
+(and
+(LYING-ON-T-21-30)
+(LYING-ON-T-21-31)
+(not (LYING-ON-T-22-30))
+(not (LYING-ON-T-22-31))
+)
+)
+(:action ROLL-T-23-31-T-23-30-T-22-31-T-22-30-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(LYING-ON-T-22-31)
+(LYING-ON-T-22-30)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-23-30-T-23-31-T-22-30-T-22-31-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(LYING-ON-T-22-30)
+(LYING-ON-T-22-31)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action ROLL-T-24-30-T-24-29-T-23-30-T-23-29-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-29)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-24-29))
+)
+)
+(:action ROLL-T-24-29-T-24-30-T-23-29-T-23-30-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-29)
+)
+:effect
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-24-29))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action ROLL-T-24-31-T-24-30-T-23-31-T-23-30-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action ROLL-T-24-30-T-24-31-T-23-30-T-23-31-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action STAND-UP-T-23-29-T-23-30-T-23-31-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-29)
+)
+:effect
+(and
+(STANDING-ON-T-23-31)
+(not (LYING-ON-T-23-29))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action STAND-UP-T-23-30-T-23-31-T-23-32-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+)
+:effect
+(and
+(STANDING-ON-T-23-32)
+(not (LYING-ON-T-23-30))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action STAND-UP-T-24-29-T-24-30-T-24-31-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-29)
+)
+:effect
+(and
+(STANDING-ON-T-24-31)
+(not (LYING-ON-T-24-29))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action STAND-UP-T-24-30-T-24-31-T-24-32-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(STANDING-ON-T-24-32)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-24-31))
+)
+)
+(:action STAND-UP-T-23-31-T-23-30-T-23-29-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-23-31)
+)
+:effect
+(and
+(STANDING-ON-T-23-29)
+(not (LYING-ON-T-23-31))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action STAND-UP-T-24-31-T-24-30-T-24-29-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(STANDING-ON-T-24-29)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-24-30))
+)
+)
+(:action STAND-UP-T-24-30-T-23-30-T-22-30-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(STANDING-ON-T-22-30)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action STAND-UP-T-24-31-T-23-31-T-22-31-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-24-31)
+)
+:effect
+(and
+(STANDING-ON-T-22-31)
+(not (LYING-ON-T-24-31))
+(not (LYING-ON-T-23-31))
+)
+)
+(:action LAY-DOWN-T-23-29-T-23-30-T-23-31-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-29)
+)
+:effect
+(and
+(LYING-ON-T-23-31)
+(LYING-ON-T-23-30)
+(not (STANDING-ON-T-23-29))
+)
+)
+(:action LAY-DOWN-T-23-29-T-24-29-T-25-29-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-23-29)
+)
+:effect
+(and
+(LYING-ON-T-25-29)
+(LYING-ON-T-24-29)
+(not (STANDING-ON-T-23-29))
+)
+)
+(:action ROLL-T-24-29-T-23-29-T-24-30-T-23-30-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-24-29)
+)
+:effect
+(and
+(LYING-ON-T-24-30)
+(LYING-ON-T-23-30)
+(not (LYING-ON-T-24-29))
+(not (LYING-ON-T-23-29))
+)
+)
+(:action ROLL-T-24-30-T-23-30-T-24-31-T-23-31-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+)
+:effect
+(and
+(LYING-ON-T-24-31)
+(LYING-ON-T-23-31)
+(not (LYING-ON-T-24-30))
+(not (LYING-ON-T-23-30))
+)
+)
+(:action ROLL-T-23-29-T-24-29-T-23-30-T-24-30-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-23-29)
+)
+:effect
+(and
+(LYING-ON-T-23-30)
+(LYING-ON-T-24-30)
+(not (LYING-ON-T-23-29))
+(not (LYING-ON-T-24-29))
+)
+)
+(:action STAND-UP-T-23-29-T-24-29-T-25-29-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-23-29)
+)
+:effect
+(and
+(STANDING-ON-T-25-29)
+(not (LYING-ON-T-23-29))
+(not (LYING-ON-T-24-29))
+)
+)
+(:action STAND-UP-T-25-29-T-25-28-T-25-27-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-25-29)
+)
+:effect
+(and
+(STANDING-ON-T-25-27)
+(not (LYING-ON-T-25-29))
+(not (LYING-ON-T-25-28))
+)
+)
+(:action STAND-UP-T-25-29-T-24-29-T-23-29-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-24-29)
+(LYING-ON-T-25-29)
+)
+:effect
+(and
+(STANDING-ON-T-23-29)
+(not (LYING-ON-T-25-29))
+(not (LYING-ON-T-24-29))
+)
+)
+(:action LAY-DOWN-T-25-27-T-25-28-T-25-29-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-27)
+)
+:effect
+(and
+(LYING-ON-T-25-29)
+(LYING-ON-T-25-28)
+(not (STANDING-ON-T-25-27))
+)
+)
+(:action LAY-DOWN-T-25-27-T-26-27-T-27-27-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-27)
+)
+:effect
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-26-27)
+(not (STANDING-ON-T-25-27))
+)
+)
+(:action LAY-DOWN-T-25-28-T-26-28-T-27-28-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-28)
+)
+:effect
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-26-28)
+(not (STANDING-ON-T-25-28))
+)
+)
+(:action LAY-DOWN-T-25-29-T-25-28-T-25-27-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-29)
+)
+:effect
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-25-28)
+(not (STANDING-ON-T-25-29))
+)
+)
+(:action LAY-DOWN-T-25-29-T-24-29-T-23-29-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-25-29)
+)
+:effect
+(and
+(LYING-ON-T-23-29)
+(LYING-ON-T-24-29)
+(not (STANDING-ON-T-25-29))
+)
+)
+(:action LAY-DOWN-T-27-27-T-26-27-T-25-27-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-27)
+)
+:effect
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-26-27)
+(not (STANDING-ON-T-27-27))
+)
+)
+(:action STAND-UP-T-25-27-T-25-28-T-25-29-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-25-27)
+)
+:effect
+(and
+(STANDING-ON-T-25-29)
+(not (LYING-ON-T-25-27))
+(not (LYING-ON-T-25-28))
+)
+)
+(:action STAND-UP-T-25-27-T-26-27-T-27-27-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-25-27)
+)
+:effect
+(and
+(STANDING-ON-T-27-27)
+(not (LYING-ON-T-25-27))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action STAND-UP-T-25-28-T-26-28-T-27-28-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-25-28)
+)
+:effect
+(and
+(STANDING-ON-T-27-28)
+(not (LYING-ON-T-25-28))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action STAND-UP-T-27-27-T-26-27-T-25-27-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-27-27)
+)
+:effect
+(and
+(STANDING-ON-T-25-27)
+(not (LYING-ON-T-27-27))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action STAND-UP-T-27-28-T-26-28-T-25-28-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-27-28)
+)
+:effect
+(and
+(STANDING-ON-T-25-28)
+(not (LYING-ON-T-27-28))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action LAY-DOWN-T-27-28-T-27-27-T-27-26-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-28)
+)
+:effect
+(and
+(LYING-ON-T-27-26)
+(LYING-ON-T-27-27)
+(not (STANDING-ON-T-27-28))
+)
+)
+(:action LAY-DOWN-T-27-28-T-26-28-T-25-28-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-28)
+)
+:effect
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-26-28)
+(not (STANDING-ON-T-27-28))
+)
+)
+(:action ROLL-T-26-27-T-25-27-T-26-28-T-25-28-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-26-27)
+)
+:effect
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-25-28)
+(not (LYING-ON-T-26-27))
+(not (LYING-ON-T-25-27))
+)
+)
+(:action ROLL-T-25-27-T-26-27-T-25-28-T-26-28-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-25-27)
+)
+:effect
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-26-28)
+(not (LYING-ON-T-25-27))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action ROLL-T-27-27-T-26-27-T-27-28-T-26-28-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-27-27)
+)
+:effect
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-26-28)
+(not (LYING-ON-T-27-27))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action ROLL-T-26-27-T-27-27-T-26-28-T-27-28-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-26-27)
+)
+:effect
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-27-28)
+(not (LYING-ON-T-26-27))
+(not (LYING-ON-T-27-27))
+)
+)
+(:action ROLL-T-25-28-T-25-27-T-26-28-T-26-27-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-25-28)
+)
+:effect
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-26-27)
+(not (LYING-ON-T-25-28))
+(not (LYING-ON-T-25-27))
+)
+)
+(:action ROLL-T-25-27-T-25-28-T-26-27-T-26-28-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-25-27)
+)
+:effect
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-26-28)
+(not (LYING-ON-T-25-27))
+(not (LYING-ON-T-25-28))
+)
+)
+(:action ROLL-T-26-28-T-26-27-T-27-28-T-27-27-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-26-28)
+)
+:effect
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-27-27)
+(not (LYING-ON-T-26-28))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action ROLL-T-26-27-T-26-28-T-27-27-T-27-28-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-26-27)
+)
+:effect
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-27-28)
+(not (LYING-ON-T-26-27))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action ROLL-T-26-28-T-25-28-T-26-27-T-25-27-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-26-28)
+)
+:effect
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-25-27)
+(not (LYING-ON-T-26-28))
+(not (LYING-ON-T-25-28))
+)
+)
+(:action ROLL-T-25-28-T-26-28-T-25-27-T-26-27-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-25-28)
+)
+:effect
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-26-27)
+(not (LYING-ON-T-25-28))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action ROLL-T-27-28-T-26-28-T-27-27-T-26-27-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-27-28)
+)
+:effect
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-26-27)
+(not (LYING-ON-T-27-28))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action ROLL-T-26-28-T-27-28-T-26-27-T-27-27-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-26-28)
+)
+:effect
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-27-27)
+(not (LYING-ON-T-26-28))
+(not (LYING-ON-T-27-28))
+)
+)
+(:action ROLL-T-26-28-T-26-27-T-25-28-T-25-27-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-26-28)
+)
+:effect
+(and
+(LYING-ON-T-25-28)
+(LYING-ON-T-25-27)
+(not (LYING-ON-T-26-28))
+(not (LYING-ON-T-26-27))
+)
+)
+(:action ROLL-T-26-27-T-26-28-T-25-27-T-25-28-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-26-27)
+)
+:effect
+(and
+(LYING-ON-T-25-27)
+(LYING-ON-T-25-28)
+(not (LYING-ON-T-26-27))
+(not (LYING-ON-T-26-28))
+)
+)
+(:action ROLL-T-27-28-T-27-27-T-26-28-T-26-27-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-27-28)
+)
+:effect
+(and
+(LYING-ON-T-26-28)
+(LYING-ON-T-26-27)
+(not (LYING-ON-T-27-28))
+(not (LYING-ON-T-27-27))
+)
+)
+(:action ROLL-T-27-27-T-27-28-T-26-27-T-26-28-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-27-27)
+)
+:effect
+(and
+(LYING-ON-T-26-27)
+(LYING-ON-T-26-28)
+(not (LYING-ON-T-27-27))
+(not (LYING-ON-T-27-28))
+)
+)
+(:action STAND-UP-T-27-26-T-27-27-T-27-28-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-27-26)
+)
+:effect
+(and
+(STANDING-ON-T-27-28)
+(not (LYING-ON-T-27-26))
+(not (LYING-ON-T-27-27))
+)
+)
+(:action STAND-UP-T-27-26-T-28-26-T-29-26-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-27-26)
+)
+:effect
+(and
+(STANDING-ON-T-29-26)
+(not (LYING-ON-T-27-26))
+(not (LYING-ON-T-28-26))
+)
+)
+(:action STAND-UP-T-27-28-T-27-27-T-27-26-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-27-27)
+(LYING-ON-T-27-28)
+)
+:effect
+(and
+(STANDING-ON-T-27-26)
+(not (LYING-ON-T-27-28))
+(not (LYING-ON-T-27-27))
+)
+)
+(:action LAY-DOWN-T-27-26-T-27-27-T-27-28-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-26)
+)
+:effect
+(and
+(LYING-ON-T-27-28)
+(LYING-ON-T-27-27)
+(not (STANDING-ON-T-27-26))
+)
+)
+(:action LAY-DOWN-T-29-24-T-29-25-T-29-26-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-24)
+)
+:effect
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-29-25)
+(not (STANDING-ON-T-29-24))
+)
+)
+(:action LAY-DOWN-T-27-26-T-28-26-T-29-26-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-27-26)
+)
+:effect
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-28-26)
+(not (STANDING-ON-T-27-26))
+)
+)
+(:action LAY-DOWN-T-28-26-T-28-25-T-28-24-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-26)
+)
+:effect
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-28-25)
+(not (STANDING-ON-T-28-26))
+)
+)
+(:action LAY-DOWN-T-29-26-T-29-25-T-29-24-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-26)
+)
+:effect
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-29-25)
+(not (STANDING-ON-T-29-26))
+)
+)
+(:action LAY-DOWN-T-29-26-T-28-26-T-27-26-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-29-26)
+)
+:effect
+(and
+(LYING-ON-T-27-26)
+(LYING-ON-T-28-26)
+(not (STANDING-ON-T-29-26))
+)
+)
+(:action ROLL-T-28-25-T-29-25-T-28-26-T-29-26-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-28-25)
+)
+:effect
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-29-26)
+(not (LYING-ON-T-28-25))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action ROLL-T-28-25-T-28-24-T-29-25-T-29-24-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-28-25)
+)
+:effect
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-24)
+(not (LYING-ON-T-28-25))
+(not (LYING-ON-T-28-24))
+)
+)
+(:action ROLL-T-28-24-T-28-25-T-29-24-T-29-25-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-24)
+)
+:effect
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-29-25)
+(not (LYING-ON-T-28-24))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action ROLL-T-28-26-T-28-25-T-29-26-T-29-25-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-26)
+)
+:effect
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-29-25)
+(not (LYING-ON-T-28-26))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action ROLL-T-28-25-T-28-26-T-29-25-T-29-26-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-28-25)
+)
+:effect
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-26)
+(not (LYING-ON-T-28-25))
+(not (LYING-ON-T-28-26))
+)
+)
+(:action ROLL-T-29-25-T-28-25-T-29-24-T-28-24-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-29-25)
+)
+:effect
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-28-24)
+(not (LYING-ON-T-29-25))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action ROLL-T-29-26-T-28-26-T-29-25-T-28-25-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-29-26)
+)
+:effect
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-28-25)
+(not (LYING-ON-T-29-26))
+(not (LYING-ON-T-28-26))
+)
+)
+(:action ROLL-T-28-25-T-29-25-T-28-24-T-29-24-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-28-25)
+)
+:effect
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-29-24)
+(not (LYING-ON-T-28-25))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action ROLL-T-28-26-T-29-26-T-28-25-T-29-25-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-28-26)
+)
+:effect
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-29-25)
+(not (LYING-ON-T-28-26))
+(not (LYING-ON-T-29-26))
+)
+)
+(:action ROLL-T-29-25-T-29-24-T-28-25-T-28-24-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-29-25)
+)
+:effect
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-24)
+(not (LYING-ON-T-29-25))
+(not (LYING-ON-T-29-24))
+)
+)
+(:action ROLL-T-29-24-T-29-25-T-28-24-T-28-25-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-24)
+)
+:effect
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-28-25)
+(not (LYING-ON-T-29-24))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action ROLL-T-29-26-T-29-25-T-28-26-T-28-25-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-26)
+)
+:effect
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-28-25)
+(not (LYING-ON-T-29-26))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action ROLL-T-29-25-T-29-26-T-28-25-T-28-26-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-29-25)
+)
+:effect
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-26)
+(not (LYING-ON-T-29-25))
+(not (LYING-ON-T-29-26))
+)
+)
+(:action STAND-UP-T-28-24-T-28-25-T-28-26-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-24)
+)
+:effect
+(and
+(STANDING-ON-T-28-26)
+(not (LYING-ON-T-28-24))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action STAND-UP-T-29-24-T-29-25-T-29-26-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-24)
+)
+:effect
+(and
+(STANDING-ON-T-29-26)
+(not (LYING-ON-T-29-24))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action STAND-UP-T-28-26-T-28-25-T-28-24-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-28-26)
+)
+:effect
+(and
+(STANDING-ON-T-28-24)
+(not (LYING-ON-T-28-26))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action STAND-UP-T-29-26-T-29-25-T-29-24-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-29-26)
+)
+:effect
+(and
+(STANDING-ON-T-29-24)
+(not (LYING-ON-T-29-26))
+(not (LYING-ON-T-29-25))
+)
+)
+(:action STAND-UP-T-29-26-T-28-26-T-27-26-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-29-26)
+)
+:effect
+(and
+(STANDING-ON-T-27-26)
+(not (LYING-ON-T-29-26))
+(not (LYING-ON-T-28-26))
+)
+)
+(:action LAY-DOWN-T-28-24-T-28-25-T-28-26-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-24)
+)
+:effect
+(and
+(LYING-ON-T-28-26)
+(LYING-ON-T-28-25)
+(not (STANDING-ON-T-28-24))
+)
+)
+(:action LAY-DOWN-T-28-24-T-29-24-T-30-24-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-28-24)
+)
+:effect
+(and
+(LYING-ON-T-30-24)
+(LYING-ON-T-29-24)
+(not (STANDING-ON-T-28-24))
+)
+)
+(:action ROLL-T-29-24-T-28-24-T-29-25-T-28-25-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-29-24)
+)
+:effect
+(and
+(LYING-ON-T-29-25)
+(LYING-ON-T-28-25)
+(not (LYING-ON-T-29-24))
+(not (LYING-ON-T-28-24))
+)
+)
+(:action ROLL-T-29-25-T-28-25-T-29-26-T-28-26-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-29-25)
+)
+:effect
+(and
+(LYING-ON-T-29-26)
+(LYING-ON-T-28-26)
+(not (LYING-ON-T-29-25))
+(not (LYING-ON-T-28-25))
+)
+)
+(:action ROLL-T-28-24-T-29-24-T-28-25-T-29-25-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-28-24)
+)
+:effect
+(and
+(LYING-ON-T-28-25)
+(LYING-ON-T-29-25)
+(not (LYING-ON-T-28-24))
+(not (LYING-ON-T-29-24))
+)
+)
+(:action STAND-UP-T-28-24-T-29-24-T-30-24-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-28-24)
+)
+:effect
+(and
+(STANDING-ON-T-30-24)
+(not (LYING-ON-T-28-24))
+(not (LYING-ON-T-29-24))
+)
+)
+(:action STAND-UP-T-30-24-T-30-23-T-30-22-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-30-24)
+)
+:effect
+(and
+(STANDING-ON-T-30-22)
+(not (LYING-ON-T-30-24))
+(not (LYING-ON-T-30-23))
+)
+)
+(:action STAND-UP-T-30-24-T-29-24-T-28-24-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-29-24)
+(LYING-ON-T-30-24)
+)
+:effect
+(and
+(STANDING-ON-T-28-24)
+(not (LYING-ON-T-30-24))
+(not (LYING-ON-T-29-24))
+)
+)
+(:action LAY-DOWN-T-30-22-T-30-23-T-30-24-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-22)
+)
+:effect
+(and
+(LYING-ON-T-30-24)
+(LYING-ON-T-30-23)
+(not (STANDING-ON-T-30-22))
+)
+)
+(:action LAY-DOWN-T-30-22-T-31-22-T-32-22-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-22)
+)
+:effect
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-31-22)
+(not (STANDING-ON-T-30-22))
+)
+)
+(:action LAY-DOWN-T-30-23-T-31-23-T-32-23-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-23)
+)
+:effect
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-31-23)
+(not (STANDING-ON-T-30-23))
+)
+)
+(:action LAY-DOWN-T-30-24-T-30-23-T-30-22-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-24)
+)
+:effect
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-30-23)
+(not (STANDING-ON-T-30-24))
+)
+)
+(:action LAY-DOWN-T-30-24-T-29-24-T-28-24-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-30-24)
+)
+:effect
+(and
+(LYING-ON-T-28-24)
+(LYING-ON-T-29-24)
+(not (STANDING-ON-T-30-24))
+)
+)
+(:action LAY-DOWN-T-32-22-T-31-22-T-30-22-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-22)
+)
+:effect
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-31-22)
+(not (STANDING-ON-T-32-22))
+)
+)
+(:action STAND-UP-T-30-22-T-30-23-T-30-24-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-30-22)
+)
+:effect
+(and
+(STANDING-ON-T-30-24)
+(not (LYING-ON-T-30-22))
+(not (LYING-ON-T-30-23))
+)
+)
+(:action STAND-UP-T-30-22-T-31-22-T-32-22-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-30-22)
+)
+:effect
+(and
+(STANDING-ON-T-32-22)
+(not (LYING-ON-T-30-22))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action STAND-UP-T-30-23-T-31-23-T-32-23-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-30-23)
+)
+:effect
+(and
+(STANDING-ON-T-32-23)
+(not (LYING-ON-T-30-23))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action STAND-UP-T-32-22-T-31-22-T-30-22-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-32-22)
+)
+:effect
+(and
+(STANDING-ON-T-30-22)
+(not (LYING-ON-T-32-22))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action STAND-UP-T-32-23-T-31-23-T-30-23-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-32-23)
+)
+:effect
+(and
+(STANDING-ON-T-30-23)
+(not (LYING-ON-T-32-23))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action LAY-DOWN-T-32-23-T-32-22-T-32-21-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-23)
+)
+:effect
+(and
+(LYING-ON-T-32-21)
+(LYING-ON-T-32-22)
+(not (STANDING-ON-T-32-23))
+)
+)
+(:action LAY-DOWN-T-32-23-T-31-23-T-30-23-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-23)
+)
+:effect
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-31-23)
+(not (STANDING-ON-T-32-23))
+)
+)
+(:action ROLL-T-31-22-T-30-22-T-31-23-T-30-23-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-31-22)
+)
+:effect
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-30-23)
+(not (LYING-ON-T-31-22))
+(not (LYING-ON-T-30-22))
+)
+)
+(:action ROLL-T-30-22-T-31-22-T-30-23-T-31-23-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-30-22)
+)
+:effect
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-31-23)
+(not (LYING-ON-T-30-22))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action ROLL-T-32-22-T-31-22-T-32-23-T-31-23-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-32-22)
+)
+:effect
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-31-23)
+(not (LYING-ON-T-32-22))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action ROLL-T-31-22-T-32-22-T-31-23-T-32-23-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-31-22)
+)
+:effect
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-32-23)
+(not (LYING-ON-T-31-22))
+(not (LYING-ON-T-32-22))
+)
+)
+(:action ROLL-T-30-23-T-30-22-T-31-23-T-31-22-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-30-23)
+)
+:effect
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-31-22)
+(not (LYING-ON-T-30-23))
+(not (LYING-ON-T-30-22))
+)
+)
+(:action ROLL-T-30-22-T-30-23-T-31-22-T-31-23-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-30-22)
+)
+:effect
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-31-23)
+(not (LYING-ON-T-30-22))
+(not (LYING-ON-T-30-23))
+)
+)
+(:action ROLL-T-31-23-T-31-22-T-32-23-T-32-22-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-31-23)
+)
+:effect
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-32-22)
+(not (LYING-ON-T-31-23))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action ROLL-T-31-22-T-31-23-T-32-22-T-32-23-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-31-22)
+)
+:effect
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-32-23)
+(not (LYING-ON-T-31-22))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action ROLL-T-31-23-T-30-23-T-31-22-T-30-22-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-31-23)
+)
+:effect
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-30-22)
+(not (LYING-ON-T-31-23))
+(not (LYING-ON-T-30-23))
+)
+)
+(:action ROLL-T-30-23-T-31-23-T-30-22-T-31-22-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-30-23)
+)
+:effect
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-31-22)
+(not (LYING-ON-T-30-23))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action ROLL-T-32-23-T-31-23-T-32-22-T-31-22-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-32-23)
+)
+:effect
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-31-22)
+(not (LYING-ON-T-32-23))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action ROLL-T-31-23-T-32-23-T-31-22-T-32-22-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-31-23)
+)
+:effect
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-32-22)
+(not (LYING-ON-T-31-23))
+(not (LYING-ON-T-32-23))
+)
+)
+(:action ROLL-T-31-23-T-31-22-T-30-23-T-30-22-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-31-23)
+)
+:effect
+(and
+(LYING-ON-T-30-23)
+(LYING-ON-T-30-22)
+(not (LYING-ON-T-31-23))
+(not (LYING-ON-T-31-22))
+)
+)
+(:action ROLL-T-31-22-T-31-23-T-30-22-T-30-23-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-31-22)
+)
+:effect
+(and
+(LYING-ON-T-30-22)
+(LYING-ON-T-30-23)
+(not (LYING-ON-T-31-22))
+(not (LYING-ON-T-31-23))
+)
+)
+(:action ROLL-T-32-23-T-32-22-T-31-23-T-31-22-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-32-23)
+)
+:effect
+(and
+(LYING-ON-T-31-23)
+(LYING-ON-T-31-22)
+(not (LYING-ON-T-32-23))
+(not (LYING-ON-T-32-22))
+)
+)
+(:action ROLL-T-32-22-T-32-23-T-31-22-T-31-23-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-32-22)
+)
+:effect
+(and
+(LYING-ON-T-31-22)
+(LYING-ON-T-31-23)
+(not (LYING-ON-T-32-22))
+(not (LYING-ON-T-32-23))
+)
+)
+(:action STAND-UP-T-32-21-T-32-22-T-32-23-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-32-21)
+)
+:effect
+(and
+(STANDING-ON-T-32-23)
+(not (LYING-ON-T-32-21))
+(not (LYING-ON-T-32-22))
+)
+)
+(:action STAND-UP-T-32-21-T-33-21-T-34-21-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-32-21)
+)
+:effect
+(and
+(STANDING-ON-T-34-21)
+(not (LYING-ON-T-32-21))
+(not (LYING-ON-T-33-21))
+)
+)
+(:action STAND-UP-T-32-23-T-32-22-T-32-21-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-32-22)
+(LYING-ON-T-32-23)
+)
+:effect
+(and
+(STANDING-ON-T-32-21)
+(not (LYING-ON-T-32-23))
+(not (LYING-ON-T-32-22))
+)
+)
+(:action LAY-DOWN-T-32-21-T-32-22-T-32-23-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-21)
+)
+:effect
+(and
+(LYING-ON-T-32-23)
+(LYING-ON-T-32-22)
+(not (STANDING-ON-T-32-21))
+)
+)
+(:action LAY-DOWN-T-33-19-T-33-20-T-33-21-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-19)
+)
+:effect
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-33-20)
+(not (STANDING-ON-T-33-19))
+)
+)
+(:action LAY-DOWN-T-34-19-T-34-20-T-34-21-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-19)
+)
+:effect
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-34-20)
+(not (STANDING-ON-T-34-19))
+)
+)
+(:action LAY-DOWN-T-32-21-T-33-21-T-34-21-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-32-21)
+)
+:effect
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-33-21)
+(not (STANDING-ON-T-32-21))
+)
+)
+(:action LAY-DOWN-T-33-19-T-34-19-T-35-19-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-19)
+)
+:effect
+(and
+(LYING-ON-T-35-19)
+(LYING-ON-T-34-19)
+(not (STANDING-ON-T-33-19))
+)
+)
+(:action LAY-DOWN-T-33-21-T-33-20-T-33-19-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-33-21)
+)
+:effect
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-33-20)
+(not (STANDING-ON-T-33-21))
+)
+)
+(:action LAY-DOWN-T-34-21-T-34-20-T-34-19-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-21)
+)
+:effect
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-34-20)
+(not (STANDING-ON-T-34-21))
+)
+)
+(:action LAY-DOWN-T-34-21-T-33-21-T-32-21-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-34-21)
+)
+:effect
+(and
+(LYING-ON-T-32-21)
+(LYING-ON-T-33-21)
+(not (STANDING-ON-T-34-21))
+)
+)
+(:action ROLL-T-33-20-T-34-20-T-33-21-T-34-21-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-33-20)
+)
+:effect
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-34-21)
+(not (LYING-ON-T-33-20))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action ROLL-T-33-20-T-33-19-T-34-20-T-34-19-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-33-20)
+)
+:effect
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-19)
+(not (LYING-ON-T-33-20))
+(not (LYING-ON-T-33-19))
+)
+)
+(:action ROLL-T-33-19-T-33-20-T-34-19-T-34-20-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-19)
+)
+:effect
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-34-20)
+(not (LYING-ON-T-33-19))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action ROLL-T-33-21-T-33-20-T-34-21-T-34-20-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-21)
+)
+:effect
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-34-20)
+(not (LYING-ON-T-33-21))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action ROLL-T-33-20-T-33-21-T-34-20-T-34-21-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-33-20)
+)
+:effect
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-21)
+(not (LYING-ON-T-33-20))
+(not (LYING-ON-T-33-21))
+)
+)
+(:action ROLL-T-34-20-T-33-20-T-34-19-T-33-19-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-34-20)
+)
+:effect
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-33-19)
+(not (LYING-ON-T-34-20))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action ROLL-T-34-21-T-33-21-T-34-20-T-33-20-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-34-21)
+)
+:effect
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-33-20)
+(not (LYING-ON-T-34-21))
+(not (LYING-ON-T-33-21))
+)
+)
+(:action ROLL-T-33-20-T-34-20-T-33-19-T-34-19-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-33-20)
+)
+:effect
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-34-19)
+(not (LYING-ON-T-33-20))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action ROLL-T-33-21-T-34-21-T-33-20-T-34-20-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-33-21)
+)
+:effect
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-34-20)
+(not (LYING-ON-T-33-21))
+(not (LYING-ON-T-34-21))
+)
+)
+(:action ROLL-T-34-20-T-34-19-T-33-20-T-33-19-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-34-20)
+)
+:effect
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-19)
+(not (LYING-ON-T-34-20))
+(not (LYING-ON-T-34-19))
+)
+)
+(:action ROLL-T-34-19-T-34-20-T-33-19-T-33-20-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-19)
+)
+:effect
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-33-20)
+(not (LYING-ON-T-34-19))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action ROLL-T-34-21-T-34-20-T-33-21-T-33-20-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-21)
+)
+:effect
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-33-20)
+(not (LYING-ON-T-34-21))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action ROLL-T-34-20-T-34-21-T-33-20-T-33-21-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-34-20)
+)
+:effect
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-21)
+(not (LYING-ON-T-34-20))
+(not (LYING-ON-T-34-21))
+)
+)
+(:action STAND-UP-T-33-19-T-33-20-T-33-21-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-19)
+)
+:effect
+(and
+(STANDING-ON-T-33-21)
+(not (LYING-ON-T-33-19))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action STAND-UP-T-34-19-T-34-20-T-34-21-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-19)
+)
+:effect
+(and
+(STANDING-ON-T-34-21)
+(not (LYING-ON-T-34-19))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action STAND-UP-T-33-21-T-33-20-T-33-19-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-33-21)
+)
+:effect
+(and
+(STANDING-ON-T-33-19)
+(not (LYING-ON-T-33-21))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action STAND-UP-T-34-21-T-34-20-T-34-19-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-34-21)
+)
+:effect
+(and
+(STANDING-ON-T-34-19)
+(not (LYING-ON-T-34-21))
+(not (LYING-ON-T-34-20))
+)
+)
+(:action STAND-UP-T-35-19-T-35-18-T-35-17-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-18)
+(LYING-ON-T-35-19)
+)
+:effect
+(and
+(STANDING-ON-T-35-17)
+(not (LYING-ON-T-35-19))
+(not (LYING-ON-T-35-18))
+)
+)
+(:action STAND-UP-T-34-21-T-33-21-T-32-21-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-21)
+(LYING-ON-T-34-21)
+)
+:effect
+(and
+(STANDING-ON-T-32-21)
+(not (LYING-ON-T-34-21))
+(not (LYING-ON-T-33-21))
+)
+)
+(:action STAND-UP-T-35-19-T-34-19-T-33-19-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-35-19)
+)
+:effect
+(and
+(STANDING-ON-T-33-19)
+(not (LYING-ON-T-35-19))
+(not (LYING-ON-T-34-19))
+)
+)
+(:action LAY-DOWN-T-35-17-T-35-18-T-35-19-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-17)
+)
+:effect
+(and
+(LYING-ON-T-35-19)
+(LYING-ON-T-35-18)
+(not (STANDING-ON-T-35-17))
+)
+)
+(:action LAY-DOWN-T-35-17-T-35-16-T-35-15-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-17)
+)
+:effect
+(and
+(LYING-ON-T-35-15)
+(LYING-ON-T-35-16)
+(not (STANDING-ON-T-35-17))
+)
+)
+(:action LAY-DOWN-T-35-18-T-35-17-T-35-16-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-18)
+)
+:effect
+(and
+(LYING-ON-T-35-16)
+(LYING-ON-T-35-17)
+(not (STANDING-ON-T-35-18))
+)
+)
+(:action ROLL-T-34-19-T-33-19-T-34-20-T-33-20-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-34-19)
+)
+:effect
+(and
+(LYING-ON-T-34-20)
+(LYING-ON-T-33-20)
+(not (LYING-ON-T-34-19))
+(not (LYING-ON-T-33-19))
+)
+)
+(:action ROLL-T-34-20-T-33-20-T-34-21-T-33-21-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-34-20)
+)
+:effect
+(and
+(LYING-ON-T-34-21)
+(LYING-ON-T-33-21)
+(not (LYING-ON-T-34-20))
+(not (LYING-ON-T-33-20))
+)
+)
+(:action ROLL-T-33-19-T-34-19-T-33-20-T-34-20-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-33-19)
+)
+:effect
+(and
+(LYING-ON-T-33-20)
+(LYING-ON-T-34-20)
+(not (LYING-ON-T-33-19))
+(not (LYING-ON-T-34-19))
+)
+)
+(:action STAND-UP-T-35-15-T-35-16-T-35-17-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-16)
+(LYING-ON-T-35-15)
+)
+:effect
+(and
+(STANDING-ON-T-35-17)
+(not (LYING-ON-T-35-15))
+(not (LYING-ON-T-35-16))
+)
+)
+(:action STAND-UP-T-35-16-T-35-17-T-35-18-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-17)
+(LYING-ON-T-35-16)
+)
+:effect
+(and
+(STANDING-ON-T-35-18)
+(not (LYING-ON-T-35-16))
+(not (LYING-ON-T-35-17))
+)
+)
+(:action STAND-UP-T-33-19-T-34-19-T-35-19-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-34-19)
+(LYING-ON-T-33-19)
+)
+:effect
+(and
+(STANDING-ON-T-35-19)
+(not (LYING-ON-T-33-19))
+(not (LYING-ON-T-34-19))
+)
+)
+(:action STAND-UP-T-35-16-T-35-15-T-35-14-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-15)
+(LYING-ON-T-35-16)
+)
+:effect
+(and
+(STANDING-ON-T-35-14)
+(not (LYING-ON-T-35-16))
+(not (LYING-ON-T-35-15))
+)
+)
+(:action STAND-UP-T-35-17-T-35-16-T-35-15-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-16)
+(LYING-ON-T-35-17)
+)
+:effect
+(and
+(STANDING-ON-T-35-15)
+(not (LYING-ON-T-35-17))
+(not (LYING-ON-T-35-16))
+)
+)
+(:action LAY-DOWN-T-35-14-T-35-15-T-35-16-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-14)
+)
+:effect
+(and
+(LYING-ON-T-35-16)
+(LYING-ON-T-35-15)
+(not (STANDING-ON-T-35-14))
+)
+)
+(:action LAY-DOWN-T-35-15-T-35-16-T-35-17-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-15)
+)
+:effect
+(and
+(LYING-ON-T-35-17)
+(LYING-ON-T-35-16)
+(not (STANDING-ON-T-35-15))
+)
+)
+(:action LAY-DOWN-T-35-14-T-35-13-T-35-12-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-14)
+)
+:effect
+(and
+(LYING-ON-T-35-12)
+(LYING-ON-T-35-13)
+(not (STANDING-ON-T-35-14))
+)
+)
+(:action LAY-DOWN-T-35-15-T-35-14-T-35-13-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-15)
+)
+:effect
+(and
+(LYING-ON-T-35-13)
+(LYING-ON-T-35-14)
+(not (STANDING-ON-T-35-15))
+)
+)
+(:action LAY-DOWN-T-35-19-T-35-18-T-35-17-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-19)
+)
+:effect
+(and
+(LYING-ON-T-35-17)
+(LYING-ON-T-35-18)
+(not (STANDING-ON-T-35-19))
+)
+)
+(:action LAY-DOWN-T-35-19-T-34-19-T-33-19-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-19)
+)
+:effect
+(and
+(LYING-ON-T-33-19)
+(LYING-ON-T-34-19)
+(not (STANDING-ON-T-35-19))
+)
+)
+(:action STAND-UP-T-35-12-T-35-13-T-35-14-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-13)
+(LYING-ON-T-35-12)
+)
+:effect
+(and
+(STANDING-ON-T-35-14)
+(not (LYING-ON-T-35-12))
+(not (LYING-ON-T-35-13))
+)
+)
+(:action STAND-UP-T-35-13-T-35-14-T-35-15-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-14)
+(LYING-ON-T-35-13)
+)
+:effect
+(and
+(STANDING-ON-T-35-15)
+(not (LYING-ON-T-35-13))
+(not (LYING-ON-T-35-14))
+)
+)
+(:action STAND-UP-T-35-17-T-35-18-T-35-19-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-18)
+(LYING-ON-T-35-17)
+)
+:effect
+(and
+(STANDING-ON-T-35-19)
+(not (LYING-ON-T-35-17))
+(not (LYING-ON-T-35-18))
+)
+)
+(:action STAND-UP-T-35-13-T-35-12-T-35-11-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-12)
+(LYING-ON-T-35-13)
+)
+:effect
+(and
+(STANDING-ON-T-35-11)
+(not (LYING-ON-T-35-13))
+(not (LYING-ON-T-35-12))
+)
+)
+(:action STAND-UP-T-35-14-T-35-13-T-35-12-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-13)
+(LYING-ON-T-35-14)
+)
+:effect
+(and
+(STANDING-ON-T-35-12)
+(not (LYING-ON-T-35-14))
+(not (LYING-ON-T-35-13))
+)
+)
+(:action STAND-UP-T-35-18-T-35-17-T-35-16-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-17)
+(LYING-ON-T-35-18)
+)
+:effect
+(and
+(STANDING-ON-T-35-16)
+(not (LYING-ON-T-35-18))
+(not (LYING-ON-T-35-17))
+)
+)
+(:action LAY-DOWN-T-35-11-T-35-12-T-35-13-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-11)
+)
+:effect
+(and
+(LYING-ON-T-35-13)
+(LYING-ON-T-35-12)
+(not (STANDING-ON-T-35-11))
+)
+)
+(:action LAY-DOWN-T-35-12-T-35-13-T-35-14-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-12)
+)
+:effect
+(and
+(LYING-ON-T-35-14)
+(LYING-ON-T-35-13)
+(not (STANDING-ON-T-35-12))
+)
+)
+(:action LAY-DOWN-T-35-16-T-35-17-T-35-18-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-16)
+)
+:effect
+(and
+(LYING-ON-T-35-18)
+(LYING-ON-T-35-17)
+(not (STANDING-ON-T-35-16))
+)
+)
+(:action LAY-DOWN-T-35-11-T-35-10-T-35-09-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-11)
+)
+:effect
+(and
+(LYING-ON-T-35-09)
+(LYING-ON-T-35-10)
+(not (STANDING-ON-T-35-11))
+)
+)
+(:action LAY-DOWN-T-35-12-T-35-11-T-35-10-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-12)
+)
+:effect
+(and
+(LYING-ON-T-35-10)
+(LYING-ON-T-35-11)
+(not (STANDING-ON-T-35-12))
+)
+)
+(:action LAY-DOWN-T-35-16-T-35-15-T-35-14-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-16)
+)
+:effect
+(and
+(LYING-ON-T-35-14)
+(LYING-ON-T-35-15)
+(not (STANDING-ON-T-35-16))
+)
+)
+(:action STAND-UP-T-35-09-T-35-10-T-35-11-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-10)
+(LYING-ON-T-35-09)
+)
+:effect
+(and
+(STANDING-ON-T-35-11)
+(not (LYING-ON-T-35-09))
+(not (LYING-ON-T-35-10))
+)
+)
+(:action STAND-UP-T-35-10-T-35-11-T-35-12-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-11)
+(LYING-ON-T-35-10)
+)
+:effect
+(and
+(STANDING-ON-T-35-12)
+(not (LYING-ON-T-35-10))
+(not (LYING-ON-T-35-11))
+)
+)
+(:action STAND-UP-T-35-14-T-35-15-T-35-16-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-15)
+(LYING-ON-T-35-14)
+)
+:effect
+(and
+(STANDING-ON-T-35-16)
+(not (LYING-ON-T-35-14))
+(not (LYING-ON-T-35-15))
+)
+)
+(:action STAND-UP-T-35-10-T-35-09-T-35-08-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-09)
+(LYING-ON-T-35-10)
+)
+:effect
+(and
+(STANDING-ON-T-35-08)
+(not (LYING-ON-T-35-10))
+(not (LYING-ON-T-35-09))
+)
+)
+(:action STAND-UP-T-35-11-T-35-10-T-35-09-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-10)
+(LYING-ON-T-35-11)
+)
+:effect
+(and
+(STANDING-ON-T-35-09)
+(not (LYING-ON-T-35-11))
+(not (LYING-ON-T-35-10))
+)
+)
+(:action STAND-UP-T-35-15-T-35-14-T-35-13-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-14)
+(LYING-ON-T-35-15)
+)
+:effect
+(and
+(STANDING-ON-T-35-13)
+(not (LYING-ON-T-35-15))
+(not (LYING-ON-T-35-14))
+)
+)
+(:action LAY-DOWN-T-35-08-T-35-09-T-35-10-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-08)
+)
+:effect
+(and
+(LYING-ON-T-35-10)
+(LYING-ON-T-35-09)
+(not (STANDING-ON-T-35-08))
+)
+)
+(:action LAY-DOWN-T-35-09-T-35-10-T-35-11-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-09)
+)
+:effect
+(and
+(LYING-ON-T-35-11)
+(LYING-ON-T-35-10)
+(not (STANDING-ON-T-35-09))
+)
+)
+(:action LAY-DOWN-T-35-13-T-35-14-T-35-15-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-13)
+)
+:effect
+(and
+(LYING-ON-T-35-15)
+(LYING-ON-T-35-14)
+(not (STANDING-ON-T-35-13))
+)
+)
+(:action LAY-DOWN-T-35-08-T-35-07-T-35-06-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-08)
+)
+:effect
+(and
+(LYING-ON-T-35-06)
+(LYING-ON-T-35-07)
+(not (STANDING-ON-T-35-08))
+)
+)
+(:action LAY-DOWN-T-35-09-T-35-08-T-35-07-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-09)
+)
+:effect
+(and
+(LYING-ON-T-35-07)
+(LYING-ON-T-35-08)
+(not (STANDING-ON-T-35-09))
+)
+)
+(:action LAY-DOWN-T-35-13-T-35-12-T-35-11-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-13)
+)
+:effect
+(and
+(LYING-ON-T-35-11)
+(LYING-ON-T-35-12)
+(not (STANDING-ON-T-35-13))
+)
+)
+(:action STAND-UP-T-35-06-T-35-07-T-35-08-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-07)
+(LYING-ON-T-35-06)
+)
+:effect
+(and
+(STANDING-ON-T-35-08)
+(not (LYING-ON-T-35-06))
+(not (LYING-ON-T-35-07))
+)
+)
+(:action STAND-UP-T-35-07-T-35-08-T-35-09-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-08)
+(LYING-ON-T-35-07)
+)
+:effect
+(and
+(STANDING-ON-T-35-09)
+(not (LYING-ON-T-35-07))
+(not (LYING-ON-T-35-08))
+)
+)
+(:action STAND-UP-T-35-11-T-35-12-T-35-13-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-12)
+(LYING-ON-T-35-11)
+)
+:effect
+(and
+(STANDING-ON-T-35-13)
+(not (LYING-ON-T-35-11))
+(not (LYING-ON-T-35-12))
+)
+)
+(:action STAND-UP-T-35-07-T-35-06-T-35-05-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-06)
+(LYING-ON-T-35-07)
+)
+:effect
+(and
+(STANDING-ON-T-35-05)
+(not (LYING-ON-T-35-07))
+(not (LYING-ON-T-35-06))
+)
+)
+(:action STAND-UP-T-35-08-T-35-07-T-35-06-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-07)
+(LYING-ON-T-35-08)
+)
+:effect
+(and
+(STANDING-ON-T-35-06)
+(not (LYING-ON-T-35-08))
+(not (LYING-ON-T-35-07))
+)
+)
+(:action STAND-UP-T-35-12-T-35-11-T-35-10-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-11)
+(LYING-ON-T-35-12)
+)
+:effect
+(and
+(STANDING-ON-T-35-10)
+(not (LYING-ON-T-35-12))
+(not (LYING-ON-T-35-11))
+)
+)
+(:action LAY-DOWN-T-35-05-T-35-06-T-35-07-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-05)
+)
+:effect
+(and
+(LYING-ON-T-35-07)
+(LYING-ON-T-35-06)
+(not (STANDING-ON-T-35-05))
+)
+)
+(:action LAY-DOWN-T-35-06-T-35-07-T-35-08-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-06)
+)
+:effect
+(and
+(LYING-ON-T-35-08)
+(LYING-ON-T-35-07)
+(not (STANDING-ON-T-35-06))
+)
+)
+(:action LAY-DOWN-T-35-10-T-35-11-T-35-12-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-10)
+)
+:effect
+(and
+(LYING-ON-T-35-12)
+(LYING-ON-T-35-11)
+(not (STANDING-ON-T-35-10))
+)
+)
+(:action LAY-DOWN-T-35-05-T-35-04-T-35-03-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-05)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-04)
+(not (STANDING-ON-T-35-05))
+)
+)
+(:action LAY-DOWN-T-35-06-T-35-05-T-35-04-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-06)
+)
+:effect
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-05)
+(not (STANDING-ON-T-35-06))
+)
+)
+(:action LAY-DOWN-T-35-10-T-35-09-T-35-08-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-10)
+)
+:effect
+(and
+(LYING-ON-T-35-08)
+(LYING-ON-T-35-09)
+(not (STANDING-ON-T-35-10))
+)
+)
+(:action STAND-UP-T-35-01-T-35-02-T-35-03-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-01)
+)
+:effect
+(and
+(STANDING-ON-T-35-03)
+(not (LYING-ON-T-35-01))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action STAND-UP-T-35-03-T-35-04-T-35-05-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(STANDING-ON-T-35-05)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-35-04))
+)
+)
+(:action STAND-UP-T-35-04-T-35-05-T-35-06-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-05)
+(LYING-ON-T-35-04)
+)
+:effect
+(and
+(STANDING-ON-T-35-06)
+(not (LYING-ON-T-35-04))
+(not (LYING-ON-T-35-05))
+)
+)
+(:action STAND-UP-T-35-08-T-35-09-T-35-10-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-09)
+(LYING-ON-T-35-08)
+)
+:effect
+(and
+(STANDING-ON-T-35-10)
+(not (LYING-ON-T-35-08))
+(not (LYING-ON-T-35-09))
+)
+)
+(:action STAND-UP-T-35-01-T-36-01-T-37-01-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-35-01)
+)
+:effect
+(and
+(STANDING-ON-T-37-01)
+(not (LYING-ON-T-35-01))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action STAND-UP-T-35-04-T-36-04-T-37-04-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-35-04)
+)
+:effect
+(and
+(STANDING-ON-T-37-04)
+(not (LYING-ON-T-35-04))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action STAND-UP-T-35-04-T-35-03-T-35-02-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-04)
+)
+:effect
+(and
+(STANDING-ON-T-35-02)
+(not (LYING-ON-T-35-04))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action STAND-UP-T-35-05-T-35-04-T-35-03-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-05)
+)
+:effect
+(and
+(STANDING-ON-T-35-03)
+(not (LYING-ON-T-35-05))
+(not (LYING-ON-T-35-04))
+)
+)
+(:action STAND-UP-T-35-09-T-35-08-T-35-07-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-08)
+(LYING-ON-T-35-09)
+)
+:effect
+(and
+(STANDING-ON-T-35-07)
+(not (LYING-ON-T-35-09))
+(not (LYING-ON-T-35-08))
+)
+)
+(:action LAY-DOWN-T-35-01-T-35-02-T-35-03-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-01)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-02)
+(not (STANDING-ON-T-35-01))
+)
+)
+(:action LAY-DOWN-T-35-02-T-35-03-T-35-04-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-03)
+(not (STANDING-ON-T-35-02))
+)
+)
+(:action LAY-DOWN-T-35-03-T-35-04-T-35-05-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-35-05)
+(LYING-ON-T-35-04)
+(not (STANDING-ON-T-35-03))
+)
+)
+(:action LAY-DOWN-T-35-07-T-35-08-T-35-09-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-07)
+)
+:effect
+(and
+(LYING-ON-T-35-09)
+(LYING-ON-T-35-08)
+(not (STANDING-ON-T-35-07))
+)
+)
+(:action LAY-DOWN-T-36-01-T-36-02-T-36-03-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-01)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+(not (STANDING-ON-T-36-01))
+)
+)
+(:action LAY-DOWN-T-36-02-T-36-03-T-36-04-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-36-03)
+(not (STANDING-ON-T-36-02))
+)
+)
+(:action LAY-DOWN-T-37-01-T-37-02-T-37-03-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-01)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-02)
+(not (STANDING-ON-T-37-01))
+)
+)
+(:action LAY-DOWN-T-37-02-T-37-03-T-37-04-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-37-03)
+(not (STANDING-ON-T-37-02))
+)
+)
+(:action LAY-DOWN-T-35-01-T-36-01-T-37-01-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-01)
+)
+:effect
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-36-01)
+(not (STANDING-ON-T-35-01))
+)
+)
+(:action LAY-DOWN-T-35-02-T-36-02-T-37-02-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-02)
+(not (STANDING-ON-T-35-02))
+)
+)
+(:action LAY-DOWN-T-35-03-T-36-03-T-37-03-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-03)
+(not (STANDING-ON-T-35-03))
+)
+)
+(:action LAY-DOWN-T-35-03-T-35-02-T-35-01-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-35-02)
+(not (STANDING-ON-T-35-03))
+)
+)
+(:action LAY-DOWN-T-35-07-T-35-06-T-35-05-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-07)
+)
+:effect
+(and
+(LYING-ON-T-35-05)
+(LYING-ON-T-35-06)
+(not (STANDING-ON-T-35-07))
+)
+)
+(:action LAY-DOWN-T-36-03-T-36-02-T-36-01-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-36-02)
+(not (STANDING-ON-T-36-03))
+)
+)
+(:action LAY-DOWN-T-37-03-T-37-02-T-37-01-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-37-02)
+(not (STANDING-ON-T-37-03))
+)
+)
+(:action LAY-DOWN-T-37-04-T-37-03-T-37-02-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-04)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-03)
+(not (STANDING-ON-T-37-04))
+)
+)
+(:action LAY-DOWN-T-37-01-T-36-01-T-35-01-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-01)
+)
+:effect
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-36-01)
+(not (STANDING-ON-T-37-01))
+)
+)
+(:action LAY-DOWN-T-37-02-T-36-02-T-35-02-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-36-02)
+(not (STANDING-ON-T-37-02))
+)
+)
+(:action LAY-DOWN-T-37-03-T-36-03-T-35-03-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-36-03)
+(not (STANDING-ON-T-37-03))
+)
+)
+(:action LAY-DOWN-T-37-04-T-36-04-T-35-04-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-37-04)
+)
+:effect
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-36-04)
+(not (STANDING-ON-T-37-04))
+)
+)
+(:action ROLL-T-36-01-T-35-01-T-36-02-T-35-02-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-36-01)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-35-02)
+(not (LYING-ON-T-36-01))
+(not (LYING-ON-T-35-01))
+)
+)
+(:action ROLL-T-36-02-T-35-02-T-36-03-T-35-03-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-35-03)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action ROLL-T-36-03-T-35-03-T-36-04-T-35-04-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-35-04)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action ROLL-T-35-01-T-36-01-T-35-02-T-36-02-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-35-01)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-35-01))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action ROLL-T-35-02-T-36-02-T-35-03-T-36-03-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-35-03-T-36-03-T-35-04-T-36-04-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-36-04)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-35-02-T-35-01-T-36-02-T-36-01-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-01)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-35-01))
+)
+)
+(:action ROLL-T-35-01-T-35-02-T-36-01-T-36-02-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-01)
+)
+:effect
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-35-01))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action ROLL-T-35-03-T-35-02-T-36-03-T-36-02-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action ROLL-T-35-02-T-35-03-T-36-02-T-36-03-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action ROLL-T-35-04-T-35-03-T-36-04-T-36-03-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-04)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-35-04))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action ROLL-T-35-03-T-35-04-T-36-03-T-36-04-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-04)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-35-04))
+)
+)
+(:action ROLL-T-36-02-T-35-02-T-36-01-T-35-01-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-35-01)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action ROLL-T-36-03-T-35-03-T-36-02-T-35-02-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-35-02)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action ROLL-T-36-04-T-35-04-T-36-03-T-35-03-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-35-03)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-35-04))
+)
+)
+(:action ROLL-T-35-02-T-36-02-T-35-01-T-36-01-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-36-01)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-35-03-T-36-03-T-35-02-T-36-02-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-35-04-T-36-04-T-35-03-T-36-03-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-35-04)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-35-04))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action ROLL-T-36-02-T-36-01-T-35-02-T-35-01-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-01)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action ROLL-T-36-01-T-36-02-T-35-01-T-35-02-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-01)
+)
+:effect
+(and
+(LYING-ON-T-35-01)
+(LYING-ON-T-35-02)
+(not (LYING-ON-T-36-01))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-36-03-T-36-02-T-35-03-T-35-02-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-02)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-36-02-T-36-03-T-35-02-T-35-03-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-03)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-36-04-T-36-03-T-35-04-T-35-03-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-35-04)
+(LYING-ON-T-35-03)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-36-03-T-36-04-T-35-03-T-35-04-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-04)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action ROLL-T-37-02-T-37-01-T-36-02-T-36-01-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-01)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-37-01))
+)
+)
+(:action ROLL-T-37-01-T-37-02-T-36-01-T-36-02-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-01)
+)
+:effect
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-37-01))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action ROLL-T-37-03-T-37-02-T-36-03-T-36-02-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action ROLL-T-37-02-T-37-03-T-36-02-T-36-03-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action ROLL-T-37-04-T-37-03-T-36-04-T-36-03-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-04)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-37-04))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action ROLL-T-37-03-T-37-04-T-36-03-T-36-04-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-04)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-37-04))
+)
+)
+(:action STAND-UP-T-35-02-T-35-03-T-35-04-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-03)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(STANDING-ON-T-35-04)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-35-03))
+)
+)
+(:action STAND-UP-T-35-05-T-35-06-T-35-07-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-06)
+(LYING-ON-T-35-05)
+)
+:effect
+(and
+(STANDING-ON-T-35-07)
+(not (LYING-ON-T-35-05))
+(not (LYING-ON-T-35-06))
+)
+)
+(:action STAND-UP-T-36-01-T-36-02-T-36-03-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-01)
+)
+:effect
+(and
+(STANDING-ON-T-36-03)
+(not (LYING-ON-T-36-01))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action STAND-UP-T-36-02-T-36-03-T-36-04-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(STANDING-ON-T-36-04)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action STAND-UP-T-37-01-T-37-02-T-37-03-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-01)
+)
+:effect
+(and
+(STANDING-ON-T-37-03)
+(not (LYING-ON-T-37-01))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action STAND-UP-T-37-02-T-37-03-T-37-04-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(STANDING-ON-T-37-04)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action STAND-UP-T-35-02-T-36-02-T-37-02-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-35-02)
+)
+:effect
+(and
+(STANDING-ON-T-37-02)
+(not (LYING-ON-T-35-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action STAND-UP-T-35-03-T-36-03-T-37-03-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(STANDING-ON-T-37-03)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action STAND-UP-T-35-03-T-35-02-T-35-01-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-03)
+)
+:effect
+(and
+(STANDING-ON-T-35-01)
+(not (LYING-ON-T-35-03))
+(not (LYING-ON-T-35-02))
+)
+)
+(:action STAND-UP-T-35-06-T-35-05-T-35-04-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-35-05)
+(LYING-ON-T-35-06)
+)
+:effect
+(and
+(STANDING-ON-T-35-04)
+(not (LYING-ON-T-35-06))
+(not (LYING-ON-T-35-05))
+)
+)
+(:action STAND-UP-T-36-03-T-36-02-T-36-01-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(STANDING-ON-T-36-01)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action STAND-UP-T-36-04-T-36-03-T-36-02-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(STANDING-ON-T-36-02)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action STAND-UP-T-37-03-T-37-02-T-37-01-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(STANDING-ON-T-37-01)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action STAND-UP-T-37-04-T-37-03-T-37-02-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-04)
+)
+:effect
+(and
+(STANDING-ON-T-37-02)
+(not (LYING-ON-T-37-04))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action STAND-UP-T-37-01-T-36-01-T-35-01-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-37-01)
+)
+:effect
+(and
+(STANDING-ON-T-35-01)
+(not (LYING-ON-T-37-01))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action STAND-UP-T-37-02-T-36-02-T-35-02-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(STANDING-ON-T-35-02)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action STAND-UP-T-37-03-T-36-03-T-35-03-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(STANDING-ON-T-35-03)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action LAY-DOWN-T-35-04-T-35-05-T-35-06-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-04)
+)
+:effect
+(and
+(LYING-ON-T-35-06)
+(LYING-ON-T-35-05)
+(not (STANDING-ON-T-35-04))
+)
+)
+(:action LAY-DOWN-T-35-04-T-36-04-T-37-04-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-04)
+)
+:effect
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-36-04)
+(not (STANDING-ON-T-35-04))
+)
+)
+(:action LAY-DOWN-T-36-04-T-37-04-T-38-04-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-38-04)
+(LYING-ON-T-37-04)
+(not (STANDING-ON-T-36-04))
+)
+)
+(:action LAY-DOWN-T-35-04-T-35-03-T-35-02-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-35-04)
+)
+:effect
+(and
+(LYING-ON-T-35-02)
+(LYING-ON-T-35-03)
+(not (STANDING-ON-T-35-04))
+)
+)
+(:action LAY-DOWN-T-36-04-T-36-03-T-36-02-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+(not (STANDING-ON-T-36-04))
+)
+)
+(:action ROLL-T-37-01-T-36-01-T-37-02-T-36-02-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-37-01)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-37-01))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action ROLL-T-37-02-T-36-02-T-37-03-T-36-03-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-37-03-T-36-03-T-37-04-T-36-04-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-36-04)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-36-01-T-37-01-T-36-02-T-37-02-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-36-01)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+(not (LYING-ON-T-36-01))
+(not (LYING-ON-T-37-01))
+)
+)
+(:action ROLL-T-36-02-T-37-02-T-36-03-T-37-03-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action ROLL-T-36-03-T-37-03-T-36-04-T-37-04-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-37-04)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action ROLL-T-36-02-T-36-01-T-37-02-T-37-01-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-01)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-36-01))
+)
+)
+(:action ROLL-T-36-01-T-36-02-T-37-01-T-37-02-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-01)
+)
+:effect
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-37-02)
+(not (LYING-ON-T-36-01))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-36-03-T-36-02-T-37-03-T-37-02-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-02)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-36-02-T-36-03-T-37-02-T-37-03-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-37-03)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-36-04-T-36-03-T-37-04-T-37-03-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-37-03)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-36-03-T-36-04-T-37-03-T-37-04-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-37-04)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action ROLL-T-37-02-T-36-02-T-37-01-T-36-01-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+)
+:effect
+(and
+(LYING-ON-T-37-01)
+(LYING-ON-T-36-01)
+(not (LYING-ON-T-37-02))
+(not (LYING-ON-T-36-02))
+)
+)
+(:action ROLL-T-37-03-T-36-03-T-37-02-T-36-02-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+)
+:effect
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-02)
+(not (LYING-ON-T-37-03))
+(not (LYING-ON-T-36-03))
+)
+)
+(:action ROLL-T-37-04-T-36-04-T-37-03-T-36-03-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-37-04)
+)
+:effect
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-03)
+(not (LYING-ON-T-37-04))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action ROLL-T-36-02-T-37-02-T-36-01-T-37-01-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-02)
+(LYING-ON-T-36-02)
+)
+:effect
+(and
+(LYING-ON-T-36-01)
+(LYING-ON-T-37-01)
+(not (LYING-ON-T-36-02))
+(not (LYING-ON-T-37-02))
+)
+)
+(:action ROLL-T-36-03-T-37-03-T-36-02-T-37-02-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-03)
+(LYING-ON-T-36-03)
+)
+:effect
+(and
+(LYING-ON-T-36-02)
+(LYING-ON-T-37-02)
+(not (LYING-ON-T-36-03))
+(not (LYING-ON-T-37-03))
+)
+)
+(:action ROLL-T-36-04-T-37-04-T-36-03-T-37-03-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(LYING-ON-T-36-03)
+(LYING-ON-T-37-03)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-37-04))
+)
+)
+(:action STAND-UP-T-38-04-T-38-05-T-38-06-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-38-04)
+)
+:effect
+(and
+(STANDING-ON-T-38-06)
+(not (LYING-ON-T-38-04))
+(not (LYING-ON-T-38-05))
+)
+)
+(:action STAND-UP-T-36-04-T-37-04-T-38-04-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-36-04)
+)
+:effect
+(and
+(STANDING-ON-T-38-04)
+(not (LYING-ON-T-36-04))
+(not (LYING-ON-T-37-04))
+)
+)
+(:action STAND-UP-T-37-04-T-36-04-T-35-04-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-37-04)
+)
+:effect
+(and
+(STANDING-ON-T-35-04)
+(not (LYING-ON-T-37-04))
+(not (LYING-ON-T-36-04))
+)
+)
+(:action STAND-UP-T-38-04-T-37-04-T-36-04-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-37-04)
+(LYING-ON-T-38-04)
+)
+:effect
+(and
+(STANDING-ON-T-36-04)
+(not (LYING-ON-T-38-04))
+(not (LYING-ON-T-37-04))
+)
+)
+(:action LAY-DOWN-T-38-04-T-38-05-T-38-06-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-04)
+)
+:effect
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-38-05)
+(not (STANDING-ON-T-38-04))
+)
+)
+(:action LAY-DOWN-T-38-05-T-39-05-T-40-05-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-05)
+)
+:effect
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-39-05)
+(not (STANDING-ON-T-38-05))
+)
+)
+(:action LAY-DOWN-T-38-06-T-39-06-T-40-06-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-06)
+)
+:effect
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-39-06)
+(not (STANDING-ON-T-38-06))
+)
+)
+(:action LAY-DOWN-T-38-06-T-38-05-T-38-04-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-06)
+)
+:effect
+(and
+(LYING-ON-T-38-04)
+(LYING-ON-T-38-05)
+(not (STANDING-ON-T-38-06))
+)
+)
+(:action LAY-DOWN-T-38-04-T-37-04-T-36-04-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-38-04)
+)
+:effect
+(and
+(LYING-ON-T-36-04)
+(LYING-ON-T-37-04)
+(not (STANDING-ON-T-38-04))
+)
+)
+(:action LAY-DOWN-T-40-06-T-39-06-T-38-06-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-06)
+)
+:effect
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-39-06)
+(not (STANDING-ON-T-40-06))
+)
+)
+(:action STAND-UP-T-38-05-T-39-05-T-40-05-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-38-05)
+)
+:effect
+(and
+(STANDING-ON-T-40-05)
+(not (LYING-ON-T-38-05))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action STAND-UP-T-38-06-T-39-06-T-40-06-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-38-06)
+)
+:effect
+(and
+(STANDING-ON-T-40-06)
+(not (LYING-ON-T-38-06))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action STAND-UP-T-38-06-T-38-05-T-38-04-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-38-06)
+)
+:effect
+(and
+(STANDING-ON-T-38-04)
+(not (LYING-ON-T-38-06))
+(not (LYING-ON-T-38-05))
+)
+)
+(:action STAND-UP-T-40-05-T-39-05-T-38-05-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-40-05)
+)
+:effect
+(and
+(STANDING-ON-T-38-05)
+(not (LYING-ON-T-40-05))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action STAND-UP-T-40-06-T-39-06-T-38-06-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-40-06)
+)
+:effect
+(and
+(STANDING-ON-T-38-06)
+(not (LYING-ON-T-40-06))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action LAY-DOWN-T-40-05-T-40-06-T-40-07-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-05)
+)
+:effect
+(and
+(LYING-ON-T-40-07)
+(LYING-ON-T-40-06)
+(not (STANDING-ON-T-40-05))
+)
+)
+(:action LAY-DOWN-T-40-05-T-39-05-T-38-05-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-05)
+)
+:effect
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-39-05)
+(not (STANDING-ON-T-40-05))
+)
+)
+(:action ROLL-T-39-05-T-38-05-T-39-06-T-38-06-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-39-05)
+)
+:effect
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-38-06)
+(not (LYING-ON-T-39-05))
+(not (LYING-ON-T-38-05))
+)
+)
+(:action ROLL-T-38-05-T-39-05-T-38-06-T-39-06-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-38-05)
+)
+:effect
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-39-06)
+(not (LYING-ON-T-38-05))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action ROLL-T-40-05-T-39-05-T-40-06-T-39-06-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-40-05)
+)
+:effect
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-39-06)
+(not (LYING-ON-T-40-05))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action ROLL-T-39-05-T-40-05-T-39-06-T-40-06-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-39-05)
+)
+:effect
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-40-06)
+(not (LYING-ON-T-39-05))
+(not (LYING-ON-T-40-05))
+)
+)
+(:action ROLL-T-38-06-T-38-05-T-39-06-T-39-05-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-38-06)
+)
+:effect
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-39-05)
+(not (LYING-ON-T-38-06))
+(not (LYING-ON-T-38-05))
+)
+)
+(:action ROLL-T-38-05-T-38-06-T-39-05-T-39-06-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-38-05)
+)
+:effect
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-39-06)
+(not (LYING-ON-T-38-05))
+(not (LYING-ON-T-38-06))
+)
+)
+(:action ROLL-T-39-06-T-39-05-T-40-06-T-40-05-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-39-06)
+)
+:effect
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-40-05)
+(not (LYING-ON-T-39-06))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action ROLL-T-39-05-T-39-06-T-40-05-T-40-06-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-39-05)
+)
+:effect
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-40-06)
+(not (LYING-ON-T-39-05))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action ROLL-T-39-06-T-38-06-T-39-05-T-38-05-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-39-06)
+)
+:effect
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-38-05)
+(not (LYING-ON-T-39-06))
+(not (LYING-ON-T-38-06))
+)
+)
+(:action ROLL-T-38-06-T-39-06-T-38-05-T-39-05-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-38-06)
+)
+:effect
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-39-05)
+(not (LYING-ON-T-38-06))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action ROLL-T-40-06-T-39-06-T-40-05-T-39-05-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-40-06)
+)
+:effect
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-39-05)
+(not (LYING-ON-T-40-06))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action ROLL-T-39-06-T-40-06-T-39-05-T-40-05-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-39-06)
+)
+:effect
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-40-05)
+(not (LYING-ON-T-39-06))
+(not (LYING-ON-T-40-06))
+)
+)
+(:action ROLL-T-39-06-T-39-05-T-38-06-T-38-05-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-39-06)
+)
+:effect
+(and
+(LYING-ON-T-38-06)
+(LYING-ON-T-38-05)
+(not (LYING-ON-T-39-06))
+(not (LYING-ON-T-39-05))
+)
+)
+(:action ROLL-T-39-05-T-39-06-T-38-05-T-38-06-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-39-05)
+)
+:effect
+(and
+(LYING-ON-T-38-05)
+(LYING-ON-T-38-06)
+(not (LYING-ON-T-39-05))
+(not (LYING-ON-T-39-06))
+)
+)
+(:action ROLL-T-40-06-T-40-05-T-39-06-T-39-05-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-40-06)
+)
+:effect
+(and
+(LYING-ON-T-39-06)
+(LYING-ON-T-39-05)
+(not (LYING-ON-T-40-06))
+(not (LYING-ON-T-40-05))
+)
+)
+(:action ROLL-T-40-05-T-40-06-T-39-05-T-39-06-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-40-05)
+)
+:effect
+(and
+(LYING-ON-T-39-05)
+(LYING-ON-T-39-06)
+(not (LYING-ON-T-40-05))
+(not (LYING-ON-T-40-06))
+)
+)
+(:action STAND-UP-T-40-05-T-40-06-T-40-07-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-40-05)
+)
+:effect
+(and
+(STANDING-ON-T-40-07)
+(not (LYING-ON-T-40-05))
+(not (LYING-ON-T-40-06))
+)
+)
+(:action STAND-UP-T-40-07-T-41-07-T-42-07-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-40-07)
+)
+:effect
+(and
+(STANDING-ON-T-42-07)
+(not (LYING-ON-T-40-07))
+(not (LYING-ON-T-41-07))
+)
+)
+(:action STAND-UP-T-40-07-T-40-06-T-40-05-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-40-06)
+(LYING-ON-T-40-07)
+)
+:effect
+(and
+(STANDING-ON-T-40-05)
+(not (LYING-ON-T-40-07))
+(not (LYING-ON-T-40-06))
+)
+)
+(:action LAY-DOWN-T-41-07-T-41-08-T-41-09-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-07)
+)
+:effect
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-41-08)
+(not (STANDING-ON-T-41-07))
+)
+)
+(:action LAY-DOWN-T-42-07-T-42-08-T-42-09-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-07)
+)
+:effect
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-42-08)
+(not (STANDING-ON-T-42-07))
+)
+)
+(:action LAY-DOWN-T-40-07-T-41-07-T-42-07-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-07)
+)
+:effect
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-41-07)
+(not (STANDING-ON-T-40-07))
+)
+)
+(:action LAY-DOWN-T-40-07-T-40-06-T-40-05-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-40-07)
+)
+:effect
+(and
+(LYING-ON-T-40-05)
+(LYING-ON-T-40-06)
+(not (STANDING-ON-T-40-07))
+)
+)
+(:action LAY-DOWN-T-42-09-T-42-08-T-42-07-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-09)
+)
+:effect
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-42-08)
+(not (STANDING-ON-T-42-09))
+)
+)
+(:action LAY-DOWN-T-42-07-T-41-07-T-40-07-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-42-07)
+)
+:effect
+(and
+(LYING-ON-T-40-07)
+(LYING-ON-T-41-07)
+(not (STANDING-ON-T-42-07))
+)
+)
+(:action ROLL-T-42-08-T-42-07-T-41-08-T-41-07-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-42-08)
+)
+:effect
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-07)
+(not (LYING-ON-T-42-08))
+(not (LYING-ON-T-42-07))
+)
+)
+(:action ROLL-T-42-07-T-42-08-T-41-07-T-41-08-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-07)
+)
+:effect
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-41-08)
+(not (LYING-ON-T-42-07))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action ROLL-T-42-09-T-42-08-T-41-09-T-41-08-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-09)
+)
+:effect
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-41-08)
+(not (LYING-ON-T-42-09))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action ROLL-T-42-08-T-42-09-T-41-08-T-41-09-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-42-08)
+)
+:effect
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-09)
+(not (LYING-ON-T-42-08))
+(not (LYING-ON-T-42-09))
+)
+)
+(:action STAND-UP-T-41-07-T-41-08-T-41-09-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-07)
+)
+:effect
+(and
+(STANDING-ON-T-41-09)
+(not (LYING-ON-T-41-07))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action STAND-UP-T-42-07-T-42-08-T-42-09-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-07)
+)
+:effect
+(and
+(STANDING-ON-T-42-09)
+(not (LYING-ON-T-42-07))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action STAND-UP-T-41-09-T-41-08-T-41-07-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-09)
+)
+:effect
+(and
+(STANDING-ON-T-41-07)
+(not (LYING-ON-T-41-09))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action STAND-UP-T-42-09-T-42-08-T-42-07-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-09)
+)
+:effect
+(and
+(STANDING-ON-T-42-07)
+(not (LYING-ON-T-42-09))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action STAND-UP-T-42-07-T-41-07-T-40-07-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-42-07)
+)
+:effect
+(and
+(STANDING-ON-T-40-07)
+(not (LYING-ON-T-42-07))
+(not (LYING-ON-T-41-07))
+)
+)
+(:action LAY-DOWN-T-41-09-T-42-09-T-43-09-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-09)
+)
+:effect
+(and
+(LYING-ON-T-43-09)
+(LYING-ON-T-42-09)
+(not (STANDING-ON-T-41-09))
+)
+)
+(:action LAY-DOWN-T-41-09-T-41-08-T-41-07-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-41-09)
+)
+:effect
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-41-08)
+(not (STANDING-ON-T-41-09))
+)
+)
+(:action LAY-DOWN-T-47-12-T-46-12-T-45-12-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-47-12)
+)
+:effect
+(and
+(LYING-ON-T-45-12)
+(LYING-ON-T-46-12)
+(not (STANDING-ON-T-47-12))
+)
+)
+(:action ROLL-T-42-07-T-41-07-T-42-08-T-41-08-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-42-07)
+)
+:effect
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-41-08)
+(not (LYING-ON-T-42-07))
+(not (LYING-ON-T-41-07))
+)
+)
+(:action ROLL-T-42-08-T-41-08-T-42-09-T-41-09-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-42-08)
+)
+:effect
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-41-09)
+(not (LYING-ON-T-42-08))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action ROLL-T-41-07-T-42-07-T-41-08-T-42-08-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-41-07)
+)
+:effect
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-42-08)
+(not (LYING-ON-T-41-07))
+(not (LYING-ON-T-42-07))
+)
+)
+(:action ROLL-T-41-08-T-42-08-T-41-09-T-42-09-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-41-08)
+)
+:effect
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-42-09)
+(not (LYING-ON-T-41-08))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action ROLL-T-41-08-T-41-07-T-42-08-T-42-07-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-41-08)
+)
+:effect
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-07)
+(not (LYING-ON-T-41-08))
+(not (LYING-ON-T-41-07))
+)
+)
+(:action ROLL-T-41-07-T-41-08-T-42-07-T-42-08-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-07)
+)
+:effect
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-42-08)
+(not (LYING-ON-T-41-07))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action ROLL-T-41-09-T-41-08-T-42-09-T-42-08-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-41-09)
+)
+:effect
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-42-08)
+(not (LYING-ON-T-41-09))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action ROLL-T-41-08-T-41-09-T-42-08-T-42-09-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-41-08)
+)
+:effect
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-42-09)
+(not (LYING-ON-T-41-08))
+(not (LYING-ON-T-41-09))
+)
+)
+(:action ROLL-T-42-08-T-41-08-T-42-07-T-41-07-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-42-08)
+)
+:effect
+(and
+(LYING-ON-T-42-07)
+(LYING-ON-T-41-07)
+(not (LYING-ON-T-42-08))
+(not (LYING-ON-T-41-08))
+)
+)
+(:action ROLL-T-42-09-T-41-09-T-42-08-T-41-08-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-42-09)
+)
+:effect
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-41-08)
+(not (LYING-ON-T-42-09))
+(not (LYING-ON-T-41-09))
+)
+)
+(:action ROLL-T-41-08-T-42-08-T-41-07-T-42-07-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-08)
+(LYING-ON-T-41-08)
+)
+:effect
+(and
+(LYING-ON-T-41-07)
+(LYING-ON-T-42-07)
+(not (LYING-ON-T-41-08))
+(not (LYING-ON-T-42-08))
+)
+)
+(:action ROLL-T-41-09-T-42-09-T-41-08-T-42-08-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-41-09)
+)
+:effect
+(and
+(LYING-ON-T-41-08)
+(LYING-ON-T-42-08)
+(not (LYING-ON-T-41-09))
+(not (LYING-ON-T-42-09))
+)
+)
+(:action STAND-UP-T-43-09-T-43-10-T-43-11-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-43-09)
+)
+:effect
+(and
+(STANDING-ON-T-43-11)
+(not (LYING-ON-T-43-09))
+(not (LYING-ON-T-43-10))
+)
+)
+(:action STAND-UP-T-41-09-T-42-09-T-43-09-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-41-09)
+)
+:effect
+(and
+(STANDING-ON-T-43-09)
+(not (LYING-ON-T-41-09))
+(not (LYING-ON-T-42-09))
+)
+)
+(:action STAND-UP-T-45-12-T-46-12-T-47-12-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-45-12)
+)
+:effect
+(and
+(STANDING-ON-T-47-12)
+(not (LYING-ON-T-45-12))
+(not (LYING-ON-T-46-12))
+)
+)
+(:action STAND-UP-T-45-12-T-45-11-T-45-10-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-45-12)
+)
+:effect
+(and
+(STANDING-ON-T-45-10)
+(not (LYING-ON-T-45-12))
+(not (LYING-ON-T-45-11))
+)
+)
+(:action STAND-UP-T-43-09-T-42-09-T-41-09-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-42-09)
+(LYING-ON-T-43-09)
+)
+:effect
+(and
+(STANDING-ON-T-41-09)
+(not (LYING-ON-T-43-09))
+(not (LYING-ON-T-42-09))
+)
+)
+(:action LAY-DOWN-T-43-09-T-43-10-T-43-11-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-09)
+)
+:effect
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-43-10)
+(not (STANDING-ON-T-43-09))
+)
+)
+(:action LAY-DOWN-T-45-10-T-45-11-T-45-12-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-10)
+)
+:effect
+(and
+(LYING-ON-T-45-12)
+(LYING-ON-T-45-11)
+(not (STANDING-ON-T-45-10))
+)
+)
+(:action LAY-DOWN-T-43-10-T-44-10-T-45-10-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-10)
+)
+:effect
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-44-10)
+(not (STANDING-ON-T-43-10))
+)
+)
+(:action LAY-DOWN-T-43-11-T-44-11-T-45-11-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-11)
+)
+:effect
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-44-11)
+(not (STANDING-ON-T-43-11))
+)
+)
+(:action LAY-DOWN-T-43-11-T-43-10-T-43-09-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-11)
+)
+:effect
+(and
+(LYING-ON-T-43-09)
+(LYING-ON-T-43-10)
+(not (STANDING-ON-T-43-11))
+)
+)
+(:action LAY-DOWN-T-43-09-T-42-09-T-41-09-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-43-09)
+)
+:effect
+(and
+(LYING-ON-T-41-09)
+(LYING-ON-T-42-09)
+(not (STANDING-ON-T-43-09))
+)
+)
+(:action LAY-DOWN-T-45-10-T-44-10-T-43-10-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-10)
+)
+:effect
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-44-10)
+(not (STANDING-ON-T-45-10))
+)
+)
+(:action LAY-DOWN-T-45-11-T-44-11-T-43-11-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-11)
+)
+:effect
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-44-11)
+(not (STANDING-ON-T-45-11))
+)
+)
+(:action STAND-UP-T-43-10-T-44-10-T-45-10-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-43-10)
+)
+:effect
+(and
+(STANDING-ON-T-45-10)
+(not (LYING-ON-T-43-10))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action STAND-UP-T-43-11-T-44-11-T-45-11-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-43-11)
+)
+:effect
+(and
+(STANDING-ON-T-45-11)
+(not (LYING-ON-T-43-11))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action STAND-UP-T-43-11-T-43-10-T-43-09-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-43-11)
+)
+:effect
+(and
+(STANDING-ON-T-43-09)
+(not (LYING-ON-T-43-11))
+(not (LYING-ON-T-43-10))
+)
+)
+(:action STAND-UP-T-45-10-T-44-10-T-43-10-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-45-10)
+)
+:effect
+(and
+(STANDING-ON-T-43-10)
+(not (LYING-ON-T-45-10))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action STAND-UP-T-45-11-T-44-11-T-43-11-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-45-11)
+)
+:effect
+(and
+(STANDING-ON-T-43-11)
+(not (LYING-ON-T-45-11))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action ROLL-T-44-10-T-43-10-T-44-11-T-43-11-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-44-10)
+)
+:effect
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-43-11)
+(not (LYING-ON-T-44-10))
+(not (LYING-ON-T-43-10))
+)
+)
+(:action ROLL-T-43-10-T-44-10-T-43-11-T-44-11-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-43-10)
+)
+:effect
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-44-11)
+(not (LYING-ON-T-43-10))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action ROLL-T-45-10-T-44-10-T-45-11-T-44-11-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-45-10)
+)
+:effect
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-44-11)
+(not (LYING-ON-T-45-10))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action ROLL-T-44-10-T-45-10-T-44-11-T-45-11-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-44-10)
+)
+:effect
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-45-11)
+(not (LYING-ON-T-44-10))
+(not (LYING-ON-T-45-10))
+)
+)
+(:action ROLL-T-43-11-T-43-10-T-44-11-T-44-10-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-43-11)
+)
+:effect
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-44-10)
+(not (LYING-ON-T-43-11))
+(not (LYING-ON-T-43-10))
+)
+)
+(:action ROLL-T-43-10-T-43-11-T-44-10-T-44-11-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-43-10)
+)
+:effect
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-44-11)
+(not (LYING-ON-T-43-10))
+(not (LYING-ON-T-43-11))
+)
+)
+(:action ROLL-T-44-11-T-44-10-T-45-11-T-45-10-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-44-11)
+)
+:effect
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-45-10)
+(not (LYING-ON-T-44-11))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action ROLL-T-44-10-T-44-11-T-45-10-T-45-11-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-44-10)
+)
+:effect
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-45-11)
+(not (LYING-ON-T-44-10))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action ROLL-T-44-11-T-43-11-T-44-10-T-43-10-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-44-11)
+)
+:effect
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-43-10)
+(not (LYING-ON-T-44-11))
+(not (LYING-ON-T-43-11))
+)
+)
+(:action ROLL-T-43-11-T-44-11-T-43-10-T-44-10-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-43-11)
+)
+:effect
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-44-10)
+(not (LYING-ON-T-43-11))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action ROLL-T-45-11-T-44-11-T-45-10-T-44-10-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-45-11)
+)
+:effect
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-44-10)
+(not (LYING-ON-T-45-11))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action ROLL-T-44-11-T-45-11-T-44-10-T-45-10-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-44-11)
+)
+:effect
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-45-10)
+(not (LYING-ON-T-44-11))
+(not (LYING-ON-T-45-11))
+)
+)
+(:action ROLL-T-44-11-T-44-10-T-43-11-T-43-10-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-44-11)
+)
+:effect
+(and
+(LYING-ON-T-43-11)
+(LYING-ON-T-43-10)
+(not (LYING-ON-T-44-11))
+(not (LYING-ON-T-44-10))
+)
+)
+(:action ROLL-T-44-10-T-44-11-T-43-10-T-43-11-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-44-10)
+)
+:effect
+(and
+(LYING-ON-T-43-10)
+(LYING-ON-T-43-11)
+(not (LYING-ON-T-44-10))
+(not (LYING-ON-T-44-11))
+)
+)
+(:action ROLL-T-45-11-T-45-10-T-44-11-T-44-10-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-45-11)
+)
+:effect
+(and
+(LYING-ON-T-44-11)
+(LYING-ON-T-44-10)
+(not (LYING-ON-T-45-11))
+(not (LYING-ON-T-45-10))
+)
+)
+(:action ROLL-T-45-10-T-45-11-T-44-10-T-44-11-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-45-10)
+)
+:effect
+(and
+(LYING-ON-T-44-10)
+(LYING-ON-T-44-11)
+(not (LYING-ON-T-45-10))
+(not (LYING-ON-T-45-11))
+)
+)
+(:action STAND-UP-T-45-10-T-45-11-T-45-12-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-45-11)
+(LYING-ON-T-45-10)
+)
+:effect
+(and
+(STANDING-ON-T-45-12)
+(not (LYING-ON-T-45-10))
+(not (LYING-ON-T-45-11))
+)
+)
+(:action LAY-DOWN-T-45-12-T-46-12-T-47-12-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-12)
+)
+:effect
+(and
+(LYING-ON-T-47-12)
+(LYING-ON-T-46-12)
+(not (STANDING-ON-T-45-12))
+)
+)
+(:action LAY-DOWN-T-45-12-T-45-11-T-45-10-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-45-12)
+)
+:effect
+(and
+(LYING-ON-T-45-10)
+(LYING-ON-T-45-11)
+(not (STANDING-ON-T-45-12))
+)
+)
+(:action ROLL-T-47-13-T-47-12-T-46-13-T-46-12-WEST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-12)
+(LYING-ON-T-47-13)
+)
+:effect
+(and
+(LYING-ON-T-46-13)
+(LYING-ON-T-46-12)
+(not (LYING-ON-T-47-13))
+(not (LYING-ON-T-47-12))
+)
+)
+(:action ROLL-T-47-12-T-47-13-T-46-12-T-46-13-EAST-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-13)
+(LYING-ON-T-47-12)
+)
+:effect
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-46-13)
+(not (LYING-ON-T-47-12))
+(not (LYING-ON-T-47-13))
+)
+)
+(:action STAND-UP-T-47-12-T-46-12-T-45-12-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-47-12)
+)
+:effect
+(and
+(STANDING-ON-T-45-12)
+(not (LYING-ON-T-47-12))
+(not (LYING-ON-T-46-12))
+)
+)
+(:action ROLL-T-47-12-T-46-12-T-47-13-T-46-13-NORTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-47-12)
+)
+:effect
+(and
+(LYING-ON-T-47-13)
+(LYING-ON-T-46-13)
+(not (LYING-ON-T-47-12))
+(not (LYING-ON-T-46-12))
+)
+)
+(:action ROLL-T-46-12-T-47-12-T-46-13-T-47-13-SOUTH-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-12)
+(LYING-ON-T-46-12)
+)
+:effect
+(and
+(LYING-ON-T-46-13)
+(LYING-ON-T-47-13)
+(not (LYING-ON-T-46-12))
+(not (LYING-ON-T-47-12))
+)
+)
+(:action ROLL-T-46-13-T-46-12-T-47-13-T-47-12-WEST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-46-13)
+)
+:effect
+(and
+(LYING-ON-T-47-13)
+(LYING-ON-T-47-12)
+(not (LYING-ON-T-46-13))
+(not (LYING-ON-T-46-12))
+)
+)
+(:action ROLL-T-46-12-T-46-13-T-47-12-T-47-13-EAST-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-13)
+(LYING-ON-T-46-12)
+)
+:effect
+(and
+(LYING-ON-T-47-12)
+(LYING-ON-T-47-13)
+(not (LYING-ON-T-46-12))
+(not (LYING-ON-T-46-13))
+)
+)
+(:action ROLL-T-47-13-T-46-13-T-47-12-T-46-12-NORTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-46-13)
+(LYING-ON-T-47-13)
+)
+:effect
+(and
+(LYING-ON-T-47-12)
+(LYING-ON-T-46-12)
+(not (LYING-ON-T-47-13))
+(not (LYING-ON-T-46-13))
+)
+)
+(:action ROLL-T-46-13-T-47-13-T-46-12-T-47-12-SOUTH-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-13)
+(LYING-ON-T-46-13)
+)
+:effect
+(and
+(LYING-ON-T-46-12)
+(LYING-ON-T-47-12)
+(not (LYING-ON-T-46-13))
+(not (LYING-ON-T-47-13))
+)
+)
+(:action STAND-UP-T-46-13-T-47-13-T-48-13-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-47-13)
+(LYING-ON-T-46-13)
+)
+:effect
+(and
+(STANDING-ON-T-48-13)
+(not (LYING-ON-T-46-13))
+(not (LYING-ON-T-47-13))
+)
+)
+(:action LAY-DOWN-T-48-13-T-48-14-T-48-15-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-13)
+)
+:effect
+(and
+(LYING-ON-T-48-15)
+(LYING-ON-T-48-14)
+(not (STANDING-ON-T-48-13))
+)
+)
+(:action LAY-DOWN-T-48-13-T-47-13-T-46-13-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-13)
+)
+:effect
+(and
+(LYING-ON-T-46-13)
+(LYING-ON-T-47-13)
+(not (STANDING-ON-T-48-13))
+)
+)
+(:action STAND-UP-T-48-14-T-48-15-T-48-16-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-15)
+(LYING-ON-T-48-14)
+)
+:effect
+(and
+(STANDING-ON-T-48-16)
+(not (LYING-ON-T-48-14))
+(not (LYING-ON-T-48-15))
+)
+)
+(:action STAND-UP-T-48-15-T-48-14-T-48-13-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-48-14)
+(LYING-ON-T-48-15)
+)
+:effect
+(and
+(STANDING-ON-T-48-13)
+(not (LYING-ON-T-48-15))
+(not (LYING-ON-T-48-14))
+)
+)
+(:action LAY-DOWN-T-48-16-T-49-16-T-50-16-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-16)
+)
+:effect
+(and
+(LYING-ON-T-50-16)
+(LYING-ON-T-49-16)
+(not (STANDING-ON-T-48-16))
+)
+)
+(:action LAY-DOWN-T-48-16-T-48-15-T-48-14-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-48-16)
+)
+:effect
+(and
+(LYING-ON-T-48-14)
+(LYING-ON-T-48-15)
+(not (STANDING-ON-T-48-16))
+)
+)
+(:action STAND-UP-T-49-16-T-50-16-T-51-16-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-50-16)
+(LYING-ON-T-49-16)
+)
+:effect
+(and
+(STANDING-ON-T-51-16)
+(not (LYING-ON-T-49-16))
+(not (LYING-ON-T-50-16))
+)
+)
+(:action STAND-UP-T-50-16-T-49-16-T-48-16-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-49-16)
+(LYING-ON-T-50-16)
+)
+:effect
+(and
+(STANDING-ON-T-48-16)
+(not (LYING-ON-T-50-16))
+(not (LYING-ON-T-49-16))
+)
+)
+(:action LAY-DOWN-T-51-16-T-52-16-T-53-16-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-16)
+)
+:effect
+(and
+(LYING-ON-T-53-16)
+(LYING-ON-T-52-16)
+(not (STANDING-ON-T-51-16))
+)
+)
+(:action LAY-DOWN-T-51-16-T-50-16-T-49-16-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-51-16)
+)
+:effect
+(and
+(LYING-ON-T-49-16)
+(LYING-ON-T-50-16)
+(not (STANDING-ON-T-51-16))
+)
+)
+(:action STAND-UP-T-52-16-T-53-16-T-54-16-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-53-16)
+(LYING-ON-T-52-16)
+)
+:effect
+(and
+(STANDING-ON-T-54-16)
+(not (LYING-ON-T-52-16))
+(not (LYING-ON-T-53-16))
+)
+)
+(:action STAND-UP-T-53-16-T-52-16-T-51-16-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-52-16)
+(LYING-ON-T-53-16)
+)
+:effect
+(and
+(STANDING-ON-T-51-16)
+(not (LYING-ON-T-53-16))
+(not (LYING-ON-T-52-16))
+)
+)
+(:action LAY-DOWN-T-54-16-T-55-16-T-56-16-SOUTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-16)
+)
+:effect
+(and
+(LYING-ON-T-56-16)
+(LYING-ON-T-55-16)
+(not (STANDING-ON-T-54-16))
+)
+)
+(:action LAY-DOWN-T-54-16-T-53-16-T-52-16-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-54-16)
+)
+:effect
+(and
+(LYING-ON-T-52-16)
+(LYING-ON-T-53-16)
+(not (STANDING-ON-T-54-16))
+)
+)
+(:action STAND-UP-T-55-16-T-56-16-T-57-16-SOUTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-56-16)
+(LYING-ON-T-55-16)
+)
+:effect
+(and
+(STANDING-ON-T-57-16)
+(not (LYING-ON-T-55-16))
+(not (LYING-ON-T-56-16))
+)
+)
+(:action STAND-UP-T-56-16-T-55-16-T-54-16-NORTH
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-55-16)
+(LYING-ON-T-56-16)
+)
+:effect
+(and
+(STANDING-ON-T-54-16)
+(not (LYING-ON-T-56-16))
+(not (LYING-ON-T-55-16))
+)
+)
+(:action LAY-DOWN-T-57-16-T-57-15-T-57-14-WEST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-16)
+)
+:effect
+(and
+(LYING-ON-T-57-14)
+(LYING-ON-T-57-15)
+(not (STANDING-ON-T-57-16))
+)
+)
+(:action LAY-DOWN-T-57-16-T-56-16-T-55-16-NORTH
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-16)
+)
+:effect
+(and
+(LYING-ON-T-55-16)
+(LYING-ON-T-56-16)
+(not (STANDING-ON-T-57-16))
+)
+)
+(:action STAND-UP-T-57-14-T-57-15-T-57-16-EAST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-15)
+(LYING-ON-T-57-14)
+)
+:effect
+(and
+(STANDING-ON-T-57-16)
+(not (LYING-ON-T-57-14))
+(not (LYING-ON-T-57-15))
+)
+)
+(:action STAND-UP-T-57-15-T-57-14-T-57-13-WEST
+:parameters ()
+:precondition
+(and
+(LYING-ON-T-57-14)
+(LYING-ON-T-57-15)
+)
+:effect
+(and
+(STANDING-ON-T-57-13)
+(not (LYING-ON-T-57-15))
+(not (LYING-ON-T-57-14))
+)
+)
+(:action LAY-DOWN-T-57-13-T-57-14-T-57-15-EAST
+:parameters ()
+:precondition
+(and
+(STANDING-ON-T-57-13)
+)
+:effect
+(and
+(LYING-ON-T-57-15)
+(LYING-ON-T-57-14)
+(not (STANDING-ON-T-57-13))
+)
+)
+)

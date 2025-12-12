@@ -1,0 +1,12 @@
+;∀ x1 ∃ x2 ∃ x3 . ((x2 ∨ ¬x3 ∨ x2) ∧ (x1 ∨ ¬x2) ∧ (¬x2 ∨ ¬x2 ∨ ¬x2))
+
+IIIXXXXXXXXXd12e01e09XXXXXXA09XXXXXXXXXXXXXXXXXXd14e02e03d04d05d06d07e13XXXXXXA13XXXXXXXXXXXXXXXXXXXXXd16d08e15XXXXXXA15XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                                    XXX      XXX                                          XXX      XXX                        XXX                                                                     XXX
+                                    XXX      XXX                                          XXX      XXX                        XXX                                                                     XXX
+         XXXe12e11A11d11d09XXXXXXXXXXXX      XXXd13e04e05e06e07d02d03e14XXXXXXA14XXXXXXXXXXXX      XXXd15e08e16XXXXXXA16XXXXXXXXX      XXXXXXXXXXXXA02XXXXXXXXXXXXXXXA01XXXXXXXXXXXXXXXA05XXXXXXXXXXXXXXX
+         XXX                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+         XXX                                                                                                                           XXX      XXX      XXX      XXX      XXX      XXX      XXX         
+         XXXd01d10XXXXXXA10XXXXXXXXXe10                                                                                                XXX      XXXA08XXXXXX      XXXA04XXXXXX      XXXA06XXXXXX         
+                                    XXX                                                                                                XXX      XXX      XXX                        XXX      XXX         
+                                    XXX                                                                                                XXX      XXX      XXX                        XXX      XXX         
+GGGXXXXXXXXXA12XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      XXXA03XXXXXX                        XXXA07XXXXXX         
