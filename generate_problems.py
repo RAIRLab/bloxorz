@@ -85,9 +85,10 @@ if __name__ == "__main__":
         "ROCK" : 3,
         "YYTBB" : 3,
         "QSAT" : 3,
+        "DEPGCHAIN": 3,
     }
 
-    #generator = ["2007", "ROCK", "YYTBB", "QSAT"]
+    #generator = ["2007", "ROCK", "YYTBB", "QSAT", "DEPGCHAIN"]
     generators = ["QSAT"]
 
     for gen_name in generators:
